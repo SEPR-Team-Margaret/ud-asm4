@@ -15,6 +15,9 @@ public class Player : MonoBehaviour {
     [SerializeField] private Color color;
     [SerializeField] private bool human;
     [SerializeField] private bool active = false;
+    
+
+
 
 
     public Game GetGame() {
@@ -156,6 +159,20 @@ public class Player : MonoBehaviour {
         else
             return false;
     }
+
+    #region Function which gives all owned sectors to the player who defeated this player (Added by Jack 01/02/2018)
+
+    public void Defeat(Player player)
+    {
+        if (!IsEliminated())
+            return; // Incase the player hasn't lost
+        foreach (Sector sector in ownedSectors)
+        {
+            sector.SetOwner(player); // Reset all the sectors
+        }
+    }
+
+    #endregion
 
     private bool OwnsLandmark() {
 

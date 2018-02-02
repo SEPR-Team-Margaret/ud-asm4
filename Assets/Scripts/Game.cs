@@ -13,6 +13,14 @@ public class Game : MonoBehaviour {
     [SerializeField] private bool gameFinished = false;
     [SerializeField] private bool testMode = false;
 
+    public GameObject GUIHandler;
+
+    public bool triggerDialog = false;
+
+    Dialog dialog;
+
+
+    public bool[] eliminatedPlayers;
 
     public TurnState GetTurnState() {
         return turnState;
@@ -113,6 +121,11 @@ public class Game : MonoBehaviour {
             player.SpawnUnits();
         }
 
+        eliminatedPlayers = new bool[players.Length]; // Automatically set to false for all
+
+        // Create an instance of the Dialog
+        dialog = GUIHandler.GetComponent<Dialog>();
+
 	}
 
     private Sector[] GetLandmarkedSectors(Sector[] sectors) {
@@ -162,29 +175,20 @@ public class Game : MonoBehaviour {
 		currentPlayer.GetGui().Deactivate();
 
         // find the index of the current player
+       
         for (int i = 0; i < players.Length; i++)
         {
             if (players[i] == currentPlayer)
             {
                 // set the next player's index
-                int nextPlayerIndex = i + 1;
+                int nextPlayerIndex = (i + 1) % players.Length;
 
-                // if end of player list is reached, loop back to the first player
-                if (nextPlayerIndex == players.Length)
-                {
-                    currentPlayer = players[0];
-                    players[0].SetActive(true);
-					players[0].GetGui().Activate();
-                }
+                // Code replaced by Jack, unnecessary if statements 
+                currentPlayer = players[nextPlayerIndex];
+                currentPlayer.SetActive(true);
+                currentPlayer.GetGui().Activate();
+                break;
 
-                // otherwise, set the next player as the current player
-                else
-                {
-                    currentPlayer = players[nextPlayerIndex];
-                    players[nextPlayerIndex].SetActive(true);
-					players[nextPlayerIndex].GetGui().Activate();
-                    break;
-                }
             }
         }
     }
@@ -212,7 +216,19 @@ public class Game : MonoBehaviour {
                 break;
         }
 
-		UpdateGUI();
+        #region Remove defeated players and check if the game was won (Added by Jack 01/02/2018)
+
+        CheckForDefeatedPlayers();
+
+        Player winner = GetWinner();
+        if (winner != null)
+        {
+            EndGame();
+        }
+
+        #endregion
+
+        UpdateGUI();
     }
 
     public void EndTurn() {
@@ -221,6 +237,27 @@ public class Game : MonoBehaviour {
 
         turnState = TurnState.EndOfTurn;
     }
+
+    #region Function to check for defeated players and notify the others (Added by Jack 01/02/2018)
+
+    public void CheckForDefeatedPlayers()
+    {
+    // Checks if any players were defeated that turn state and removes them whilst notifying the rest of the players
+        for (int i = 0; i < players.Length; i++)
+        {
+            if (players[i].IsEliminated() && eliminatedPlayers[i] == false)
+            {
+                // Set up the dialog box and show it
+                dialog.setDialogType(Dialog.DialogType.PlayerElimated);
+                dialog.setPlayerName(players[i].name);
+                dialog.Show();
+                eliminatedPlayers[i] = true; // Used to ensure that the dialog is only shown once
+                players[i].Defeat(currentPlayer); // Releases all owned sectors
+            }
+        }
+    }
+
+    #endregion
 
     public Player GetWinner() {
 
@@ -252,6 +289,15 @@ public class Game : MonoBehaviour {
 
     public void EndGame() {
         gameFinished = true;
+
+        #region Show the winner dialog (Added by Jack 01/02/2018)
+
+        dialog.setDialogType(Dialog.DialogType.EndGame);
+        dialog.setPlayerName(GetWinner().name);
+        dialog.Show();
+
+        #endregion
+
         currentPlayer.SetActive(false);
         currentPlayer = null;
         turnState = TurnState.NULL;
@@ -297,6 +343,13 @@ public class Game : MonoBehaviour {
         // at the end of each turn, check for a winner and end the game if
         // necessary; otherwise, start the next player's turn
 
+        if (triggerDialog)
+        {
+            triggerDialog = false;
+            dialog.setDialogType(Dialog.DialogType.EndGame);
+            dialog.setPlayerName("PLAYER 1");
+            dialog.Show();
+        }
 		
         // if the current turn has ended and test mode is not enabled
         if (turnState == TurnState.EndOfTurn && !testMode)
