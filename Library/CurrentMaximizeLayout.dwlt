@@ -18,12 +18,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
-    width: 1904
-    height: 932
-  m_MinSize: {x: 683, y: 342}
-  m_MaxSize: {x: 12008, y: 8042}
+    width: 1944
+    height: 989
+  m_MinSize: {x: 683, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 392
+  controlID: 36515
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -46,29 +46,30 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-    x: 416
-    y: 99
-    width: 940
-    height: 498
+    x: 682
+    y: 137
+    width: 1007
+    height: 558
+  m_PersistentViewDataDictionary: {fileID: 0}
   m_MaximizeOnPlay: 1
   m_Gizmos: 0
   m_Stats: 0
-  m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_SelectedSizes: 05000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_TargetDisplay: 0
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-    m_HBaseRangeMin: -470
-    m_HBaseRangeMax: 470
-    m_VBaseRangeMin: -240.5
-    m_VBaseRangeMax: 240.5
+    m_HBaseRangeMin: -480.8889
+    m_HBaseRangeMax: 480.8889
+    m_VBaseRangeMin: -270.5
+    m_VBaseRangeMax: 270.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
-    m_HSlider: 1
-    m_VSlider: 1
+    m_HSlider: 0
+    m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoom: 0
@@ -78,25 +79,25 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 940
-      height: 481
-    m_Scale: {x: 1.4685334, y: 1.4685333}
-    m_Translation: {x: 507.39954, y: 329.30634}
+      width: 1007
+      height: 541
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 503.5, y: 270.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -345.51447
-      y: -224.24165
-      width: 640.0944
-      height: 327.5377
+      x: -503.5
+      y: -270.5
+      width: 1007
+      height: 541
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 940, y: 498}
+  m_LastWindowPixelSize: {x: 1007, y: 558}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -118,12 +119,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1350
-    height: 932
-  m_MinSize: {x: 406, y: 342}
-  m_MaxSize: {x: 8006, y: 8042}
+    width: 1422
+    height: 989
+  m_MinSize: {x: 406, y: 492}
+  m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 368
+  controlID: 36516
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,12 +143,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1350
-    height: 519
+    width: 1422
+    height: 579
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 369
+  controlID: 36517
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,10 +165,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 406
-    height: 519
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+    width: 411
+    height: 579
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -195,29 +196,30 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 8
-    y: 99
-    width: 404
-    height: 498
+    x: 269
+    y: 137
+    width: 409
+    height: 558
+  m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: da39ffff
-    m_LastClickedID: -50726
-    m_ExpandedIDs: 3c3affff00000000da3b0000383c0000a03c0000
+    m_SelectedIDs: 8a2d0000
+    m_LastClickedID: 0
+    m_ExpandedIDs: d4d2efff34c9f9ff6cd7f9ffa4f3f9ff4402faffca0dfaff9e19faff1025faffc236faffec44faffd87efaff82bafafff0cffaffd8d8faff7ae2faffdae3faff40edfaff12effaff7af8faff90f9faff1c03fbff360ffbffa426ffff8628ffff9efbffff000000003c30000002320000b232000032330000b83300000435000000ae010006af0100e6af010064b00100ace70100b2e801006cea0100a8ec0100aeed010072050200800502006e0602002c070200f4070200d8080200fa0802001c090200da0902004c0a0200580a0200
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: LandmarkCube
-      m_OriginalName: LandmarkCube
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: -50726
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 5}
     m_SearchString: 
@@ -240,10 +242,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 406
+    x: 411
     y: 0
-    width: 944
-    height: 519
+    width: 1011
+    height: 579
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 2}
@@ -275,19 +277,20 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-    x: 279
-    y: 100
-    width: 623
-    height: 319
+    x: 682
+    y: 137
+    width: 1007
+    height: 558
+  m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 1567.0173786121024
+  lastFramingTime: 6383.832041978836
   m_2DMode: 0
-  m_isRotationLocked: 1
+  m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -42.176308, y: -31.470816, z: 19.36489}
+    m_Target: {x: -84.05854, y: -2.819999, z: 56.31037}
     speed: 2
-    m_Value: {x: -42.176308, y: -31.470816, z: 19.36489}
+    m_Value: {x: -84.05854, y: -2.819999, z: 56.31037}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -296,6 +299,7 @@ MonoBehaviour:
     showSkybox: 1
     showFlares: 1
     showImageEffects: 1
+    showParticleSystems: 1
   grid:
     xGrid:
       m_Target: 0
@@ -310,20 +314,20 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.006485272, y: -0.71655846, z: 0.6974671, w: 0.0066603404}
+    m_Target: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
     speed: 2
-    m_Value: {x: -0.0064852717, y: 0.71655846, z: -0.6974671, w: -0.00666034}
+    m_Value: {x: -0.7071068, y: 0, z: -0, w: -0.7071068}
   m_Size:
-    m_Target: 96.74622
+    m_Target: 120.241035
     speed: 2
-    m_Value: 96.74622
+    m_Value: 120.241035
   m_Ortho:
-    m_Target: 0
+    m_Target: 1
     speed: 2
-    m_Value: 0
+    m_Value: 1
   m_ShowGlobalGrid: 1
-  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
-  m_LastSceneViewOrtho: 0
+  m_LastSceneViewRotation: {x: 0.12223432, y: 0.8771996, z: -0.34467933, w: 0.3110834}
+  m_LastSceneViewOrtho: 1
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
   m_LastLockedObject: {fileID: 0}
@@ -350,10 +354,11 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1166
-    y: 99
-    width: 467
-    height: 542
+    x: 626
+    y: 164
+    width: 977
+    height: 533
+  m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -369,18 +374,18 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 519
-    width: 1350
-    height: 413
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 12}
+    y: 579
+    width: 1422
+    height: 410
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 11}
   - {fileID: 12}
   - {fileID: 13}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 2
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -403,10 +408,11 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 619
-    width: 1359
-    height: 399
+    x: 269
+    y: 716
+    width: 1420
+    height: 389
+  m_PersistentViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
     m_ClassNames: []
@@ -419,19 +425,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Luke\Unity\UniversityDomination
+  m_LastProjectPath: /Users/giovanni/Documents/Projects/UniversityDomination
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 66360000
-    m_LastClickedID: 13926
-    m_ExpandedIDs: 000000004c350000
+    scrollPos: {x: 0, y: 28.000488}
+    m_SelectedIDs: 502c0000
+    m_LastClickedID: 11344
+    m_ExpandedIDs: 000000005c27000036290000ea2a0000242c0000502c0000fc2f000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -447,7 +453,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 10}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -459,7 +465,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004c350000
+    m_ExpandedIDs: 000000005c27000036290000ea2a0000242c0000502c0000fc2f000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -484,10 +490,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 8a2d0000
+    m_LastClickedInstanceID: 11658
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 00000000162d0000202d0000242d0000282d00002c2d0000302d0000342d0000382d00003c2d0000402d0000442d0000482d00004c2d0000502d0000542d0000582d00005c2d0000602d0000642d0000682d00006c2d0000702d0000742d0000782d00007c2d0000802d0000842d0000882d00008c2d0000902d0000942d0000982d00009c2d00004c470000
+    m_ExpandedInstanceIDs: 162d0000202d0000242d0000282d00002c2d0000302d0000342d0000382d00003c2d0000402d0000442d0000482d00004c2d0000502d0000542d0000582d00005c2d0000602d0000642d0000682d00006c2d0000702d0000742d0000782d00007c2d0000802d0000842d0000882d00008c2d0000902d0000942d0000982d00009c2d00004c47000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -503,7 +509,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 10}
+      m_ClientGUIView: {fileID: 0}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -513,7 +519,7 @@ MonoBehaviour:
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
-  m_DirectoriesAreaWidth: 115
+  m_DirectoriesAreaWidth: 188
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -536,10 +542,11 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 8
-    y: 618
-    width: 1348
-    height: 392
+    x: 625
+    y: 706
+    width: 1615
+    height: 372
+  m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -561,31 +568,32 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 8
-    y: 440
-    width: 894
-    height: 250
-  m_TestTypeToolbarIndex: 0
+    x: 625
+    y: 706
+    width: 1615
+    height: 372
+  m_PersistentViewDataDictionary: {fileID: 0}
+  m_TestTypeToolbarIndex: 1
   m_PlayModeTestListGUI:
     m_Window: {fileID: 13}
     newResultList:
     - id: '[University Domination][suite]'
       name: University Domination
       fullName: University Domination
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.204372
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-      isSuite: 1
-    - id: '[C:/Luke/Unity/UniversityDomination/Library/ScriptAssemblies/Assembly-CSharp.dll][suite]'
+      isSuite: 0
+    - id: '[/Users/giovanni/Documents/Projects/UniversityDomination/Library/ScriptAssemblies/Assembly-CSharp.dll][suite]'
       name: Assembly-CSharp.dll
-      fullName: C:/Luke/Unity/UniversityDomination/Library/ScriptAssemblies/Assembly-CSharp.dll
-      resultStatus: 0
-      duration: 0
+      fullName: /Users/giovanni/Documents/Projects/UniversityDomination/Library/ScriptAssemblies/Assembly-CSharp.dll
+      resultStatus: 1
+      duration: 0.170762
       messages: 
       output: 
       stacktrace: 
@@ -596,8 +604,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest][suite]'
       name: GameTest
       fullName: GameTest
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.140815
       messages: 
       output: 
       stacktrace: 
@@ -608,8 +616,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest.CreatePlayers_AtLeastTwoPlayersAreHuman]'
       name: CreatePlayers_AtLeastTwoPlayersAreHuman
       fullName: GameTest.CreatePlayers_AtLeastTwoPlayersAreHuman
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.10442
       messages: 
       output: 
       stacktrace: 
@@ -620,8 +628,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest.CreatePlayers_AtMostFourPlayersAreHuman]'
       name: CreatePlayers_AtMostFourPlayersAreHuman
       fullName: GameTest.CreatePlayers_AtMostFourPlayersAreHuman
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.032768
       messages: 
       output: 
       stacktrace: 
@@ -632,8 +640,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest.CreatePlayers_FourPlayersAreHuman]'
       name: CreatePlayers_FourPlayersAreHuman
       fullName: GameTest.CreatePlayers_FourPlayersAreHuman
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.034313
       messages: 
       output: 
       stacktrace: 
@@ -644,8 +652,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest.CreatePlayers_ThreePlayersAreHumanAndOneNot]'
       name: CreatePlayers_ThreePlayersAreHumanAndOneNot
       fullName: GameTest.CreatePlayers_ThreePlayersAreHumanAndOneNot
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.034019
       messages: 
       output: 
       stacktrace: 
@@ -656,8 +664,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest.CreatePlayers_TwoPlayersAreHumanAndTwoNot]'
       name: CreatePlayers_TwoPlayersAreHumanAndTwoNot
       fullName: GameTest.CreatePlayers_TwoPlayersAreHumanAndTwoNot
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.032861
       messages: 
       output: 
       stacktrace: 
@@ -668,10 +676,12 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest.EndGame_GameEndsCorrectlyWithNoCurrentPlayerAndNoActivePlayersAndNoTurnState]'
       name: EndGame_GameEndsCorrectlyWithNoCurrentPlayerAndNoActivePlayersAndNoTurnState
       fullName: GameTest.EndGame_GameEndsCorrectlyWithNoCurrentPlayerAndNoActivePlayersAndNoTurnState
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.032483
       messages: 
-      output: 
+      output: 'GAME FINISHED
+
+'
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -680,8 +690,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest.GetWinner_NoWinnerWhenAPlayerHasLandmarkAndAnotherHasUnits]'
       name: GetWinner_NoWinnerWhenAPlayerHasLandmarkAndAnotherHasUnits
       fullName: GameTest.GetWinner_NoWinnerWhenAPlayerHasLandmarkAndAnotherHasUnits
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.033058
       messages: 
       output: 
       stacktrace: 
@@ -692,8 +702,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest.GetWinner_NoWinnerWhenMultiplePlayersOwningLandmarks]'
       name: GetWinner_NoWinnerWhenMultiplePlayersOwningLandmarks
       fullName: GameTest.GetWinner_NoWinnerWhenMultiplePlayersOwningLandmarks
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.033411
       messages: 
       output: 
       stacktrace: 
@@ -704,8 +714,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest.GetWinner_NoWinnerWhenMultiplePlayersWithUnits]'
       name: GetWinner_NoWinnerWhenMultiplePlayersWithUnits
       fullName: GameTest.GetWinner_NoWinnerWhenMultiplePlayersWithUnits
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.033133
       messages: 
       output: 
       stacktrace: 
@@ -716,8 +726,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest.GetWinner_OnePlayerWithLandmarksAndUnitsWins]'
       name: GetWinner_OnePlayerWithLandmarksAndUnitsWins
       fullName: GameTest.GetWinner_OnePlayerWithLandmarksAndUnitsWins
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.033687
       messages: 
       output: 
       stacktrace: 
@@ -728,8 +738,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest.InitializeMap_OneLandmarkAllocatedWithUnitPerPlayer]'
       name: InitializeMap_OneLandmarkAllocatedWithUnitPerPlayer
       fullName: GameTest.InitializeMap_OneLandmarkAllocatedWithUnitPerPlayer
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.033493
       messages: 
       output: 
       stacktrace: 
@@ -740,8 +750,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest.NextPlayer_CurrentPlayerChangesToNextPlayerEachTime]'
       name: NextPlayer_CurrentPlayerChangesToNextPlayerEachTime
       fullName: GameTest.NextPlayer_CurrentPlayerChangesToNextPlayerEachTime
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.033205
       messages: 
       output: 
       stacktrace: 
@@ -752,8 +762,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest.NextPlayer_EliminatedPlayersAreSkipped]'
       name: NextPlayer_EliminatedPlayersAreSkipped
       fullName: GameTest.NextPlayer_EliminatedPlayersAreSkipped
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.033518
       messages: 
       output: 
       stacktrace: 
@@ -764,8 +774,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest.NextTurnState_TurnStateProgressesCorrectly]'
       name: NextTurnState_TurnStateProgressesCorrectly
       fullName: GameTest.NextTurnState_TurnStateProgressesCorrectly
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.032943
       messages: 
       output: 
       stacktrace: 
@@ -776,8 +786,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest.NoUnitSelected_ReturnsFalseWhenUnitIsSelected]'
       name: NoUnitSelected_ReturnsFalseWhenUnitIsSelected
       fullName: GameTest.NoUnitSelected_ReturnsFalseWhenUnitIsSelected
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.032777
       messages: 
       output: 
       stacktrace: 
@@ -788,8 +798,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][PlayerTest][suite]'
       name: PlayerTest
       fullName: PlayerTest
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.600046
       messages: 
       output: 
       stacktrace: 
@@ -800,8 +810,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][PlayerTest.CaptureLandmark_BothPlayersBeerAmountCorrect]'
       name: CaptureLandmark_BothPlayersBeerAmountCorrect
       fullName: PlayerTest.CaptureLandmark_BothPlayersBeerAmountCorrect
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.032726
       messages: 
       output: 
       stacktrace: 
@@ -812,8 +822,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][PlayerTest.CaptureLandmark_BothPlayersKnowledgeAmountCorrect]'
       name: CaptureLandmark_BothPlayersKnowledgeAmountCorrect
       fullName: PlayerTest.CaptureLandmark_BothPlayersKnowledgeAmountCorrect
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.034049
       messages: 
       output: 
       stacktrace: 
@@ -824,8 +834,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][PlayerTest.CaptureLandmark_NeutralLandmarkPlayerBeerAmountCorrect]'
       name: CaptureLandmark_NeutralLandmarkPlayerBeerAmountCorrect
       fullName: PlayerTest.CaptureLandmark_NeutralLandmarkPlayerBeerAmountCorrect
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.033289
       messages: 
       output: 
       stacktrace: 
@@ -836,8 +846,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][PlayerTest.CaptureLandmark_NeutralLandmarkPlayerKnowledgeAmountCorrect]'
       name: CaptureLandmark_NeutralLandmarkPlayerKnowledgeAmountCorrect
       fullName: PlayerTest.CaptureLandmark_NeutralLandmarkPlayerKnowledgeAmountCorrect
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.033345
       messages: 
       output: 
       stacktrace: 
@@ -848,8 +858,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][PlayerTest.CaptureSector_ChangesOwner]'
       name: CaptureSector_ChangesOwner
       fullName: PlayerTest.CaptureSector_ChangesOwner
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.032972
       messages: 
       output: 
       stacktrace: 
@@ -860,8 +870,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][PlayerTest.IsEliminated_PlayerWithNoUnitsAndNoLandmarksEliminated]'
       name: IsEliminated_PlayerWithNoUnitsAndNoLandmarksEliminated
       fullName: PlayerTest.IsEliminated_PlayerWithNoUnitsAndNoLandmarksEliminated
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.033132
       messages: 
       output: 
       stacktrace: 
@@ -872,8 +882,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][PlayerTest.SpawnUnits_NotSpawnedWhenLandmarkNotOwned]'
       name: SpawnUnits_NotSpawnedWhenLandmarkNotOwned
       fullName: PlayerTest.SpawnUnits_NotSpawnedWhenLandmarkNotOwned
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.033053
       messages: 
       output: 
       stacktrace: 
@@ -884,8 +894,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][PlayerTest.SpawnUnits_NotSpawnedWhenLandmarkOwnedAndOccupied]'
       name: SpawnUnits_NotSpawnedWhenLandmarkOwnedAndOccupied
       fullName: PlayerTest.SpawnUnits_NotSpawnedWhenLandmarkOwnedAndOccupied
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.033279
       messages: 
       output: 
       stacktrace: 
@@ -896,8 +906,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][PlayerTest.SpawnUnits_SpawnedWhenLandmarkOwnedAndUnoccupied]'
       name: SpawnUnits_SpawnedWhenLandmarkOwnedAndUnoccupied
       fullName: PlayerTest.SpawnUnits_SpawnedWhenLandmarkOwnedAndUnoccupied
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.033534
       messages: 
       output: 
       stacktrace: 
@@ -908,8 +918,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][SectorTest][suite]'
       name: SectorTest
       fullName: SectorTest
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.733428
       messages: 
       output: 
       stacktrace: 
@@ -920,8 +930,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][SectorTest.AdjacentSelectedUnit_SectorsAreAdjacent]'
       name: AdjacentSelectedUnit_SectorsAreAdjacent
       fullName: SectorTest.AdjacentSelectedUnit_SectorsAreAdjacent
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.032691
       messages: 
       output: 
       stacktrace: 
@@ -932,8 +942,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][SectorTest.ClearUnit_UnitRemovedFromSector]'
       name: ClearUnit_UnitRemovedFromSector
       fullName: SectorTest.ClearUnit_UnitRemovedFromSector
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.033039
       messages: 
       output: 
       stacktrace: 
@@ -944,8 +954,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][SectorTest.Highlight_SectorColourCorrect]'
       name: Highlight_SectorColourCorrect
       fullName: SectorTest.Highlight_SectorColourCorrect
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.032905
       messages: 
       output: 
       stacktrace: 
@@ -956,8 +966,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][SectorTest.Initialize_OwnedAndNotOwnedSectorsOwnerAndColor]'
       name: Initialize_OwnedAndNotOwnedSectorsOwnerAndColor
       fullName: SectorTest.Initialize_OwnedAndNotOwnedSectorsOwnerAndColor
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.033552
       messages: 
       output: 
       stacktrace: 
@@ -968,8 +978,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][SectorTest.MoveIntoFriendlyUnit_UnitsSwapSectorsAndTurnStateProgressed]'
       name: MoveIntoFriendlyUnit_UnitsSwapSectorsAndTurnStateProgressed
       fullName: SectorTest.MoveIntoFriendlyUnit_UnitsSwapSectorsAndTurnStateProgressed
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.032984
       messages: 
       output: 
       stacktrace: 
@@ -980,8 +990,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][SectorTest.MoveIntoHostileUnit_AttackingUnitTakesSectorAndLevelUpAndTurnEnd]'
       name: MoveIntoHostileUnit_AttackingUnitTakesSectorAndLevelUpAndTurnEnd
       fullName: SectorTest.MoveIntoHostileUnit_AttackingUnitTakesSectorAndLevelUpAndTurnEnd
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.033371
       messages: 
       output: 
       stacktrace: 
@@ -992,8 +1002,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][SectorTest.MoveIntoHostileUnit_DefendingUnitDefendsSectorAndTurnEnd]'
       name: MoveIntoHostileUnit_DefendingUnitDefendsSectorAndTurnEnd
       fullName: SectorTest.MoveIntoHostileUnit_DefendingUnitDefendsSectorAndTurnEnd
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.032815
       messages: 
       output: 
       stacktrace: 
@@ -1004,8 +1014,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][SectorTest.MoveIntoHostileUnit_TieConflict_DefendingUnitDefendsSectorAndTurnEnd]'
       name: MoveIntoHostileUnit_TieConflict_DefendingUnitDefendsSectorAndTurnEnd
       fullName: SectorTest.MoveIntoHostileUnit_TieConflict_DefendingUnitDefendsSectorAndTurnEnd
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.033446
       messages: 
       output: 
       stacktrace: 
@@ -1016,8 +1026,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][SectorTest.MoveIntoUnoccupiedSector_NewSectorHasUnitAndOldDoesNotAndTurnStateProgressed]'
       name: MoveIntoUnoccupiedSector_NewSectorHasUnitAndOldDoesNotAndTurnStateProgressed
       fullName: SectorTest.MoveIntoUnoccupiedSector_NewSectorHasUnitAndOldDoesNotAndTurnStateProgressed
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.033028
       messages: 
       output: 
       stacktrace: 
@@ -1028,8 +1038,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][SectorTest.OnMouseAsButton_CorrectUnitIsSelected]'
       name: OnMouseAsButton_CorrectUnitIsSelected
       fullName: SectorTest.OnMouseAsButton_CorrectUnitIsSelected
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.033157
       messages: 
       output: 
       stacktrace: 
@@ -1040,8 +1050,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][SectorTest.SetOwner_SectorOwnerAndColorCorrect]'
       name: SetOwner_SectorOwnerAndColorCorrect
       fullName: SectorTest.SetOwner_SectorOwnerAndColorCorrect
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.032799
       messages: 
       output: 
       stacktrace: 
@@ -1052,8 +1062,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][UnitTest][suite]'
       name: UnitTest
       fullName: UnitTest
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.533298
       messages: 
       output: 
       stacktrace: 
@@ -1064,8 +1074,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][UnitTest.DestroySelf_UnitNotInSectorAndNotInPlayersUnitsList]'
       name: DestroySelf_UnitNotInSectorAndNotInPlayersUnitsList
       fullName: UnitTest.DestroySelf_UnitNotInSectorAndNotInPlayersUnitsList
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.033546
       messages: 
       output: 
       stacktrace: 
@@ -1076,8 +1086,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][UnitTest.LevelUp_UnitLevelDoesNotPastFive]'
       name: LevelUp_UnitLevelDoesNotPastFive
       fullName: UnitTest.LevelUp_UnitLevelDoesNotPastFive
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.032988
       messages: 
       output: 
       stacktrace: 
@@ -1088,8 +1098,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][UnitTest.LevelUp_UnitLevelIncreasesByOne]'
       name: LevelUp_UnitLevelIncreasesByOne
       fullName: UnitTest.LevelUp_UnitLevelIncreasesByOne
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.03291
       messages: 
       output: 
       stacktrace: 
@@ -1100,8 +1110,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][UnitTest.MoveToFriendly_UnitInCorrectSector]'
       name: MoveToFriendly_UnitInCorrectSector
       fullName: UnitTest.MoveToFriendly_UnitInCorrectSector
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.03333
       messages: 
       output: 
       stacktrace: 
@@ -1112,8 +1122,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][UnitTest.MoveToFriendlyFromNull_UnitInCorrectSector]'
       name: MoveToFriendlyFromNull_UnitInCorrectSector
       fullName: UnitTest.MoveToFriendlyFromNull_UnitInCorrectSector
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.033687
       messages: 
       output: 
       stacktrace: 
@@ -1124,8 +1134,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][UnitTest.MoveToNeutral_UnitInCorrectSector]'
       name: MoveToNeutral_UnitInCorrectSector
       fullName: UnitTest.MoveToNeutral_UnitInCorrectSector
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0332
       messages: 
       output: 
       stacktrace: 
@@ -1136,8 +1146,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][UnitTest.SelectAndDeselect_SelectedTrueWhenSelectedFalseWhenDeselected]'
       name: SelectAndDeselect_SelectedTrueWhenSelectedFalseWhenDeselected
       fullName: UnitTest.SelectAndDeselect_SelectedTrueWhenSelectedFalseWhenDeselected
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.033184
       messages: 
       output: 
       stacktrace: 
@@ -1148,8 +1158,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][UnitTest.SwapPlaces_UnitsInCorrectNewSectors]'
       name: SwapPlaces_UnitsInCorrectNewSectors
       fullName: UnitTest.SwapPlaces_UnitsInCorrectNewSectors
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.033273
       messages: 
       output: 
       stacktrace: 
@@ -1157,13 +1167,13 @@ MonoBehaviour:
       ignoredOrSkipped: 0
       description: 
       isSuite: 0
-    m_ResultText: 
+    m_ResultText: CreatePlayers_ThreePlayersAreHumanAndOneNot (0.034s)
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 0312488b3824249148c5a39ab42787b39e6015ce804395efd2256847ffffff7f
+      m_SelectedIDs: e8ed898a
+      m_LastClickedID: -1970672152
+      m_ExpandedIDs: 0312488b3824249148c5a39a780766a1b42787b39e6015ce804395ef1348cd0fd2256847ffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1191,9 +1201,57 @@ MonoBehaviour:
   m_EditModeTestListGUI:
     m_Window: {fileID: 13}
     newResultList:
-    - id: '[University Domination]'
+    - id: '[University Domination][suite]'
       name: University Domination
       fullName: University Domination
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+    - id: '[/Users/giovanni/Documents/Projects/UniversityDomination/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll][suite]'
+      name: Assembly-CSharp-Editor.dll
+      fullName: /Users/giovanni/Documents/Projects/UniversityDomination/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+    - id: '[Assembly-CSharp-Editor][NewEditModeTest][suite]'
+      name: NewEditModeTest
+      fullName: NewEditModeTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+    - id: '[Assembly-CSharp-Editor][NewEditModeTest.NewEditModeTestSimplePasses]'
+      name: NewEditModeTestSimplePasses
+      fullName: NewEditModeTest.NewEditModeTestSimplePasses
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp-Editor][NewEditModeTest.NewEditModeTestWithEnumeratorPasses]'
+      name: NewEditModeTestWithEnumeratorPasses
+      fullName: NewEditModeTest.NewEditModeTestWithEnumeratorPasses
       resultStatus: 0
       duration: 0
       messages: 
@@ -1209,7 +1267,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 38242491ffffff7f
+      m_ExpandedIDs: 3824249148c5a39affffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1248,16 +1306,17 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1350
+    x: 1422
     y: 0
-    width: 554
-    height: 932
+    width: 522
+    height: 989
   m_MinSize: {x: 277, y: 71}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
   - {fileID: 16}
+  - {fileID: 17}
   m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &15
@@ -1282,18 +1341,46 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1360
-    y: 99
-    width: 552
-    height: 911
+    x: 1693
+    y: 137
+    width: 520
+    height: 968
+  m_PersistentViewDataDictionary: {fileID: 0}
   m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
   m_PreviewResizer:
-    m_CachedPref: 160
+    m_CachedPref: 348
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
 --- !u!114 &16
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12079, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AutoRepaintOnSceneChange: 0
+  m_MinSize: {x: 360, y: 390}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Lighting
+    m_Image: {fileID: 8394858894532624064, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_DepthBufferBits: 0
+  m_Pos:
+    serializedVersion: 2
+    x: 1818
+    y: 163
+    width: 520
+    height: 968
+  m_PersistentViewDataDictionary: {fileID: 0}
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -1314,10 +1401,11 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1637
-    y: 99
-    width: 275
-    height: 911
+    x: 2244
+    y: 152
+    width: 301
+    height: 926
+  m_PersistentViewDataDictionary: {fileID: 0}
   m_InitialOpenURL: https://public-cdn.cloud.unity3d.com/editor/production/cloud/hub
   m_GlobalObjectTypeName: 
   m_RegisteredViewURLs:
