@@ -176,7 +176,8 @@ public class Game : MonoBehaviour {
     }
 
     public void NextPlayer() {
-        SavedGame.Save("test8.xml", this);
+        // For saving tests
+        SavedGame.Save("test8", this);
         //SavedGame.Load("test7");
 
         // set the current player to the next player in the order
@@ -390,45 +391,5 @@ public class Game : MonoBehaviour {
                 if (!gameFinished)
                     EndGame();
         }
-    }
-
-    //public bool Save(string fileName)
-    //{
-    //    using (FileStream stream = File.Open(saveFilePath + fileName + ".uds", FileMode.Create))
-    //    {
-    //        try
-    //        {
-    //            BinaryFormatter formatter = new BinaryFormatter();
-    //            formatter.Serialize(stream, this);
-    //            return true;
-    //        }
-    //        catch (SerializationException)
-    //        {
-    //            return false;
-    //        }
-
-    //    }
-    //}
-
-    //public bool Load(string fileName)
-    //{
-    //    using (FileStream stream = File.Open(saveFilePath + fileName + ".uds", FileMode.Open))
-    //    {
-    //       // try
-    //       // {
-
-    //            BinaryFormatter formatter = new BinaryFormatter();
-    //            Debug.Log(formatter.Deserialize(stream));
-
-    //            return true;
-    //       // }
-    //       // catch (SerializationException)
-    //       // {
-    //       //     return false;
-    //       // }
-    //    }
-    //}
-
-    
-
+    }  
 }

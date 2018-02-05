@@ -9,20 +9,7 @@ using System.Xml.Serialization;
 
 public static class SavedGame
 {
-    
-    /*public static CreateXML(string fileName)
-    {
-        
-        XmlDocument doc = new XmlDocument();
-
-        AddGameProps();
-    }
-
-    private static XmlDocument AddGameProps(XmlDocument doc)
-    {
-
-    }*/
-
+    // XML file creator
     public static bool Save(string fileName, Game game)
     {
         string filePath = Application.persistentDataPath + "/";
@@ -45,7 +32,7 @@ public static class SavedGame
     }
 
 
-
+    // Binary Serialization
     /*
     public static bool Save(string fileName)
     {
@@ -70,18 +57,18 @@ public static class SavedGame
     {
         using (FileStream stream = File.Open(Application.persistentDataPath + "/" + fileName + ".uds", FileMode.Open))
         {
-            // try
-            // {
+            try
+            {
 
             BinaryFormatter formatter = new BinaryFormatter();
             Debug.Log(formatter.Deserialize(stream));
 
             return true;
-            // }
-            // catch (SerializationException)
-            // {
-            //     return false;
-            // }
+            }
+            catch (SerializationException)
+            {
+                return false;
+            }
         }
     }
     
