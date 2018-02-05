@@ -1,10 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
+[System.Serializable]
 public class Game : MonoBehaviour {
 
-    public Player[] players;
+    public Player[] players; 
 	public GameObject gameMap;
     public Player currentPlayer;
 
@@ -12,7 +17,7 @@ public class Game : MonoBehaviour {
     [SerializeField] private TurnState turnState;
     [SerializeField] private bool gameFinished = false;
     [SerializeField] private bool testMode = false;
-
+    public string saveFilePath;
 
     public TurnState GetTurnState() {
         return turnState;
@@ -34,7 +39,25 @@ public class Game : MonoBehaviour {
         testMode = false;
     }
 
+    public Player[] GetPlayers()
+    {
+        return players;
+    }
 
+    public Player GetCurrentPlayer()
+    {
+        return currentPlayer;
+    }
+
+    public bool GetTestMode()
+    {
+        return testMode;
+    }
+
+    public int GetPlayerID(Player player)
+    {
+        return System.Array.IndexOf(players, player);
+    }
 
     public void CreatePlayers(int numberOfPlayers){
 
@@ -153,6 +176,8 @@ public class Game : MonoBehaviour {
     }
 
     public void NextPlayer() {
+        SavedGame.Save("test8.xml", this);
+        //SavedGame.Load("test7");
 
         // set the current player to the next player in the order
 
@@ -267,9 +292,8 @@ public class Game : MonoBehaviour {
 	}
         
     public void Initialize () {
-        
-        // initialize the game
 
+        // initialize the game
 
         // create a specified number of human players
         // *** currently hard-wired to 2 for testing ***
@@ -291,7 +315,27 @@ public class Game : MonoBehaviour {
 
 	}
 
-        
+    // Initialize the game from a saved game
+    public void Initialize(Game savedGame)
+    {
+        // Create number of players that is saved in saved game
+        CreatePlayers(savedGame.players.Length);
+
+        // initialize the map and allocate players to landmarks
+        InitializeMap();
+
+        // initialize the turn state from saved game
+        turnState = savedGame.turnState;
+
+        // set current player from saved game as current player
+        currentPlayer = savedGame.currentPlayer;
+        currentPlayer.GetGui().Activate();
+        players[GetPlayerID(currentPlayer)].SetActive(true);
+
+        // update GUIs
+        UpdateGUI();
+    }
+
     void Update () {
 
         // at the end of each turn, check for a winner and end the game if
@@ -347,5 +391,44 @@ public class Game : MonoBehaviour {
                     EndGame();
         }
     }
+
+    //public bool Save(string fileName)
+    //{
+    //    using (FileStream stream = File.Open(saveFilePath + fileName + ".uds", FileMode.Create))
+    //    {
+    //        try
+    //        {
+    //            BinaryFormatter formatter = new BinaryFormatter();
+    //            formatter.Serialize(stream, this);
+    //            return true;
+    //        }
+    //        catch (SerializationException)
+    //        {
+    //            return false;
+    //        }
+
+    //    }
+    //}
+
+    //public bool Load(string fileName)
+    //{
+    //    using (FileStream stream = File.Open(saveFilePath + fileName + ".uds", FileMode.Open))
+    //    {
+    //       // try
+    //       // {
+
+    //            BinaryFormatter formatter = new BinaryFormatter();
+    //            Debug.Log(formatter.Deserialize(stream));
+
+    //            return true;
+    //       // }
+    //       // catch (SerializationException)
+    //       // {
+    //       //     return false;
+    //       // }
+    //    }
+    //}
+
+    
 
 }
