@@ -272,8 +272,8 @@ public class Sector : MonoBehaviour {
          */
 
         // calculate the rolls of each unit
-        int attackingUnitRoll = Random.Range(1, (5 + attackingUnit.GetLevel())) + attackingUnit.GetOwner().GetBeer();
-        int defendingUnitRoll = Random.Range(1, (5 + defendingUnit.GetLevel())) + defendingUnit.GetOwner().GetKnowledge();
+        int attackingUnitRoll = Random.Range(1, (5 + attackingUnit.GetLevel())) + attackingUnit.GetOwner().GetAttack();
+        int defendingUnitRoll = Random.Range(1, (5 + defendingUnit.GetLevel())) + defendingUnit.GetOwner().GetDefence();
 
         return (attackingUnitRoll > defendingUnitRoll);
     }

@@ -7,7 +7,6 @@ public class Landmark : MonoBehaviour {
     public enum ResourceType {Beer, Knowledge};
 	[SerializeField] private ResourceType resourceType;
     [SerializeField] private int amount = 2;
-
     
     public ResourceType GetResourceType() {
         return resourceType;
