@@ -54,8 +54,8 @@ public class PlayerTest
         landmark.SetResourceType(Landmark.ResourceType.Beer);
 
         // get beer amounts for each player before capture
-        int attackerBeerBeforeCapture = playerA.GetBeer();
-        int defenderBeerBeforeCapture = playerB.GetBeer();
+        int attackerBeerBeforeCapture = playerA.GetAttack();
+        int defenderBeerBeforeCapture = playerB.GetAttack();
         Player previousOwner = landmarkedSector.GetOwner();
 
         playerA.Capture(landmarkedSector);
@@ -65,8 +65,8 @@ public class PlayerTest
         Assert.IsTrue(playerA.ownedSectors.Contains(landmarkedSector));
 
         // ensure resources are transferred correctly
-        Assert.IsTrue(attackerBeerBeforeCapture + landmark.GetAmount() == playerA.GetBeer());
-        Assert.IsTrue(defenderBeerBeforeCapture - landmark.GetAmount() == previousOwner.GetBeer());
+        Assert.IsTrue(attackerBeerBeforeCapture + landmark.GetAmount() == playerA.GetAttack());
+        Assert.IsTrue(defenderBeerBeforeCapture - landmark.GetAmount() == previousOwner.GetAttack());
 
         yield return null;
     }
@@ -89,8 +89,8 @@ public class PlayerTest
         landmark.SetResourceType(Landmark.ResourceType.Knowledge);
 
         // get knowledge amounts for each player before capture
-        int attackerKnowledgeBeforeCapture = playerA.GetKnowledge();
-        int defenderKnowledgeBeforeCapture = playerB.GetKnowledge();
+        int attackerKnowledgeBeforeCapture = playerA.GetDefence();
+        int defenderKnowledgeBeforeCapture = playerB.GetDefence();
         Player previousOwner = landmarkedSector.GetOwner();
 
         playerA.Capture(landmarkedSector);
@@ -100,8 +100,8 @@ public class PlayerTest
         Assert.IsTrue(playerA.ownedSectors.Contains(landmarkedSector));
 
         // ensure resources are transferred correctly
-        Assert.IsTrue(attackerKnowledgeBeforeCapture + landmark.GetAmount() == playerA.GetKnowledge());
-        Assert.IsTrue(defenderKnowledgeBeforeCapture - landmark.GetAmount() == previousOwner.GetKnowledge());
+        Assert.IsTrue(attackerKnowledgeBeforeCapture + landmark.GetAmount() == playerA.GetDefence());
+        Assert.IsTrue(defenderKnowledgeBeforeCapture - landmark.GetAmount() == previousOwner.GetDefence());
 
         yield return null;
     }
@@ -122,7 +122,7 @@ public class PlayerTest
         landmark.SetResourceType(Landmark.ResourceType.Beer);
 
         // get player beer amount before capture
-        int oldBeer = playerA.GetBeer();
+        int oldBeer = playerA.GetAttack();
 
         playerA.Capture(landmarkedSector);
 
@@ -131,7 +131,7 @@ public class PlayerTest
         Assert.IsTrue(playerA.ownedSectors.Contains(landmarkedSector));
 
         // ensure resources are gained correctly
-        Assert.IsTrue(playerA.GetBeer() - oldBeer == landmark.GetAmount());
+        Assert.IsTrue(playerA.GetAttack() - oldBeer == landmark.GetAmount());
         
         yield return null;
     }
@@ -152,7 +152,7 @@ public class PlayerTest
         landmark.SetResourceType(Landmark.ResourceType.Knowledge);
 
         // get player knowledge amount before capture
-        int oldKnowledge = playerA.GetKnowledge();
+        int oldKnowledge = playerA.GetDefence();
 
         playerA.Capture(landmarkedSector);
 
@@ -161,7 +161,7 @@ public class PlayerTest
         Assert.IsTrue(playerA.ownedSectors.Contains(landmarkedSector));
 
         // ensure resources are gained correctly
-        Assert.IsTrue(playerA.GetKnowledge() - oldKnowledge == landmark.GetAmount());
+        Assert.IsTrue(playerA.GetDefence() - oldKnowledge == landmark.GetAmount());
 
         yield return null;
     }

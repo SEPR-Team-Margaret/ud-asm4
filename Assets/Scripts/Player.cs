@@ -10,8 +10,8 @@ public class Player : MonoBehaviour {
     [SerializeField] private Game game;
     [SerializeField] private GameObject unitPrefab;
 	[SerializeField] private PlayerUI gui;
-    [SerializeField] private int beer = 0;
-    [SerializeField] private int knowledge = 0;
+    [SerializeField] private int attack = 0;
+    [SerializeField] private int defence = 0;
     [SerializeField] private Color color;
     [SerializeField] private bool human;
     [SerializeField] private bool active = false;
@@ -37,20 +37,20 @@ public class Player : MonoBehaviour {
 		this.gui = gui;
 	}
 
-    public int GetBeer() {
-        return beer;
+    public int GetAttack() {
+        return attack;
     }
 
-    public void SetBeer(int beer) {
-        this.beer = beer;
+    public void SetAttack(int beer) {
+        this.attack = beer;
     }
 
-    public int GetKnowledge() {
-        return knowledge;
+    public int GetDefence() {
+        return defence;
     }
 
-    public void SetKnowledge(int knowledge) {
-        this.knowledge = knowledge;
+    public void SetDefence(int knowledge) {
+        this.defence = knowledge;
     }
 
     public Color GetColor() {
@@ -107,15 +107,15 @@ public class Player : MonoBehaviour {
             // owner and add it to this player
             if (landmark.GetResourceType() == Landmark.ResourceType.Beer)
             {
-                this.beer += landmark.GetAmount();
+                this.attack += landmark.GetAmount();
                 if (previousOwner != null)
-                    previousOwner.beer -= landmark.GetAmount();
+                    previousOwner.attack -= landmark.GetAmount();
             }
             else if (landmark.GetResourceType() == Landmark.ResourceType.Knowledge)
             {
-                this.knowledge += landmark.GetAmount();
+                this.defence += landmark.GetAmount();
                 if (previousOwner != null)
-                    previousOwner.knowledge -= landmark.GetAmount();
+                    previousOwner.defence -= landmark.GetAmount();
             }
         }
     }

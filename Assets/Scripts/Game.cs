@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour {
 
@@ -12,6 +13,8 @@ public class Game : MonoBehaviour {
     [SerializeField] private TurnState turnState;
     [SerializeField] private bool gameFinished = false;
     [SerializeField] private bool testMode = false;
+
+    private UnityEngine.UI.Text actionsRemaining;
 
 
     public TurnState GetTurnState() {
@@ -33,8 +36,6 @@ public class Game : MonoBehaviour {
     public void DisableTestMode() {
         testMode = false;
     }
-
-
 
     public void CreatePlayers(int numberOfPlayers){
 
@@ -198,14 +199,17 @@ public class Game : MonoBehaviour {
         {
             case TurnState.Move1:
                 turnState = TurnState.Move2;
+                actionsRemaining.text = "1";
                 break;
 
             case TurnState.Move2:
                 turnState = TurnState.EndOfTurn;
+                actionsRemaining.text = "0";
                 break;
 
             case TurnState.EndOfTurn:
                 turnState = TurnState.Move1;
+                actionsRemaining.text = "2";
                 break;
 
             default:
@@ -265,11 +269,24 @@ public class Game : MonoBehaviour {
 			players [i].GetGui ().UpdateDisplay ();
 		}
 	}
+
+    private void MenuButtonPressed()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
         
     public void Initialize () {
-        
-        // initialize the game
 
+        #region Setup GUI components (Added by Dom 06/02/2018)
+        // initialize the game
+        actionsRemaining = GameObject.Find("Remaining_Actions_Value").GetComponent<UnityEngine.UI.Text>();
+
+        UnityEngine.UI.Button endTurnButton = GameObject.Find("End_Turn_Button").GetComponent<UnityEngine.UI.Button>();
+        endTurnButton.onClick.AddListener(EndTurn);
+
+        UnityEngine.UI.Button menuButton = GameObject.Find("Menu_Button").GetComponent<UnityEngine.UI.Button>();
+        menuButton.onClick.AddListener(MenuButtonPressed);
+        #endregion
 
         // create a specified number of human players
         // *** currently hard-wired to 2 for testing ***

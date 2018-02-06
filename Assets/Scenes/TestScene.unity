@@ -704,8 +704,8 @@ MonoBehaviour:
   game: {fileID: 369558830}
   unitPrefab: {fileID: 1005237642776706, guid: e44a5fa07bc4cf145a4771f52385f525, type: 2}
   gui: {fileID: 25781009}
-  beer: 0
-  knowledge: 0
+  attack: 0
+  defence: 0
   color: {r: 0.8039216, g: 0, b: 0, a: 1}
   human: 0
   active: 0
@@ -1487,7 +1487,7 @@ GameObject:
   - component: {fileID: 203850758}
   - component: {fileID: 203850757}
   m_Layer: 5
-  m_Name: RemainingActions_Value
+  m_Name: Remaining_Actions_Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1543,7 +1543,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: X
+  m_Text: 2
 --- !u!222 &203850758
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1678,7 +1678,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: beerholder
+  m_Text: 0
 --- !u!222 &209031578
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1894,7 +1894,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: knowholder
+  m_Text: 0
 --- !u!222 &219801882
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4887,8 +4887,8 @@ MonoBehaviour:
   game: {fileID: 369558830}
   unitPrefab: {fileID: 1005237642776706, guid: 26a26f6c35e02e741b6011ca4d58b14b, type: 2}
   gui: {fileID: 1590918745}
-  beer: 0
-  knowledge: 0
+  attack: 0
+  defence: 0
   color: {r: 0.6945231, g: 0, b: 0.9411765, a: 1}
   human: 0
   active: 0
@@ -4962,7 +4962,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: knowholder
+  m_Text: 0
 --- !u!222 &708372745
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5040,7 +5040,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: beerholder
+  m_Text: 0
 --- !u!222 &709066158
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5531,7 +5531,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: beerholder
+  m_Text: 0
 --- !u!222 &809866971
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5609,7 +5609,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: beerholder
+  m_Text: 0
 --- !u!222 &815007961
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7422,7 +7422,7 @@ GameObject:
   - component: {fileID: 1141867542}
   - component: {fileID: 1141867541}
   m_Layer: 5
-  m_Name: Menu Button
+  m_Name: Menu_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8480,8 +8480,8 @@ MonoBehaviour:
   game: {fileID: 369558830}
   unitPrefab: {fileID: 1005237642776706, guid: 1486e80e1d1c1034790e21d826787651, type: 2}
   gui: {fileID: 1507163498}
-  beer: 0
-  knowledge: 0
+  attack: 0
+  defence: 0
   color: {r: 0, g: 0.8039216, b: 0, a: 1}
   human: 0
   active: 0
@@ -8530,8 +8530,8 @@ MonoBehaviour:
   game: {fileID: 369558830}
   unitPrefab: {fileID: 1005237642776706, guid: 6d8addf51e1b32f4ea5444b9e4052acc, type: 2}
   gui: {fileID: 722604580}
-  beer: 0
-  knowledge: 0
+  attack: 0
+  defence: 0
   color: {r: 0.8039216, g: 0.8039216, b: 0, a: 1}
   human: 0
   active: 0
@@ -10061,7 +10061,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: knowholder
+  m_Text: 0
 --- !u!222 &1569971843
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11317,7 +11317,7 @@ GameObject:
   - component: {fileID: 1791812316}
   - component: {fileID: 1791812315}
   m_Layer: 5
-  m_Name: End Turn Button
+  m_Name: End_Turn_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12133,7 +12133,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: knowholder
+  m_Text: 0
 --- !u!222 &1890351260
 CanvasRenderer:
   m_ObjectHideFlags: 0

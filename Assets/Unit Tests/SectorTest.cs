@@ -242,8 +242,8 @@ public class SectorTest
 
         // setup units such that the attacking unit wins
         ResetSectors(sectorA, sectorB);
-        sectorA.GetOwner().SetBeer(99); // to ensure the sectorA unit will win any conflict (attacking)
-        sectorB.GetOwner().SetKnowledge(0);
+        sectorA.GetOwner().SetAttack(99); // to ensure the sectorA unit will win any conflict (attacking)
+        sectorB.GetOwner().SetDefence(0);
 
         sectorB.MoveIntoHostileUnit(sectorA.GetUnit(), sectorB.GetUnit());
         Assert.IsNull(sectorA.GetUnit()); // attackingg unit moved out of sectorA
@@ -268,8 +268,8 @@ public class SectorTest
         // setup units such that the defending unit wins
         game.SetTurnState(Game.TurnState.Move1);
         ResetSectors(sectorA, sectorB);
-        sectorA.GetOwner().SetBeer(0);
-        sectorB.GetOwner().SetKnowledge(99); //to ensure the sectorB unit will win any conflict (defending)
+        sectorA.GetOwner().SetAttack(0);
+        sectorB.GetOwner().SetDefence(99); //to ensure the sectorB unit will win any conflict (defending)
 
         sectorB.MoveIntoHostileUnit(sectorA.GetUnit(), sectorB.GetUnit());
         Assert.IsNull(sectorA.GetUnit()); // attacking unit destroyed
@@ -298,9 +298,9 @@ public class SectorTest
         game.SetTurnState(Game.TurnState.Move1);
         ResetSectors(sectorA, sectorB);
         sectorA.GetUnit().SetLevel(-4);
-        sectorA.GetOwner().SetBeer(0);
+        sectorA.GetOwner().SetAttack(0);
         sectorB.GetUnit().SetLevel(-4);
-        sectorB.GetOwner().SetKnowledge(0); // making both units equal
+        sectorB.GetOwner().SetDefence(0); // making both units equal
 
         sectorB.MoveIntoHostileUnit(sectorA.GetUnit(), sectorB.GetUnit());
         Assert.IsNull(sectorA.GetUnit()); // attacking unit destroyed

@@ -9,6 +9,5 @@ public class Initializer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         game.Initialize();
-	}
-	
+	}	
 }
