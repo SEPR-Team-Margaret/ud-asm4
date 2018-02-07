@@ -27,8 +27,14 @@ public class PlayerUI : MonoBehaviour {
 		header.text = "Player " + player_id.ToString();
 		headerHighlight.text = header.text;
 		headerHighlight.color = player.GetColor();
-	
-	}
+
+        //added by Peter
+        if (player.IsNeutral())
+            header.text = "Neutral";
+
+    
+
+}
 
 	public void UpdateDisplay() {
 
