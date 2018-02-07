@@ -14,6 +14,7 @@ public class Player : MonoBehaviour {
     [SerializeField] private int defence = 0;
     [SerializeField] private Color color;
     [SerializeField] private bool human;
+    [SerializeField] private bool neutral; //added by Peter
     [SerializeField] private bool active = false;
 
 
@@ -61,12 +62,23 @@ public class Player : MonoBehaviour {
         this.color = color;
     }
 
+    //added by Peter
     public bool IsHuman() {
         return human;
     }
-
+    //added by Peter
     public void SetHuman(bool human) {
         this.human = human;
+    }
+
+    public bool IsNeutral()
+    {
+        return neutral;
+    }
+
+    public void SetNeutral(bool neutral)
+    {
+        this.neutral = neutral;
     }
 
     public bool IsActive() {

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -37,33 +38,52 @@ public class Game : MonoBehaviour {
         testMode = false;
     }
 
-    public void CreatePlayers(int numberOfPlayers){
+    //Re-done by Peter
+    public void CreatePlayers(int numberOfPlayers, bool neutralPlayer)
+    {
 
         // ensure that the specified number of players
         // is at least 2 and does not exceed 4
         if (numberOfPlayers < 2)
             numberOfPlayers = 2;
 
-        if (numberOfPlayers > 4) 
+        if (numberOfPlayers > 4)
             numberOfPlayers = 4;
 
         // mark the specified number of players as human
-        for (int i = 0; i < numberOfPlayers; i++)
+        if (!neutralPlayer)
         {
-            players[i].SetHuman(true);
+            for (int i = 0; i < numberOfPlayers; i++)
+            {
+                players[i].SetHuman(true);
+            }
+            GameObject.Find("PlayerNeutralUI").SetActive(false);
+            players[numberOfPlayers] = GameObject.Find("Player4").GetComponent<Player>();
+        }
+        else
+        {
+            for (int i = 0; i < (numberOfPlayers - 1); i++)
+            {
+                players[i].SetHuman(true);
+            }
+            players[numberOfPlayers] = GameObject.Find("PlayerNeutral").GetComponent<Player>();
+            GameObject.Find("Player4UI").SetActive(false);
+            players[numberOfPlayers].SetNeutral(true);
         }
 
+
         // give all players a reference to this game
-		// and initialize their GUIs
-		for (int i = 0; i < 4; i++)
-		{
-			players[i].SetGame(this);
-			players[i].GetGui().Initialize(players[i], i + 1);
-		}
+        // and initialize their GUIs
+        for (int i = 0; i < 4; i++)
+        {
+            players[i].SetGame(this);
+            players[i].GetGui().Initialize(players[i], i + 1);
+        }
 
     }
 
-	public void InitializeMap() {
+    //modified by Peter
+    public void InitializeMap() {
 
         // initialize all sectors, allocate players to landmarks,
         // and spawn units
@@ -114,7 +134,21 @@ public class Game : MonoBehaviour {
             player.SpawnUnits();
         }
 
-	}
+        //set Vice Chancellor
+        int rand = Random.Range(0, sectors.Length);
+        while (sectors[rand].GetLandmark() != null)
+        {
+            if (sectors[rand].GetLandmark() == null)
+            {
+                sectors[rand].setVC(true);
+            }
+            else
+            {
+                rand = Random.Range(0, sectors.Length);
+            }
+        }
+
+    }
 
     private Sector[] GetLandmarkedSectors(Sector[] sectors) {
 
@@ -153,14 +187,16 @@ public class Game : MonoBehaviour {
         return true;
     }
 
-    public void NextPlayer() {
+    //modified by Peter
+    public void NextPlayer()
+    {
 
         // set the current player to the next player in the order
 
 
         // deactivate the current player
         currentPlayer.SetActive(false);
-		currentPlayer.GetGui().Deactivate();
+        currentPlayer.GetGui().Deactivate();
 
         // find the index of the current player
         for (int i = 0; i < players.Length; i++)
@@ -175,7 +211,7 @@ public class Game : MonoBehaviour {
                 {
                     currentPlayer = players[0];
                     players[0].SetActive(true);
-					players[0].GetGui().Activate();
+                    players[0].GetGui().Activate();
                 }
 
                 // otherwise, set the next player as the current player
@@ -183,13 +219,33 @@ public class Game : MonoBehaviour {
                 {
                     currentPlayer = players[nextPlayerIndex];
                     players[nextPlayerIndex].SetActive(true);
-					players[nextPlayerIndex].GetGui().Activate();
+                    players[nextPlayerIndex].GetGui().Activate();
+                    if (currentPlayer.IsNeutral())
+                    {
+                        NeutralPlayerTurn();
+                        NeutralPlayerTurn(); //Horrible i know
+                    }
                     break;
                 }
             }
         }
     }
-       
+
+    //Created by Peter
+    public void NeutralPlayerTurn()
+    {
+        NextTurnState();
+        List<Unit> units = currentPlayer.units;
+        Unit selectedUnit = units[Random.Range(0, units.Count)];
+        Sector[] adjacentSectors = selectedUnit.GetSector().GetAdjacentSectors();
+        for (int i = 0; i < adjacentSectors.Length; i++)
+        {
+            if (adjacentSectors[i].GetUnit() != null)
+                adjacentSectors = adjacentSectors.Where(w => w != adjacentSectors[i]).ToArray();
+        }
+        selectedUnit.MoveTo(adjacentSectors[Random.Range(0, adjacentSectors.Length)]);
+    }
+
     public void NextTurnState() {
 
         // change the turn state to the next in the order,
@@ -275,6 +331,7 @@ public class Game : MonoBehaviour {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
         
+    //modified by Peter
     public void Initialize () {
 
         #region Setup GUI components (Added by Dom 06/02/2018)
@@ -290,7 +347,7 @@ public class Game : MonoBehaviour {
 
         // create a specified number of human players
         // *** currently hard-wired to 2 for testing ***
-        CreatePlayers(2);
+        CreatePlayers(3, true);
 
         // initialize the map and allocate players to landmarks
         InitializeMap();

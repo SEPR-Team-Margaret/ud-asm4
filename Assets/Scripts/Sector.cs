@@ -9,7 +9,20 @@ public class Sector : MonoBehaviour {
     [SerializeField] private Player owner;
     [SerializeField] private Sector[] adjacentSectors;
 	[SerializeField] private Landmark landmark;
+    [SerializeField] private bool VC = false; //added by Peter
 
+
+    //added by Peter
+    public bool isVC()
+    {
+        return VC;
+    }
+
+    //added by Peter
+    public void setVC(bool VC)
+    {
+        this.VC = VC;
+    }
 
     public Map GetMap() {
         return map;
