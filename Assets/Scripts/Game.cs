@@ -10,12 +10,20 @@ public class Game : MonoBehaviour {
 	public GameObject gameMap;
     public Player currentPlayer;
 
+    public const int NUMBER_OF_PLAYERS = 4;
+    
     public enum TurnState { Move1, Move2, EndOfTurn, NULL };
     [SerializeField] private TurnState turnState;
     [SerializeField] private bool gameFinished = false;
     [SerializeField] private bool testMode = false;
 
     private UnityEngine.UI.Text actionsRemaining;
+
+    [SerializeField] Dialog dialog;
+
+    public bool triggerDialog = false;
+
+    public bool[] eliminatedPlayers;
 
 
     public TurnState GetTurnState() {
@@ -39,48 +47,44 @@ public class Game : MonoBehaviour {
     }
 
     //Re-done by Peter
-    public void CreatePlayers(int numberOfPlayers, bool neutralPlayer)
+    public void CreatePlayers(bool neutralPlayer)
     {
-
-        // ensure that the specified number of players
-        // is at least 2 and does not exceed 4
-        if (numberOfPlayers < 2)
-            numberOfPlayers = 2;
-
-        if (numberOfPlayers > 4)
-            numberOfPlayers = 4;
-
         // mark the specified number of players as human
         if (!neutralPlayer)
         {
-            for (int i = 0; i < numberOfPlayers; i++)
+            for (int i = 0; i < NUMBER_OF_PLAYERS; i++)
             {
                 players[i].SetHuman(true);
             }
             GameObject.Find("PlayerNeutralUI").SetActive(false);
-            players[numberOfPlayers] = GameObject.Find("Player4").GetComponent<Player>();
+            players[NUMBER_OF_PLAYERS] = GameObject.Find("Player4").GetComponent<Player>();
         }
         else
         {
-            for (int i = 0; i < (numberOfPlayers - 1); i++)
+            for (int i = 0; i < (NUMBER_OF_PLAYERS - 1); i++)
             {
                 players[i].SetHuman(true);
             }
-            players[numberOfPlayers] = GameObject.Find("PlayerNeutral").GetComponent<Player>();
+            players[NUMBER_OF_PLAYERS - 1] = GameObject.Find("PlayerNeutral").GetComponent<Player>();
             GameObject.Find("Player4UI").SetActive(false);
-            players[numberOfPlayers].SetNeutral(true);
+            players[NUMBER_OF_PLAYERS - 1].SetNeutral(true);
         }
 
 
         // give all players a reference to this game
         // and initialize their GUIs
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < NUMBER_OF_PLAYERS; i++)
         {
             players[i].SetGame(this);
             players[i].GetGui().Initialize(players[i], i + 1);
         }
 
-    }
+        eliminatedPlayers = new bool[NUMBER_OF_PLAYERS]; // always 4 players in game
+        for (int i = 0; i < eliminatedPlayers.Length; i++)
+        {
+            eliminatedPlayers[i] = false;
+        }
+     }
 
     //modified by Peter
     public void InitializeMap() {
@@ -204,29 +208,17 @@ public class Game : MonoBehaviour {
             if (players[i] == currentPlayer)
             {
                 // set the next player's index
-                int nextPlayerIndex = i + 1;
-
-                // if end of player list is reached, loop back to the first player
-                if (nextPlayerIndex == players.Length)
+                int nextPlayerIndex = (i + 1) % NUMBER_OF_PLAYERS; // set index to next player, loop if end reached
+                
+                currentPlayer = players[nextPlayerIndex];
+                players[nextPlayerIndex].SetActive(true);
+                players[nextPlayerIndex].GetGui().Activate();
+                if (currentPlayer.IsNeutral())
                 {
-                    currentPlayer = players[0];
-                    players[0].SetActive(true);
-                    players[0].GetGui().Activate();
+                    NeutralPlayerTurn();
+                    NeutralPlayerTurn(); //Horrible i know
                 }
-
-                // otherwise, set the next player as the current player
-                else
-                {
-                    currentPlayer = players[nextPlayerIndex];
-                    players[nextPlayerIndex].SetActive(true);
-                    players[nextPlayerIndex].GetGui().Activate();
-                    if (currentPlayer.IsNeutral())
-                    {
-                        NeutralPlayerTurn();
-                        NeutralPlayerTurn(); //Horrible i know
-                    }
-                    break;
-                }
+                break;                
             }
         }
     }
@@ -272,8 +264,41 @@ public class Game : MonoBehaviour {
                 break;
         }
 
-		UpdateGUI();
+        #region Remove defeated players and check if the game was won (Added by Jack 01/02/2018)
+
+        CheckForDefeatedPlayers();
+
+        Player winner = GetWinner();
+        if (winner != null)
+        {
+            EndGame();
+        }
+
+        #endregion
+
+        UpdateGUI();
     }
+
+    #region Function to check for defeated players and notify the others (Added by Jack 01/02/2018)
+
+    public void CheckForDefeatedPlayers()
+    {
+        // Checks if any players were defeated that turn state and removes them whilst notifying the rest of the players
+        for (int i = 0; i < players.Length; i++)
+        {
+            if (players[i].IsEliminated() && eliminatedPlayers[i] == false)
+            {
+                // Set up the dialog box and show it
+                dialog.setDialogType(Dialog.DialogType.PlayerElimated);
+                dialog.setPlayerName(players[i].name);
+                dialog.Show();
+                eliminatedPlayers[i] = true; // Used to ensure that the dialog is only shown once
+                players[i].Defeat(currentPlayer); // Releases all owned sectors
+            }
+        }
+    }
+
+    #endregion
 
     public void EndTurn() {
 
@@ -287,6 +312,8 @@ public class Game : MonoBehaviour {
         // return the winning player, or null if no winner yet
 
         Player winner = null;
+
+
 
         // scan through each player
         foreach (Player player in players)
@@ -311,6 +338,14 @@ public class Game : MonoBehaviour {
     }
 
     public void EndGame() {
+        #region Show the winner dialog (Added by Jack 01/02/2018)
+
+        dialog.setDialogType(Dialog.DialogType.EndGame);
+        dialog.setPlayerName(GetWinner().name);
+        dialog.Show();
+
+        #endregion
+
         gameFinished = true;
         currentPlayer.SetActive(false);
         currentPlayer = null;
@@ -347,7 +382,7 @@ public class Game : MonoBehaviour {
 
         // create a specified number of human players
         // *** currently hard-wired to 2 for testing ***
-        CreatePlayers(3, true);
+        CreatePlayers(true);
 
         // initialize the map and allocate players to landmarks
         InitializeMap();
@@ -371,7 +406,13 @@ public class Game : MonoBehaviour {
         // at the end of each turn, check for a winner and end the game if
         // necessary; otherwise, start the next player's turn
 
-		
+        if (triggerDialog)
+        {
+            triggerDialog = false;
+            dialog.setDialogType(Dialog.DialogType.EndGame);
+            dialog.setPlayerName("PLAYER 1");
+            dialog.Show();
+        }
         // if the current turn has ended and test mode is not enabled
         if (turnState == TurnState.EndOfTurn && !testMode)
         {
@@ -380,8 +421,9 @@ public class Game : MonoBehaviour {
             if (GetWinner() == null)
             {
                 // start the next player's turn
-                NextPlayer();
+                // Swapped by Jack
                 NextTurnState();
+                NextPlayer();
 
                 // skip eliminated players
                 while (currentPlayer.IsEliminated())
