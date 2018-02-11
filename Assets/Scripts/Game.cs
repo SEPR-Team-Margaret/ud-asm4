@@ -203,6 +203,7 @@ public class Game : MonoBehaviour {
         currentPlayer.GetGui().Deactivate();
 
         // find the index of the current player
+       
         for (int i = 0; i < players.Length; i++)
         {
             if (players[i] == currentPlayer)
@@ -307,6 +308,27 @@ public class Game : MonoBehaviour {
         turnState = TurnState.EndOfTurn;
     }
 
+    #region Function to check for defeated players and notify the others (Added by Jack 01/02/2018)
+
+    public void CheckForDefeatedPlayers()
+    {
+    // Checks if any players were defeated that turn state and removes them whilst notifying the rest of the players
+        for (int i = 0; i < players.Length; i++)
+        {
+            if (players[i].IsEliminated() && eliminatedPlayers[i] == false)
+            {
+                // Set up the dialog box and show it
+                dialog.setDialogType(Dialog.DialogType.PlayerElimated);
+                dialog.setPlayerName(players[i].name);
+                dialog.Show();
+                eliminatedPlayers[i] = true; // Used to ensure that the dialog is only shown once
+                players[i].Defeat(currentPlayer); // Releases all owned sectors
+            }
+        }
+    }
+
+    #endregion
+
     public Player GetWinner() {
 
         // return the winning player, or null if no winner yet
@@ -347,6 +369,15 @@ public class Game : MonoBehaviour {
         #endregion
 
         gameFinished = true;
+
+        #region Show the winner dialog (Added by Jack 01/02/2018)
+
+        dialog.setDialogType(Dialog.DialogType.EndGame);
+        dialog.setPlayerName(GetWinner().name);
+        dialog.Show();
+
+        #endregion
+
         currentPlayer.SetActive(false);
         currentPlayer = null;
         turnState = TurnState.NULL;
