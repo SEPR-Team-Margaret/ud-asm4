@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
+[System.Serializable]
 public class Game : MonoBehaviour {
 
-    public Player[] players;
+    public Player[] players; 
 	public GameObject gameMap;
     public Player currentPlayer;
 
@@ -16,6 +21,7 @@ public class Game : MonoBehaviour {
     [SerializeField] private TurnState turnState;
     [SerializeField] private bool gameFinished = false;
     [SerializeField] private bool testMode = false;
+    public string saveFilePath;
 
     private UnityEngine.UI.Text actionsRemaining;
 
@@ -44,6 +50,26 @@ public class Game : MonoBehaviour {
 
     public void DisableTestMode() {
         testMode = false;
+    }
+
+    public Player[] GetPlayers()
+    {
+        return players;
+    }
+
+    public Player GetCurrentPlayer()
+    {
+        return currentPlayer;
+    }
+
+    public bool GetTestMode()
+    {
+        return testMode;
+    }
+
+    public int GetPlayerID(Player player)
+    {
+        return System.Array.IndexOf(players, player);
     }
 
     //Re-done by Peter
@@ -191,9 +217,10 @@ public class Game : MonoBehaviour {
         return true;
     }
 
-    //modified by Peter
-    public void NextPlayer()
-    {
+    public void NextPlayer() {
+        // For saving tests
+        SavedGame.Save("test8", this);
+        //SavedGame.Load("test7");
 
         // set the current player to the next player in the order
 
@@ -431,7 +458,27 @@ public class Game : MonoBehaviour {
 
 	}
 
-        
+    // Initialize the game from a saved game
+    public void Initialize(Game savedGame)
+    {
+        // Create number of players that is saved in saved game
+        CreatePlayers(savedGame.players.Length);
+
+        // initialize the map and allocate players to landmarks
+        InitializeMap();
+
+        // initialize the turn state from saved game
+        turnState = savedGame.turnState;
+
+        // set current player from saved game as current player
+        currentPlayer = savedGame.currentPlayer;
+        currentPlayer.GetGui().Activate();
+        players[GetPlayerID(currentPlayer)].SetActive(true);
+
+        // update GUIs
+        UpdateGUI();
+    }
+
     void Update () {
 
         // at the end of each turn, check for a winner and end the game if
@@ -493,6 +540,5 @@ public class Game : MonoBehaviour {
                 if (!gameFinished)
                     EndGame();
         }
-    }
-
+    }  
 }
