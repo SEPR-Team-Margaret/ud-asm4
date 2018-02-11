@@ -10,8 +10,8 @@ public class Initializer : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        game.saveFilePath = Application.persistentDataPath + "/";
-        //game.Load("test6");
+        SavedGame.Load("test8");
+        
         game.Initialize();
 	}
 }

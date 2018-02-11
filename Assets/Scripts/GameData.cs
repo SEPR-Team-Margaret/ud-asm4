@@ -15,7 +15,11 @@ public class GameData
     public bool gameFinished;
     public bool testMode;
     public int currentPlayerID;
-    public List<List<object>> players;
+    public List<List<string>> player0;
+    public List<List<string>> player1;
+    public List<List<string>> player2;
+    public List<List<string>> player3;
+    public string badger;
 
     // Fetches all data when called and assigns to properties
     public void SetupGameData(Game game)
@@ -25,21 +29,23 @@ public class GameData
         this.gameFinished = game.IsFinished();
         this.testMode = game.GetTestMode();
         this.currentPlayerID = game.GetPlayerID(game.GetCurrentPlayer());
+        this.badger = "hello badger";
 
         //Player Properties
-        this.players = new List<List<object>>();
+        this.players = new List<List<string>>();
+        int i = 0;
         foreach(Player player in game.players)
         {
             // Need to think of a better way of doing this
-            List<object> playerProp = new List<object>();
-            playerProp.Add(player.GetBeer);
-            playerProp.Add(player.GetKnowledge);
-            playerProp.Add(player.GetColor);
-            playerProp.Add(player.IsHuman);
-            playerProp.Add(player.IsActive);
+            List<string> playerProp = new List<string>();
+            playerProp.Add(this.badger);
+            //playerProp.Add(player.GetKnowledge);
+            //playerProp.Add(player.GetColor);
+            //playerProp.Add(player.IsHuman);
+            //playerProp.Add(player.IsActive);
 
             this.players.Add(playerProp);
-            Debug.Log(player);
+            i ++;
         }
         
     }

@@ -31,46 +31,23 @@ public static class SavedGame
         }
     }
 
-
-    // Binary Serialization
-    /*
-    public static bool Save(string fileName)
-    {
-        Setup(Game.current);
-        using (FileStream stream = File.Open(Application.persistentDataPath + "/" + fileName + ".uds", FileMode.Create))
-        {
-            try
-            {
-                BinaryFormatter formatter = new BinaryFormatter();
-                formatter.Serialize(stream, SavedGame);
-                return true;
-            }
-            catch (SerializationException)
-            {
-                return false;
-            }
-
-        }
-    }
-
     public static bool Load(string fileName)
     {
-        using (FileStream stream = File.Open(Application.persistentDataPath + "/" + fileName + ".uds", FileMode.Open))
+        string filePath = Application.persistentDataPath + "/";
+        try
         {
-            try
+            XmlSerializer serializer = new XmlSerializer(typeof(GameData));
+            using (StreamReader r = new StreamReader(filePath + fileName + ".xml"))
             {
-
-            BinaryFormatter formatter = new BinaryFormatter();
-            Debug.Log(formatter.Deserialize(stream));
-
-            return true;
-            }
-            catch (SerializationException)
-            {
-                return false;
+                GameData savedGame = (GameData)serializer.Deserialize(r);
+                // Access to saved game like -> savedGame.currentPlayerID
+                // Calls to instantiate methods
+                return true;
             }
         }
+        catch (SerializationException)
+        {
+            return false;
+        }
     }
-    
-*/
 }
