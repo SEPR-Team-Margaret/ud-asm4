@@ -10,36 +10,7 @@ public class GameTest
     private Map map;
     private Player[] players;
 	private PlayerUI[] gui;
-
-	[UnityTest]
-	public IEnumerator CreatePlayers_TwoPlayersAreHumanAndTwoNot() {
-        
-        Setup();
-
-        // ensure creation of 2 players is accurate
-        game.GetComponent<Game>().CreatePlayers(2, false);
-        Assert.IsTrue(game.GetComponent<Game>().players[0].IsHuman());
-        Assert.IsTrue(game.GetComponent<Game>().players[1].IsHuman());
-        Assert.IsFalse(game.GetComponent<Game>().players[2].IsHuman());
-        Assert.IsFalse(game.GetComponent<Game>().players[3].IsHuman());
-
-        yield return null;
-    }
-
-    [UnityTest]
-    public IEnumerator CreatePlayers_ThreePlayersAreHumanAndOneNot() {
-        
-        Setup();
-
-        // ensure creation of 3 players is accurate
-        game.GetComponent<Game>().CreatePlayers(3, false);
-        Assert.IsTrue(game.GetComponent<Game>().players[0].IsHuman());
-        Assert.IsTrue(game.GetComponent<Game>().players[1].IsHuman());
-        Assert.IsTrue(game.GetComponent<Game>().players[2].IsHuman());
-        Assert.IsFalse(game.GetComponent<Game>().players[3].IsHuman());
-
-        yield return null;
-    }
+    
 
     [UnityTest]
     public IEnumerator CreatePlayers_FourPlayersAreHuman() {
@@ -47,7 +18,7 @@ public class GameTest
         Setup();
 
         // ensure creation of 4 players is accurate
-        game.GetComponent<Game>().CreatePlayers(4, false);
+        game.GetComponent<Game>().CreatePlayers(false);
         Assert.IsTrue(game.GetComponent<Game>().players[0].IsHuman());
         Assert.IsTrue(game.GetComponent<Game>().players[1].IsHuman());
         Assert.IsTrue(game.GetComponent<Game>().players[2].IsHuman());
@@ -55,36 +26,7 @@ public class GameTest
 
         yield return null;
     }
-
-    [UnityTest]
-    public IEnumerator CreatePlayers_AtLeastTwoPlayersAreHuman() {
-        
-        Setup();
-
-        // ensure that at least 2 players are created no matter what
-        game.GetComponent<Game>().CreatePlayers(0, false);
-        Assert.IsTrue(game.GetComponent<Game>().players[0].IsHuman());
-        Assert.IsTrue(game.GetComponent<Game>().players[1].IsHuman());
-        Assert.IsFalse(game.GetComponent<Game>().players[2].IsHuman());
-        Assert.IsFalse(game.GetComponent<Game>().players[3].IsHuman());
-
-        yield return null;
-    }
-
-    [UnityTest]
-    public IEnumerator CreatePlayers_AtMostFourPlayersAreHuman() {
-        
-        Setup();
-
-        // ensure that at most 4 players are created no matter what
-        game.GetComponent<Game>().CreatePlayers(5, false);
-        Assert.IsTrue(game.GetComponent<Game>().players[0].IsHuman());
-        Assert.IsTrue(game.GetComponent<Game>().players[1].IsHuman());
-        Assert.IsTrue(game.GetComponent<Game>().players[2].IsHuman());
-        Assert.IsTrue(game.GetComponent<Game>().players[3].IsHuman());
-
-		yield return null;
-	}
+    
 
     [UnityTest]
     public IEnumerator InitializeMap_OneLandmarkAllocatedWithUnitPerPlayer() {
