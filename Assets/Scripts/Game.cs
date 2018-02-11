@@ -219,7 +219,7 @@ public class Game : MonoBehaviour {
 
     public void NextPlayer() {
         // For saving tests
-        SavedGame.Save("test8", this);
+        SavedGame.Save("test1", this);
         //SavedGame.Load("test7");
 
         // set the current player to the next player in the order
@@ -335,27 +335,6 @@ public class Game : MonoBehaviour {
         turnState = TurnState.EndOfTurn;
     }
 
-    #region Function to check for defeated players and notify the others (Added by Jack 01/02/2018)
-
-    public void CheckForDefeatedPlayers()
-    {
-    // Checks if any players were defeated that turn state and removes them whilst notifying the rest of the players
-        for (int i = 0; i < players.Length; i++)
-        {
-            if (players[i].IsEliminated() && eliminatedPlayers[i] == false)
-            {
-                // Set up the dialog box and show it
-                dialog.setDialogType(Dialog.DialogType.PlayerElimated);
-                dialog.setPlayerName(players[i].name);
-                dialog.Show();
-                eliminatedPlayers[i] = true; // Used to ensure that the dialog is only shown once
-                players[i].Defeat(currentPlayer); // Releases all owned sectors
-            }
-        }
-    }
-
-    #endregion
-
     public Player GetWinner() {
 
         // return the winning player, or null if no winner yet
@@ -461,6 +440,7 @@ public class Game : MonoBehaviour {
     // Initialize the game from a saved game
     public void Initialize(Game savedGame)
     {
+        /*
         // Create number of players that is saved in saved game
         CreatePlayers(savedGame.players.Length);
 
@@ -477,6 +457,7 @@ public class Game : MonoBehaviour {
 
         // update GUIs
         UpdateGUI();
+        */
     }
 
     void Update () {

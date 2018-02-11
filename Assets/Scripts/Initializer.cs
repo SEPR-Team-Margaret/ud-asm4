@@ -10,8 +10,8 @@ public class Initializer : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        SavedGame.Load("test8");
-        
+        //SavedGame.Load("test8");
+       
         game.Initialize();
 	}
 }
