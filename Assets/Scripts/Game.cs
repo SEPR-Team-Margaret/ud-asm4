@@ -262,7 +262,7 @@ public class Game : MonoBehaviour {
                 if (currentPlayer.IsNeutral())
                 {
                     NeutralPlayerTurn();
-                    NeutralPlayerTurn(); //Horrible i know
+                    NeutralPlayerTurn(); 
                 }
                 break;                
             }
@@ -338,7 +338,7 @@ public class Game : MonoBehaviour {
                 dialog.setDialogType(Dialog.DialogType.PlayerElimated);
                 dialog.setPlayerName(players[i].name);
                 dialog.Show();
-                eliminatedPlayers[i] = true; // Used to ensure that the dialog is only shown once
+                eliminatedPlayers[i] = true; // ensure that the dialog is only shown once
                 players[i].Defeat(currentPlayer); // Releases all owned sectors
             }
         }
@@ -358,8 +358,6 @@ public class Game : MonoBehaviour {
         // return the winning player, or null if no winner yet
 
         Player winner = null;
-
-
 
         // scan through each player
         foreach (Player player in players)
@@ -384,14 +382,7 @@ public class Game : MonoBehaviour {
     }
 
     public void EndGame() {
-        #region Show the winner dialog (Added by Jack 01/02/2018)
-
-        dialog.setDialogType(Dialog.DialogType.EndGame);
-        dialog.setPlayerName(GetWinner().name);
-        dialog.Show();
-
-        #endregion
-
+       
         gameFinished = true;
 
         #region Show the winner dialog (Added by Jack 01/02/2018)
