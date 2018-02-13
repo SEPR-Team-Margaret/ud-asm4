@@ -16,10 +16,6 @@ public class Player : MonoBehaviour {
     [SerializeField] private bool human;
     [SerializeField] private bool neutral; //added by Peter
     [SerializeField] private bool active = false;
-    
-
-
-
 
     public Game GetGame() {
         return game;

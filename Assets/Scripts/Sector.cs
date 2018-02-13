@@ -14,43 +14,72 @@ public class Sector : MonoBehaviour {
 
 
     //added by Peter
+    /// <summary>
+    /// 
+    /// Returns if this sector contains the vice chancelor
+    /// 
+    /// </summary>
+    /// <returns>True if sector contains vice chancellor else false</returns>
     public bool isVC()
     {
         return VC;
     }
 
     //added by Peter
+    /// <summary>
+    /// 
+    /// Sets if this sector contains the vice chancellor
+    /// 
+    /// </summary>
+    /// <param name="VC">True if this sector should contain the VC else false</param>
     public void setVC(bool VC)
     {
         this.VC = VC;
     }
-
-    public Map GetMap() {
-        return map;
-    }
-
-    public void SetMap(Map map) {
-        this.map = map;
-    }
-
+    
+    // removed get and set map as never used (Modifed by Dom (13/02/2018))
+    
+    /// <summary>
+    /// 
+    /// fetches the unit object on this sector
+    /// </summary>
+    /// 
+    /// <returns>The unit on this sector</returns>
     public Unit GetUnit() {
         return unit;
     }
 
+    /// <summary>
+    /// 
+    /// Sets the unit on this sector
+    /// 
+    /// </summary>
+    /// <param name="unit">The unit that is to be put on this sector</param>
     public void SetUnit(Unit unit) {
         this.unit = unit;
     }
 
+    /// <summary>
+    /// 
+    /// fetches the Player object for the player that owns this sector
+    /// 
+    /// </summary>
+    /// <returns>The Player object of the player that owns this sector</returns>
     public Player GetOwner() {
         return owner;
     }
 
+    /// <summary>
+    /// 
+    /// sets the owner of this sector to the passed player
+    /// updates the colour of the sector to that of the player
+    /// 
+    /// if passed player is null resets the sector colour back to grey
+    /// 
+    /// </summary>
+    /// <param name="owner">Player object of the new owner of this sector or null if there is no owner</param>
     public void SetOwner (Player owner) {
-
-        // set the owner of the sector to the specified player,
-        // and change the sector's color to match the new owner
-
-
+        
         // set sector owner to the given player
         this.owner = owner;
 
@@ -63,27 +92,46 @@ public class Sector : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// 
+    /// returns an array of sectors that are adjacent to this one
+    /// 
+    /// </summary>
+    /// <returns>Array of sectors that are adjacent to this sector</returns>
     public Sector[] GetAdjacentSectors() {
         return adjacentSectors;
     }
 
+    /// <summary>
+    /// 
+    /// returns the landmark of this sector or null if it does not have one
+    /// 
+    /// </summary>
+    /// <returns>The landmark object for this sector; May return null if sector does not have a landmark</returns>
 	public Landmark GetLandmark() {
         return landmark;
     }
 
+    /// <summary>
+    /// 
+    /// Sets the landmark object of this sector to the passed landmark
+    /// 
+    /// </summary>
+    /// <param name="landmark">Landmark object to be set on this sector</param>
 	public void SetLandmark(Landmark landmark) {
         this.landmark = landmark;
-    }
-        
-	
+    }	
 
+    /// <summary>
+    /// 
+    /// initializes a sector
+    /// determines if the sector contains a landmark
+    /// sets owner and unit to null
+    /// 
+    /// </summary>
 	public void Initialize() {
 
-        // initialize the sector by setting its owner and unit to null
-        // and determining if it contains a landmark or not
-
-
-		// reset owner
+		// set no owner
 		SetOwner(null);
 
 		// clear unit
@@ -94,9 +142,14 @@ public class Sector : MonoBehaviour {
 
 	}
 
+    /// <summary>
+    /// 
+    /// highlight a sector by increasing its RGB values by a specified amount
+    /// 
+    /// </summary>
+    /// <param name="amount"></param>
     public void ApplyHighlight(float amount) {
 
-        // highlight a sector by increasing its RGB values by a specified amount
 
         Renderer renderer = GetComponent<Renderer>();
         Color currentColor = renderer.material.color;
@@ -106,10 +159,14 @@ public class Sector : MonoBehaviour {
         renderer.material.color = newColor;
     }
 
+    /// <summary>
+    /// 
+    /// unhighlight a sector by decreasing its RGB values by a specified amount
+    /// 
+    /// </summary>
+    /// <param name="amount"></param>
     public void RevertHighlight(float amount) {
-
-        // unhighlight a sector by decreasing its RGB values by a specified amount
-
+        
         Renderer renderer = GetComponent<Renderer>();
         Color currentColor = renderer.material.color;
         Color offset = new Vector4(amount, amount, amount, 1);
@@ -118,29 +175,37 @@ public class Sector : MonoBehaviour {
         renderer.material.color = newColor;
     }
 
+    /// <summary>
+    /// 
+    /// highlight each sector adjacent to this one
+    /// 
+    /// </summary>
     public void ApplyHighlightAdjacent() {
-
-        // highlight each sector adjacent to this one
-
         foreach (Sector adjacentSector in adjacentSectors)
         {
             adjacentSector.ApplyHighlight(0.2f);
         }
     }
 
+    /// <summary>
+    /// 
+    /// unhighlight each sector adjacent to this one
+    /// 
+    /// </summary>
     public void RevertHighlightAdjacent() {
-
-        // unhighlight each sector adjacent to this one
-        
         foreach (Sector adjacentSector in adjacentSectors)
         {
             adjacentSector.RevertHighlight(0.2f);
         }
     }
 
+    /// <summary>
+    /// 
+    /// clear this sector of any unit
+    /// 
+    /// </summary>
     public void ClearUnit() {
 
-        // clear this sector of any unit
 
         unit = null;
     }
@@ -153,7 +218,7 @@ public class Sector : MonoBehaviour {
 		OnMouseUpAsButtonAccessible();
 
     }
-
+    
     public void OnMouseUpAsButtonAccessible() {
 
         // a method of OnMouseUpAsButton that is 
@@ -196,27 +261,45 @@ public class Sector : MonoBehaviour {
             // if the sector is occupied by a hostile unit
             else if (unit.GetOwner() != selectedUnit.GetOwner())
                 MoveIntoHostileUnit(selectedUnit, this.unit);
+            
+            map.game.NextTurnState(); // adavance to next turn phase when action take (Modified by Dom 13/02/2018)
         }
     }
 
+    /// <summary>
+    /// 
+    /// Moves the passed unit onto this sector
+    /// should only be used when this sector is unoccupied
+    /// 
+    /// </summary>
+    /// <param name="unit">The unit to be moved onto this sector</param>
     public void MoveIntoUnoccupiedSector(Unit unit) {
         
         // move the selected unit into this sector
         unit.MoveTo(this);
-
-        // advance turn state
-        map.game.NextTurnState();
     }
 
+    /// <summary>
+    /// 
+    /// switches the unit on this sector with the passed one
+    /// 
+    /// </summary>
+    /// <param name="otherUnit">Unit object of the unit on the adjacent sector to be switched onto this sector</param>
     public void MoveIntoFriendlyUnit(Unit otherUnit) {
 
         // swap the two units
         this.unit.SwapPlacesWith(otherUnit);
-
-        // advance turn state
-        map.game.NextTurnState();
     }
 
+    /// <summary>
+    /// 
+    /// initates a combat encounter between a pair of units
+    /// the loosing is destroyed
+    /// if the attacker wins then they move onto the defending units territory
+    /// 
+    /// </summary>
+    /// <param name="attackingUnit"></param>
+    /// <param name="defendingUnit"></param>
     public void MoveIntoHostileUnit(Unit attackingUnit, Unit defendingUnit) {
 
         // start and resolve a conflict
@@ -237,12 +320,11 @@ public class Sector : MonoBehaviour {
         {
             // destroy attacking unit
             attackingUnit.DestroySelf();
-        }
-
-        // end the turn
-        map.game.EndTurn();
-    }
+        }      
         
+        // removed automatically end turn after attacking (Modified by Dom 13/02/18)
+    }
+       
     public Unit AdjacentSelectedUnit() {
 
         // return the selected unit if it is adjacent to this sector
@@ -262,6 +344,18 @@ public class Sector : MonoBehaviour {
         return null;
     }
 
+    /// <summary>
+    /// 
+    /// returns the outcome of a combat encounter between two units
+    /// takes into consideration the units levels and the attack/defence bonus of the player
+    /// 
+    /// close match leads to uncertain outcome (i.e. could go either way)
+    /// if one unit + bonuses is significantly more powerful than another then they are very likely to win
+    /// 
+    /// </summary>
+    /// <param name="attackingUnit">Unit object of the attacking unit</param>
+    /// <param name="defendingUnit">Unit object of the defending unit</param>
+    /// <returns>'true' if attacking unit wins or 'false' if defending unit wins</returns>
     private bool Conflict(Unit attackingUnit, Unit defendingUnit) {
 
         // return 'true' if attacking unit wins;
