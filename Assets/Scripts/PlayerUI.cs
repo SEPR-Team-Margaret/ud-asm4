@@ -30,11 +30,10 @@ public class PlayerUI : MonoBehaviour {
 
         //added by Peter
         if (player.IsNeutral())
+        {
             header.text = "Neutral";
-
-    
-
-}
+        }
+    }
 
 	public void UpdateDisplay() {
 
@@ -45,14 +44,10 @@ public class PlayerUI : MonoBehaviour {
 	}
 
 	public void Activate() {
-
 		header.color = player.GetColor();
-
 	}
 
 	public void Deactivate() {
-
 		header.color = defaultHeaderColor;
-
 	}
 }

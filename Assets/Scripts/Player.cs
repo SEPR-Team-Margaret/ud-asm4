@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -105,6 +106,23 @@ public class Player : MonoBehaviour {
         else
         {
             return "none";
+        }
+    }
+
+    public void SetController(String controller)
+    {
+        if (controller.Equals("human"))
+        {
+            human = true;
+            neutral = false;
+        } else if (controller.Equals("neutral"))
+        {
+            human = false;
+            neutral = true;
+        } else
+        {
+            human = false;
+            neutral = false;
         }
     }
 
@@ -218,5 +236,5 @@ public class Player : MonoBehaviour {
         // otherwise, return false
         return false;
     }
-
+    
 }

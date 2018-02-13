@@ -262,7 +262,7 @@ public class Game : MonoBehaviour {
                 if (currentPlayer.IsNeutral())
                 {
                     NeutralPlayerTurn();
-                    NeutralPlayerTurn(); //Horrible i know
+                    NeutralPlayerTurn(); 
                 }
                 break;                
             }
@@ -338,7 +338,7 @@ public class Game : MonoBehaviour {
                 dialog.setDialogType(Dialog.DialogType.PlayerElimated);
                 dialog.setPlayerName(players[i].name);
                 dialog.Show();
-                eliminatedPlayers[i] = true; // Used to ensure that the dialog is only shown once
+                eliminatedPlayers[i] = true; // ensure that the dialog is only shown once
                 players[i].Defeat(currentPlayer); // Releases all owned sectors
             }
         }
@@ -358,8 +358,6 @@ public class Game : MonoBehaviour {
         // return the winning player, or null if no winner yet
 
         Player winner = null;
-
-
 
         // scan through each player
         foreach (Player player in players)
@@ -384,14 +382,7 @@ public class Game : MonoBehaviour {
     }
 
     public void EndGame() {
-        #region Show the winner dialog (Added by Jack 01/02/2018)
-
-        dialog.setDialogType(Dialog.DialogType.EndGame);
-        dialog.setPlayerName(GetWinner().name);
-        dialog.Show();
-
-        #endregion
-
+       
         gameFinished = true;
 
         #region Show the winner dialog (Added by Jack 01/02/2018)
@@ -456,26 +447,77 @@ public class Game : MonoBehaviour {
 	}
 
     // Initialize the game from a saved game
-    public void Initialize(Game savedGame)
+    public void Initialize(GameData savedGame)
     {
-        /*
-        // Create number of players that is saved in saved game
-        CreatePlayers(savedGame.players.Length);
+        // set global game settings
+        this.turnState = savedGame.turnState;
+        this.gameFinished = savedGame.gameFinished;
+        this.testMode = savedGame.testMode;
+        this.currentPlayer = players[savedGame.currentPlayerID];
 
-        // initialize the map and allocate players to landmarks
-        InitializeMap();
+        // set player attack bonus
+        players[0].SetAttack(savedGame.player1Attack);
+        players[1].SetAttack(savedGame.player2Attack);
+        players[2].SetAttack(savedGame.player3Attack);
+        players[3].SetAttack(savedGame.player4Attack);
 
-        // initialize the turn state from saved game
-        turnState = savedGame.turnState;
+        // set player defence bonus
+        players[0].SetDefence(savedGame.player1Defence);
+        players[1].SetDefence(savedGame.player2Defence);
+        players[2].SetDefence(savedGame.player3Defence);
+        players[3].SetDefence(savedGame.player4Defence);
 
-        // set current player from saved game as current player
-        currentPlayer = savedGame.currentPlayer;
-        currentPlayer.GetGui().Activate();
-        players[GetPlayerID(currentPlayer)].SetActive(true);
+        // set player colour
+        players[0].SetColor(savedGame.player1Color);
+        players[1].SetColor(savedGame.player2Color);
+        players[2].SetColor(savedGame.player3Color);
+        players[3].SetColor(savedGame.player4Color);
 
-        // update GUIs
-        UpdateGUI();
-        */
+        // set player colour
+        players[0].SetController(savedGame.player1Controller);
+        players[1].SetController(savedGame.player2Controller);
+        players[2].SetController(savedGame.player3Controller);
+        players[3].SetController(savedGame.player4Controller);
+
+        // set sector owners
+        sectors[0].SetOwner(players[savedGame.sector01Owner]);
+        sectors[1].SetOwner(players[savedGame.sector02Owner]);
+        sectors[2].SetOwner(players[savedGame.sector03Owner]);
+        sectors[3].SetOwner(players[savedGame.sector04Owner]);
+        sectors[4].SetOwner(players[savedGame.sector05Owner]);
+        sectors[5].SetOwner(players[savedGame.sector06Owner]);
+        sectors[6].SetOwner(players[savedGame.sector07Owner]);
+        sectors[7].SetOwner(players[savedGame.sector08Owner]);
+        sectors[8].SetOwner(players[savedGame.sector09Owner]);
+        sectors[9].SetOwner(players[savedGame.sector10Owner]);
+        sectors[10].SetOwner(players[savedGame.sector11Owner]);
+        sectors[11].SetOwner(players[savedGame.sector12Owner]);
+        sectors[12].SetOwner(players[savedGame.sector13Owner]);
+        sectors[13].SetOwner(players[savedGame.sector14Owner]);
+        sectors[14].SetOwner(players[savedGame.sector15Owner]);
+        sectors[15].SetOwner(players[savedGame.sector16Owner]);
+        sectors[16].SetOwner(players[savedGame.sector17Owner]);
+        sectors[17].SetOwner(players[savedGame.sector18Owner]);
+        sectors[18].SetOwner(players[savedGame.sector19Owner]);
+        sectors[19].SetOwner(players[savedGame.sector20Owner]);
+        sectors[20].SetOwner(players[savedGame.sector21Owner]);
+        sectors[21].SetOwner(players[savedGame.sector22Owner]);
+        sectors[22].SetOwner(players[savedGame.sector23Owner]);
+        sectors[23].SetOwner(players[savedGame.sector24Owner]);
+        sectors[24].SetOwner(players[savedGame.sector25Owner]);
+        sectors[25].SetOwner(players[savedGame.sector26Owner]);
+        sectors[26].SetOwner(players[savedGame.sector27Owner]);
+        sectors[27].SetOwner(players[savedGame.sector28Owner]);
+        sectors[28].SetOwner(players[savedGame.sector29Owner]);
+        sectors[29].SetOwner(players[savedGame.sector30Owner]);
+        sectors[30].SetOwner(players[savedGame.sector31Owner]);
+        sectors[31].SetOwner(players[savedGame.sector32Owner]);
+
+        // set unit level in sectors
+
+
+
+
     }
 
     void Update () {
