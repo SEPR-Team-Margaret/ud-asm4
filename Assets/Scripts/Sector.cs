@@ -266,30 +266,45 @@ public class Sector : MonoBehaviour {
 
         // return 'true' if attacking unit wins;
         // return 'false' if defending unit wins
-
-
-        /*
-         * Conflict resolution is done by comparing a random roll 
-         * from each unit involved. The roll is weighted based on
-         * the unit's level and the amount of the associated 
-         * resource the unit's owner has. Beer is associated with
-         * attacking, and Knowledge is associated with defending.
-         * 
-         * The formula is:
-         * 
-         *     roll = [ a random integer with a lowerbound of 1
-         *              and an upperbound of 5 + the unit's level ] 
-         *           + [ the amount of the associated resource the
-         *               unit's owner has ]
-         * 
-         * In the event of a tie, the defending unit wins the conflict
-         */
-
-        // calculate the rolls of each unit
+        
         int attackingUnitRoll = Random.Range(1, (5 + attackingUnit.GetLevel())) + attackingUnit.GetOwner().GetAttack();
         int defendingUnitRoll = Random.Range(1, (5 + defendingUnit.GetLevel())) + defendingUnit.GetOwner().GetDefence();
 
-        return (attackingUnitRoll > defendingUnitRoll);
+        #region conflict resolution algorithm updated to make more fair (Modified by Dom 13/02/2018)
+
+        // diff = +ve attacker advantage 
+        // diff = -ve defender advantage
+        int diff = (attackingUnit.GetLevel() + attackingUnit.GetOwner().GetAttack() + 1) - (defendingUnit.GetLevel() + defendingUnit.GetOwner().GetDefence());
+
+        // determine uncertaincy in combat
+        // small diff in troops small uncertaincy level
+        float uncertaincy = -0.4f * (Mathf.Abs(diff)) + 0.5f;
+        if (uncertaincy < 0.1f)
+        {
+            uncertaincy = 0.1f; // always at least 10% uncertaincy
+        }
+
+        if (Random.Range(0, 1) < uncertaincy)
+        {
+            if (diff < 0)
+            {
+                return false;
+            } else
+            {
+                return true;
+            }
+        } else
+        {
+            if (diff < 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        #endregion
     }
-        
+
 }
