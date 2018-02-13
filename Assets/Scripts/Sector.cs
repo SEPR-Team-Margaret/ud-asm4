@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System.Xml;
+﻿using UnityEngine;
 
 public class Sector : MonoBehaviour {
 
@@ -43,6 +40,22 @@ public class Sector : MonoBehaviour {
 
     public Player GetOwner() {
         return owner;
+    }
+
+    /// <summary>
+    /// Get the level of the unit on the sector
+    /// </summary>
+    /// <returns>Int value for the id of the sector</returns>
+    public int GetLevel()
+    {
+        if (this.unit == null)
+        {
+            return -1;
+        }
+        else
+        {
+            return this.unit.GetLevel();
+        } 
     }
 
     public void SetOwner (Player owner) {

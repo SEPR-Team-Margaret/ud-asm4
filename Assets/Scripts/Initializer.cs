@@ -9,10 +9,7 @@ public class Initializer : MonoBehaviour {
  
     // Use this for initialization
     void Start()
-    {
-        //SavedGame.Load("test8");
-       
+    {      
         game.Initialize();
 	}
 }
-// (File.Exists(saveFilePath + fileName))
