@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Runtime.Serialization;
-using System.Xml.Serialization;
 
 [System.Serializable]
 public class Game : MonoBehaviour {
@@ -14,6 +10,7 @@ public class Game : MonoBehaviour {
     public Player[] players; 
 	public GameObject gameMap;
     public Player currentPlayer;
+    public Sector[] sectors;
 
     public const int NUMBER_OF_PLAYERS = 4;
     
@@ -57,6 +54,11 @@ public class Game : MonoBehaviour {
         return players;
     }
 
+    public Sector[] GetSectors()
+    {
+        return sectors;
+    }
+
     public Player GetCurrentPlayer()
     {
         return currentPlayer;
@@ -70,6 +72,22 @@ public class Game : MonoBehaviour {
     public int GetPlayerID(Player player)
     {
         return System.Array.IndexOf(players, player);
+    }
+
+    /// <summary>
+    /// Finds the sector the VC is assigned to
+    /// </summary>
+    /// <returns>The id of the sector, or -1 if not set</returns>
+    public int GetVCSectorID()
+    {
+        foreach (Sector sector in sectors)
+        {
+            if (sector.isVC())
+            {
+                return System.Array.IndexOf(sectors, sector);
+            }
+        }
+        return -1;
     }
 
     //Re-done by Peter
@@ -120,7 +138,7 @@ public class Game : MonoBehaviour {
 
 
 		// get an array of all sectors
-        Sector[] sectors = gameMap.GetComponentsInChildren<Sector>();
+        sectors = gameMap.GetComponentsInChildren<Sector>();
 
 		// initialize each sector
         foreach (Sector sector in sectors)

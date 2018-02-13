@@ -16,10 +16,6 @@ public class Player : MonoBehaviour {
     [SerializeField] private bool human;
     [SerializeField] private bool neutral; //added by Peter
     [SerializeField] private bool active = false;
-    
-
-
-
 
     public Game GetGame() {
         return game;
@@ -90,6 +86,26 @@ public class Player : MonoBehaviour {
 
     public void SetActive(bool active) {
         this.active = active;
+    }
+
+    /// <summary>
+    /// Store who controlls the player in the save game
+    /// </summary>
+    /// <returns>String "human"/"neutral"/"none" depending on the player properties</returns>
+    public string GetController()
+    {
+        if (this.IsHuman())
+        {
+            return "human";
+        }
+        else if (this.IsNeutral())
+        {
+            return "neutral";
+        }
+        else
+        {
+            return "none";
+        }
     }
 
     #region Function which gives all owned sectors to the player who defeated this player (Added by Jack 01/02/2018)
