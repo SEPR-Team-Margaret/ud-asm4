@@ -38,59 +38,135 @@ public class Player : MonoBehaviour {
 		this.gui = gui;
 	}
 
+    /// <summary>
+    /// 
+    /// gets this player's attack bonus
+    /// 
+    /// </summary>
+    /// <returns>This player's attack bonus</returns>
     public int GetAttack() {
         return attack;
     }
 
-    public void SetAttack(int beer) {
-        this.attack = beer;
+    /// <summary>
+    /// 
+    /// sets this players attack bonus
+    /// 
+    /// </summary>
+    /// <param name="attack">The player's attack bonus</param>
+    public void SetAttack(int attack) {
+        this.attack = attack;
     }
 
+    /// <summary>
+    /// 
+    /// gets this player's defence
+    /// 
+    /// </summary>
+    /// <returns>The player's defence bonus</returns>
     public int GetDefence() {
         return defence;
     }
 
-    public void SetDefence(int knowledge) {
-        this.defence = knowledge;
+    /// <summary>
+    /// 
+    /// sets this players defence bonus
+    /// 
+    /// </summary>
+    /// <param name="defence">The player's defence bonus</param>
+    public void SetDefence(int defence) {
+        this.defence = defence;
     }
-
+    
+    /// <summary>
+    /// 
+    /// gets the colour associated with this player
+    /// 
+    /// </summary>
+    /// <returns>The colour associated with this player</returns>
     public Color GetColor() {
         return color;
     }
 
+    /// <summary>
+    /// 
+    /// sets the players colour to be used for sector colouring and setting the player's name colour
+    /// 
+    /// </summary>
+    /// <param name="color">The colour to be used for this player</param>
     public void SetColor(Color color) {
         this.color = color;
     }
 
     //added by Peter
+    /// <summary>
+    /// 
+    /// returns if this player is controlled by a human or not
+    /// 
+    /// </summary>
+    /// <returns>True if the player is controlled by a human else false</returns>
     public bool IsHuman() {
         return human;
     }
+
     //added by Peter
+    /// <summary>
+    /// 
+    /// sets if this player is to be controlled by a human
+    /// 
+    /// </summary>
+    /// <param name="human">True if the player is to be contolled by a human else false</param>
     public void SetHuman(bool human) {
         this.human = human;
     }
 
+    /// <summary>
+    /// 
+    /// returns true if this player is neutral else false
+    /// 
+    /// </summary>
+    /// <returns>True if player is neutral else false</returns>
     public bool IsNeutral()
     {
         return neutral;
     }
 
+    /// <summary>
+    /// 
+    /// Sets if this player should be controlled by the neutral AI
+    /// 
+    /// </summary>
+    /// <param name="neutral">True if the player is neutral else false</param>
     public void SetNeutral(bool neutral)
     {
         this.neutral = neutral;
     }
 
+    /// <summary>
+    /// 
+    /// returns if the player is active or not
+    /// 
+    /// </summary>
+    /// <returns>True if player is active else false</returns>
     public bool IsActive() {
         return active;
     }
 
+    /// <summary>
+    /// 
+    /// sets if this player is active
+    /// if it is a player's turn they are active else they are not
+    /// 
+    /// </summary>
+    /// <param name="active">True if player is active else false</param>
     public void SetActive(bool active) {
         this.active = active;
     }
 
     /// <summary>
+    /// 
     /// Store who controlls the player in the save game
+    /// 
     /// </summary>
     /// <returns>String "human"/"neutral"/"none" depending on the player properties</returns>
     public string GetController()
@@ -109,6 +185,12 @@ public class Player : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// 
+    /// sets how this player is controlled
+    /// 
+    /// </summary>
+    /// <param name="controller">'human' if player controlled by human; 'neutral' if player controlled by neutral AI; all other values have no contoller</param>
     public void SetController(String controller)
     {
         if (controller.Equals("human"))
@@ -128,6 +210,12 @@ public class Player : MonoBehaviour {
 
     #region Function which gives all owned sectors to the player who defeated this player (Added by Jack 01/02/2018)
 
+    /// <summary>
+    /// 
+    /// called when this player is eliminated in order to pass all sectors owned by this player to the player that eliminated this player
+    /// 
+    /// </summary>
+    /// <param name="player">The player to recieve all of this player's sectors</param>
     public void Defeat(Player player)
     {
         if (!IsEliminated())
@@ -141,6 +229,14 @@ public class Player : MonoBehaviour {
     #endregion
 
 
+    /// <summary>
+    /// 
+    /// called when this player captures a sector 
+    /// updates this players attack and defence bonuses
+    /// sets the sectors owner and updates its colour
+    /// 
+    /// </summary>
+    /// <param name="sector">The sector that is being captured by this player</param>
     public void Capture(Sector sector) {
 
         // capture the given sector
@@ -167,13 +263,13 @@ public class Player : MonoBehaviour {
 
             // remove the landmark's resource bonus from the previous
             // owner and add it to this player
-            if (landmark.GetResourceType() == Landmark.ResourceType.Beer)
+            if (landmark.GetResourceType() == Landmark.ResourceType.Attack)
             {
                 this.attack += landmark.GetAmount();
                 if (previousOwner != null)
                     previousOwner.attack -= landmark.GetAmount();
             }
-            else if (landmark.GetResourceType() == Landmark.ResourceType.Knowledge)
+            else if (landmark.GetResourceType() == Landmark.ResourceType.Defence)
             {
                 this.defence += landmark.GetAmount();
                 if (previousOwner != null)
@@ -182,11 +278,12 @@ public class Player : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// 
+    /// spawns a unit at each unoccupied sector containing a landmark owned by this player
+    /// 
+    /// </summary>
     public void SpawnUnits() {
-
-        // spawn a unit at each unoccupied landmark
-
-
         // scan through each owned sector
 		foreach (Sector sector in ownedSectors) 
 		{
@@ -207,24 +304,29 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+    /// <summary>
+    /// 
+    /// checks if the player has any units or if they own any landmarks
+    /// if they have neither then they have been eliminated
+    /// 
+    /// </summary>
+    /// <returns>true if the player has no units and landmarks else false</returns>
     public bool IsEliminated() {
-
-        // returns true if the player is eliminated, false otherwise;
-        // a player is considered eliminated if it has no units left
-        // and does not own a landmark
-
         if (units.Count == 0 && !OwnsLandmark())
             return true;
         else
             return false;
     }
     
+
+    /// <summary>
+    /// 
+    /// returns true if any of the sectors the player owns contains a landmark
+    /// 
+    /// </summary>
+    /// <returns>true if the player owns 1 or more landmarks else false</returns>
     private bool OwnsLandmark() {
 
-        // returns true if the player owns at least one landmark,
-        // false otherwise
-
-        
         // scan through each owned sector
         foreach (Sector sector in ownedSectors)
         {

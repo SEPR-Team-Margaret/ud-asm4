@@ -51,7 +51,7 @@ public class PlayerTest
 
         // ensure 'landmarkedSector' is a landmark of type Beer
         Assert.IsNotNull(landmarkedSector.GetLandmark());
-        landmark.SetResourceType(Landmark.ResourceType.Beer);
+        landmark.SetResourceType(Landmark.ResourceType.Attack);
 
         // get beer amounts for each player before capture
         int attackerBeerBeforeCapture = playerA.GetAttack();
@@ -86,7 +86,7 @@ public class PlayerTest
 
         // ensure 'landmarkedSector' is a landmark of type Knowledge
         Assert.IsNotNull(landmarkedSector.GetLandmark());
-        landmark.SetResourceType(Landmark.ResourceType.Knowledge);
+        landmark.SetResourceType(Landmark.ResourceType.Defence);
 
         // get knowledge amounts for each player before capture
         int attackerKnowledgeBeforeCapture = playerA.GetDefence();
@@ -119,7 +119,7 @@ public class PlayerTest
 
         // ensure 'landmarkedSector' is a landmark of type Beer
         Assert.IsNotNull(landmarkedSector.GetLandmark());
-        landmark.SetResourceType(Landmark.ResourceType.Beer);
+        landmark.SetResourceType(Landmark.ResourceType.Attack);
 
         // get player beer amount before capture
         int oldBeer = playerA.GetAttack();
@@ -149,7 +149,7 @@ public class PlayerTest
 
         // ensure 'landmarkedSector' is a landmark of type Knowledge
         Assert.IsNotNull(landmarkedSector.GetLandmark());
-        landmark.SetResourceType(Landmark.ResourceType.Knowledge);
+        landmark.SetResourceType(Landmark.ResourceType.Defence);
 
         // get player knowledge amount before capture
         int oldKnowledge = playerA.GetDefence();

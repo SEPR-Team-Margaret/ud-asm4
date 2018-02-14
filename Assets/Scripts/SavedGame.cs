@@ -40,7 +40,7 @@ public static class SavedGame
     /// </summary>
     /// <param name="fileName">The file to be loaded, exclusing the extension</param>
     /// <returns>True if game setup correctly, false if not</returns>
-    public static bool Load(string fileName)
+    public static GameData Load(string fileName)
     {
         string filePath = Application.persistentDataPath + "/";
         try
@@ -51,16 +51,16 @@ public static class SavedGame
                 GameData savedGame = (GameData)serializer.Deserialize(r);
                 // Access to saved game like -> savedGame.currentPlayerID
                 // Calls to instantiate methods
-                return true;
+                return savedGame;
             }
         }
         catch (SerializationException)
         {
-            return false;
+            return null;
         }
         catch (FileNotFoundException)
         {
-            return false;
+            return null;
         }
     }
 

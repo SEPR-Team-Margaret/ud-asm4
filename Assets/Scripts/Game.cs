@@ -184,11 +184,12 @@ public class Game : MonoBehaviour {
 
         //set Vice Chancellor
         int rand = Random.Range(0, sectors.Length);
-        while (sectors[rand].GetLandmark() != null)
+        while (true)
         {
             if (sectors[rand].GetLandmark() == null)
             {
                 sectors[rand].setVC(true);
+                break;
             }
             else
             {
@@ -214,6 +215,7 @@ public class Game : MonoBehaviour {
         return landmarkedSectors.ToArray();
     }
 
+
     public bool NoUnitSelected() {
         
         // return true if no unit is selected, false otherwise
@@ -235,9 +237,13 @@ public class Game : MonoBehaviour {
         return true;
     }
 
+    /// <summary>
+    /// 
+    /// Sets the active player to the next player
+    /// If it is a neutral player's turn then carries out their actions
+    /// 
+    /// </summary>
     public void NextPlayer() {
-        // For saving tests
-        SavedGame.Save("test1", this);
         //SavedGame.Load("test7");
 
         // set the current player to the next player in the order
@@ -270,6 +276,12 @@ public class Game : MonoBehaviour {
     }
 
     //Created by Peter
+    /// <summary>
+    /// 
+    /// Carries out the neutral player turn
+    /// The neutral player units cannot move to a sector with a unit on
+    /// 
+    /// </summary>
     public void NeutralPlayerTurn()
     {
         NextTurnState();
@@ -284,6 +296,11 @@ public class Game : MonoBehaviour {
         selectedUnit.MoveTo(adjacentSectors[Random.Range(0, adjacentSectors.Length)]);
     }
 
+    /// <summary>
+    /// 
+    /// Advances the turn state to the next state
+    /// 
+    /// </summary>
     public void NextTurnState() {
 
         // change the turn state to the next in the order,
@@ -327,9 +344,14 @@ public class Game : MonoBehaviour {
 
     #region Function to check for defeated players and notify the others (Added by Jack 01/02/2018)
 
+    /// <summary>
+    /// 
+    /// Checks if any players were defeated that turn and removes them 
+    /// Displays a dialog box showing which players have been defeated this turn
+    /// 
+    /// </summary>
     public void CheckForDefeatedPlayers()
     {
-        // Checks if any players were defeated that turn state and removes them whilst notifying the rest of the players
         for (int i = 0; i < players.Length; i++)
         {
             if (players[i].IsEliminated() && eliminatedPlayers[i] == false)
@@ -346,6 +368,11 @@ public class Game : MonoBehaviour {
 
     #endregion
 
+    /// <summary>
+    /// 
+    /// sets the turn phase to the EndOfTurn state
+    /// 
+    /// </summary>
     public void EndTurn() {
 
         // end the current turn
@@ -353,6 +380,13 @@ public class Game : MonoBehaviour {
         turnState = TurnState.EndOfTurn;
     }
 
+    /// <summary>
+    /// 
+    /// checks if there is a winner in the game
+    /// a winner is found when there is only one player with territory remaining, (unclaimed territories are ignored)
+    /// 
+    /// </summary>
+    /// <returns>The winning player object or null if no winner has been found</returns>
     public Player GetWinner() {
 
         // return the winning player, or null if no winner yet
@@ -381,6 +415,12 @@ public class Game : MonoBehaviour {
         return winner;
     }
 
+    /// <summary>
+    /// 
+    /// Called when the game is over
+    /// Displays a Dialog saying which player has won and allows the player to quit the game or restart the game
+    /// 
+    /// </summary>
     public void EndGame() {
        
         gameFinished = true;
@@ -399,20 +439,39 @@ public class Game : MonoBehaviour {
         Debug.Log("GAME FINISHED");
     }
 
+    /// <summary>
+    /// 
+    /// Updates the Player Information GUI components and the Actions remaining label
+    /// 
+    /// </summary>
 	public void UpdateGUI() {
 
 		// update all players' GUIs
 		for (int i = 0; i < 4; i++) {
-			players [i].GetGui ().UpdateDisplay ();
+			players [i].GetGui ().UpdateDisplay();
 		}
 	}
 
+    /// <summary>
+    /// 
+    /// Action to be carried out when the menu button is pressed
+    /// Opens dialog asking player if they would like to 
+    ///     Quit Game
+    ///     Save & Quit Game
+    ///     Return To Game
+    /// 
+    /// </summary>
     private void MenuButtonPressed()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
-        
+
     //modified by Peter
+    /// <summary>
+    /// 
+    /// Initializes a new game
+    /// 
+    /// </summary>
     public void Initialize () {
 
         #region Setup GUI components (Added by Dom 06/02/2018)
@@ -445,15 +504,43 @@ public class Game : MonoBehaviour {
 		UpdateGUI();
 
 	}
-
-    // Initialize the game from a saved game
+    
+    //Added by Dom
+    /// <summary>
+    /// 
+    /// sets up a game with the state stored by the passed GameData
+    /// 
+    /// </summary>
+    /// <param name="savedGame">The saved game state</param>
     public void Initialize(GameData savedGame)
     {
+
+        gameMap = GameObject.Find("Map");
+
+        // initialize the game
+        actionsRemaining = GameObject.Find("Remaining_Actions_Value").GetComponent<UnityEngine.UI.Text>();
+
+        UnityEngine.UI.Button endTurnButton = GameObject.Find("End_Turn_Button").GetComponent<UnityEngine.UI.Button>();
+        endTurnButton.onClick.AddListener(EndTurn);
+
+        UnityEngine.UI.Button menuButton = GameObject.Find("Menu_Button").GetComponent<UnityEngine.UI.Button>();
+        menuButton.onClick.AddListener(MenuButtonPressed);
+
+        if (savedGame.player4Controller.Equals("human"))
+        {
+            CreatePlayers(false);
+        } else
+        {
+            CreatePlayers(true);
+        }
+
         // set global game settings
         this.turnState = savedGame.turnState;
         this.gameFinished = savedGame.gameFinished;
         this.testMode = savedGame.testMode;
         this.currentPlayer = players[savedGame.currentPlayerID];
+        currentPlayer.GetGui().Activate();
+        players[savedGame.currentPlayerID].SetActive(true);
 
         // set player attack bonus
         players[0].SetAttack(savedGame.player1Attack);
@@ -479,52 +566,147 @@ public class Game : MonoBehaviour {
         players[2].SetController(savedGame.player3Controller);
         players[3].SetController(savedGame.player4Controller);
 
+        // get an array of all sectors
+        sectors = gameMap.GetComponentsInChildren<Sector>();
+
+        // initialize each sector
+        foreach (Sector sector in sectors)
+        {
+            sector.Initialize();
+        }
+
         // set sector owners
-        sectors[0].SetOwner(players[savedGame.sector01Owner]);
-        sectors[1].SetOwner(players[savedGame.sector02Owner]);
-        sectors[2].SetOwner(players[savedGame.sector03Owner]);
-        sectors[3].SetOwner(players[savedGame.sector04Owner]);
-        sectors[4].SetOwner(players[savedGame.sector05Owner]);
-        sectors[5].SetOwner(players[savedGame.sector06Owner]);
-        sectors[6].SetOwner(players[savedGame.sector07Owner]);
-        sectors[7].SetOwner(players[savedGame.sector08Owner]);
-        sectors[8].SetOwner(players[savedGame.sector09Owner]);
-        sectors[9].SetOwner(players[savedGame.sector10Owner]);
-        sectors[10].SetOwner(players[savedGame.sector11Owner]);
-        sectors[11].SetOwner(players[savedGame.sector12Owner]);
-        sectors[12].SetOwner(players[savedGame.sector13Owner]);
-        sectors[13].SetOwner(players[savedGame.sector14Owner]);
-        sectors[14].SetOwner(players[savedGame.sector15Owner]);
-        sectors[15].SetOwner(players[savedGame.sector16Owner]);
-        sectors[16].SetOwner(players[savedGame.sector17Owner]);
-        sectors[17].SetOwner(players[savedGame.sector18Owner]);
-        sectors[18].SetOwner(players[savedGame.sector19Owner]);
-        sectors[19].SetOwner(players[savedGame.sector20Owner]);
-        sectors[20].SetOwner(players[savedGame.sector21Owner]);
-        sectors[21].SetOwner(players[savedGame.sector22Owner]);
-        sectors[22].SetOwner(players[savedGame.sector23Owner]);
-        sectors[23].SetOwner(players[savedGame.sector24Owner]);
-        sectors[24].SetOwner(players[savedGame.sector25Owner]);
-        sectors[25].SetOwner(players[savedGame.sector26Owner]);
-        sectors[26].SetOwner(players[savedGame.sector27Owner]);
-        sectors[27].SetOwner(players[savedGame.sector28Owner]);
-        sectors[28].SetOwner(players[savedGame.sector29Owner]);
-        sectors[29].SetOwner(players[savedGame.sector30Owner]);
-        sectors[30].SetOwner(players[savedGame.sector31Owner]);
-        sectors[31].SetOwner(players[savedGame.sector32Owner]);
+        setupSectorOwner(0, savedGame.sector01Owner);
+        setupSectorOwner(1, savedGame.sector02Owner);
+        setupSectorOwner(2, savedGame.sector03Owner);
+        setupSectorOwner(3, savedGame.sector04Owner);
+        setupSectorOwner(4, savedGame.sector05Owner);
+        setupSectorOwner(5, savedGame.sector06Owner);
+        setupSectorOwner(6, savedGame.sector07Owner);
+        setupSectorOwner(7, savedGame.sector08Owner);
+        setupSectorOwner(8, savedGame.sector09Owner);
+        setupSectorOwner(9, savedGame.sector10Owner);
+        setupSectorOwner(10, savedGame.sector11Owner);
+        setupSectorOwner(11, savedGame.sector12Owner);
+        setupSectorOwner(12, savedGame.sector13Owner);
+        setupSectorOwner(13, savedGame.sector14Owner);
+        setupSectorOwner(14, savedGame.sector15Owner);
+        setupSectorOwner(15, savedGame.sector16Owner);
+        setupSectorOwner(16, savedGame.sector17Owner);
+        setupSectorOwner(17, savedGame.sector18Owner);
+        setupSectorOwner(18, savedGame.sector19Owner);
+        setupSectorOwner(19, savedGame.sector20Owner);
+        setupSectorOwner(20, savedGame.sector21Owner);
+        setupSectorOwner(21, savedGame.sector22Owner);
+        setupSectorOwner(22, savedGame.sector23Owner);
+        setupSectorOwner(23, savedGame.sector24Owner);
+        setupSectorOwner(24, savedGame.sector25Owner);
+        setupSectorOwner(25, savedGame.sector26Owner);
+        setupSectorOwner(26, savedGame.sector27Owner);
+        setupSectorOwner(27, savedGame.sector28Owner);
+        setupSectorOwner(28, savedGame.sector29Owner);
+        setupSectorOwner(29, savedGame.sector30Owner);
+        setupSectorOwner(30, savedGame.sector31Owner);
+        setupSectorOwner(31, savedGame.sector32Owner);
 
         // set unit level in sectors
+        setupUnit(0, savedGame.sector01Level);
+        setupUnit(1, savedGame.sector02Level);
+        setupUnit(2, savedGame.sector03Level);
+        setupUnit(3, savedGame.sector04Level);
+        setupUnit(4, savedGame.sector05Level);
+        setupUnit(5, savedGame.sector06Level);
+        setupUnit(6, savedGame.sector07Level);
+        setupUnit(7, savedGame.sector08Level);
+        setupUnit(8, savedGame.sector09Level);
+        setupUnit(9, savedGame.sector10Level);
+        setupUnit(10, savedGame.sector11Level);
+        setupUnit(11, savedGame.sector12Level);
+        setupUnit(12, savedGame.sector13Level);
+        setupUnit(13, savedGame.sector14Level);
+        setupUnit(14, savedGame.sector15Level);
+        setupUnit(15, savedGame.sector16Level);
+        setupUnit(16, savedGame.sector17Level);
+        setupUnit(17, savedGame.sector18Level);
+        setupUnit(18, savedGame.sector19Level);
+        setupUnit(19, savedGame.sector20Level);
+        setupUnit(20, savedGame.sector21Level);
+        setupUnit(21, savedGame.sector22Level);
+        setupUnit(22, savedGame.sector23Level);
+        setupUnit(23, savedGame.sector24Level);
+        setupUnit(24, savedGame.sector25Level);
+        setupUnit(25, savedGame.sector26Level);
+        setupUnit(26, savedGame.sector27Level);
+        setupUnit(27, savedGame.sector28Level);
+        setupUnit(28, savedGame.sector29Level);
+        setupUnit(29, savedGame.sector30Level);
+        setupUnit(30, savedGame.sector31Level);
+        setupUnit(31, savedGame.sector32Level);
 
+        //set VC sector
+        sectors[savedGame.VCSector].setVC(true);
 
-
+        UpdateGUI();
 
     }
 
+    //Added by Dom
+    /// <summary>
+    /// 
+    /// sets the sector owner, if it has one
+    /// 
+    /// </summary>
+    /// <param name="sectorId">id of sector being set</param>
+    /// <param name="ownerId">id of player</param>
+    private void setupSectorOwner(int sectorId, int ownerId)
+    {
+        if (ownerId == -1)
+        {
+            return;
+        }
+        Player p = players[ownerId];
+        sectors[sectorId].SetOwner(p);
+        p.ownedSectors.Add(sectors[sectorId]);
+    }
+    //Added by Dom
+    /// <summary>
+    /// 
+    /// sets up the units on the passed sector
+    /// 
+    /// </summary>
+    /// <param name="sectorIndex">Sector id of sector being setup</param>
+    /// <param name="level">unit level on sector; -1 if no unit on this sector</param>
+    private void setupUnit(int sectorIndex, int level)
+    {
+        if (level == -1)
+        {
+            return;
+        }
+        Unit unit = Instantiate(sectors[sectorIndex].GetOwner().GetUnitPrefab()).GetComponent<Unit>();
+        unit.Initialize(sectors[sectorIndex].GetOwner(), sectors[sectorIndex]);
+        unit.SetLevel(level);
+        unit.updateUnitMaterial();
+        unit.MoveTo(sectors[sectorIndex]);
+        sectors[sectorIndex].GetOwner().units.Add(unit);
+    }
+
+    /// <summary>
+    /// 
+    /// calls UpdateAccessible
+    /// 
+    /// </summary>
     void Update () {
+        UpdateAccessible();
+	}
 
-        // at the end of each turn, check for a winner and end the game if
-        // necessary; otherwise, start the next player's turn
-
+    /// <summary>
+    /// 
+    /// at the end of each turn, check for a winner and end the game if necessary; otherwise, start the next player's turn 
+    /// exposed version of update method so accessible for testing
+    /// 
+    /// </summary>
+    public void UpdateAccessible ()
+    {
         if (triggerDialog)
         {
             triggerDialog = false;
@@ -533,9 +715,9 @@ public class Game : MonoBehaviour {
             dialog.Show();
         }
         // if the current turn has ended and test mode is not enabled
-        if (turnState == TurnState.EndOfTurn && !testMode)
+        if (turnState == TurnState.EndOfTurn)
         {
-            
+
             // if there is no winner yet
             if (GetWinner() == null)
             {
@@ -553,33 +735,7 @@ public class Game : MonoBehaviour {
             }
             else
                 if (!gameFinished)
-                    EndGame();
+                EndGame();
         }
-	}
-
-    public void UpdateAccessible () {
-
-        // copy of Update that can be called by other objects (for testing)
-
-        if (turnState == TurnState.EndOfTurn)
-        {
-            // if there is no winner yet
-            if (GetWinner() == null)
-            {
-                // start the next player's turn
-                NextPlayer();
-                NextTurnState();
-
-                // skip eliminated players
-                while (currentPlayer.IsEliminated())
-                    NextPlayer();
-
-                // spawn units for the next player
-                currentPlayer.SpawnUnits();
-            }
-            else
-                if (!gameFinished)
-                    EndGame();
-        }
-    }  
+    }
 }

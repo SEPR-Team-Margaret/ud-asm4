@@ -15,60 +15,23 @@ public class Unit : MonoBehaviour {
 	[SerializeField] private Material level3Material;
 	[SerializeField] private Material level4Material;
 	[SerializeField] private Material level5Material;
-
-
-    public Player GetOwner() {
-        return owner;
-    }
-
-    public void SetOwner(Player owner) {
-        this.owner = owner;
-    }
-
-    public Sector GetSector() {
-        return sector;
-    }
-
-    public void SetSector(Sector sector) {
-        this.sector = sector;
-    }
-
-    public int GetLevel() {
-        return level;
-    }
-
-    public void SetLevel(int level) {
-        this.level = level;
-    }
-
-    public Color GetColor() {
-        return color;
-    }
-
-    public void SetColor(Color color) {
-        this.color = color;
-    }
-
-    public bool IsSelected() {
-        return selected;
-    }
-
-    public void SetSelected(bool selected) {
-        this.selected = selected;
-    }
-
-
-
-    public void Initialize(Player player, Sector sector) {
-
-        // initialize the unit to be owned by the specified 
-        // player and in the specified sector
-
+    
+    /// <summary>
+    /// 
+    /// Initializes the unit on the passed sector and assigns it to the passed player
+    /// The unit is set to level 1
+    /// The unit's colour is set to the colour of the player that owns it
+    /// 
+    /// </summary>
+    /// <param name="player">The player the unit belongs to</param>
+    /// <param name="sector">The sector the unit is on</param>
+    public void Initialize(Player player, Sector sector)
+    {
 
         // set the owner, level, and color of the unit
         owner = player;
         level = 1;
-		color = owner.GetColor();
+        color = owner.GetColor();
 
         // set the material color to the player color
         GetComponent<Renderer>().material.color = color;
@@ -78,12 +41,115 @@ public class Unit : MonoBehaviour {
 
     }
 
+    /// <summary>
+    /// 
+    /// returns the player that owns this unit
+    /// 
+    /// </summary>
+    /// <returns>The player that owns this unit</returns>
+    public Player GetOwner() {
+        return owner;
+    }
+
+    /// <summary>
+    /// 
+    /// Sets the player that owns this unit
+    /// 
+    /// </summary>
+    /// <param name="owner">The player that owns this unit</param>
+    public void SetOwner(Player owner) {
+        this.owner = owner;
+    }
+
+    /// <summary>
+    /// 
+    /// returns the sector that this unit is in
+    /// 
+    /// </summary>
+    /// <returns>The sector that this unit is in</returns>
+    public Sector GetSector() {
+        return sector;
+    }
+
+    /// <summary>
+    /// 
+    /// sets the sector that this unit is in
+    /// 
+    /// </summary>
+    /// <param name="sector">The sector that this unit is on</param>
+    public void SetSector(Sector sector) {
+        this.sector = sector;
+    }
+
+    /// <summary>
+    /// 
+    /// Returns this unit's level
+    /// 
+    /// </summary>
+    /// <returns>This unit's level</returns>
+    public int GetLevel() {
+        return level;
+    }
+
+    /// <summary>
+    /// 
+    /// Sets this units level
+    /// 
+    /// </summary>
+    /// <param name="level">This units level</param>
+    public void SetLevel(int level) {
+        this.level = level;
+    }
+
+    /// <summary>
+    /// 
+    /// Returns this units colour
+    /// 
+    /// </summary>
+    /// <returns>This units colour</returns>
+    public Color GetColor() {
+        return color;
+    }
+
+    /// <summary>
+    /// 
+    /// Sets this unit's colour
+    /// 
+    /// </summary>
+    /// <param name="color">This units colour</param>
+    public void SetColor(Color color) {
+        this.color = color;
+    }
+
+    /// <summary>
+    /// 
+    /// Returns if this unit has been selected
+    /// 
+    /// </summary>
+    /// <returns>True if this unit is selected and false otherwise</returns>
+    public bool IsSelected() {
+        return selected;
+    }
+
+    /// <summary>
+    /// 
+    /// sets if this unit is currently selected
+    /// 
+    /// </summary>
+    /// <param name="selected">True if unit is seclected else false</param>
+    public void SetSelected(bool selected) {
+        this.selected = selected;
+    }
+    
+    /// <summary>
+    /// 
+    /// Moves this unit to the passed sector
+    /// If the unit moves to a sector they do not own then LevelUp is called on it
+    /// 
+    /// </summary>
+    /// <param name="targetSector">The sector to move this unit to</param>
     public void MoveTo(Sector targetSector) {
-
-        // move the unit into the target sector, capturing it
-        // and levelling up if necessary
-
-
+        
         // clear the unit's current sector
         if (this.sector != null)
         {
@@ -117,11 +183,14 @@ public class Unit : MonoBehaviour {
 
     }
 
+    /// <summary>
+    /// 
+    /// switch the position of this unit and the passed unit
+    /// 
+    /// </summary>
+    /// <param name="otherUnit">The unit to be swapped with this one</param>
     public void SwapPlacesWith(Unit otherUnit) {
-
-        // switch the sectors of this unit and another unit
-
-
+        
         // swap the sectors' references to the units
         this.sector.SetUnit(otherUnit);
         otherUnit.sector.SetUnit(this);
@@ -149,6 +218,12 @@ public class Unit : MonoBehaviour {
         
     }
 
+    /// <summary>
+    /// 
+    /// increase this units level and update the unit model to display the new level
+    /// levelling up is capped at level 5
+    /// 
+    /// </summary>
 	public void LevelUp() {
 
         // level up the unit, capping at Level 5
@@ -157,55 +232,64 @@ public class Unit : MonoBehaviour {
 
 			// increase level
 			level++;
-
-			// change texture to reflect new level
-			switch (level) 
-			{
-			case 2:
-				this.gameObject.GetComponent<MeshRenderer> ().material = level2Material;
-				break;
-			case 3:
-				this.gameObject.GetComponent<MeshRenderer> ().material = level3Material;
-				break;
-			case 4:
-				this.gameObject.GetComponent<MeshRenderer> ().material = level4Material;
-				break;
-			case 5:
-				this.gameObject.GetComponent<MeshRenderer> ().material = level5Material;
-				break;
-			default:
-				this.gameObject.GetComponent<MeshRenderer> ().material = level1Material;
-				break;
-			}
-
-			// set material color to match owner color
-			GetComponent<Renderer>().material.color = color;
-
+            updateUnitMaterial();
 		}
 		
 	}
 
+    public void updateUnitMaterial()
+    {
+        switch (level)
+        {
+            case 2:
+                this.gameObject.GetComponent<MeshRenderer>().material = level2Material;
+                break;
+            case 3:
+                this.gameObject.GetComponent<MeshRenderer>().material = level3Material;
+                break;
+            case 4:
+                this.gameObject.GetComponent<MeshRenderer>().material = level4Material;
+                break;
+            case 5:
+                this.gameObject.GetComponent<MeshRenderer>().material = level5Material;
+                break;
+            default:
+                this.gameObject.GetComponent<MeshRenderer>().material = level1Material;
+                break;
+        }
+
+        // set material color to match owner color
+        GetComponent<Renderer>().material.color = color;
+    }
+
+    /// <summary>
+    /// 
+    /// select the unit and highlight the sectors adjacent to it
+    /// 
+    /// </summary>
     public void Select() {
-
-        // select the unit and highlight the sectors adjacent to it
-
+        
         selected = true;
         sector.ApplyHighlightAdjacent();
     }
 
+    /// <summary>
+    /// 
+    /// deselect the unit and unhighlight the sectors adjacent to it
+    /// 
+    /// </summary>
     public void Deselect() {
-
-        // deselect the unit and unhighlight the sectors adjacent to it
-
+        
         selected = false;
         sector.RevertHighlightAdjacent();
     }
 
-    public void DestroySelf() {
-
-        // safely destroy the unit by removing it from its owner's
-        // list of units before destroying
-
+    /// <summary>
+    /// 
+    /// safely destroy the unit by removing it from its owner's list of units before destroying
+    /// 
+    /// </summary>
+    public void DestroySelf() { 
         sector.ClearUnit();
         owner.units.Remove(this);
         Destroy(this.gameObject);

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Landmark : MonoBehaviour {
 
-    public enum ResourceType {Beer, Knowledge};
+    public enum ResourceType {Attack, Defence};
 	[SerializeField] private ResourceType resourceType;
     [SerializeField] private int amount = 2;
     

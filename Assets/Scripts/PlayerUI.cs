@@ -8,8 +8,8 @@ public class PlayerUI : MonoBehaviour {
 	[SerializeField] private UnityEngine.UI.Text header;
 	[SerializeField] private UnityEngine.UI.Text headerHighlight;
 	[SerializeField] private UnityEngine.UI.Text percentOwned;
-	[SerializeField] private UnityEngine.UI.Text beer;
-	[SerializeField] private UnityEngine.UI.Text knowledge;
+	[SerializeField] private UnityEngine.UI.Text attack;
+	[SerializeField] private UnityEngine.UI.Text defence;
 	[SerializeField] private int numberOfSectors;
 	private Color defaultHeaderColor = new Color(0.2f, 0.2f, 0.2f, 1.0f);
 
@@ -20,8 +20,8 @@ public class PlayerUI : MonoBehaviour {
 		header = transform.Find("Header").GetComponent<UnityEngine.UI.Text>();
 		headerHighlight = transform.Find("HeaderHighlight").GetComponent<UnityEngine.UI.Text>();
 		percentOwned = transform.Find("PercentOwned_Value").GetComponent<UnityEngine.UI.Text>();
-		beer = transform.Find("ATK_Value").GetComponent<UnityEngine.UI.Text>();
-		knowledge = transform.Find("DEF_Value").GetComponent<UnityEngine.UI.Text>();
+		attack = transform.Find("ATK_Value").GetComponent<UnityEngine.UI.Text>();
+		defence = transform.Find("DEF_Value").GetComponent<UnityEngine.UI.Text>();
 		numberOfSectors = player.GetGame().gameMap.GetComponent<Map>().sectors.Length;
 
 		header.text = "Player " + player_id.ToString();
@@ -38,8 +38,8 @@ public class PlayerUI : MonoBehaviour {
 	public void UpdateDisplay() {
 
 		percentOwned.text = Mathf.Round(100 * player.ownedSectors.Count / numberOfSectors).ToString() + "%";
-		beer.text = player.GetAttack().ToString();
-		knowledge.text = player.GetDefence().ToString();
+		attack.text = player.GetAttack().ToString();
+		defence.text = player.GetDefence().ToString();
 
 	}
 
