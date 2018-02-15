@@ -222,6 +222,7 @@ public class Game : MonoBehaviour {
     public void SaveGame(string fileName)
     {
         SavedGame.Save(fileName, this);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex - 1);
     }
 
 
@@ -321,21 +322,17 @@ public class Game : MonoBehaviour {
                 if (!currentPlayer.hasUnits())
                 {
                     turnState = TurnState.EndOfTurn;
-                    actionsRemaining.text = "0";
                     break;
                 }
                 turnState = TurnState.Move2;
-                actionsRemaining.text = "1";
                 break;
 
             case TurnState.Move2:
                 turnState = TurnState.EndOfTurn;
-                actionsRemaining.text = "0";
                 break;
 
             case TurnState.EndOfTurn:
                 turnState = TurnState.Move1;
-                actionsRemaining.text = "2";
                 break;
 
             default:
@@ -355,6 +352,32 @@ public class Game : MonoBehaviour {
         #endregion
 
         UpdateGUI();
+    }
+    //Added by Dom (15/02/2018)
+    /// <summary>
+    /// 
+    /// Updates the text of the Actions Remaining label
+    /// 
+    /// </summary>
+    private void UpdateActionsRemainingLabel()
+    {
+        switch (turnState)
+        {
+            case TurnState.Move1:
+                actionsRemaining.text = "2";
+                break;
+
+            case TurnState.Move2:
+                actionsRemaining.text = "1";
+                break;
+
+            case TurnState.EndOfTurn:
+                actionsRemaining.text = "0";
+                break;
+
+            default:
+                break;
+        }
     }
 
     #region Function to check for defeated players and notify the others (Added by Jack 01/02/2018)
@@ -465,6 +488,7 @@ public class Game : MonoBehaviour {
 		for (int i = 0; i < 4; i++) {
 			players [i].GetGui ().UpdateDisplay();
 		}
+        UpdateActionsRemainingLabel();
 	}
 
     //modified by Peter
