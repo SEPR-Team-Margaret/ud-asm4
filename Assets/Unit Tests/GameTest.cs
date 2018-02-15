@@ -181,13 +181,13 @@ public class GameTest
     public IEnumerator NeutralPlayerTurn_EnsureNeutralPlayerMovesCorrectly()
     {
         Setup();
-
+        
         List<Unit> units = game.currentPlayer.units;
         Unit selectedUnit = units[Random.Range(0, units.Count)];
         Sector[] adjacentSectors = selectedUnit.GetSector().GetAdjacentSectors();
         for (int i = 0; i < adjacentSectors.Length; i++)
         {
-            if (adjacentSectors[i].GetUnit() != null)
+            if (adjacentSectors[i].GetUnit() != null || adjacentSectors[i].isVC())
                 adjacentSectors = adjacentSectors.Where(w => w != adjacentSectors[i]).ToArray();
         }
         selectedUnit.MoveTo(adjacentSectors[Random.Range(0, adjacentSectors.Length)]);
