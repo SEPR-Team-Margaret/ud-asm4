@@ -38,7 +38,6 @@ public class MinigameManager : MonoBehaviour {
         {
             Destroy(this);
         }
-        PlayerPrefs.SetInt("_mgInit", 1);
         GameObject goBird = Instantiate(birdPrefab, Vector3.zero, Quaternion.identity, startPos.transform);
         goBird.transform.localPosition = Vector3.zero;
         goBird.transform.localRotation = Quaternion.identity;
@@ -70,6 +69,7 @@ public class MinigameManager : MonoBehaviour {
 
     IEnumerator endGame(bool won)
     {
+        PlayerPrefs.SetInt("_gamemode", 3);
         loseOverlay.SetActive(true);
         loseOverlay.transform.GetChild(0).GetComponent<Text>().text = string.Format(won? winText : loseText, birdComponent.GetScore());
         yield return new WaitForSeconds(3);

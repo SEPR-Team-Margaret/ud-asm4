@@ -5,12 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour {
 
-	public void Play (){
+	public void Play (bool neutralPlayer){
+        PlayerPrefs.SetInt("_gamemode", neutralPlayer ? 1 : 0);
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
 	}
 
+    public void PlayLoad()
+    {
+        PlayerPrefs.SetInt("_gamemode", 2);
+        SceneManager.LoadScene(1);
+    }
+
 	public void Quit (){
-		Debug.Log ("QUIT!");
 		Application.Quit();
 	}
 }

@@ -14,7 +14,7 @@ public class Dialog : MonoBehaviour
 
     public enum DialogType
     {
-        EndGame, PlayerElimated
+        EndGame, PlayerElimated, SaveQuit
     }
 
     public void setDialogType(DialogType type)
@@ -28,12 +28,22 @@ public class Dialog : MonoBehaviour
                 texture.transform.GetChild(2).gameObject.SetActive(false);
                 texture.transform.GetChild(3).gameObject.SetActive(true);
                 texture.transform.GetChild(4).gameObject.SetActive(true);
+                texture.transform.GetChild(5).gameObject.SetActive(false);
                 break;
             case DialogType.PlayerElimated:
                 texture.transform.GetChild(0).GetComponent<Text>().text = "ELIMINATED!";
                 texture.transform.GetChild(2).gameObject.SetActive(true);
                 texture.transform.GetChild(3).gameObject.SetActive(false);
                 texture.transform.GetChild(4).gameObject.SetActive(false);
+                texture.transform.GetChild(5).gameObject.SetActive(false);
+                break;
+            case DialogType.SaveQuit:
+                texture.transform.GetChild(0).GetComponent<Text>().text = "OPTIONS";
+                texture.transform.GetChild(1).GetComponent<Text>().text = "";
+                texture.transform.GetChild(2).gameObject.SetActive(false);
+                texture.transform.GetChild(3).gameObject.SetActive(false);
+                texture.transform.GetChild(4).gameObject.SetActive(true);
+                texture.transform.GetChild(5).gameObject.SetActive(true);
                 break;
         }
     }

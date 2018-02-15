@@ -1,8 +1,7 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class Game : MonoBehaviour {
@@ -19,6 +18,7 @@ public class Game : MonoBehaviour {
     [SerializeField] private bool gameFinished = false;
     [SerializeField] private bool testMode = false;
     public string saveFilePath;
+    private bool isSaveQuitMenuOpen = false;
 
     private UnityEngine.UI.Text actionsRemaining;
 
@@ -74,6 +74,19 @@ public class Game : MonoBehaviour {
         return System.Array.IndexOf(players, player);
     }
 
+    public void openSaveQuitMenu()
+    {
+        if (isSaveQuitMenuOpen)
+        {
+            dialog.Close();
+            isSaveQuitMenuOpen = false;
+            return;
+        }
+        isSaveQuitMenuOpen = true;
+        dialog.setDialogType(Dialog.DialogType.SaveQuit);
+        dialog.Show();
+    }
+
     /// <summary>
     /// Finds the sector the VC is assigned to
     /// </summary>
@@ -84,7 +97,7 @@ public class Game : MonoBehaviour {
         {
             if (sector.isVC())
             {
-                return System.Array.IndexOf(sectors, sector);
+                return Array.IndexOf(sectors, sector);
             }
         }
         return -1;
@@ -101,7 +114,7 @@ public class Game : MonoBehaviour {
                 players[i].SetHuman(true);
             }
             GameObject.Find("PlayerNeutralUI").SetActive(false);
-            players[NUMBER_OF_PLAYERS] = GameObject.Find("Player4").GetComponent<Player>();
+            players[NUMBER_OF_PLAYERS - 1] = GameObject.Find("Player4").GetComponent<Player>();
         }
         else
         {
@@ -163,7 +176,7 @@ public class Game : MonoBehaviour {
             while (!playerAllocated) {
                 
 				// choose a landmarked sector at random
-                int randomIndex = Random.Range (0, landmarkedSectors.Length);
+                int randomIndex = UnityEngine.Random.Range (0, landmarkedSectors.Length);
 				
                 // if the sector is not yet allocated, allocate the player
                 if (((Sector) landmarkedSectors[randomIndex]).GetOwner() == null)
@@ -183,20 +196,11 @@ public class Game : MonoBehaviour {
         }
 
         //set Vice Chancellor
-        int rand = Random.Range(0, sectors.Length);
-        while (true)
-        {
-            if (sectors[rand].GetLandmark() == null)
-            {
-                sectors[rand].setVC(true);
-                break;
-            }
-            else
-            {
-                rand = Random.Range(0, sectors.Length);
-            }
-        }
-
+        int rand = UnityEngine.Random.Range(0, sectors.Length);
+        while (sectors[rand].GetLandmark() != null)
+            rand = UnityEngine.Random.Range(0, sectors.Length);
+        sectors[rand].setVC(true);
+        Debug.Log(sectors[rand].name);
     }
 
     private Sector[] GetLandmarkedSectors(Sector[] sectors) {
@@ -213,6 +217,11 @@ public class Game : MonoBehaviour {
         }
 
         return landmarkedSectors.ToArray();
+    }
+
+    public void SaveGame(string fileName)
+    {
+        SavedGame.Save(fileName, this);
     }
 
 
@@ -286,14 +295,14 @@ public class Game : MonoBehaviour {
     {
         NextTurnState();
         List<Unit> units = currentPlayer.units;
-        Unit selectedUnit = units[Random.Range(0, units.Count)];
+        Unit selectedUnit = units[UnityEngine.Random.Range(0, units.Count)];
         Sector[] adjacentSectors = selectedUnit.GetSector().GetAdjacentSectors();
         for (int i = 0; i < adjacentSectors.Length; i++)
         {
             if (adjacentSectors[i].GetUnit() != null)
                 adjacentSectors = adjacentSectors.Where(w => w != adjacentSectors[i]).ToArray();
         }
-        selectedUnit.MoveTo(adjacentSectors[Random.Range(0, adjacentSectors.Length)]);
+        selectedUnit.MoveTo(adjacentSectors[UnityEngine.Random.Range(0, adjacentSectors.Length)]);
     }
 
     /// <summary>
@@ -309,6 +318,12 @@ public class Game : MonoBehaviour {
         switch (turnState)
         {
             case TurnState.Move1:
+                if (!currentPlayer.hasUnits())
+                {
+                    turnState = TurnState.EndOfTurn;
+                    actionsRemaining.text = "0";
+                    break;
+                }
                 turnState = TurnState.Move2;
                 actionsRemaining.text = "1";
                 break;
@@ -452,27 +467,13 @@ public class Game : MonoBehaviour {
 		}
 	}
 
-    /// <summary>
-    /// 
-    /// Action to be carried out when the menu button is pressed
-    /// Opens dialog asking player if they would like to 
-    ///     Quit Game
-    ///     Save & Quit Game
-    ///     Return To Game
-    /// 
-    /// </summary>
-    private void MenuButtonPressed()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-    }
-
     //modified by Peter
     /// <summary>
     /// 
     /// Initializes a new game
     /// 
     /// </summary>
-    public void Initialize () {
+    public void Initialize (bool neutralPlayer) {
 
         #region Setup GUI components (Added by Dom 06/02/2018)
         // initialize the game
@@ -480,14 +481,12 @@ public class Game : MonoBehaviour {
 
         UnityEngine.UI.Button endTurnButton = GameObject.Find("End_Turn_Button").GetComponent<UnityEngine.UI.Button>();
         endTurnButton.onClick.AddListener(EndTurn);
-
-        UnityEngine.UI.Button menuButton = GameObject.Find("Menu_Button").GetComponent<UnityEngine.UI.Button>();
-        menuButton.onClick.AddListener(MenuButtonPressed);
+        
         #endregion
 
         // create a specified number of human players
         // *** currently hard-wired to 2 for testing ***
-        CreatePlayers(true);
+        CreatePlayers(neutralPlayer);
 
         // initialize the map and allocate players to landmarks
         InitializeMap();
@@ -522,9 +521,6 @@ public class Game : MonoBehaviour {
 
         UnityEngine.UI.Button endTurnButton = GameObject.Find("End_Turn_Button").GetComponent<UnityEngine.UI.Button>();
         endTurnButton.onClick.AddListener(EndTurn);
-
-        UnityEngine.UI.Button menuButton = GameObject.Find("Menu_Button").GetComponent<UnityEngine.UI.Button>();
-        menuButton.onClick.AddListener(MenuButtonPressed);
 
         if (savedGame.player4Controller.Equals("human"))
         {
@@ -710,7 +706,7 @@ public class Game : MonoBehaviour {
         if (triggerDialog)
         {
             triggerDialog = false;
-            dialog.setDialogType(Dialog.DialogType.EndGame);
+            dialog.setDialogType(Dialog.DialogType.SaveQuit);
             dialog.setPlayerName("PLAYER 1");
             dialog.Show();
         }
@@ -738,4 +734,21 @@ public class Game : MonoBehaviour {
                 EndGame();
         }
     }
+
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+
+
+    internal void GiveReward()
+    {
+
+        int rewardLevel = PlayerPrefs.GetInt("_mgScore");
+        // REWARD TO BE ADDED TO PLAYER
+        Debug.Log("Player " + (Array.IndexOf(players, currentPlayer) + 1) + " has won " + rewardLevel + " points");
+
+    }
+
+
 }
