@@ -10,7 +10,7 @@ public class Initializer : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        game.Initialize(SavedGame.Load("test1"));
-        //game.Initialize();
+        //game.Initialize(SavedGame.Load("test1"));
+        game.Initialize();
     }
 }
