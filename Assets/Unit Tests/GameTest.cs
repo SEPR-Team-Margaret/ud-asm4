@@ -3,6 +3,7 @@ using UnityEngine.TestTools;
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class GameTest 
 {
@@ -26,7 +27,22 @@ public class GameTest
 
         yield return null;
     }
-    
+
+    // Test added by Owain
+    public IEnumerator CreatePlayers_ThreePlayersHumanAndOneNeutral()
+    {
+        Setup();
+
+        // ensure game with three players and one neutral is accurate
+        game.GetComponent<Game>().CreatePlayers(true);
+        Assert.IsTrue(game.GetComponent<Game>().players[0].IsHuman());
+        Assert.IsTrue(game.GetComponent<Game>().players[1].IsHuman());
+        Assert.IsTrue(game.GetComponent<Game>().players[2].IsHuman());
+        Assert.IsTrue(game.GetComponent<Game>().players[3].IsNeutral());
+
+        yield return null;
+    }
+
 
     [UnityTest]
     public IEnumerator InitializeMap_OneLandmarkAllocatedWithUnitPerPlayer() {
@@ -160,6 +176,32 @@ public class GameTest
         yield return null;
     }
 
+    // Test added by Owain
+    [UnityTest]
+    public IEnumerator NeutralPlayerTurn_EnsureNeutralPlayerMovesCorrectly()
+    {
+        Setup();
+        
+        List<Unit> units = game.currentPlayer.units;
+        Unit selectedUnit = units[Random.Range(0, units.Count)];
+        Sector[] adjacentSectors = selectedUnit.GetSector().GetAdjacentSectors();
+        for (int i = 0; i < adjacentSectors.Length; i++)
+        {
+            if (adjacentSectors[i].GetUnit() != null || adjacentSectors[i].isVC())
+                adjacentSectors = adjacentSectors.Where(w => w != adjacentSectors[i]).ToArray();
+        }
+        selectedUnit.MoveTo(adjacentSectors[Random.Range(0, adjacentSectors.Length)]);
+
+        // Check that the neutral player is only moving to sectors that do not already contain units
+        // Check that the neutral player is not moving to a sector containing the vice chancellor
+        foreach (Sector sector in adjacentSectors)
+        {
+            Assert.IsTrue(sector.GetUnit() == null);
+            Assert.IsFalse(sector.isVC());
+        }
+
+        yield return null;
+    }
 
     [UnityTest]
     public IEnumerator NextTurnState_TurnStateProgressesCorrectly() {
