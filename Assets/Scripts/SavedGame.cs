@@ -82,4 +82,11 @@ public static class SavedGame
         }
         return saves;
     }
+
+
+    public static void DeleteFile(string filename)
+    {
+        string filePath = Application.persistentDataPath + "/";
+        File.Delete(filePath + filename);
+    }
 }

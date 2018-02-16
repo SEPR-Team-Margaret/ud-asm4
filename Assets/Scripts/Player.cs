@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
@@ -276,6 +277,15 @@ public class Player : MonoBehaviour {
                     previousOwner.defence -= landmark.GetAmount();
             }
         }
+
+        if (sector.isVC())
+        {
+            SavedGame.Save("_tmp", game);
+            SceneManager.LoadScene(2); 
+
+        }
+
+
     }
 
     /// <summary>
@@ -318,6 +328,10 @@ public class Player : MonoBehaviour {
             return false;
     }
     
+    public bool hasUnits()
+    {
+        return units.Count > 0;
+    }
 
     /// <summary>
     /// 
