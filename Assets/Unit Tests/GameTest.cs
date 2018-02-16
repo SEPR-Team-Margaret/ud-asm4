@@ -80,7 +80,7 @@ public class GameTest
     public IEnumerator NoUnitSelected_ReturnsFalseWhenUnitIsSelected() {
         
         Setup();
-        game.Initialize();
+        game.Initialize(false);
 
         // clear any selected units
         foreach (Player player in game.players)

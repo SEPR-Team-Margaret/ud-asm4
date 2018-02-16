@@ -32,6 +32,7 @@ public class PlayerUI : MonoBehaviour {
         if (player.IsNeutral())
         {
             header.text = "Neutral";
+            headerHighlight.text = header.text;
         }
     }
 
