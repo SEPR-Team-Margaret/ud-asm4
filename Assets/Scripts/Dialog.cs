@@ -17,7 +17,13 @@ public class Dialog : MonoBehaviour
         EndGame, PlayerElimated, SaveQuit
     }
 
-    public void setDialogType(DialogType type)
+    /// <summary>
+    /// 
+    /// Sets up the dialog in the format of the passed dialog type
+    /// 
+    /// </summary>
+    /// <param name="type">The type that this dialog should be set up in the form of</param>
+    public void SetDialogType(DialogType type)
     {
         // Updates the dialog with the different buttons needed for each mode
         this.type = type;
@@ -48,7 +54,13 @@ public class Dialog : MonoBehaviour
         }
     }
 
-    public void setPlayerName(string name)
+    /// <summary>
+    /// 
+    /// Sets the players name in this dialog
+    /// 
+    /// </summary>
+    /// <param name="name">The pla yer's name who this dialog refers to</param>
+    public void SetPlayerName(string name)
     {
 
         switch (type)
@@ -62,22 +74,42 @@ public class Dialog : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 
+    /// Displays this dialog
+    /// 
+    /// </summary>
     public void Show()
     {
         texture.SetActive(true);
     }
 
+    /// <summary>
+    /// 
+    /// Closes this dialog
+    /// 
+    /// </summary>
     public void Close()
     {
         Debug.Log("Closing");
         texture.SetActive(false);
     }
 
+    /// <summary>
+    /// 
+    /// Changes to the previous sce3ne
+    /// 
+    /// </summary>
     public void Exit()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
+    /// <summary>
+    /// 
+    /// Loads the main menu scene
+    /// 
+    /// </summary>
     public void Restart()
     {
         SceneManager.LoadScene(0);

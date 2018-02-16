@@ -9329,7 +9329,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 369558830}
-        m_MethodName: openSaveQuitMenu
+        m_MethodName: OpenSaveQuitMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

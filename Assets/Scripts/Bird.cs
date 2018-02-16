@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
+//Added by Jack
 [RequireComponent(typeof(Rigidbody))]
 public class Bird : MonoBehaviour
 {
@@ -19,16 +20,25 @@ public class Bird : MonoBehaviour
 
     Rigidbody rb;
 
-
     bool dead = false;
     bool paused = true;
 
+    /// <summary>
+    /// 
+    /// Sets up bird from scene components
+    /// 
+    /// </summary>
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         renderer = GetComponent<MeshRenderer>();
     }
 
+    /// <summary>
+    /// 
+    /// Update bird position
+    /// 
+    /// </summary>
     public void Update()
     {
         float dx = 0;
@@ -43,15 +53,7 @@ public class Bird : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, -yVel, 0);
             return;
         }
-        /*if (Input.GetKey(KeyCode.RightArrow))
-        {
-            dx = -speed;
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            dx = speed;
-        }*/
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
             yVel = -jumpForce;
             renderer.material = states[1];
@@ -69,21 +71,44 @@ public class Bird : MonoBehaviour
         renderer.material = states[0];
     }
 
+    /// <summary>
+    /// 
+    /// Gets the player's current score
+    /// 
+    /// </summary>
+    /// <returns>The player's current score</returns>
     public int GetScore()
     {
         return score;
     }
 
+    /// <summary>
+    /// 
+    /// Returns if the bird is dead or not
+    /// 
+    /// </summary>
+    /// <returns>True if bird is dead, else false</returns>
     public bool IsDead()
     {
         return dead;
     }
 
+    /// <summary>
+    /// 
+    /// Unpauses the mini game
+    /// 
+    /// </summary>
     public void UnPause()
     {
         paused = false;
     }
 
+    /// <summary>
+    /// 
+    /// Handle the bird colliding with something
+    /// 
+    /// </summary>
+    /// <param name="collision">The collision event</param>
     private void OnCollisionEnter(Collision collision)
     {
         //Debug.Log("Collision Detected!");
@@ -100,15 +125,25 @@ public class Bird : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 
+    /// Returns if the game is paused or not
+    /// 
+    /// </summary>
+    /// <returns>True if game is paused else false</returns>
     internal bool IsPaused()
     {
         return paused;
     }
 
-    public void Die()
+    /// <summary>
+    /// 
+    /// Pauses the game
+    /// 
+    /// </summary>
+    public void Pause()
     {
         paused = true;
-        Debug.Log("Fucking dead bitch");
     }
 
 }

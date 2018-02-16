@@ -28,53 +28,116 @@ public class Game : MonoBehaviour {
 
     public bool[] eliminatedPlayers;
 
-
+    /// <summary>
+    /// 
+    /// Returns the current turn state
+    /// 
+    /// </summary>
+    /// <returns>The current turn state</returns>
     public TurnState GetTurnState() {
         return turnState;
     }
 
+    /// <summary>
+    /// 
+    /// Sets the current turn state
+    /// 
+    /// </summary>
+    /// <param name="turnState">The state the current turn state should be set to</param>
     public void SetTurnState(TurnState turnState) {
         this.turnState = turnState;
     }
 
+    /// <summary>
+    /// 
+    /// Returns if the game is finished
+    /// 
+    /// </summary>
+    /// <returns>True if game is finished else false</returns>
     public bool IsFinished() {
         return gameFinished;
     }
 
+    /// <summary>
+    /// 
+    /// Sets testmode to on
+    /// 
+    /// </summary>
     public void EnableTestMode() {
         testMode = true;
     }
 
+    /// <summary>
+    /// 
+    /// Turns off test mode
+    /// 
+    /// </summary>
     public void DisableTestMode() {
         testMode = false;
     }
 
+    /// <summary>
+    /// 
+    /// Returns an array of the players in this game
+    /// 
+    /// </summary>
+    /// <returns>Array of players in this game</returns>
     public Player[] GetPlayers()
     {
         return players;
     }
 
+    /// <summary>
+    /// 
+    /// Returns the array of sectors used in this game
+    /// 
+    /// </summary>
+    /// <returns>Array of sectors used in this game</returns>
     public Sector[] GetSectors()
     {
         return sectors;
     }
 
+    /// <summary>
+    /// 
+    /// Gets the object of the current player
+    /// 
+    /// </summary>
+    /// <returns></returns>
     public Player GetCurrentPlayer()
     {
         return currentPlayer;
     }
 
+    /// <summary>
+    /// 
+    /// Gets if this game is in testmode or not
+    /// 
+    /// </summary>
+    /// <returns>True if in testmode else false</returns>
     public bool GetTestMode()
     {
         return testMode;
     }
 
+    /// <summary>
+    /// 
+    /// Gets the index of the passed player object in the players array
+    /// 
+    /// </summary>
+    /// <param name="player">The player to find the index of</param>
+    /// <returns>The player objects index in players</returns>
     public int GetPlayerID(Player player)
     {
         return System.Array.IndexOf(players, player);
     }
 
-    public void openSaveQuitMenu()
+    /// <summary>
+    /// 
+    /// Triggers the Save and quit dialog
+    /// 
+    /// </summary>
+    public void OpenSaveQuitMenu()
     {
         if (isSaveQuitMenuOpen)
         {
@@ -83,7 +146,7 @@ public class Game : MonoBehaviour {
             return;
         }
         isSaveQuitMenuOpen = true;
-        dialog.setDialogType(Dialog.DialogType.SaveQuit);
+        dialog.SetDialogType(Dialog.DialogType.SaveQuit);
         dialog.Show();
     }
 
@@ -104,6 +167,14 @@ public class Game : MonoBehaviour {
     }
 
     //Re-done by Peter
+    /// <summary>
+    /// 
+    /// Sets up the players in the game
+    /// 3 human + 1 neutral if neutral player enabled
+    /// 4 human if no neutal player
+    /// 
+    /// </summary>
+    /// <param name="neutralPlayer">True if neutral player enabled else false</param>
     public void CreatePlayers(bool neutralPlayer)
     {
         // mark the specified number of players as human
@@ -144,11 +215,12 @@ public class Game : MonoBehaviour {
      }
 
     //modified by Peter
+    /// <summary>
+    /// 
+    /// initialize all sectors, allocate players to landmarks, and spawn units
+    /// 
+    /// </summary>
     public void InitializeMap() {
-
-        // initialize all sectors, allocate players to landmarks,
-        // and spawn units
-
 
 		// get an array of all sectors
         sectors = gameMap.GetComponentsInChildren<Sector>();
@@ -203,6 +275,13 @@ public class Game : MonoBehaviour {
         Debug.Log(sectors[rand].name);
     }
 
+    /// <summary>
+    /// 
+    /// Returns an array of sectors that contain landmarks from the passed array of sectors
+    /// 
+    /// </summary>
+    /// <param name="sectors">Sectors to search though</param>
+    /// <returns>Subset of sectors from sectors that contain landmarks</returns>
     private Sector[] GetLandmarkedSectors(Sector[] sectors) {
 
         // return a list of all sectors that contain landmarks from the given array
@@ -219,13 +298,24 @@ public class Game : MonoBehaviour {
         return landmarkedSectors.ToArray();
     }
 
+    /// <summary>
+    /// 
+    /// Saves this game to file
+    /// 
+    /// </summary>
+    /// <param name="fileName">Name of save game file</param>
     public void SaveGame(string fileName)
     {
         SavedGame.Save(fileName, this);
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex - 1);
     }
 
-
+    /// <summary>
+    /// 
+    /// Returns if there is a unit currently selected
+    /// 
+    /// </summary>
+    /// <returns>True if no unit is seleced else false</returns>
     public bool NoUnitSelected() {
         
         // return true if no unit is selected, false otherwise
@@ -395,8 +485,8 @@ public class Game : MonoBehaviour {
             if (players[i].IsEliminated() && eliminatedPlayers[i] == false)
             {
                 // Set up the dialog box and show it
-                dialog.setDialogType(Dialog.DialogType.PlayerElimated);
-                dialog.setPlayerName(players[i].name);
+                dialog.SetDialogType(Dialog.DialogType.PlayerElimated);
+                dialog.SetPlayerName(players[i].name);
                 dialog.Show();
                 eliminatedPlayers[i] = true; // ensure that the dialog is only shown once
                 players[i].Defeat(currentPlayer); // Releases all owned sectors
@@ -465,8 +555,8 @@ public class Game : MonoBehaviour {
 
         #region Show the winner dialog (Added by Jack 01/02/2018)
 
-        dialog.setDialogType(Dialog.DialogType.EndGame);
-        dialog.setPlayerName(GetWinner().name);
+        dialog.SetDialogType(Dialog.DialogType.EndGame);
+        dialog.SetPlayerName(GetWinner().name);
         dialog.Show();
 
         #endregion
@@ -730,8 +820,8 @@ public class Game : MonoBehaviour {
         if (triggerDialog)
         {
             triggerDialog = false;
-            dialog.setDialogType(Dialog.DialogType.SaveQuit);
-            dialog.setPlayerName("PLAYER 1");
+            dialog.SetDialogType(Dialog.DialogType.SaveQuit);
+            dialog.SetPlayerName("PLAYER 1");
             dialog.Show();
         }
         // if the current turn has ended and test mode is not enabled
@@ -758,20 +848,29 @@ public class Game : MonoBehaviour {
                 EndGame();
         }
     }
-
+    
     private void OnApplicationQuit()
     {
         PlayerPrefs.DeleteAll();
     }
 
-
+    /// <summary>
+    /// 
+    /// Allocates a reward to the player when they complete the mini game
+    /// Reward = (Number of coins collected + 1) / 2 added to attack and defence bonus
+    /// 
+    /// </summary>
     internal void GiveReward()
     {
-
         int rewardLevel = PlayerPrefs.GetInt("_mgScore");
         // REWARD TO BE ADDED TO PLAYER
-        Debug.Log("Player " + (Array.IndexOf(players, currentPlayer) + 1) + " has won " + rewardLevel + " points");
+        int bonus = (int)Mathf.Ceil((rewardLevel + 1) / 2);
+        currentPlayer.SetAttack(currentPlayer.GetAttack() + bonus);
+        currentPlayer.SetDefence(currentPlayer.GetDefence() + bonus);
 
+        UpdateGUI(); // update GUI with new bonuses
+
+        Debug.Log("Player " + (Array.IndexOf(players, currentPlayer) + 1) + " has won " + bonus + " points");
     }
 
 

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+// Added by Jack
 public class MinigameManager : MonoBehaviour {
 
     public static MinigameManager instance;
@@ -13,7 +14,7 @@ public class MinigameManager : MonoBehaviour {
     [SerializeField] GameObject uiOverlay, loseOverlay, minCoinSpawn, maxCoinSpawn;
     [SerializeField][Multiline] string initialText, winText, loseText;
     [SerializeField] Vector3 minPos, maxPos;
-    [SerializeField] float maxScore = 3;
+    [SerializeField] float maxScore = 6;
 
     List<GameObject> pillars = new List<GameObject>();
     List<GameObject> clouds = new List<GameObject>();
@@ -28,7 +29,11 @@ public class MinigameManager : MonoBehaviour {
         MovingPillars.Reset();
     }
 
-    // Use this for initialization
+    /// <summary>
+    /// 
+    /// Starts the mini game
+    /// 
+    /// </summary>
     void Start () {
         if (instance == null)
         {
@@ -42,15 +47,19 @@ public class MinigameManager : MonoBehaviour {
         goBird.transform.localPosition = Vector3.zero;
         goBird.transform.localRotation = Quaternion.identity;
         birdComponent = goBird.GetComponent<Bird>();
-        StartCoroutine(countdown());
+        StartCoroutine(Countdown());
 	}
 
-    // Update is called once per frame
+    /// <summary>
+    /// 
+    /// Updates the mini game
+    /// 
+    /// </summary>
     void Update() {
         Vector3 pos = birdComponent.transform.position;
         if (!(pos.x > minPos.x && pos.x < maxPos.x && pos.y > minPos.y && pos.y < maxPos.y))
         {
-            birdComponent.Die();
+            birdComponent.Pause();
         }
         if (birdComponent.GetScore() == maxScore  || birdComponent.IsDead())
         {
@@ -58,16 +67,22 @@ public class MinigameManager : MonoBehaviour {
             if (gameOver)
                 return;
             gameOver = true;
-            StartCoroutine(endGame(birdComponent.GetScore() == maxScore));
+            StartCoroutine(EndGame(birdComponent.GetScore() == maxScore));
         }
         if (birdComponent.IsPaused() == false)
         {
-            spawnPillar();
+            SpawnPillar();
         }
-        spawnCloud();
+        SpawnCloud();
     }
 
-    IEnumerator endGame(bool won)
+    /// <summary>
+    /// 
+    /// Ends the game and reloads the main game scene
+    /// 
+    /// </summary>
+    /// <param name="won">True if the player won the minigame else false</param>
+    IEnumerator EndGame(bool won)
     {
         PlayerPrefs.SetInt("_gamemode", 3);
         loseOverlay.SetActive(true);
@@ -76,7 +91,12 @@ public class MinigameManager : MonoBehaviour {
         SceneManager.LoadScene(1);
     }
 
-    IEnumerator countdown()
+    /// <summary>
+    /// 
+    /// Updates the countdown berfore the minigame starts
+    /// 
+    /// </summary>
+    IEnumerator Countdown()
     {
         for (int i = 3; i >= 0; i--)
         {
@@ -87,7 +107,19 @@ public class MinigameManager : MonoBehaviour {
         birdComponent.UnPause();
     }
 
-    private Vector3 getRandomValueBetweenWhilstAvoiding(Vector3 min, Vector3 max, Vector3 position, float range)
+    /// <summary>
+    /// 
+    /// Returns avector with a random x and z value, y = 0
+    /// x and z values are in range specified by min and max
+    /// total length of vector is less than range
+    /// 
+    /// </summary>
+    /// <param name="min">min x and z value</param>
+    /// <param name="max">max x and z value</param>
+    /// <param name="position">where to measure distance from</param>
+    /// <param name="range">Max length of vector</param>
+    /// <returns></returns>
+    private Vector3 GetRandomValueBetweenWhilstAvoiding(Vector3 min, Vector3 max, Vector3 position, float range)
     {
         Vector3 newPos = position;
         while (Vector3.Distance(newPos, position) <= range)
@@ -97,7 +129,12 @@ public class MinigameManager : MonoBehaviour {
         return newPos;
     }
 
-    public void spawnPillar()
+    /// <summary>
+    /// 
+    /// Adds a pilar to the minigame scene
+    /// 
+    /// </summary>
+    public void SpawnPillar()
     {
         // Random.value * (max - min) + min
         if (pillars.Count == 0 || pillars[pillars.Count - 1].transform.position.x <= 1.2)
@@ -109,20 +146,18 @@ public class MinigameManager : MonoBehaviour {
         }
     }
 
-    public void spawnCloud()
+    /// <summary>
+    /// 
+    /// Adds a cloud to the minigame scene
+    /// 
+    /// </summary>
+    public void SpawnCloud()
     {
         if (Random.value < 0.005f)
         {
             clouds.Add(Instantiate(cloudPrefab, new Vector3(10.5f, Random.value * 3 + 1.5f, Random.value * 0.2f - 0.1f + 6.21f), Quaternion.Euler(90, 180, 0)));
-            clouds[clouds.Count - 1].GetComponent<MovingPillars>().setSpeed(Random.value * 2 + 3);
+            clouds[clouds.Count - 1].GetComponent<MovingPillars>().SetSpeed(Random.value * 2 + 3);
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        /*if (birdComponent != null)
-            Gizmos.DrawWireSphere(birdComponent.transform.position, 2);*/
-        //Gizmos.DrawCube(0.5f * (minPos + maxPos), maxPos - minPos);
-    }
+    }  
 
 }

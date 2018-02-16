@@ -7,7 +7,11 @@ public class Initializer : MonoBehaviour {
 
     public Game game;
  
-    // Use this for initialization
+    /// <summary>
+    /// 
+    /// start the game
+    /// 
+    /// </summary>
     void Start()
     {
         switch (PlayerPrefs.GetInt("_gamemode", 0))

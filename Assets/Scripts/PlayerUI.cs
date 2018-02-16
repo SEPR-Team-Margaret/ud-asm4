@@ -13,6 +13,13 @@ public class PlayerUI : MonoBehaviour {
 	[SerializeField] private int numberOfSectors;
 	private Color defaultHeaderColor = new Color(0.2f, 0.2f, 0.2f, 1.0f);
 
+    /// <summary>
+    /// 
+    /// Loads all the components for a PlayerUI
+    /// 
+    /// </summary>
+    /// <param name="player">The player object for whom this UI is for</param>
+    /// <param name="player_id">ID of the player</param>
 	public void Initialize(Player player, int player_id) {
 
 		this.player = player;
@@ -36,6 +43,11 @@ public class PlayerUI : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// 
+    /// Update the text labels in the UI
+    /// 
+    /// </summary>
 	public void UpdateDisplay() {
 
 		percentOwned.text = Mathf.Round(100 * player.ownedSectors.Count / numberOfSectors).ToString() + "%";
@@ -44,10 +56,20 @@ public class PlayerUI : MonoBehaviour {
 
 	}
 
+    /// <summary>
+    /// 
+    /// Highlight the player's name in the UI
+    /// 
+    /// </summary>
 	public void Activate() {
 		header.color = player.GetColor();
 	}
 
+    /// <summary>
+    /// 
+    /// Un-highlight the player's name in the UI
+    /// 
+    /// </summary>
 	public void Deactivate() {
 		header.color = defaultHeaderColor;
 	}

@@ -23,7 +23,7 @@ public class MovingPillars : MonoBehaviour {
         stopped = false;
     }
 
-    public void setSpeed(float speed)
+    public void SetSpeed(float speed)
     {
         this.speed = speed;
     }
