@@ -486,7 +486,7 @@ public class Game : MonoBehaviour {
             {
                 // Set up the dialog box and show it
                 dialog.SetDialogType(Dialog.DialogType.PlayerElimated);
-                dialog.SetPlayerName(players[i].name);
+                dialog.SetDialogData(players[i].name);
                 dialog.Show();
                 eliminatedPlayers[i] = true; // ensure that the dialog is only shown once
                 players[i].Defeat(currentPlayer); // Releases all owned sectors
@@ -556,7 +556,7 @@ public class Game : MonoBehaviour {
         #region Show the winner dialog (Added by Jack 01/02/2018)
 
         dialog.SetDialogType(Dialog.DialogType.EndGame);
-        dialog.SetPlayerName(GetWinner().name);
+        dialog.SetDialogData(GetWinner().name);
         dialog.Show();
 
         #endregion
@@ -821,7 +821,7 @@ public class Game : MonoBehaviour {
         {
             triggerDialog = false;
             dialog.SetDialogType(Dialog.DialogType.SaveQuit);
-            dialog.SetPlayerName("PLAYER 1");
+            dialog.SetDialogData("PLAYER 1");
             dialog.Show();
         }
         // if the current turn has ended and test mode is not enabled
@@ -867,6 +867,12 @@ public class Game : MonoBehaviour {
         int bonus = (int)Mathf.Ceil((rewardLevel + 1) / 2);
         currentPlayer.SetAttack(currentPlayer.GetAttack() + bonus);
         currentPlayer.SetDefence(currentPlayer.GetDefence() + bonus);
+
+        dialog.SetDialogType(Dialog.DialogType.ShowText);
+
+        dialog.SetDialogData("REWARD!", string.Format("Well done, you have gained:\n+{0} attack\n+{0} defence", bonus));
+
+        dialog.Show();
 
         UpdateGUI(); // update GUI with new bonuses
 

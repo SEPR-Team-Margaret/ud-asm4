@@ -14,7 +14,7 @@ public class Dialog : MonoBehaviour
 
     public enum DialogType
     {
-        EndGame, PlayerElimated, SaveQuit
+        EndGame, PlayerElimated, SaveQuit, ShowText
     }
 
     /// <summary>
@@ -35,6 +35,7 @@ public class Dialog : MonoBehaviour
                 texture.transform.GetChild(3).gameObject.SetActive(true);
                 texture.transform.GetChild(4).gameObject.SetActive(true);
                 texture.transform.GetChild(5).gameObject.SetActive(false);
+                texture.transform.GetChild(6).gameObject.SetActive(false);
                 break;
             case DialogType.PlayerElimated:
                 texture.transform.GetChild(0).GetComponent<Text>().text = "ELIMINATED!";
@@ -42,6 +43,7 @@ public class Dialog : MonoBehaviour
                 texture.transform.GetChild(3).gameObject.SetActive(false);
                 texture.transform.GetChild(4).gameObject.SetActive(false);
                 texture.transform.GetChild(5).gameObject.SetActive(false);
+                texture.transform.GetChild(6).gameObject.SetActive(false);
                 break;
             case DialogType.SaveQuit:
                 texture.transform.GetChild(0).GetComponent<Text>().text = "OPTIONS";
@@ -50,7 +52,17 @@ public class Dialog : MonoBehaviour
                 texture.transform.GetChild(3).gameObject.SetActive(false);
                 texture.transform.GetChild(4).gameObject.SetActive(true);
                 texture.transform.GetChild(5).gameObject.SetActive(true);
+                texture.transform.GetChild(6).gameObject.SetActive(false);
                 break;
+            case DialogType.ShowText:
+                texture.transform.GetChild(0).GetComponent<Text>().text = "";
+                texture.transform.GetChild(2).gameObject.SetActive(false);
+                texture.transform.GetChild(3).gameObject.SetActive(false);
+                texture.transform.GetChild(4).gameObject.SetActive(false);
+                texture.transform.GetChild(5).gameObject.SetActive(false);
+                texture.transform.GetChild(6).gameObject.SetActive(true);
+                break;
+
         }
     }
 
@@ -60,16 +72,27 @@ public class Dialog : MonoBehaviour
     /// 
     /// </summary>
     /// <param name="name">The pla yer's name who this dialog refers to</param>
-    public void SetPlayerName(string name)
+    public void SetDialogData(string data)
     {
 
         switch (type)
         {
             case DialogType.EndGame:
-                texture.transform.GetChild(1).GetComponent<Text>().text = name + " WON!";
+                texture.transform.GetChild(1).GetComponent<Text>().text = data + " WON!";
                 break;
             case DialogType.PlayerElimated:
-                texture.transform.GetChild(1).GetComponent<Text>().text = name + " was eliminated";
+                texture.transform.GetChild(1).GetComponent<Text>().text = data + " was eliminated";
+                break;
+        }
+    }
+
+    public void SetDialogData(string header, string body)
+    {
+        switch (type)
+        {
+            case DialogType.ShowText:
+                texture.transform.GetChild(0).GetComponent<Text>().text = header;
+                texture.transform.GetChild(1).GetComponent<Text>().text = body;
                 break;
         }
     }
