@@ -365,7 +365,7 @@ public class Game : MonoBehaviour {
                 currentPlayer = players[nextPlayerIndex];
                 players[nextPlayerIndex].SetActive(true);
                 players[nextPlayerIndex].GetGui().Activate();
-                if (currentPlayer.IsNeutral())
+                if (currentPlayer.IsNeutral() && !currentPlayer.IsEliminated())
                 {
                     NeutralPlayerTurn();
                     NeutralPlayerTurn(); 
@@ -686,38 +686,38 @@ public class Game : MonoBehaviour {
         }
 
         // set sector owners
-        setupSectorOwner(0, savedGame.sector01Owner);
-        setupSectorOwner(1, savedGame.sector02Owner);
-        setupSectorOwner(2, savedGame.sector03Owner);
-        setupSectorOwner(3, savedGame.sector04Owner);
-        setupSectorOwner(4, savedGame.sector05Owner);
-        setupSectorOwner(5, savedGame.sector06Owner);
-        setupSectorOwner(6, savedGame.sector07Owner);
-        setupSectorOwner(7, savedGame.sector08Owner);
-        setupSectorOwner(8, savedGame.sector09Owner);
-        setupSectorOwner(9, savedGame.sector10Owner);
-        setupSectorOwner(10, savedGame.sector11Owner);
-        setupSectorOwner(11, savedGame.sector12Owner);
-        setupSectorOwner(12, savedGame.sector13Owner);
-        setupSectorOwner(13, savedGame.sector14Owner);
-        setupSectorOwner(14, savedGame.sector15Owner);
-        setupSectorOwner(15, savedGame.sector16Owner);
-        setupSectorOwner(16, savedGame.sector17Owner);
-        setupSectorOwner(17, savedGame.sector18Owner);
-        setupSectorOwner(18, savedGame.sector19Owner);
-        setupSectorOwner(19, savedGame.sector20Owner);
-        setupSectorOwner(20, savedGame.sector21Owner);
-        setupSectorOwner(21, savedGame.sector22Owner);
-        setupSectorOwner(22, savedGame.sector23Owner);
-        setupSectorOwner(23, savedGame.sector24Owner);
-        setupSectorOwner(24, savedGame.sector25Owner);
-        setupSectorOwner(25, savedGame.sector26Owner);
-        setupSectorOwner(26, savedGame.sector27Owner);
-        setupSectorOwner(27, savedGame.sector28Owner);
-        setupSectorOwner(28, savedGame.sector29Owner);
-        setupSectorOwner(29, savedGame.sector30Owner);
-        setupSectorOwner(30, savedGame.sector31Owner);
-        setupSectorOwner(31, savedGame.sector32Owner);
+        SetupSectorOwner(0, savedGame.sector01Owner);
+        SetupSectorOwner(1, savedGame.sector02Owner);
+        SetupSectorOwner(2, savedGame.sector03Owner);
+        SetupSectorOwner(3, savedGame.sector04Owner);
+        SetupSectorOwner(4, savedGame.sector05Owner);
+        SetupSectorOwner(5, savedGame.sector06Owner);
+        SetupSectorOwner(6, savedGame.sector07Owner);
+        SetupSectorOwner(7, savedGame.sector08Owner);
+        SetupSectorOwner(8, savedGame.sector09Owner);
+        SetupSectorOwner(9, savedGame.sector10Owner);
+        SetupSectorOwner(10, savedGame.sector11Owner);
+        SetupSectorOwner(11, savedGame.sector12Owner);
+        SetupSectorOwner(12, savedGame.sector13Owner);
+        SetupSectorOwner(13, savedGame.sector14Owner);
+        SetupSectorOwner(14, savedGame.sector15Owner);
+        SetupSectorOwner(15, savedGame.sector16Owner);
+        SetupSectorOwner(16, savedGame.sector17Owner);
+        SetupSectorOwner(17, savedGame.sector18Owner);
+        SetupSectorOwner(18, savedGame.sector19Owner);
+        SetupSectorOwner(19, savedGame.sector20Owner);
+        SetupSectorOwner(20, savedGame.sector21Owner);
+        SetupSectorOwner(21, savedGame.sector22Owner);
+        SetupSectorOwner(22, savedGame.sector23Owner);
+        SetupSectorOwner(23, savedGame.sector24Owner);
+        SetupSectorOwner(24, savedGame.sector25Owner);
+        SetupSectorOwner(25, savedGame.sector26Owner);
+        SetupSectorOwner(26, savedGame.sector27Owner);
+        SetupSectorOwner(27, savedGame.sector28Owner);
+        SetupSectorOwner(28, savedGame.sector29Owner);
+        SetupSectorOwner(29, savedGame.sector30Owner);
+        SetupSectorOwner(30, savedGame.sector31Owner);
+        SetupSectorOwner(31, savedGame.sector32Owner);
 
         // set unit level in sectors
         setupUnit(0, savedGame.sector01Level);
@@ -768,7 +768,7 @@ public class Game : MonoBehaviour {
     /// </summary>
     /// <param name="sectorId">id of sector being set</param>
     /// <param name="ownerId">id of player</param>
-    private void setupSectorOwner(int sectorId, int ownerId)
+    private void SetupSectorOwner(int sectorId, int ownerId)
     {
         if (ownerId == -1)
         {
@@ -870,7 +870,7 @@ public class Game : MonoBehaviour {
 
         dialog.SetDialogType(Dialog.DialogType.ShowText);
 
-        dialog.SetDialogData("REWARD!", string.Format("Well done, you have gained:\n+{0} attack\n+{0} defence", bonus));
+        dialog.SetDialogData("REWARD!", string.Format("Well done, you have gained:\n+{0} Attack\n+{0} Defence", bonus));
 
         dialog.Show();
 

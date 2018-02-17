@@ -29,6 +29,7 @@ public class GameTest
     }
 
     // Test added by Owain
+    [UnityTest]
     public IEnumerator CreatePlayers_ThreePlayersHumanAndOneNeutral()
     {
         Setup();
