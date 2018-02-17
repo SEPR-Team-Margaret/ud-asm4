@@ -17,7 +17,7 @@ public class Sector : MonoBehaviour {
     /// 
     /// </summary>
     /// <returns>True if sector contains vice chancellor else false</returns>
-    public bool isVC()
+    public bool IsVC()
     {
         return VC;
     }
@@ -29,7 +29,7 @@ public class Sector : MonoBehaviour {
     /// 
     /// </summary>
     /// <param name="VC">True if this sector should contain the VC else false</param>
-    public void setVC(bool VC)
+    public void SetVC(bool VC)
     {
         this.VC = VC;
     }
@@ -314,10 +314,7 @@ public class Sector : MonoBehaviour {
     /// <param name="attackingUnit"></param>
     /// <param name="defendingUnit"></param>
     public void MoveIntoHostileUnit(Unit attackingUnit, Unit defendingUnit) {
-
-        // start and resolve a conflict
-
-
+        
         // if the attacking unit wins
         if (Conflict(attackingUnit, defendingUnit))
         {
