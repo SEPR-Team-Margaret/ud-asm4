@@ -278,7 +278,7 @@ public class Player : MonoBehaviour {
             }
         }
 
-        if (sector.isVC())
+        if (sector.IsVC())
         {
             SavedGame.Save("_tmp", game);
             SceneManager.LoadScene(2); 
