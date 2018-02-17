@@ -188,7 +188,7 @@ public class GameTest
         Sector[] adjacentSectors = selectedUnit.GetSector().GetAdjacentSectors();
         for (int i = 0; i < adjacentSectors.Length; i++)
         {
-            if (adjacentSectors[i].GetUnit() != null || adjacentSectors[i].isVC())
+            if (adjacentSectors[i].GetUnit() != null || adjacentSectors[i].IsVC())
                 adjacentSectors = adjacentSectors.Where(w => w != adjacentSectors[i]).ToArray();
         }
         selectedUnit.MoveTo(adjacentSectors[Random.Range(0, adjacentSectors.Length)]);
@@ -198,7 +198,7 @@ public class GameTest
         foreach (Sector sector in adjacentSectors)
         {
             Assert.IsTrue(sector.GetUnit() == null);
-            Assert.IsFalse(sector.isVC());
+            Assert.IsFalse(sector.IsVC());
         }
 
         yield return null;

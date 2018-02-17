@@ -232,12 +232,12 @@ public class Unit : MonoBehaviour {
 
 			// increase level
 			level++;
-            updateUnitMaterial();
+            UpdateUnitMaterial();
 		}
 		
 	}
 
-    public void updateUnitMaterial()
+    public void UpdateUnitMaterial()
     {
         switch (level)
         {

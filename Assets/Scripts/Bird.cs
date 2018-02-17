@@ -57,7 +57,7 @@ public class Bird : MonoBehaviour
         {
             yVel = -jumpForce;
             renderer.material = states[1];
-            StartCoroutine(swapStates());
+            StartCoroutine(SwapStates());
             
         }
         rb.velocity = new Vector3(-dx, -yVel, 0);
@@ -65,7 +65,7 @@ public class Bird : MonoBehaviour
 
     }
 
-    IEnumerator swapStates()
+    IEnumerator SwapStates()
     {
         yield return new WaitForSeconds(0.1f);
         renderer.material = states[0];

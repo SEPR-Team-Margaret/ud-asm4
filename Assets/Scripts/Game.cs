@@ -158,7 +158,7 @@ public class Game : MonoBehaviour {
     {
         foreach (Sector sector in sectors)
         {
-            if (sector.isVC())
+            if (sector.IsVC())
             {
                 return Array.IndexOf(sectors, sector);
             }
@@ -271,7 +271,7 @@ public class Game : MonoBehaviour {
         int rand = UnityEngine.Random.Range(0, sectors.Length);
         while (sectors[rand].GetLandmark() != null)
             rand = UnityEngine.Random.Range(0, sectors.Length);
-        sectors[rand].setVC(true);
+        sectors[rand].SetVC(true);
         Debug.Log(sectors[rand].name);
     }
 
@@ -390,7 +390,7 @@ public class Game : MonoBehaviour {
         Sector[] adjacentSectors = selectedUnit.GetSector().GetAdjacentSectors();
         for (int i = 0; i < adjacentSectors.Length; i++)
         {
-            if (adjacentSectors[i].GetUnit() != null || adjacentSectors[i].isVC())
+            if (adjacentSectors[i].GetUnit() != null || adjacentSectors[i].IsVC())
                 adjacentSectors = adjacentSectors.Where(w => w != adjacentSectors[i]).ToArray();
         }
         selectedUnit.MoveTo(adjacentSectors[UnityEngine.Random.Range(0, adjacentSectors.Length)]);
@@ -720,41 +720,41 @@ public class Game : MonoBehaviour {
         SetupSectorOwner(31, savedGame.sector32Owner);
 
         // set unit level in sectors
-        setupUnit(0, savedGame.sector01Level);
-        setupUnit(1, savedGame.sector02Level);
-        setupUnit(2, savedGame.sector03Level);
-        setupUnit(3, savedGame.sector04Level);
-        setupUnit(4, savedGame.sector05Level);
-        setupUnit(5, savedGame.sector06Level);
-        setupUnit(6, savedGame.sector07Level);
-        setupUnit(7, savedGame.sector08Level);
-        setupUnit(8, savedGame.sector09Level);
-        setupUnit(9, savedGame.sector10Level);
-        setupUnit(10, savedGame.sector11Level);
-        setupUnit(11, savedGame.sector12Level);
-        setupUnit(12, savedGame.sector13Level);
-        setupUnit(13, savedGame.sector14Level);
-        setupUnit(14, savedGame.sector15Level);
-        setupUnit(15, savedGame.sector16Level);
-        setupUnit(16, savedGame.sector17Level);
-        setupUnit(17, savedGame.sector18Level);
-        setupUnit(18, savedGame.sector19Level);
-        setupUnit(19, savedGame.sector20Level);
-        setupUnit(20, savedGame.sector21Level);
-        setupUnit(21, savedGame.sector22Level);
-        setupUnit(22, savedGame.sector23Level);
-        setupUnit(23, savedGame.sector24Level);
-        setupUnit(24, savedGame.sector25Level);
-        setupUnit(25, savedGame.sector26Level);
-        setupUnit(26, savedGame.sector27Level);
-        setupUnit(27, savedGame.sector28Level);
-        setupUnit(28, savedGame.sector29Level);
-        setupUnit(29, savedGame.sector30Level);
-        setupUnit(30, savedGame.sector31Level);
-        setupUnit(31, savedGame.sector32Level);
+        SetupUnit(0, savedGame.sector01Level);
+        SetupUnit(1, savedGame.sector02Level);
+        SetupUnit(2, savedGame.sector03Level);
+        SetupUnit(3, savedGame.sector04Level);
+        SetupUnit(4, savedGame.sector05Level);
+        SetupUnit(5, savedGame.sector06Level);
+        SetupUnit(6, savedGame.sector07Level);
+        SetupUnit(7, savedGame.sector08Level);
+        SetupUnit(8, savedGame.sector09Level);
+        SetupUnit(9, savedGame.sector10Level);
+        SetupUnit(10, savedGame.sector11Level);
+        SetupUnit(11, savedGame.sector12Level);
+        SetupUnit(12, savedGame.sector13Level);
+        SetupUnit(13, savedGame.sector14Level);
+        SetupUnit(14, savedGame.sector15Level);
+        SetupUnit(15, savedGame.sector16Level);
+        SetupUnit(16, savedGame.sector17Level);
+        SetupUnit(17, savedGame.sector18Level);
+        SetupUnit(18, savedGame.sector19Level);
+        SetupUnit(19, savedGame.sector20Level);
+        SetupUnit(20, savedGame.sector21Level);
+        SetupUnit(21, savedGame.sector22Level);
+        SetupUnit(22, savedGame.sector23Level);
+        SetupUnit(23, savedGame.sector24Level);
+        SetupUnit(24, savedGame.sector25Level);
+        SetupUnit(25, savedGame.sector26Level);
+        SetupUnit(26, savedGame.sector27Level);
+        SetupUnit(27, savedGame.sector28Level);
+        SetupUnit(28, savedGame.sector29Level);
+        SetupUnit(29, savedGame.sector30Level);
+        SetupUnit(30, savedGame.sector31Level);
+        SetupUnit(31, savedGame.sector32Level);
 
         //set VC sector
-        sectors[savedGame.VCSector].setVC(true);
+        sectors[savedGame.VCSector].SetVC(true);
 
         UpdateGUI();
 
@@ -786,7 +786,7 @@ public class Game : MonoBehaviour {
     /// </summary>
     /// <param name="sectorIndex">Sector id of sector being setup</param>
     /// <param name="level">unit level on sector; -1 if no unit on this sector</param>
-    private void setupUnit(int sectorIndex, int level)
+    private void SetupUnit(int sectorIndex, int level)
     {
         if (level == -1)
         {
@@ -795,7 +795,7 @@ public class Game : MonoBehaviour {
         Unit unit = Instantiate(sectors[sectorIndex].GetOwner().GetUnitPrefab()).GetComponent<Unit>();
         unit.Initialize(sectors[sectorIndex].GetOwner(), sectors[sectorIndex]);
         unit.SetLevel(level);
-        unit.updateUnitMaterial();
+        unit.UpdateUnitMaterial();
         unit.MoveTo(sectors[sectorIndex]);
         sectors[sectorIndex].GetOwner().units.Add(unit);
     }
