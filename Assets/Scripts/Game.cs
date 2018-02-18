@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-/* GAME EXECUTABLE http://riskydevelopments.co.uk/ud/UniversityDominationAss3.exe */
+/* GAME EXECUTABLE http://riskydevelopments.co.uk/ud/UniversityDominationAss3.zip */
 
 [System.Serializable]
 public class Game : MonoBehaviour {

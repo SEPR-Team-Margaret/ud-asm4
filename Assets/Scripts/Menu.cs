@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-/* GAME EXECUTABLE http://riskydevelopments.co.uk/ud/UniversityDominationAss3.exe */
+/* GAME EXECUTABLE http://riskydevelopments.co.uk/ud/UniversityDominationAss3.zip */
 
 // Added by Gio
 public class Menu : MonoBehaviour {
