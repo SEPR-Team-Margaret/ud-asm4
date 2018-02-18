@@ -193,21 +193,26 @@ public class GameTest
         Setup();
 
         List<Unit> units = game.currentPlayer.units;
-        Unit selectedUnit = units[Random.Range(0, units.Count)];
+        Unit selectedUnit = units[UnityEngine.Random.Range(0, units.Count)];
         Sector[] adjacentSectors = selectedUnit.GetSector().GetAdjacentSectors();
+        List<Sector> possibleSectors = new List<Sector>();
         for (int i = 0; i < adjacentSectors.Length; i++)
         {
-            if (adjacentSectors[i].GetUnit() != null || adjacentSectors[i].IsVC())
-                adjacentSectors = adjacentSectors.Where(w => w != adjacentSectors[i]).ToArray();
+            bool neutralOrEmpty = adjacentSectors[i].GetOwner() == null || adjacentSectors[i].GetOwner().IsNeutral();
+            if (neutralOrEmpty && !adjacentSectors[i].IsVC())
+                possibleSectors.Add(adjacentSectors[i]);
         }
-        selectedUnit.MoveTo(adjacentSectors[Random.Range(0, adjacentSectors.Length)]);
+        if (possibleSectors.Count > 0)
+        {
+            selectedUnit.MoveTo(possibleSectors[UnityEngine.Random.Range(0, possibleSectors.Count - 1)]);
+        }
+    
 
         // Check that the neutral player is only moving to sectors that do not already contain units
         // Check that the neutral player is not moving to a sector containing the vice chancellor
         foreach (Sector sector in adjacentSectors)
         {
-            Assert.IsTrue(sector.GetUnit() == null);
-            Assert.IsFalse(sector.IsVC());
+            Assert.IsTrue(sector.GetOwner() == null || sector.GetOwner().IsNeutral() && !sector.IsVC());
         }
 
         yield return null;
