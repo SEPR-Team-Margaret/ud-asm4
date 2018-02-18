@@ -10,6 +10,15 @@ public class SectorTest
     private Player[] players;
 	private PlayerUI[] gui;
 
+    private void Setup()
+    {
+        TestSetup t = new TestSetup();
+        this.game = t.GetGame();
+        this.map = t.GetMap();
+        this.players = t.GetPlayers();
+        this.gui = t.GetPlayerUIs();
+    }
+
     [UnityTest]
     public IEnumerator SetOwner_SectorOwnerAndColorCorrect() {
         
@@ -78,18 +87,12 @@ public class SectorTest
         
         Setup();
 
-        Sector sector = map.sectors[0];
-        sector.SetUnit(null);
+        Sector sector = map.sectors[0]; // sector 0 contains a unit by default
+        Assert.NotNull(sector.GetUnit());
 
         sector.ClearUnit();
         Assert.IsNull(sector.GetUnit());
-
-        sector.SetUnit(MonoBehaviour.Instantiate(players[0].GetUnitPrefab()).GetComponent<Unit>());
-        Assert.IsNotNull(sector.GetUnit());
-
-        sector.ClearUnit();
-        Assert.IsNull(sector.GetUnit());
-
+        
         yield return null;
     }
 
@@ -336,61 +339,7 @@ public class SectorTest
 
         yield return null;
     }
-
-
-    private void Setup() {
-        
-        // initialize the game, map, and players with any references needed
-        // the "GameManager" asset contains a copy of the GameManager object
-        // in the 4x4 Test, but its script lacks references to players & the map
-        game = MonoBehaviour.Instantiate(Resources.Load<GameObject>("GameManager")).GetComponent<Game>();
-
-        // the "Map" asset is a copy of the 4x4 Test map, complete with
-        // adjacent sectors and landmarks at (0,1), (1,3), (2,0), and (3,2),
-        // but its script lacks references to the game & sectors
-        map = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Map")).GetComponent<Map>();
-
-        // the "Players" asset contains 4 prefab Player game objects; only
-        // references not in its script is each player's color
-        players = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Players")).GetComponentsInChildren<Player>();
-
-		// the "GUI" asset contains the PlayerUI object for each Player
-		gui = MonoBehaviour.Instantiate(Resources.Load<GameObject>("GUI")).GetComponentsInChildren<PlayerUI>();
-
-		// the "Scenery" asset contains the camera and light source of the 4x4 Test
-		// can uncomment to view scene as tests run, but significantly reduces speed
-		//MonoBehaviour.Instantiate(Resources.Load<GameObject>("Scenery"));
-
-        // establish references from game to players & map
-        game.players = players;
-        game.gameMap = map.gameObject;
-        game.EnableTestMode();
-
-        // establish references from map to game & sectors (from children)
-        map.game = game;
-        map.sectors = map.gameObject.GetComponentsInChildren<Sector>();
-
-        // establish references from each player to the game
-        foreach (Player player in players)
-        {
-            player.SetGame(game);
-        }
-
-        // establish references to SSB 64 colors for each player
-        players[0].SetColor(Color.red);
-        players[1].SetColor(Color.blue);
-        players[2].SetColor(Color.yellow);
-        players[3].SetColor(Color.green);
-
-		// establish references to a PlayerUI and Game for each player & initialize GUI
-		for (int i = 0; i < players.Length; i++) 
-		{
-			players[i].SetGui(gui[i]);
-			players[i].SetGame(game);
-			players[i].GetGui().Initialize(players[i], i + 1);
-		}
-    }
-
+    
     private void ResetSectors(Sector sectorA, Sector sectorB) {
         
         // re-initialize sectors for in between test cases in MoveIntoHostileUnitTest

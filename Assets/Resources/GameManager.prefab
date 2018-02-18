@@ -52,12 +52,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   players:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  gameMap: {fileID: 0}
-  currentPlayer: {fileID: 0}
+  - {fileID: 114364557242802902, guid: 51e10a00e6473c34e877f29cdbb22425, type: 2}
+  - {fileID: 114833906439526722, guid: 51e10a00e6473c34e877f29cdbb22425, type: 2}
+  - {fileID: 114874954980118012, guid: 51e10a00e6473c34e877f29cdbb22425, type: 2}
+  - {fileID: 114912479347063014, guid: 51e10a00e6473c34e877f29cdbb22425, type: 2}
+  gameMap: {fileID: 1632274046267084, guid: aee31a61dbe2b1b408bf78ee082c7565, type: 2}
+  currentPlayer: {fileID: 114364557242802902, guid: 51e10a00e6473c34e877f29cdbb22425,
+    type: 2}
+  sectors: []
   turnState: 0
   gameFinished: 0
-  testMode: 0
+  testMode: 1
+  saveFilePath: 
+  dialog: {fileID: 0}
+  triggerDialog: 0
+  eliminatedPlayers: 

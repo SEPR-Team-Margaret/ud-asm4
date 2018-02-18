@@ -20,13 +20,51 @@ public class Game : MonoBehaviour {
     public string saveFilePath;
     private bool isSaveQuitMenuOpen = false;
 
-    private UnityEngine.UI.Text actionsRemaining;
+    [SerializeField] private UnityEngine.UI.Text actionsRemaining;
 
     [SerializeField] Dialog dialog;
 
     public bool triggerDialog = false;
 
     public bool[] eliminatedPlayers;
+        
+    //modified by Peter
+    /// <summary>
+    /// 
+    /// Initializes a new game
+    /// 
+    /// </summary>
+    public void Initialize(bool neutralPlayer)
+    {
+        if (testMode) return;
+        #region Setup GUI components (Added by Dom 06/02/2018)
+        // initialize the game
+        actionsRemaining = GameObject.Find("Remaining_Actions_Value").GetComponent<UnityEngine.UI.Text>();
+
+        UnityEngine.UI.Button endTurnButton = GameObject.Find("End_Turn_Button").GetComponent<UnityEngine.UI.Button>();
+        endTurnButton.onClick.AddListener(EndTurn);
+
+        #endregion
+
+        // create a specified number of human players
+        // *** currently hard-wired to 2 for testing ***
+        CreatePlayers(neutralPlayer);
+
+        // initialize the map and allocate players to landmarks
+        InitializeMap();
+
+        // initialize the turn state
+        turnState = TurnState.Move1;
+
+        // set Player 1 as the current player
+        currentPlayer = players[0];
+        currentPlayer.GetGui().Activate();
+        players[0].SetActive(true);
+
+        // update GUIs
+        UpdateGUI();
+
+    }
 
     /// <summary>
     /// 
@@ -130,6 +168,11 @@ public class Game : MonoBehaviour {
     public int GetPlayerID(Player player)
     {
         return System.Array.IndexOf(players, player);
+    }
+
+    public void SetPlayers(Player[] players)
+    {
+        this.players = players;
     }
 
     /// <summary>
@@ -585,44 +628,7 @@ public class Game : MonoBehaviour {
 		}
         UpdateActionsRemainingLabel();
 	}
-
-    //modified by Peter
-    /// <summary>
-    /// 
-    /// Initializes a new game
-    /// 
-    /// </summary>
-    public void Initialize (bool neutralPlayer) {
-
-        #region Setup GUI components (Added by Dom 06/02/2018)
-        // initialize the game
-        actionsRemaining = GameObject.Find("Remaining_Actions_Value").GetComponent<UnityEngine.UI.Text>();
-
-        UnityEngine.UI.Button endTurnButton = GameObject.Find("End_Turn_Button").GetComponent<UnityEngine.UI.Button>();
-        endTurnButton.onClick.AddListener(EndTurn);
         
-        #endregion
-
-        // create a specified number of human players
-        // *** currently hard-wired to 2 for testing ***
-        CreatePlayers(neutralPlayer);
-
-        // initialize the map and allocate players to landmarks
-        InitializeMap();
-
-        // initialize the turn state
-        turnState = TurnState.Move1;
-
-        // set Player 1 as the current player
-        currentPlayer = players[0];
-		currentPlayer.GetGui().Activate();
-        players[0].SetActive(true);
-
-		// update GUIs
-		UpdateGUI();
-
-	}
-    
     //Added by Dom
     /// <summary>
     /// 
@@ -632,7 +638,6 @@ public class Game : MonoBehaviour {
     /// <param name="savedGame">The saved game state</param>
     public void Initialize(GameData savedGame)
     {
-
         gameMap = GameObject.Find("Map");
 
         // initialize the game

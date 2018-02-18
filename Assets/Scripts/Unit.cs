@@ -207,8 +207,7 @@ public class Unit : MonoBehaviour {
         // swap the units' references to their sectors
         this.sector = otherUnit.sector;
         otherUnit.sector = this.owner.GetGame().gameMap.GetComponent<Map>().sectors[tempSectorIndex] ;
-
-
+                
         // realign transforms for each unit
 		this.transform.SetParent(this.sector.transform.Find("Units").transform);
 		this.transform.position = this.sector.transform.Find("Units").position;

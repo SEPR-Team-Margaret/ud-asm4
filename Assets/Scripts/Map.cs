@@ -11,5 +11,5 @@ public class Map : MonoBehaviour {
 
     public Game game;
     public Sector[] sectors;
-
+    
 }

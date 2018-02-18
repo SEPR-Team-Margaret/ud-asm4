@@ -12,14 +12,21 @@ public class GameTest
     private Player[] players;
 	private PlayerUI[] gui;
     
+    private void Setup()
+    {
+        TestSetup t = new TestSetup();
+        this.game = t.GetGame();
+        this.map = t.GetMap();
+        this.players = t.GetPlayers();
+        this.gui = t.GetPlayerUIs();
+    }
 
     [UnityTest]
     public IEnumerator CreatePlayers_FourPlayersAreHuman() {
         
         Setup();
-
+        game.CreatePlayers(false);
         // ensure creation of 4 players is accurate
-        game.GetComponent<Game>().CreatePlayers(false);
         Assert.IsTrue(game.GetComponent<Game>().players[0].IsHuman());
         Assert.IsTrue(game.GetComponent<Game>().players[1].IsHuman());
         Assert.IsTrue(game.GetComponent<Game>().players[2].IsHuman());
@@ -33,9 +40,10 @@ public class GameTest
     public IEnumerator CreatePlayers_ThreePlayersHumanAndOneNeutral()
     {
         Setup();
+        game.CreatePlayers(true);
 
         // ensure game with three players and one neutral is accurate
-        game.GetComponent<Game>().CreatePlayers(true);
+
         Assert.IsTrue(game.GetComponent<Game>().players[0].IsHuman());
         Assert.IsTrue(game.GetComponent<Game>().players[1].IsHuman());
         Assert.IsTrue(game.GetComponent<Game>().players[2].IsHuman());
@@ -109,6 +117,7 @@ public class GameTest
     public IEnumerator NextPlayer_CurrentPlayerChangesToNextPlayerEachTime() {
         
         Setup();
+        yield return null;
 
         Player playerA = players[0];
         Player playerB = players[1];
@@ -182,7 +191,7 @@ public class GameTest
     public IEnumerator NeutralPlayerTurn_EnsureNeutralPlayerMovesCorrectly()
     {
         Setup();
-        
+
         List<Unit> units = game.currentPlayer.units;
         Unit selectedUnit = units[Random.Range(0, units.Count)];
         Sector[] adjacentSectors = selectedUnit.GetSector().GetAdjacentSectors();
@@ -240,6 +249,7 @@ public class GameTest
     public IEnumerator GetWinner_OnePlayerWithLandmarksAndUnitsWins() {
         
         Setup();
+        yield return null;
 
         Sector landmark1 = map.sectors[1];
         Player playerA = players[0];
@@ -261,6 +271,7 @@ public class GameTest
     public IEnumerator GetWinner_NoWinnerWhenMultiplePlayersOwningLandmarks() {
         
         Setup();
+        yield return null;
 
         Sector landmark1 = map.sectors[1];
         Sector landmark2 = map.sectors[7];
@@ -303,6 +314,7 @@ public class GameTest
     public IEnumerator GetWinner_NoWinnerWhenAPlayerHasLandmarkAndAnotherHasUnits() {
         
         Setup();
+        yield return null;
 
         Sector landmark1 = map.sectors[1];
         Player playerA = players[0];
@@ -326,6 +338,7 @@ public class GameTest
     public IEnumerator EndGame_GameEndsCorrectlyWithNoCurrentPlayerAndNoActivePlayersAndNoTurnState() {
         
         Setup();
+        yield return null;
         game.currentPlayer = game.players[0];
         game.EndGame();
 
@@ -346,54 +359,7 @@ public class GameTest
     }
 
 
-    private void Setup() {
-        
-        // initialize the game, map, and players with any references needed
-        // the "GameManager" asset contains a copy of the GameManager object
-        // in the 4x4 Test, but its script lacks references to players & the map
-        game = MonoBehaviour.Instantiate(Resources.Load<GameObject>("GameManager")).GetComponent<Game>();
-
-        // the "Map" asset is a copy of the 4x4 Test map, complete with
-        // adjacent sectors and landmarks at (0,1), (1,3), (2,0), and (3,2),
-        // but its script lacks references to the game & sectors
-        map = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Map")).GetComponent<Map>();
-
-        // the "Players" asset contains 4 prefab Player game objects; only
-        // references not in its script is each player's color
-        players = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Players")).GetComponentsInChildren<Player>();
-		   
-		// the "GUI" asset contains the PlayerUI object for each Player
-		gui = MonoBehaviour.Instantiate(Resources.Load<GameObject>("GUI")).GetComponentsInChildren<PlayerUI>();
-
-		// the "Scenery" asset contains the camera and light source of the 4x4 Test
-		// can uncomment to view scene as tests run, but significantly reduces speed
-		//MonoBehaviour.Instantiate(Resources.Load<GameObject>("Scenery"));
-
-        // establish references from game to players & map
-        game.players = players;
-        game.gameMap = map.gameObject;
-         
-        // establish references from map to game & sectors (from children)
-        map.game = game;
-        map.sectors = map.gameObject.GetComponentsInChildren<Sector>();
-
-        // establish references to SSB 64 colors for each player
-        players[0].SetColor(Color.red);
-        players[1].SetColor(Color.blue);
-        players[2].SetColor(Color.yellow);
-        players[3].SetColor(Color.green);
-
-		// establish references to a PlayerUI and Game for each player & initialize GUI
-		for (int i = 0; i < players.Length; i++) 
-		{
-			players[i].SetGui(gui[i]);
-			players[i].SetGame(game);
-			players[i].GetGui().Initialize(players[i], i + 1);
-		}
-
-        // enable game's test mode
-        game.EnableTestMode();
-    }
+    
 
     private void ClearSectorsAndUnitsOfAllPlayers() {
         
