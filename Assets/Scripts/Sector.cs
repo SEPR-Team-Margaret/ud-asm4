@@ -88,6 +88,18 @@ public class Sector : MonoBehaviour {
             gameObject.GetComponent<Renderer> ().material.color = owner.GetColor();
         }
     }
+
+    /// <summary>
+    /// 
+    /// sets the owner of this sector to the passed player without updating the colour
+    /// for testing only
+    /// 
+    /// </summary>
+    /// <param name="owner">Player object of the new owner of this sector or null if there is no owner</param
+    public void SetOwnerNoColour(Player owner)
+    {
+        this.owner = owner;
+    }
     
     /// <summary>
     /// Get the level of the unit on the sector
