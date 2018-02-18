@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
+/* GAME EXECUTABLE http://riskydevelopments.co.uk/ud/UniversityDominationAss3.exe */
+
 public class Initializer : MonoBehaviour {
 
     public Game game;
