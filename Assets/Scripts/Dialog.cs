@@ -36,6 +36,7 @@ public class Dialog : MonoBehaviour
                 texture.transform.GetChild(3).gameObject.SetActive(true);
                 texture.transform.GetChild(4).gameObject.SetActive(true);
                 texture.transform.GetChild(5).gameObject.SetActive(false);
+                texture.transform.GetChild(6).gameObject.SetActive(false);
                 break;
             case DialogType.PlayerElimated:
                 texture.transform.GetChild(0).GetComponent<Text>().text = "ELIMINATED!";
@@ -44,6 +45,7 @@ public class Dialog : MonoBehaviour
                 texture.transform.GetChild(3).gameObject.SetActive(false);
                 texture.transform.GetChild(4).gameObject.SetActive(false);
                 texture.transform.GetChild(5).gameObject.SetActive(false);
+                texture.transform.GetChild(6).gameObject.SetActive(false);
                 break;
             case DialogType.SaveQuit:
                 texture.transform.GetChild(0).GetComponent<Text>().text = "PAUSED";
@@ -52,6 +54,7 @@ public class Dialog : MonoBehaviour
                 texture.transform.GetChild(3).gameObject.SetActive(false);
                 texture.transform.GetChild(4).gameObject.SetActive(true);
                 texture.transform.GetChild(5).gameObject.SetActive(true);
+                texture.transform.GetChild(6).gameObject.SetActive(true);
                 break;
             case DialogType.ShowText:
                 texture.transform.GetChild(0).GetComponent<Text>().text = "";
@@ -60,6 +63,7 @@ public class Dialog : MonoBehaviour
                 texture.transform.GetChild(3).gameObject.SetActive(false);
                 texture.transform.GetChild(4).gameObject.SetActive(false);
                 texture.transform.GetChild(5).gameObject.SetActive(false);
+                texture.transform.GetChild(6).gameObject.SetActive(false);
                 break;
 
         }
@@ -79,7 +83,7 @@ public class Dialog : MonoBehaviour
                 texture.transform.GetChild(1).GetComponent<Text>().text = data + " WON!";
                 break;
             case DialogType.PlayerElimated:
-                texture.transform.GetChild(1).GetComponent<Text>().text = data + " was eliminated";
+                texture.transform.GetChild(1).GetComponent<Text>().text = data + "\nwas eliminated";
                 break;
         }
     }

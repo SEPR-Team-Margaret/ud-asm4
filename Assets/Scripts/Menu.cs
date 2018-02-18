@@ -24,6 +24,7 @@ public class Menu : MonoBehaviour {
     /// </summary>
     public void PlayLoad()
     {
+        if (!SavedGame.SaveExists("test1")) return;
         PlayerPrefs.SetInt("_gamemode", 2);
         SceneManager.LoadScene(1);
     }

@@ -65,6 +65,37 @@ public static class SavedGame
     }
 
     /// <summary>
+    /// 
+    /// returns if a save game exists to load
+    /// 
+    /// </summary>
+    /// <param name="fileName">save file name</param>
+    /// <returns>true if game exists to load else false</returns>
+    public static bool SaveExists(string fileName)
+    {
+        string filePath = Application.persistentDataPath + "/";
+        try
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(GameData));
+            using (StreamReader r = new StreamReader(filePath + fileName + ".xml"))
+            {
+                GameData savedGame = (GameData)serializer.Deserialize(r);
+                // Access to saved game like -> savedGame.currentPlayerID
+                // Calls to instantiate methods
+                return true;
+            }
+        }
+        catch (SerializationException)
+        {
+            return false;
+        }
+        catch (FileNotFoundException)
+        {
+            return false;
+        }
+    }
+
+    /// <summary>
     /// Generates a list of any save files in the default folder
     /// </summary>
     /// <returns>List of strings</returns>

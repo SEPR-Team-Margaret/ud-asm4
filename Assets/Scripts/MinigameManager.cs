@@ -14,7 +14,7 @@ public class MinigameManager : MonoBehaviour {
     [SerializeField] GameObject uiOverlay, loseOverlay, minCoinSpawn, maxCoinSpawn;
     [SerializeField][Multiline] string initialText, winText, loseText;
     [SerializeField] Vector3 minPos, maxPos;
-    [SerializeField] float maxScore = 6;
+    [SerializeField] float maxScore = 10;
 
     List<GameObject> pillars = new List<GameObject>();
     List<GameObject> clouds = new List<GameObject>();

@@ -280,6 +280,8 @@ public class Player : MonoBehaviour {
 
         if (sector.IsVC())
         {
+            game.NextTurnState(); // update turn mode before game is saved
+            sector.SetVC(false); // set VC to false so game can only be triggered once
             SavedGame.Save("_tmp", game);
             SceneManager.LoadScene(2); 
 

@@ -764,7 +764,7 @@ public class Game : MonoBehaviour {
         SetupUnit(31, savedGame.sector32Level);
 
         //set VC sector
-        sectors[savedGame.VCSector].SetVC(true);
+        if (savedGame.VCSector != -1) sectors[savedGame.VCSector].SetVC(true);
 
         UpdateGUI();
 
@@ -874,7 +874,11 @@ public class Game : MonoBehaviour {
     {
         int rewardLevel = PlayerPrefs.GetInt("_mgScore");
         // REWARD TO BE ADDED TO PLAYER
-        int bonus = (int)Mathf.Ceil((rewardLevel + 1) / 2);
+        int bonus = 1; 
+        if (rewardLevel == 10)
+        {
+            bonus = 4;
+        }
         currentPlayer.SetAttack(currentPlayer.GetAttack() + bonus);
         currentPlayer.SetDefence(currentPlayer.GetDefence() + bonus);
 
