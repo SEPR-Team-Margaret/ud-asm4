@@ -15,12 +15,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 43
-    width: 2048
-    height: 1069
+    width: 1280
+    height: 637
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 392}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -41,9 +41,9 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 2048
-    height: 1069
-  m_MinSize: {x: 950, y: 542}
+    width: 1280
+    height: 637
+  m_MinSize: {x: 950, y: 392}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -61,7 +61,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 2048
+    width: 1280
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -81,8 +81,8 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 1049
-    width: 2048
+    y: 617
+    width: 1280
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -104,12 +104,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
-    width: 2048
-    height: 1019
-  m_MinSize: {x: 683, y: 492}
-  m_MaxSize: {x: 14004, y: 14042}
+    width: 1280
+    height: 587
+  m_MinSize: {x: 683, y: 342}
+  m_MaxSize: {x: 12008, y: 8042}
   vertical: 0
-  controlID: 1412
+  controlID: 1636
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -128,12 +128,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1600
-    height: 1019
-  m_MinSize: {x: 406, y: 492}
-  m_MaxSize: {x: 10002, y: 14042}
+    width: 1000
+    height: 587
+  m_MinSize: {x: 406, y: 342}
+  m_MaxSize: {x: 8006, y: 8042}
   vertical: 1
-  controlID: 1413
+  controlID: 1637
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -152,12 +152,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1600
-    height: 549
+    width: 1000
+    height: 316
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 1414
+  controlID: 1638
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -174,8 +174,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 581
-    height: 549
+    width: 363
+    height: 316
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 13}
@@ -197,10 +197,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 581
+    x: 363
     y: 0
-    width: 1019
-    height: 549
+    width: 637
+    height: 316
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 12}
@@ -225,18 +225,18 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 549
-    width: 1600
-    height: 470
-  m_MinSize: {x: 232, y: 271}
-  m_MaxSize: {x: 10002, y: 10021}
-  m_ActualView: {fileID: 16}
+    y: 316
+    width: 1000
+    height: 271
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 16}
   - {fileID: 17}
   - {fileID: 18}
-  m_Selected: 0
-  m_LastSelected: 2
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -251,10 +251,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1600
+    x: 1000
     y: 0
-    width: 448
-    height: 1019
+    width: 280
+    height: 587
   m_MinSize: {x: 277, y: 71}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 19}
@@ -284,10 +284,10 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-    x: 583
+    x: 365
     y: 92
-    width: 1015
-    height: 528
+    width: 633
+    height: 295
   m_PersistentViewDataDictionary: {fileID: 0}
   m_MaximizeOnPlay: 1
   m_Gizmos: 0
@@ -297,10 +297,10 @@ MonoBehaviour:
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-    m_HBaseRangeMin: -454.22223
-    m_HBaseRangeMax: 454.22223
-    m_VBaseRangeMin: -255.5
-    m_VBaseRangeMax: 255.5
+    m_HBaseRangeMin: -247.11111
+    m_HBaseRangeMax: 247.11111
+    m_VBaseRangeMin: -139
+    m_VBaseRangeMax: 139
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -317,25 +317,25 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 1015
-      height: 511
+      width: 633
+      height: 278
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 507.5, y: 255.5}
+    m_Translation: {x: 316.5, y: 139}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -507.5
-      y: -255.5
-      width: 1015
-      height: 511
+      x: -316.5
+      y: -139
+      width: 633
+      height: 278
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 1015, y: 528}
+  m_LastWindowPixelSize: {x: 633, y: 295}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -363,14 +363,14 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 92
-    width: 579
-    height: 528
+    width: 361
+    height: 295
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
+    m_SelectedIDs: 4cb50000
     m_LastClickedID: 0
-    m_ExpandedIDs: c2c5ffff70d3ffff80fbffff00000000f4c5000074c7000068c9000056cb0000cccb0000
+    m_ExpandedIDs: 9efbffff00000000be310000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -520,9 +520,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 641
-    width: 1598
-    height: 449
+    y: 408
+    width: 998
+    height: 250
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -536,19 +536,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\domt\Documents\UniDom\UniversityDomination
+  m_LastProjectPath: C:\Users\owain\Documents\GitHub\UniversityDomination
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: aa2c0000
-    m_LastClickedID: 11434
-    m_ExpandedIDs: 00000000a6270000762c000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 75}
+    m_SelectedIDs: 9a2a0000
+    m_LastClickedID: 10906
+    m_ExpandedIDs: 00000000862700005a2c000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -576,7 +576,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a6270000762c000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000862700005a2c000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -601,9 +601,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 18070000
+    m_LastClickedInstanceID: 1816
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -691,7 +691,7 @@ MonoBehaviour:
     - id: '[University Domination][suite]'
       name: University Domination
       fullName: University Domination
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.3194209
       messages: One or more child tests had errors
       output: 
@@ -700,9 +700,9 @@ MonoBehaviour:
       ignoredOrSkipped: 0
       description: 
       isSuite: 1
-    - id: '[C:/Users/domt/Documents/UniDom/UniversityDomination/Library/ScriptAssemblies/Assembly-CSharp.dll][suite]'
+    - id: '[C:/Users/owain/Documents/GitHub/UniversityDomination/Library/ScriptAssemblies/Assembly-CSharp.dll][suite]'
       name: Assembly-CSharp.dll
-      fullName: C:/Users/domt/Documents/UniDom/UniversityDomination/Library/ScriptAssemblies/Assembly-CSharp.dll
+      fullName: C:/Users/owain/Documents/GitHub/UniversityDomination/Library/ScriptAssemblies/Assembly-CSharp.dll
       resultStatus: 0
       duration: 0
       messages: 
@@ -715,7 +715,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest][suite]'
       name: GameTest
       fullName: GameTest
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.2283438
       messages: One or more child tests had errors
       output: 
@@ -727,7 +727,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest.CreatePlayers_FourPlayersAreHuman]'
       name: CreatePlayers_FourPlayersAreHuman
       fullName: GameTest.CreatePlayers_FourPlayersAreHuman
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.1936244
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -742,10 +742,22 @@ MonoBehaviour:
       ignoredOrSkipped: 0
       description: 
       isSuite: 0
+    - id: '[Assembly-CSharp][GameTest.CreatePlayers_ThreePlayersHumanAndOneNeutral]'
+      name: CreatePlayers_ThreePlayersHumanAndOneNeutral
+      fullName: GameTest.CreatePlayers_ThreePlayersHumanAndOneNeutral
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
     - id: '[Assembly-CSharp][GameTest.EndGame_GameEndsCorrectlyWithNoCurrentPlayerAndNoActivePlayersAndNoTurnState]'
       name: EndGame_GameEndsCorrectlyWithNoCurrentPlayerAndNoActivePlayersAndNoTurnState
       fullName: GameTest.EndGame_GameEndsCorrectlyWithNoCurrentPlayerAndNoActivePlayersAndNoTurnState
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0431127
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -763,7 +775,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest.GetWinner_NoWinnerWhenAPlayerHasLandmarkAndAnotherHasUnits]'
       name: GetWinner_NoWinnerWhenAPlayerHasLandmarkAndAnotherHasUnits
       fullName: GameTest.GetWinner_NoWinnerWhenAPlayerHasLandmarkAndAnotherHasUnits
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.042922
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -781,7 +793,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest.GetWinner_NoWinnerWhenMultiplePlayersOwningLandmarks]'
       name: GetWinner_NoWinnerWhenMultiplePlayersOwningLandmarks
       fullName: GameTest.GetWinner_NoWinnerWhenMultiplePlayersOwningLandmarks
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0654347
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -799,7 +811,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest.GetWinner_NoWinnerWhenMultiplePlayersWithUnits]'
       name: GetWinner_NoWinnerWhenMultiplePlayersWithUnits
       fullName: GameTest.GetWinner_NoWinnerWhenMultiplePlayersWithUnits
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0352901
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -817,7 +829,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest.GetWinner_OnePlayerWithLandmarksAndUnitsWins]'
       name: GetWinner_OnePlayerWithLandmarksAndUnitsWins
       fullName: GameTest.GetWinner_OnePlayerWithLandmarksAndUnitsWins
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0327746
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -835,7 +847,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest.InitializeMap_OneLandmarkAllocatedWithUnitPerPlayer]'
       name: InitializeMap_OneLandmarkAllocatedWithUnitPerPlayer
       fullName: GameTest.InitializeMap_OneLandmarkAllocatedWithUnitPerPlayer
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0334022
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -865,7 +877,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest.NextPlayer_CurrentPlayerChangesToNextPlayerEachTime]'
       name: NextPlayer_CurrentPlayerChangesToNextPlayerEachTime
       fullName: GameTest.NextPlayer_CurrentPlayerChangesToNextPlayerEachTime
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0394178
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -883,7 +895,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest.NextPlayer_EliminatedPlayersAreSkipped]'
       name: NextPlayer_EliminatedPlayersAreSkipped
       fullName: GameTest.NextPlayer_EliminatedPlayersAreSkipped
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0415425
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -901,7 +913,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest.NextTurnState_TurnStateProgressesCorrectly]'
       name: NextTurnState_TurnStateProgressesCorrectly
       fullName: GameTest.NextTurnState_TurnStateProgressesCorrectly
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0369165
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -919,7 +931,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest.NoUnitSelected_ReturnsFalseWhenUnitIsSelected]'
       name: NoUnitSelected_ReturnsFalseWhenUnitIsSelected
       fullName: GameTest.NoUnitSelected_ReturnsFalseWhenUnitIsSelected
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0540015
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -937,7 +949,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][PlayerTest][suite]'
       name: PlayerTest
       fullName: PlayerTest
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.6939007
       messages: One or more child tests had errors
       output: 
@@ -949,7 +961,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][PlayerTest.CaptureLandmark_BothPlayersBeerAmountCorrect]'
       name: CaptureLandmark_BothPlayersBeerAmountCorrect
       fullName: PlayerTest.CaptureLandmark_BothPlayersBeerAmountCorrect
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0344678
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -967,7 +979,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][PlayerTest.CaptureLandmark_BothPlayersKnowledgeAmountCorrect]'
       name: CaptureLandmark_BothPlayersKnowledgeAmountCorrect
       fullName: PlayerTest.CaptureLandmark_BothPlayersKnowledgeAmountCorrect
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0537549
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -985,7 +997,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][PlayerTest.CaptureLandmark_NeutralLandmarkPlayerBeerAmountCorrect]'
       name: CaptureLandmark_NeutralLandmarkPlayerBeerAmountCorrect
       fullName: PlayerTest.CaptureLandmark_NeutralLandmarkPlayerBeerAmountCorrect
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0341111
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -1003,7 +1015,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][PlayerTest.CaptureLandmark_NeutralLandmarkPlayerKnowledgeAmountCorrect]'
       name: CaptureLandmark_NeutralLandmarkPlayerKnowledgeAmountCorrect
       fullName: PlayerTest.CaptureLandmark_NeutralLandmarkPlayerKnowledgeAmountCorrect
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0401924
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -1021,7 +1033,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][PlayerTest.CaptureSector_ChangesOwner]'
       name: CaptureSector_ChangesOwner
       fullName: PlayerTest.CaptureSector_ChangesOwner
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0424122
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -1039,7 +1051,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][PlayerTest.IsEliminated_PlayerWithNoUnitsAndNoLandmarksEliminated]'
       name: IsEliminated_PlayerWithNoUnitsAndNoLandmarksEliminated
       fullName: PlayerTest.IsEliminated_PlayerWithNoUnitsAndNoLandmarksEliminated
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0487765
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -1057,7 +1069,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][PlayerTest.SpawnUnits_NotSpawnedWhenLandmarkNotOwned]'
       name: SpawnUnits_NotSpawnedWhenLandmarkNotOwned
       fullName: PlayerTest.SpawnUnits_NotSpawnedWhenLandmarkNotOwned
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0384427
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -1075,7 +1087,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][PlayerTest.SpawnUnits_NotSpawnedWhenLandmarkOwnedAndOccupied]'
       name: SpawnUnits_NotSpawnedWhenLandmarkOwnedAndOccupied
       fullName: PlayerTest.SpawnUnits_NotSpawnedWhenLandmarkOwnedAndOccupied
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0434876
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -1093,7 +1105,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][PlayerTest.SpawnUnits_SpawnedWhenLandmarkOwnedAndUnoccupied]'
       name: SpawnUnits_SpawnedWhenLandmarkOwnedAndUnoccupied
       fullName: PlayerTest.SpawnUnits_SpawnedWhenLandmarkOwnedAndUnoccupied
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.04713
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -1111,7 +1123,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][SectorTest][suite]'
       name: SectorTest
       fullName: SectorTest
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.840036
       messages: One or more child tests had errors
       output: 
@@ -1123,7 +1135,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][SectorTest.AdjacentSelectedUnit_SectorsAreAdjacent]'
       name: AdjacentSelectedUnit_SectorsAreAdjacent
       fullName: SectorTest.AdjacentSelectedUnit_SectorsAreAdjacent
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0491134
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -1141,7 +1153,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][SectorTest.ClearUnit_UnitRemovedFromSector]'
       name: ClearUnit_UnitRemovedFromSector
       fullName: SectorTest.ClearUnit_UnitRemovedFromSector
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0532233
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -1159,7 +1171,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][SectorTest.Highlight_SectorColourCorrect]'
       name: Highlight_SectorColourCorrect
       fullName: SectorTest.Highlight_SectorColourCorrect
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0414626
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -1177,7 +1189,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][SectorTest.Initialize_OwnedAndNotOwnedSectorsOwnerAndColor]'
       name: Initialize_OwnedAndNotOwnedSectorsOwnerAndColor
       fullName: SectorTest.Initialize_OwnedAndNotOwnedSectorsOwnerAndColor
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0517102
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -1195,7 +1207,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][SectorTest.MoveIntoFriendlyUnit_UnitsSwapSectorsAndTurnStateProgressed]'
       name: MoveIntoFriendlyUnit_UnitsSwapSectorsAndTurnStateProgressed
       fullName: SectorTest.MoveIntoFriendlyUnit_UnitsSwapSectorsAndTurnStateProgressed
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0374169
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -1213,7 +1225,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][SectorTest.MoveIntoHostileUnit_AttackingUnitTakesSectorAndLevelUpAndTurnEnd]'
       name: MoveIntoHostileUnit_AttackingUnitTakesSectorAndLevelUpAndTurnEnd
       fullName: SectorTest.MoveIntoHostileUnit_AttackingUnitTakesSectorAndLevelUpAndTurnEnd
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.037073
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -1231,7 +1243,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][SectorTest.MoveIntoHostileUnit_DefendingUnitDefendsSectorAndTurnEnd]'
       name: MoveIntoHostileUnit_DefendingUnitDefendsSectorAndTurnEnd
       fullName: SectorTest.MoveIntoHostileUnit_DefendingUnitDefendsSectorAndTurnEnd
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0399587
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -1249,7 +1261,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][SectorTest.MoveIntoHostileUnit_TieConflict_DefendingUnitDefendsSectorAndTurnEnd]'
       name: MoveIntoHostileUnit_TieConflict_DefendingUnitDefendsSectorAndTurnEnd
       fullName: SectorTest.MoveIntoHostileUnit_TieConflict_DefendingUnitDefendsSectorAndTurnEnd
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0422568
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -1267,7 +1279,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][SectorTest.MoveIntoUnoccupiedSector_NewSectorHasUnitAndOldDoesNotAndTurnStateProgressed]'
       name: MoveIntoUnoccupiedSector_NewSectorHasUnitAndOldDoesNotAndTurnStateProgressed
       fullName: SectorTest.MoveIntoUnoccupiedSector_NewSectorHasUnitAndOldDoesNotAndTurnStateProgressed
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0446969
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -1285,7 +1297,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][SectorTest.OnMouseAsButton_CorrectUnitIsSelected]'
       name: OnMouseAsButton_CorrectUnitIsSelected
       fullName: SectorTest.OnMouseAsButton_CorrectUnitIsSelected
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0392978
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -1303,7 +1315,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][SectorTest.SetOwner_SectorOwnerAndColorCorrect]'
       name: SetOwner_SectorOwnerAndColorCorrect
       fullName: SectorTest.SetOwner_SectorOwnerAndColorCorrect
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0407898
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -1321,7 +1333,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][UnitTest][suite]'
       name: UnitTest
       fullName: UnitTest
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.6133317
       messages: One or more child tests had errors
       output: 
@@ -1333,7 +1345,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][UnitTest.DestroySelf_UnitNotInSectorAndNotInPlayersUnitsList]'
       name: DestroySelf_UnitNotInSectorAndNotInPlayersUnitsList
       fullName: UnitTest.DestroySelf_UnitNotInSectorAndNotInPlayersUnitsList
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0402541
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -1351,7 +1363,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][UnitTest.LevelUp_UnitLevelDoesNotPastFive]'
       name: LevelUp_UnitLevelDoesNotPastFive
       fullName: UnitTest.LevelUp_UnitLevelDoesNotPastFive
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0466132
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -1369,7 +1381,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][UnitTest.LevelUp_UnitLevelIncreasesByOne]'
       name: LevelUp_UnitLevelIncreasesByOne
       fullName: UnitTest.LevelUp_UnitLevelIncreasesByOne
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0379686
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -1387,7 +1399,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][UnitTest.MoveToFriendly_UnitInCorrectSector]'
       name: MoveToFriendly_UnitInCorrectSector
       fullName: UnitTest.MoveToFriendly_UnitInCorrectSector
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0459199
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -1405,7 +1417,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][UnitTest.MoveToFriendlyFromNull_UnitInCorrectSector]'
       name: MoveToFriendlyFromNull_UnitInCorrectSector
       fullName: UnitTest.MoveToFriendlyFromNull_UnitInCorrectSector
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0382079
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -1423,7 +1435,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][UnitTest.MoveToNeutral_UnitInCorrectSector]'
       name: MoveToNeutral_UnitInCorrectSector
       fullName: UnitTest.MoveToNeutral_UnitInCorrectSector
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0384898
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -1441,7 +1453,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][UnitTest.SelectAndDeselect_SelectedTrueWhenSelectedFalseWhenDeselected]'
       name: SelectAndDeselect_SelectedTrueWhenSelectedFalseWhenDeselected
       fullName: UnitTest.SelectAndDeselect_SelectedTrueWhenSelectedFalseWhenDeselected
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0392964
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -1459,7 +1471,7 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][UnitTest.SwapPlaces_UnitsInCorrectNewSectors]'
       name: SwapPlaces_UnitsInCorrectNewSectors
       fullName: UnitTest.SwapPlaces_UnitsInCorrectNewSectors
-      resultStatus: 2
+      resultStatus: 0
       duration: 0.0392757
       messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
         reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
@@ -1635,10 +1647,10 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1602
+    x: 1002
     y: 92
-    width: 446
-    height: 998
+    width: 278
+    height: 566
   m_PersistentViewDataDictionary: {fileID: 0}
   m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0

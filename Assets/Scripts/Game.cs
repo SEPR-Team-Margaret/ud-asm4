@@ -388,12 +388,17 @@ public class Game : MonoBehaviour {
         List<Unit> units = currentPlayer.units;
         Unit selectedUnit = units[UnityEngine.Random.Range(0, units.Count)];
         Sector[] adjacentSectors = selectedUnit.GetSector().GetAdjacentSectors();
+        List<Sector> possibleSectors = new List<Sector>();
         for (int i = 0; i < adjacentSectors.Length; i++)
         {
-            if (adjacentSectors[i].GetUnit() != null || adjacentSectors[i].IsVC())
-                adjacentSectors = adjacentSectors.Where(w => w != adjacentSectors[i]).ToArray();
+            bool neutralOrEmpty = adjacentSectors[i].GetOwner() == null || adjacentSectors[i].GetOwner().IsNeutral();
+            if (neutralOrEmpty && !adjacentSectors[i].IsVC())
+                possibleSectors.Add(adjacentSectors[i]);
         }
-        selectedUnit.MoveTo(adjacentSectors[UnityEngine.Random.Range(0, adjacentSectors.Length)]);
+        if (possibleSectors.Count > 0)
+        {
+            selectedUnit.MoveTo(possibleSectors[UnityEngine.Random.Range(0, possibleSectors.Count -1)]);
+        }
     }
 
     /// <summary>
