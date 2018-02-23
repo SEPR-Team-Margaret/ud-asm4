@@ -84,6 +84,9 @@ public class Sector : MonoBehaviour {
             gameObject.GetComponent<Renderer> ().material.color = Color.gray;
         } else {
             gameObject.GetComponent<Renderer> ().material.color = owner.GetColor();
+            if (landmark.landmarkBuilding != null){
+                landmark.landmarkBuilding.GetComponent<Renderer>().material.color = owner.GetColor();
+            }
         }
     }
 
