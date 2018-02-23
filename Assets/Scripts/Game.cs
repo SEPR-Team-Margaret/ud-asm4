@@ -420,7 +420,6 @@ public class Game : MonoBehaviour {
         }
     }
 
-    //Created by Peter
     /// <summary>
     /// 
     /// Carries out the neutral player turn

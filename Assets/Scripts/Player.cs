@@ -16,9 +16,9 @@ public class Player : MonoBehaviour {
     [SerializeField] private int defence = 0;
     [SerializeField] private Color color;
     [SerializeField] private bool human;
-    [SerializeField] private bool neutral; //added by Peter
+    [SerializeField] private bool neutral;
     [SerializeField] private bool active = false;
-
+    
     public Game GetGame() {
         return game;
     }
@@ -38,6 +38,8 @@ public class Player : MonoBehaviour {
 	public void SetGui(PlayerUI gui) {
 		this.gui = gui;
 	}
+
+    #region Getters and Setters
 
     /// <summary>
     /// 
@@ -99,7 +101,55 @@ public class Player : MonoBehaviour {
         this.color = color;
     }
 
-    //added by Peter
+    /// <summary>
+    /// 
+    /// Store who controlls the player in the save game
+    /// 
+    /// </summary>
+    /// <returns>String "human"/"neutral"/"none" depending on the player properties</returns>
+    public string GetController()
+    {
+        if (this.IsHuman())
+        {
+            return "human";
+        }
+        else if (this.IsNeutral())
+        {
+            return "neutral";
+        }
+        else
+        {
+            return "none";
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// sets how this player is controlled
+    /// 
+    /// </summary>
+    /// <param name="controller">'human' if player controlled by human; 'neutral' if player controlled by neutral AI; all other values have no contoller</param>
+    public void SetController(String controller)
+    {
+        if (controller.Equals("human"))
+        {
+            human = true;
+            neutral = false;
+        }
+        else if (controller.Equals("neutral"))
+        {
+            human = false;
+            neutral = true;
+        }
+        else
+        {
+            human = false;
+            neutral = false;
+        }
+    }
+
+    #endregion
+
     /// <summary>
     /// 
     /// returns if this player is controlled by a human or not
@@ -110,7 +160,6 @@ public class Player : MonoBehaviour {
         return human;
     }
 
-    //added by Peter
     /// <summary>
     /// 
     /// sets if this player is to be controlled by a human
@@ -166,53 +215,6 @@ public class Player : MonoBehaviour {
 
     /// <summary>
     /// 
-    /// Store who controlls the player in the save game
-    /// 
-    /// </summary>
-    /// <returns>String "human"/"neutral"/"none" depending on the player properties</returns>
-    public string GetController()
-    {
-        if (this.IsHuman())
-        {
-            return "human";
-        }
-        else if (this.IsNeutral())
-        {
-            return "neutral";
-        }
-        else
-        {
-            return "none";
-        }
-    }
-
-    /// <summary>
-    /// 
-    /// sets how this player is controlled
-    /// 
-    /// </summary>
-    /// <param name="controller">'human' if player controlled by human; 'neutral' if player controlled by neutral AI; all other values have no contoller</param>
-    public void SetController(String controller)
-    {
-        if (controller.Equals("human"))
-        {
-            human = true;
-            neutral = false;
-        } else if (controller.Equals("neutral"))
-        {
-            human = false;
-            neutral = true;
-        } else
-        {
-            human = false;
-            neutral = false;
-        }
-    }
-
-    #region Function which gives all owned sectors to the player who defeated this player (Added by Jack 01/02/2018)
-
-    /// <summary>
-    /// 
     /// called when this player is eliminated in order to pass all sectors owned by this player to the player that eliminated this player
     /// 
     /// </summary>
@@ -226,9 +228,6 @@ public class Player : MonoBehaviour {
             sector.SetOwner(player); // Reset all the sectors
         }
     }
-
-    #endregion
-
 
     /// <summary>
     /// 

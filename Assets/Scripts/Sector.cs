@@ -7,10 +7,11 @@ public class Sector : MonoBehaviour {
     [SerializeField] private Player owner;
     [SerializeField] private Sector[] adjacentSectors;
 	[SerializeField] private Landmark landmark;
-    [SerializeField] private bool VC = false; //added by Peter
+    [SerializeField] private bool VC = false;
+    [SerializeField] private bool PunishmentCard = false;
 
+    #region Getters and Setters
 
-    //added by Peter
     /// <summary>
     /// 
     /// Returns if this sector contains the vice chancelor
@@ -22,7 +23,6 @@ public class Sector : MonoBehaviour {
         return VC;
     }
 
-    //added by Peter
     /// <summary>
     /// 
     /// Sets if this sector contains the vice chancellor
@@ -33,8 +33,6 @@ public class Sector : MonoBehaviour {
     {
         this.VC = VC;
     }
-    
-    // removed get and set map as never used (Modifed by Dom (13/02/2018))
     
     /// <summary>
     /// 
@@ -145,7 +143,9 @@ public class Sector : MonoBehaviour {
     /// <param name="landmark">Landmark object to be set on this sector</param>
 	public void SetLandmark(Landmark landmark) {
         this.landmark = landmark;
-    }	
+    }
+
+    #endregion
 
     /// <summary>
     /// 
@@ -154,7 +154,7 @@ public class Sector : MonoBehaviour {
     /// sets owner and unit to null
     /// 
     /// </summary>
-	public void Initialize() {
+    public void Initialize() {
 
 		// set no owner
 		SetOwner(null);
