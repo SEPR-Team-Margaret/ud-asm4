@@ -437,7 +437,9 @@ public class Game : MonoBehaviour {
         {
             bool neutralOrEmpty = adjacentSectors[i].GetOwner() == null || adjacentSectors[i].GetOwner().IsNeutral();
             if (neutralOrEmpty && !adjacentSectors[i].IsVC())
-                possibleSectors.Add(adjacentSectors[i]);
+                if (adjacentSectors[i].GetUnit() == null) {
+                    possibleSectors.Add(adjacentSectors[i]);
+                }
         }
         if (possibleSectors.Count > 0)
         {
