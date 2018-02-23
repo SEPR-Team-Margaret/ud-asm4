@@ -88,7 +88,6 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 112000002, guid: da525f2f9b1694b97b480f4b50a49cd8,
     type: 2}
   m_UseShadowmask: 1
@@ -140,7 +139,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 5195891}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -348.13, y: -105.109985, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1507163497}
@@ -304,8 +303,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 10664828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 568, y: 319.5, z: 0}
+  m_LocalScale: {x: 1.1609974, y: 1.1609974, z: 1.1609974}
   m_Children:
   - {fileID: 25781008}
   - {fileID: 1590918744}
@@ -403,6 +402,7 @@ MonoBehaviour:
   - {fileID: 1846041886}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &10711854
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -412,9 +412,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 16830e17dc7e9b4449a2ac816d01feea, type: 3}
 --- !u!1001 &12300210
@@ -498,6 +498,7 @@ MonoBehaviour:
   - {fileID: 331780287}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &12300216
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -507,9 +508,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 1ec4a59cc00c1a449a9455ff13395e02, type: 3}
 --- !u!1001 &19986170
@@ -583,7 +584,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 25781007}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -345.9, y: -38.619995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1568930157}
@@ -648,7 +649,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 28142021}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -358.1, y: -105.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1590918744}
@@ -728,7 +729,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 58540015}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -365.82996, y: -193.11998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1507163497}
@@ -806,7 +807,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 68778246}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -340.7, y: -168.62003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 722604579}
@@ -878,7 +879,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 69477045}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -288.13004, y: -224.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 748083289}
@@ -983,6 +984,8 @@ MonoBehaviour:
   human: 0
   neutral: 0
   active: 0
+  punishmentCard: {fileID: 0}
+  numPunishmentCards: 0
 --- !u!1001 &85890179
 Prefab:
   m_ObjectHideFlags: 0
@@ -1114,9 +1117,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 3d00133a1add946409499dabc9793aab, type: 3}
 --- !u!23 &113256003
@@ -1378,7 +1381,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 152604243}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -347.6, y: -168.62003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1590918744}
@@ -1503,6 +1506,7 @@ MonoBehaviour:
   - {fileID: 839985103}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &157737337
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1512,9 +1516,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: eb65ef56c87306742a5ec874e7d132ef, type: 3}
 --- !u!1 &165533898
@@ -1543,7 +1547,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 165533898}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -302.53, y: -193.11998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 748083289}
@@ -1673,6 +1677,7 @@ MonoBehaviour:
   - {fileID: 565838941}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &188522736
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1682,9 +1687,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 116f44a3ee2d84c4e8b95aad9275efd9, type: 3}
 --- !u!1001 &198135368
@@ -1831,7 +1836,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 203850755}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0000035762769}
+  m_LocalPosition: {x: 38.77, y: -9.400009, z: -0.0000035762769}
   m_LocalScale: {x: 0.050000045, y: 0.049995564, z: 1}
   m_Children: []
   m_Father: {fileID: 458651135}
@@ -1960,6 +1965,7 @@ MonoBehaviour:
   - {fileID: 1152496385}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &206610318
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1969,9 +1975,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: e4749b4c1b1542a4cb7bebcb97caaeaa, type: 3}
 --- !u!1 &209031575
@@ -2000,7 +2006,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 209031575}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -314.40002, y: -157.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1590918744}
@@ -2298,6 +2304,7 @@ MonoBehaviour:
   - {fileID: 796509343}
   landmark: {fileID: 233223232}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &217717019
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2307,9 +2314,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: e2d90b34adc9e184c8f48e77a0cf6c39, type: 3}
 --- !u!1 &219801879
@@ -2338,7 +2345,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 219801879}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -305.59995, y: -193.11998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 722604579}
@@ -2487,19 +2494,19 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 217717014}
+    m_TransformParent: {fileID: 188522732}
     m_Modifications:
     - target: {fileID: 4956928184798894, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.3538333
+      value: -0.2414
       objectReference: {fileID: 0}
     - target: {fileID: 4956928184798894, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.07400002
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 4956928184798894, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.25779995
+      value: 0.4156
       objectReference: {fileID: 0}
     - target: {fileID: 4956928184798894, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2836,7 +2843,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 316056502}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -374.90002, y: -157.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1590918744}
@@ -2971,6 +2978,7 @@ MonoBehaviour:
   - {fileID: 796509343}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &331780290
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2980,9 +2988,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 89eb270782ae06641a1ae89a198426db, type: 3}
 --- !u!1001 &347052331
@@ -3064,6 +3072,7 @@ MonoBehaviour:
   - {fileID: 1615274803}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &347052337
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3073,9 +3082,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: b67e78f8b3028794bb9d5fb9aa21d55b, type: 3}
 --- !u!1 &348605549
@@ -3104,7 +3113,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 348605549}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -304.43008, y: -157.82002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 748083289}
@@ -3315,7 +3324,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 383959927}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -368.9, y: -193.11998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 722604579}
@@ -3393,7 +3402,7 @@ Transform:
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 1615274802}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &385885430
 GameObject:
@@ -3495,7 +3504,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 405137633}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -348.13, y: -105.109985, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 748083289}
@@ -3621,7 +3630,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 412044939}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -351.20007, y: -105.109985, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 722604579}
@@ -3701,7 +3710,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 416879679}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -337.6301, y: -168.62003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 748083289}
@@ -3773,7 +3782,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 418832278}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -351.20007, y: -105.109985, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 722604579}
@@ -3852,7 +3861,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 420055566}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -69.61, z: 0}
   m_LocalScale: {x: 1.0000025, y: 1.0000025, z: 1.0000025}
   m_Children:
   - {fileID: 901067060}
@@ -3976,7 +3985,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 420372338}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -364.42987, y: -224.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 748083289}
@@ -4052,7 +4061,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 426948401}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -7.4300003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1105538900}
@@ -4271,6 +4280,8 @@ MonoBehaviour:
   human: 0
   neutral: 0
   active: 0
+  punishmentCard: {fileID: 0}
+  numPunishmentCards: 0
 --- !u!1001 &481771056
 Prefab:
   m_ObjectHideFlags: 0
@@ -4396,6 +4407,7 @@ MonoBehaviour:
   - {fileID: 347052334}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &493240952
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4405,9 +4417,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 1fbb59ec1d1e8274faa33e2ff318d933, type: 3}
 --- !u!1 &537696784
@@ -4556,7 +4568,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 561049141}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -291.20007, y: -224.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 722604579}
@@ -4688,6 +4700,7 @@ MonoBehaviour:
   - {fileID: 157737334}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &565838944
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4697,9 +4710,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: cc007e2094b015046bd7fa008059149b, type: 3}
 --- !u!1001 &566734043
@@ -4774,7 +4787,7 @@ Transform:
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 1208763420}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &572135883
 GameObject:
@@ -4800,7 +4813,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 572135883}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -7.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 579811563}
@@ -4915,7 +4928,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 579811562}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -60, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 572135884}
@@ -5177,7 +5190,7 @@ Transform:
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 188522732}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &623839783
 GameObject:
@@ -5259,7 +5272,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 652976596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -7.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1000788804}
@@ -5335,7 +5348,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 661196215}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 17.7, y: -139.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 25781008}
@@ -5533,7 +5546,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 692145093}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -358.1, y: -105.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1590918744}
@@ -5757,6 +5770,7 @@ MonoBehaviour:
   - {fileID: 839985103}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &699414683
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5766,9 +5780,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 1af12d31645ad004c984ce63b04dc759, type: 3}
 --- !u!1001 &704808527
@@ -5852,6 +5866,7 @@ MonoBehaviour:
   - {fileID: 10711851}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &704808533
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5861,9 +5876,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 3b4e2de28a1e9544a9791e1acd0b6635, type: 3}
 --- !u!1 &707397470
@@ -5917,6 +5932,8 @@ MonoBehaviour:
   human: 0
   neutral: 0
   active: 0
+  punishmentCard: {fileID: 0}
+  numPunishmentCards: 0
 --- !u!1 &708372742
 GameObject:
   m_ObjectHideFlags: 0
@@ -5943,7 +5960,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 708372742}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -302.53, y: -193.11998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1507163497}
@@ -6021,7 +6038,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 709066155}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -304.43008, y: -157.82002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1507163497}
@@ -6099,7 +6116,7 @@ Transform:
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 217717014}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &717166551
 GameObject:
@@ -6154,7 +6171,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 722604578}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 353.4, y: -20, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 68778247}
@@ -6272,6 +6289,7 @@ MonoBehaviour:
   - {fileID: 206610315}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &735652243
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6281,9 +6299,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 806d9592c5d4eb04cab9cfcf4800110b, type: 3}
 --- !u!1 &737081092
@@ -6312,7 +6330,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 737081092}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 18.2, y: -205.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 25781008}
@@ -6536,6 +6554,7 @@ MonoBehaviour:
   - {fileID: 1615274803}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &745472833
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6545,9 +6564,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: ccff21c7fbebf6047baa1b856f64ec7b, type: 3}
 --- !u!1001 &745889746
@@ -6633,7 +6652,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 748083288}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 507.9, y: -20.000015, z: 0}
   m_LocalScale: {x: 1.0000025, y: 1.0000025, z: 1.0000025}
   m_Children:
   - {fileID: 416879680}
@@ -6795,6 +6814,7 @@ MonoBehaviour:
   - {fileID: 188522733}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &764776714
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6804,9 +6824,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 0b1ab7a180db3c64c96bb4dc1d8738b0, type: 3}
 --- !u!1001 &768532243
@@ -7052,6 +7072,7 @@ MonoBehaviour:
   - {fileID: 2120657127}
   landmark: {fileID: 1291592236}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &772535084
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7061,9 +7082,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300002, guid: f92ef4c4ef2bac94490916a8f0a5c2b2, type: 3}
 --- !u!1 &784910517
@@ -7090,7 +7111,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 784910517}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 50, z: 0}
   m_LocalScale: {x: 1.0000025, y: 1.0000025, z: 1.0000025}
   m_Children: []
   m_Father: {fileID: 771273925}
@@ -7221,6 +7242,7 @@ MonoBehaviour:
   - {fileID: 10711851}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &796509346
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7230,9 +7252,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 337fdf417f7a53549a0bb8286434c161, type: 3}
 --- !u!1 &809866968
@@ -7261,7 +7283,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 809866968}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -307.50003, y: -157.82002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 722604579}
@@ -7367,7 +7389,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 815007958}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 78.2, y: -139.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 25781008}
@@ -7491,7 +7513,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 827580792}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -365.82996, y: -193.11998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 748083289}
@@ -7623,6 +7645,7 @@ MonoBehaviour:
   - {fileID: 1723041533}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &839985106
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7632,9 +7655,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: efe0d73114ef47343913b6ddce251694, type: 3}
 --- !u!1001 &846368694
@@ -7642,19 +7665,19 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1208763420}
+    m_TransformParent: {fileID: 1615274802}
     m_Modifications:
     - target: {fileID: 4956928184798894, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.06923332
+      value: -0.0441
       objectReference: {fileID: 0}
     - target: {fileID: 4956928184798894, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.254
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 4956928184798894, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.23729995
+      value: 0.1494
       objectReference: {fileID: 0}
     - target: {fileID: 4956928184798894, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
       propertyPath: m_LocalRotation.x
@@ -7980,7 +8003,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 911446716}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -348.13, y: -105.109985, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 748083289}
@@ -8139,6 +8162,7 @@ MonoBehaviour:
   - {fileID: 1846041886}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &918769889
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8148,9 +8172,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 665c78da29ebb1942ae6caf9932d7fc0, type: 3}
 --- !u!1001 &929174093
@@ -8269,7 +8293,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 929691221}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.000061035156, y: -7.4300003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1105538900}
@@ -8486,7 +8510,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1000579394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 85.5, y: 97.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 385885431}
@@ -8608,7 +8632,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1000788803}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.000061035156, y: 0, z: 0}
   m_LocalScale: {x: 1.0000005, y: 1.0000005, z: 1.0000005}
   m_Children:
   - {fileID: 1430910141}
@@ -8732,7 +8756,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1001166871}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 34.5, y: -86.490005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 25781008}
@@ -8840,7 +8864,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1007807678}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -298.09998, y: -224.01999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1590918744}
@@ -9096,7 +9120,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1068691139}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -375.80002, y: -193.11998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1590918744}
@@ -9226,6 +9250,7 @@ MonoBehaviour:
   - {fileID: 1826363245}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &1085659048
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9235,9 +9260,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 31472a214887d15499bdc4c265ff23bc, type: 3}
 --- !u!1 &1105538899
@@ -9390,9 +9415,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 3a33b71a55a431d4c890feb5e39d3342, type: 3}
 --- !u!23 &1113250524
@@ -9682,7 +9707,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1141867539}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -35.800003, y: 29.7, z: 0}
   m_LocalScale: {x: 0.03, y: 0.04, z: 1}
   m_Children:
   - {fileID: 2072111128}
@@ -9862,6 +9887,7 @@ MonoBehaviour:
   - {fileID: 796509343}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &1152496388
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9871,9 +9897,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 833d011120db43e4d8d14254c998dbd9, type: 3}
 --- !u!1001 &1155640397
@@ -9955,6 +9981,7 @@ MonoBehaviour:
   - {fileID: 347052334}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &1155640403
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9964,9 +9991,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 926887507fa7b704cbb2e6cd979c1568, type: 3}
 --- !u!1 &1171347374
@@ -9995,7 +10022,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1171347374}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 16.8, y: -174.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 25781008}
@@ -10117,7 +10144,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1178596744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 771273925}
@@ -10247,6 +10274,7 @@ MonoBehaviour:
   - {fileID: 1615274803}
   landmark: {fileID: 846368695}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &1208763425
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10256,9 +10284,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 940837788dec63340bb76ddf55972f2c, type: 3}
 --- !u!1 &1233575651
@@ -10486,7 +10514,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4956928184798894, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.254
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 4956928184798894, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
       propertyPath: m_LocalPosition.z
@@ -10773,24 +10801,26 @@ MonoBehaviour:
   human: 0
   neutral: 0
   active: 0
+  punishmentCard: {fileID: 0}
+  numPunishmentCards: 0
 --- !u!1001 &1381155729
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1781388712}
+    m_TransformParent: {fileID: 1826363244}
     m_Modifications:
     - target: {fileID: 4956928184798894, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.3734333
+      value: -0.438
       objectReference: {fileID: 0}
     - target: {fileID: 4956928184798894, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.012000036
+      value: 0.22000001
       objectReference: {fileID: 0}
     - target: {fileID: 4956928184798894, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.060799994
+      value: 0.045
       objectReference: {fileID: 0}
     - target: {fileID: 4956928184798894, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
       propertyPath: m_LocalRotation.x
@@ -10894,6 +10924,8 @@ MonoBehaviour:
   human: 0
   neutral: 0
   active: 0
+  punishmentCard: {fileID: 0}
+  numPunishmentCards: 0
 --- !u!1001 &1392050394
 Prefab:
   m_ObjectHideFlags: 0
@@ -11070,7 +11102,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1413955168}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 34.5, y: -86.490005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 25781008}
@@ -11182,7 +11214,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1430910140}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -7.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1000788804}
@@ -11399,7 +11431,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1507163496}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 507.9, y: -20, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1530403609}
@@ -11600,7 +11632,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1520194974}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -367.99997, y: -157.82002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 722604579}
@@ -11678,7 +11710,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1530403608}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -337.6301, y: -168.62003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1507163497}
@@ -11796,7 +11828,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1535522488}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -367.49997, y: -224.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 722604579}
@@ -11948,7 +11980,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1568930156}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 45, y: -150, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 25781008}
@@ -12020,7 +12052,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1569971840}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 80.1, y: -174.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 25781008}
@@ -12098,7 +12130,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1577584289}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -374.39996, y: -224.01999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1590918744}
@@ -12221,7 +12253,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1590918743}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 204.5, y: -20, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 152604244}
@@ -12396,6 +12428,7 @@ MonoBehaviour:
   - {fileID: 347052334}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &1615274806
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12405,9 +12438,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 6355cdc063340eb49b84767e37c1dcde, type: 3}
 --- !u!1001 &1643632859
@@ -12534,6 +12567,7 @@ MonoBehaviour:
   - {fileID: 217717016}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &1647300176
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12543,9 +12577,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: b7ebb1db56d3ddf4586e413acaa5896f, type: 3}
 --- !u!1001 &1656115559
@@ -12628,6 +12662,7 @@ MonoBehaviour:
   - {fileID: 1152496385}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &1656115565
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12637,9 +12672,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: e78912d2da1b8cc46ac9bb5a41ef3e08, type: 3}
 --- !u!1 &1682808836
@@ -12668,7 +12703,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1682808836}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 94.5, y: -205.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 25781008}
@@ -12922,6 +12957,7 @@ MonoBehaviour:
   - {fileID: 745472830}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &1723041536
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12931,9 +12967,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 9f45574c664ddc94e99aac098d26c48e, type: 3}
 --- !u!1 &1728596164
@@ -13192,7 +13228,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1756898814}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -288.13004, y: -224.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1507163497}
@@ -13318,7 +13354,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1780981202}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -348.13, y: -105.109985, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1507163497}
@@ -13450,6 +13486,7 @@ MonoBehaviour:
   - {fileID: 704808530}
   landmark: {fileID: 1381155730}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &1781388717
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13459,9 +13496,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 7eca71efc264ea446959634226210dfd, type: 3}
 --- !u!1 &1787264814
@@ -13517,7 +13554,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1791812313}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 33.679993, y: -27.5, z: 0}
   m_LocalScale: {x: 0.03, y: 0.03, z: 1}
   m_Children:
   - {fileID: 1442875960}
@@ -13836,6 +13873,7 @@ MonoBehaviour:
   - {fileID: 704808530}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &1826363248
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13845,9 +13883,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 43d533e70c0a75547bd9f6d9a5145331, type: 3}
 --- !u!1 &1838844684
@@ -13874,7 +13912,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1838844684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 27.5, y: -9.399994, z: 0}
   m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_Children: []
   m_Father: {fileID: 458651135}
@@ -13950,7 +13988,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1842539542}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -364.93005, y: -157.82002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1507163497}
@@ -14081,6 +14119,7 @@ MonoBehaviour:
   - {fileID: 347052334}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &1846041889
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14090,9 +14129,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: a58628a0ed696184196e754ac49995e5, type: 3}
 --- !u!1001 &1864451695
@@ -14235,7 +14274,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1886784265}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0.03}
+  m_LocalPosition: {x: -0.061878204, y: 0.11000061, z: 0.03}
   m_LocalScale: {x: 0.1, y: 0.1428572, z: 0.10000005}
   m_Children:
   - {fileID: 458651135}
@@ -14273,7 +14312,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1890351257}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -312.5, y: -193.11998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1590918744}
@@ -14462,7 +14501,6 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -14652,6 +14690,7 @@ MonoBehaviour:
   - {fileID: 1085659045}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &1984087425
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14661,9 +14700,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 328b6573dedf7de4b9fec51242f51f89, type: 3}
 --- !u!1 &1994184042
@@ -14692,7 +14731,7 @@ Transform:
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 1826363244}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1996719614
 GameObject:
@@ -14718,7 +14757,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1996719614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -7.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 579811563}
@@ -14905,7 +14944,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2013784615}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -364.42987, y: -224.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1507163497}
@@ -15338,9 +15377,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &2104769151
@@ -15386,7 +15425,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2105685577}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8017332, y: -0.22800003, z: 0.17679998}
+  m_LocalPosition: {x: -0.7835, y: -0.22800003, z: 0.0956}
   m_LocalScale: {x: 1, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 772535079}
@@ -15472,6 +15511,7 @@ MonoBehaviour:
   - {fileID: 12300213}
   landmark: {fileID: 0}
   VC: 0
+  punishmentCard: {fileID: 0}
 --- !u!64 &2120657130
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15481,9 +15521,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 579490b0e25d9b2479b1cc07896630f9, type: 3}
 --- !u!1001 &2129180812
@@ -15558,7 +15598,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2136568904}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -364.93005, y: -157.82002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 748083289}
@@ -15636,5 +15676,5 @@ Transform:
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 1781388712}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

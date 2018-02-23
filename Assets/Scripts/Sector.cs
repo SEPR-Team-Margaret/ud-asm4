@@ -8,7 +8,7 @@ public class Sector : MonoBehaviour {
     [SerializeField] private Sector[] adjacentSectors;
 	[SerializeField] private Landmark landmark;
     [SerializeField] private bool VC = false;
-    [SerializeField] private bool PunishmentCard = false;
+    [SerializeField] private PunishmentCard punishmentCard;
 
     #region Getters and Setters
 

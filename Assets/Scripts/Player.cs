@@ -18,7 +18,11 @@ public class Player : MonoBehaviour {
     [SerializeField] private bool human;
     [SerializeField] private bool neutral;
     [SerializeField] private bool active = false;
-    
+    [SerializeField] private PunishmentCard punishmentCard;
+    [SerializeField] private int numPunishmentCards;
+
+    #region Getters and Setters
+
     public Game GetGame() {
         return game;
     }
@@ -38,8 +42,6 @@ public class Player : MonoBehaviour {
 	public void SetGui(PlayerUI gui) {
 		this.gui = gui;
 	}
-
-    #region Getters and Setters
 
     /// <summary>
     /// 
@@ -145,6 +147,47 @@ public class Player : MonoBehaviour {
         {
             human = false;
             neutral = false;
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// Gets the number of Punishment Cards this player has
+    /// 
+    /// </summary>
+    public int GetPunishmentCards() {
+        return numPunishmentCards;
+    }
+
+    /// <summary>
+    /// 
+    /// Sets the number of Punishment Cards this player has
+    /// 
+    /// </summary>
+    /// <param name="val">An integer value that numPunishmentCards will be set to, if val is greater than or equal to 0.</param>
+    public void SetPunishmentCards(int val) {
+        if (val >= 0) {
+            numPunishmentCards = val;
+        }
+        else {
+            Debug.LogWarning("numPunishmentCards is being set to " + val + ", which is less than 0.");
+        }
+
+    }
+
+    /// <summary>
+    /// 
+    /// Sets the number of Punishment Cards this player has.
+    /// Defaults to 0 if numPunishmentCards becomes less than 0.
+    /// 
+    /// </summary>
+    /// <param name="val">An integer value that numPunishmentCards will have added to it.</param>
+    public void AddPunishmentCards(int val) {
+        numPunishmentCards += val;
+
+        if (numPunishmentCards < 0) {
+            numPunishmentCards = 0;
+            Debug.LogWarning("Punishment Cards is being set to a value less than 0");
         }
     }
 
