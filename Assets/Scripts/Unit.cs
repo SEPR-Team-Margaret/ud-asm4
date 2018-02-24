@@ -45,7 +45,7 @@ public class Unit : MonoBehaviour {
     }
 
     private string GenerateName() {
-        
+        return null;
 
     }
 

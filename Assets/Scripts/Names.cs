@@ -18,7 +18,6 @@ public static class Names {
             UTF8Encoding temp = new UTF8Encoding(true);
 
             while (fileStream.Read(b, 0, b.Length) > 0) {
-                Console.WriteLine(temp.GetString(b));
             }
 
         }
