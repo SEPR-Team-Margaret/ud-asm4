@@ -37,8 +37,6 @@ public class PunishmentCard : MonoBehaviour {
     }
 
     private Sector RandomizeSector() {
-        int numSectors = 32;
-
 
         Sector[] sectors = map.GetSectors();
         List<int> numbers = new List<int>();

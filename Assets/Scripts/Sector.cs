@@ -145,6 +145,13 @@ public class Sector : MonoBehaviour {
         this.landmark = landmark;
     }
 
+    public PunishmentCard GetPunishmentCard() {
+        return punishmentCard;
+    }
+    public void SetPunishmentCard(PunishmentCard pc) {
+        this.punishmentCard = pc;
+    }
+
     #endregion
 
     /// <summary>
