@@ -6,21 +6,38 @@ using UnityEngine;
 
 public static class Names {
 
-    static string[] forenames;
-    static string[] surnames;
-    static string[] titles;
+    public static string[] forenames;
+    public static string[] surnames;
+    public static string[] titles;
 
     public static void Init() {
-        FileStream fileStream;
-        string filePath = Application.dataPath + "/Assets/Data/names.txt";
-        using (fileStream = File.Open(filePath, FileMode.Open)) {
-            byte[] b = new byte[1024];
-            UTF8Encoding temp = new UTF8Encoding(true);
+        string filePath = Application.dataPath + "/Data/names.txt";
+        string line;
+        int lineNo = 0;
 
-            while (fileStream.Read(b, 0, b.Length) > 0) {
+        if (File.Exists(filePath)) {
+            StreamReader file = null;
+            try {
+                file = new StreamReader(filePath);
+                while ((line = file.ReadLine()) != null) {
+                    // Lines
+                    if (lineNo == 0) {
+                        forenames = line.Split(new char[] { ',' } );
+                    } else if (lineNo == 1) {
+                        surnames = line.Split(new char[] { ',' });
+                    } else {
+                        titles = line.Split(new char[] { ',' });
+                    }
+                    lineNo++;
+                }
             }
-
-        }
+            finally {
+                if (file != null)
+                    file.Close();
+            }
+        } else {
+            Debug.Log("Names file not found!");
+        } 
     }
 }
 

@@ -29,7 +29,12 @@ public class Game : MonoBehaviour {
     public bool triggerDialog = false;
 
     public bool[] eliminatedPlayers;
-        
+
+
+    public void Start() {
+        Names.Init();
+    }
+
     //modified by Peter
     /// <summary>
     /// 
