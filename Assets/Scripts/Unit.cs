@@ -9,8 +9,9 @@ public class Unit : MonoBehaviour {
     [SerializeField] private int level;
     [SerializeField] private Color color;
     [SerializeField] private bool selected = false;
+    [SerializeField] private string unitName;
 
-	[SerializeField] private Material level1Material;
+    [SerializeField] private Material level1Material;
 	[SerializeField] private Material level2Material;
 	[SerializeField] private Material level3Material;
 	[SerializeField] private Material level4Material;
@@ -33,11 +34,18 @@ public class Unit : MonoBehaviour {
         level = 1;
         color = owner.GetColor();
 
+        unitName = GenerateName();
+
         // set the material color to the player color
         GetComponent<Renderer>().material.color = color;
 
         // place the unit in the sector
         MoveTo(sector);
+
+    }
+
+    private string GenerateName() {
+        
 
     }
 
