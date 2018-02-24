@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 392}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -106,10 +106,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 948
-  m_MinSize: {x: 681, y: 492}
-  m_MaxSize: {x: 14004, y: 14042}
+  m_MinSize: {x: 681, y: 342}
+  m_MaxSize: {x: 12006, y: 8042}
   vertical: 0
-  controlID: 6574
+  controlID: 121
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,10 +130,10 @@ MonoBehaviour:
     y: 0
     width: 1501
     height: 948
-  m_MinSize: {x: 404, y: 492}
-  m_MaxSize: {x: 10002, y: 14042}
+  m_MinSize: {x: 404, y: 342}
+  m_MaxSize: {x: 8004, y: 8042}
   vertical: 1
-  controlID: 6498
+  controlID: 10
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 221}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 6499
+  controlID: 11
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -228,15 +228,15 @@ MonoBehaviour:
     y: 677
     width: 1501
     height: 271
-  m_MinSize: {x: 232, y: 271}
-  m_MaxSize: {x: 10002, y: 10021}
-  m_ActualView: {fileID: 16}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 16}
   - {fileID: 17}
   - {fileID: 18}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -255,8 +255,8 @@ MonoBehaviour:
     y: 0
     width: 419
     height: 948
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -365,10 +365,10 @@ MonoBehaviour:
     width: 339
     height: 656
   m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 1569}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00ebfdff9451ffff0000000098430000de430000604400006a4700004c480000c2480000b67a0000e87a00002a7b0000087d0000447e0000107f0000527f0000787f00009e7f0000c47f0000348000003e80000044800000
+    m_ExpandedIDs: dcc4fefff4c5feffd4d5ffff8efbffff00000000e83000009a3300003434000094340000a83500001a36000090360000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -418,14 +418,14 @@ MonoBehaviour:
     width: 1156
     height: 656
   m_SceneLighting: 1
-  lastFramingTime: 10130.064890480542
+  lastFramingTime: 4018.8739008222183
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -42.84112, y: 40.2812, z: 47.343678}
+    m_Target: {x: -41.13142, y: -0.7450442, z: 20.738087}
     speed: 2
-    m_Value: {x: -42.84112, y: 40.2812, z: 47.343678}
+    m_Value: {x: -41.13142, y: -0.7450442, z: 20.738087}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -448,13 +448,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.005073414, y: -0.8465174, z: 0.5322758, w: 0.008069246}
+    m_Target: {x: -0.0010163704, y: 0.9794838, z: -0.20146012, w: -0.0049344786}
     speed: 2
-    m_Value: {x: 0.005073414, y: -0.8465174, z: 0.5322758, w: 0.008069246}
+    m_Value: {x: -0.0010163704, y: 0.9794838, z: -0.20146012, w: -0.0049344786}
   m_Size:
-    m_Target: 15.773917
+    m_Target: 15.430907
     speed: 2
-    m_Value: 15.773917
+    m_Value: 15.430907
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -530,19 +530,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Luke\Unity\ud-asm4
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 39}
-    m_SelectedIDs: 54400000
-    m_LastClickedID: 16468
-    m_ExpandedIDs: 00000000183d00003640000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 135}
+    m_SelectedIDs: 882a0000
+    m_LastClickedID: 10888
+    m_ExpandedIDs: 0000000064270000142b0000562c000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -570,7 +570,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000183d00003640000000ca9a3bffffff7f
+    m_ExpandedIDs: 0000000064270000562c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -595,24 +595,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: d4d5ffff
+    m_LastClickedInstanceID: -10796
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: PointTowardsCamera
+      m_OriginalName: PointTowardsCamera
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 16178
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:
@@ -622,9 +622,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 75}
     m_GridSize: 16
-  m_DirectoriesAreaWidth: 115
+  m_DirectoriesAreaWidth: 116
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -708,8 +708,8 @@ MonoBehaviour:
       name: GameTest
       fullName: GameTest
       resultStatus: 0
-      duration: 0.2283438
-      messages: One or more child tests had errors
+      duration: 0
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -720,16 +720,10 @@ MonoBehaviour:
       name: CreatePlayers_FourPlayersAreHuman
       fullName: GameTest.CreatePlayers_FourPlayersAreHuman
       resultStatus: 0
-      duration: 0.1936244
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nGameTest.Setup
-        () (at Assets/Unit Tests/GameTest.cs:348)\r\nGameTest+<CreatePlayers_FourPlayersAreHuman>c__Iterator0.MoveNext
-        () (at Assets/Unit Tests/GameTest.cs:18)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -750,16 +744,10 @@ MonoBehaviour:
       name: EndGame_GameEndsCorrectlyWithNoCurrentPlayerAndNoActivePlayersAndNoTurnState
       fullName: GameTest.EndGame_GameEndsCorrectlyWithNoCurrentPlayerAndNoActivePlayersAndNoTurnState
       resultStatus: 0
-      duration: 0.0431127
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nGameTest.Setup
-        () (at Assets/Unit Tests/GameTest.cs:348)\r\nGameTest+<EndGame_GameEndsCorrectlyWithNoCurrentPlayerAndNoActivePlayersAndNoTurnState>c__IteratorA.MoveNext
-        () (at Assets/Unit Tests/GameTest.cs:285)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -768,16 +756,10 @@ MonoBehaviour:
       name: GetWinner_NoWinnerWhenAPlayerHasLandmarkAndAnotherHasUnits
       fullName: GameTest.GetWinner_NoWinnerWhenAPlayerHasLandmarkAndAnotherHasUnits
       resultStatus: 0
-      duration: 0.042922
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nGameTest.Setup
-        () (at Assets/Unit Tests/GameTest.cs:348)\r\nGameTest+<GetWinner_NoWinnerWhenAPlayerHasLandmarkAndAnotherHasUnits>c__Iterator9.MoveNext
-        () (at Assets/Unit Tests/GameTest.cs:262)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -786,16 +768,10 @@ MonoBehaviour:
       name: GetWinner_NoWinnerWhenMultiplePlayersOwningLandmarks
       fullName: GameTest.GetWinner_NoWinnerWhenMultiplePlayersOwningLandmarks
       resultStatus: 0
-      duration: 0.0654347
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nGameTest.Setup
-        () (at Assets/Unit Tests/GameTest.cs:348)\r\nGameTest+<GetWinner_NoWinnerWhenMultiplePlayersOwningLandmarks>c__Iterator7.MoveNext
-        () (at Assets/Unit Tests/GameTest.cs:220)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -804,16 +780,10 @@ MonoBehaviour:
       name: GetWinner_NoWinnerWhenMultiplePlayersWithUnits
       fullName: GameTest.GetWinner_NoWinnerWhenMultiplePlayersWithUnits
       resultStatus: 0
-      duration: 0.0352901
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nGameTest.Setup
-        () (at Assets/Unit Tests/GameTest.cs:348)\r\nGameTest+<GetWinner_NoWinnerWhenMultiplePlayersWithUnits>c__Iterator8.MoveNext
-        () (at Assets/Unit Tests/GameTest.cs:245)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -822,16 +792,10 @@ MonoBehaviour:
       name: GetWinner_OnePlayerWithLandmarksAndUnitsWins
       fullName: GameTest.GetWinner_OnePlayerWithLandmarksAndUnitsWins
       resultStatus: 0
-      duration: 0.0327746
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nGameTest.Setup
-        () (at Assets/Unit Tests/GameTest.cs:348)\r\nGameTest+<GetWinner_OnePlayerWithLandmarksAndUnitsWins>c__Iterator6.MoveNext
-        () (at Assets/Unit Tests/GameTest.cs:199)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -840,16 +804,10 @@ MonoBehaviour:
       name: InitializeMap_OneLandmarkAllocatedWithUnitPerPlayer
       fullName: GameTest.InitializeMap_OneLandmarkAllocatedWithUnitPerPlayer
       resultStatus: 0
-      duration: 0.0334022
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nGameTest.Setup
-        () (at Assets/Unit Tests/GameTest.cs:348)\r\nGameTest+<InitializeMap_OneLandmarkAllocatedWithUnitPerPlayer>c__Iterator1.MoveNext
-        () (at Assets/Unit Tests/GameTest.cs:35)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -870,16 +828,10 @@ MonoBehaviour:
       name: NextPlayer_CurrentPlayerChangesToNextPlayerEachTime
       fullName: GameTest.NextPlayer_CurrentPlayerChangesToNextPlayerEachTime
       resultStatus: 0
-      duration: 0.0394178
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nGameTest.Setup
-        () (at Assets/Unit Tests/GameTest.cs:348)\r\nGameTest+<NextPlayer_CurrentPlayerChangesToNextPlayerEachTime>c__Iterator3.MoveNext
-        () (at Assets/Unit Tests/GameTest.cs:94)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -888,16 +840,10 @@ MonoBehaviour:
       name: NextPlayer_EliminatedPlayersAreSkipped
       fullName: GameTest.NextPlayer_EliminatedPlayersAreSkipped
       resultStatus: 0
-      duration: 0.0415425
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nGameTest.Setup
-        () (at Assets/Unit Tests/GameTest.cs:348)\r\nGameTest+<NextPlayer_EliminatedPlayersAreSkipped>c__Iterator4.MoveNext
-        () (at Assets/Unit Tests/GameTest.cs:139)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -906,16 +852,10 @@ MonoBehaviour:
       name: NextTurnState_TurnStateProgressesCorrectly
       fullName: GameTest.NextTurnState_TurnStateProgressesCorrectly
       resultStatus: 0
-      duration: 0.0369165
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nGameTest.Setup
-        () (at Assets/Unit Tests/GameTest.cs:348)\r\nGameTest+<NextTurnState_TurnStateProgressesCorrectly>c__Iterator5.MoveNext
-        () (at Assets/Unit Tests/GameTest.cs:167)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -924,16 +864,10 @@ MonoBehaviour:
       name: NoUnitSelected_ReturnsFalseWhenUnitIsSelected
       fullName: GameTest.NoUnitSelected_ReturnsFalseWhenUnitIsSelected
       resultStatus: 0
-      duration: 0.0540015
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nGameTest.Setup
-        () (at Assets/Unit Tests/GameTest.cs:348)\r\nGameTest+<NoUnitSelected_ReturnsFalseWhenUnitIsSelected>c__Iterator2.MoveNext
-        () (at Assets/Unit Tests/GameTest.cs:66)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -942,8 +876,8 @@ MonoBehaviour:
       name: PlayerTest
       fullName: PlayerTest
       resultStatus: 0
-      duration: 0.6939007
-      messages: One or more child tests had errors
+      duration: 0
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -954,16 +888,10 @@ MonoBehaviour:
       name: CaptureLandmark_BothPlayersBeerAmountCorrect
       fullName: PlayerTest.CaptureLandmark_BothPlayersBeerAmountCorrect
       resultStatus: 0
-      duration: 0.0344678
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nPlayerTest.Setup
-        () (at Assets/Unit Tests/PlayerTest.cs:312)\r\nPlayerTest+<CaptureLandmark_BothPlayersBeerAmountCorrect>c__Iterator1.MoveNext
-        () (at Assets/Unit Tests/PlayerTest.cs:42)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -972,16 +900,10 @@ MonoBehaviour:
       name: CaptureLandmark_BothPlayersKnowledgeAmountCorrect
       fullName: PlayerTest.CaptureLandmark_BothPlayersKnowledgeAmountCorrect
       resultStatus: 0
-      duration: 0.0537549
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nPlayerTest.Setup
-        () (at Assets/Unit Tests/PlayerTest.cs:312)\r\nPlayerTest+<CaptureLandmark_BothPlayersKnowledgeAmountCorrect>c__Iterator2.MoveNext
-        () (at Assets/Unit Tests/PlayerTest.cs:77)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -990,16 +912,10 @@ MonoBehaviour:
       name: CaptureLandmark_NeutralLandmarkPlayerBeerAmountCorrect
       fullName: PlayerTest.CaptureLandmark_NeutralLandmarkPlayerBeerAmountCorrect
       resultStatus: 0
-      duration: 0.0341111
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nPlayerTest.Setup
-        () (at Assets/Unit Tests/PlayerTest.cs:312)\r\nPlayerTest+<CaptureLandmark_NeutralLandmarkPlayerBeerAmountCorrect>c__Iterator3.MoveNext
-        () (at Assets/Unit Tests/PlayerTest.cs:112)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1008,16 +924,10 @@ MonoBehaviour:
       name: CaptureLandmark_NeutralLandmarkPlayerKnowledgeAmountCorrect
       fullName: PlayerTest.CaptureLandmark_NeutralLandmarkPlayerKnowledgeAmountCorrect
       resultStatus: 0
-      duration: 0.0401924
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nPlayerTest.Setup
-        () (at Assets/Unit Tests/PlayerTest.cs:312)\r\nPlayerTest+<CaptureLandmark_NeutralLandmarkPlayerKnowledgeAmountCorrect>c__Iterator4.MoveNext
-        () (at Assets/Unit Tests/PlayerTest.cs:142)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1026,16 +936,10 @@ MonoBehaviour:
       name: CaptureSector_ChangesOwner
       fullName: PlayerTest.CaptureSector_ChangesOwner
       resultStatus: 0
-      duration: 0.0424122
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nPlayerTest.Setup
-        () (at Assets/Unit Tests/PlayerTest.cs:312)\r\nPlayerTest+<CaptureSector_ChangesOwner>c__Iterator0.MoveNext
-        () (at Assets/Unit Tests/PlayerTest.cs:16)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1044,16 +948,10 @@ MonoBehaviour:
       name: IsEliminated_PlayerWithNoUnitsAndNoLandmarksEliminated
       fullName: PlayerTest.IsEliminated_PlayerWithNoUnitsAndNoLandmarksEliminated
       resultStatus: 0
-      duration: 0.0487765
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nPlayerTest.Setup
-        () (at Assets/Unit Tests/PlayerTest.cs:312)\r\nPlayerTest+<IsEliminated_PlayerWithNoUnitsAndNoLandmarksEliminated>c__Iterator8.MoveNext
-        () (at Assets/Unit Tests/PlayerTest.cs:242)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1062,16 +960,10 @@ MonoBehaviour:
       name: SpawnUnits_NotSpawnedWhenLandmarkNotOwned
       fullName: PlayerTest.SpawnUnits_NotSpawnedWhenLandmarkNotOwned
       resultStatus: 0
-      duration: 0.0384427
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nPlayerTest.Setup
-        () (at Assets/Unit Tests/PlayerTest.cs:312)\r\nPlayerTest+<SpawnUnits_NotSpawnedWhenLandmarkNotOwned>c__Iterator7.MoveNext
-        () (at Assets/Unit Tests/PlayerTest.cs:218)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1080,16 +972,10 @@ MonoBehaviour:
       name: SpawnUnits_NotSpawnedWhenLandmarkOwnedAndOccupied
       fullName: PlayerTest.SpawnUnits_NotSpawnedWhenLandmarkOwnedAndOccupied
       resultStatus: 0
-      duration: 0.0434876
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nPlayerTest.Setup
-        () (at Assets/Unit Tests/PlayerTest.cs:312)\r\nPlayerTest+<SpawnUnits_NotSpawnedWhenLandmarkOwnedAndOccupied>c__Iterator6.MoveNext
-        () (at Assets/Unit Tests/PlayerTest.cs:194)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1098,16 +984,10 @@ MonoBehaviour:
       name: SpawnUnits_SpawnedWhenLandmarkOwnedAndUnoccupied
       fullName: PlayerTest.SpawnUnits_SpawnedWhenLandmarkOwnedAndUnoccupied
       resultStatus: 0
-      duration: 0.04713
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nPlayerTest.Setup
-        () (at Assets/Unit Tests/PlayerTest.cs:312)\r\nPlayerTest+<SpawnUnits_SpawnedWhenLandmarkOwnedAndUnoccupied>c__Iterator5.MoveNext
-        () (at Assets/Unit Tests/PlayerTest.cs:172)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1152,8 +1032,8 @@ MonoBehaviour:
       name: SectorTest
       fullName: SectorTest
       resultStatus: 0
-      duration: 0.840036
-      messages: One or more child tests had errors
+      duration: 0
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -1164,16 +1044,10 @@ MonoBehaviour:
       name: AdjacentSelectedUnit_SectorsAreAdjacent
       fullName: SectorTest.AdjacentSelectedUnit_SectorsAreAdjacent
       resultStatus: 0
-      duration: 0.0491134
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nSectorTest.Setup
-        () (at Assets/Unit Tests/SectorTest.cs:390)\r\nSectorTest+<AdjacentSelectedUnit_SectorsAreAdjacent>c__IteratorA.MoveNext
-        () (at Assets/Unit Tests/SectorTest.cs:316)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1182,16 +1056,10 @@ MonoBehaviour:
       name: ClearUnit_UnitRemovedFromSector
       fullName: SectorTest.ClearUnit_UnitRemovedFromSector
       resultStatus: 0
-      duration: 0.0532233
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nSectorTest.Setup
-        () (at Assets/Unit Tests/SectorTest.cs:390)\r\nSectorTest+<ClearUnit_UnitRemovedFromSector>c__Iterator3.MoveNext
-        () (at Assets/Unit Tests/SectorTest.cs:79)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1200,16 +1068,10 @@ MonoBehaviour:
       name: Highlight_SectorColourCorrect
       fullName: SectorTest.Highlight_SectorColourCorrect
       resultStatus: 0
-      duration: 0.0414626
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nSectorTest.Setup
-        () (at Assets/Unit Tests/SectorTest.cs:390)\r\nSectorTest+<Highlight_SectorColourCorrect>c__Iterator2.MoveNext
-        () (at Assets/Unit Tests/SectorTest.cs:59)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1218,16 +1080,10 @@ MonoBehaviour:
       name: Initialize_OwnedAndNotOwnedSectorsOwnerAndColor
       fullName: SectorTest.Initialize_OwnedAndNotOwnedSectorsOwnerAndColor
       resultStatus: 0
-      duration: 0.0517102
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nSectorTest.Setup
-        () (at Assets/Unit Tests/SectorTest.cs:390)\r\nSectorTest+<Initialize_OwnedAndNotOwnedSectorsOwnerAndColor>c__Iterator1.MoveNext
-        () (at Assets/Unit Tests/SectorTest.cs:36)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1236,16 +1092,10 @@ MonoBehaviour:
       name: MoveIntoFriendlyUnit_UnitsSwapSectorsAndTurnStateProgressed
       fullName: SectorTest.MoveIntoFriendlyUnit_UnitsSwapSectorsAndTurnStateProgressed
       resultStatus: 0
-      duration: 0.0374169
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nSectorTest.Setup
-        () (at Assets/Unit Tests/SectorTest.cs:390)\r\nSectorTest+<MoveIntoFriendlyUnit_UnitsSwapSectorsAndTurnStateProgressed>c__Iterator6.MoveNext
-        () (at Assets/Unit Tests/SectorTest.cs:205)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1254,16 +1104,10 @@ MonoBehaviour:
       name: MoveIntoHostileUnit_AttackingUnitTakesSectorAndLevelUpAndTurnEnd
       fullName: SectorTest.MoveIntoHostileUnit_AttackingUnitTakesSectorAndLevelUpAndTurnEnd
       resultStatus: 0
-      duration: 0.037073
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nSectorTest.Setup
-        () (at Assets/Unit Tests/SectorTest.cs:390)\r\nSectorTest+<MoveIntoHostileUnit_AttackingUnitTakesSectorAndLevelUpAndTurnEnd>c__Iterator7.MoveNext
-        () (at Assets/Unit Tests/SectorTest.cs:234)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1272,16 +1116,10 @@ MonoBehaviour:
       name: MoveIntoHostileUnit_DefendingUnitDefendsSectorAndTurnEnd
       fullName: SectorTest.MoveIntoHostileUnit_DefendingUnitDefendsSectorAndTurnEnd
       resultStatus: 0
-      duration: 0.0399587
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nSectorTest.Setup
-        () (at Assets/Unit Tests/SectorTest.cs:390)\r\nSectorTest+<MoveIntoHostileUnit_DefendingUnitDefendsSectorAndTurnEnd>c__Iterator8.MoveNext
-        () (at Assets/Unit Tests/SectorTest.cs:259)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1290,16 +1128,10 @@ MonoBehaviour:
       name: MoveIntoHostileUnit_TieConflict_DefendingUnitDefendsSectorAndTurnEnd
       fullName: SectorTest.MoveIntoHostileUnit_TieConflict_DefendingUnitDefendsSectorAndTurnEnd
       resultStatus: 0
-      duration: 0.0422568
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nSectorTest.Setup
-        () (at Assets/Unit Tests/SectorTest.cs:390)\r\nSectorTest+<MoveIntoHostileUnit_TieConflict_DefendingUnitDefendsSectorAndTurnEnd>c__Iterator9.MoveNext
-        () (at Assets/Unit Tests/SectorTest.cs:285)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1308,16 +1140,10 @@ MonoBehaviour:
       name: MoveIntoUnoccupiedSector_NewSectorHasUnitAndOldDoesNotAndTurnStateProgressed
       fullName: SectorTest.MoveIntoUnoccupiedSector_NewSectorHasUnitAndOldDoesNotAndTurnStateProgressed
       resultStatus: 0
-      duration: 0.0446969
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nSectorTest.Setup
-        () (at Assets/Unit Tests/SectorTest.cs:390)\r\nSectorTest+<MoveIntoUnoccupiedSector_NewSectorHasUnitAndOldDoesNotAndTurnStateProgressed>c__Iterator5.MoveNext
-        () (at Assets/Unit Tests/SectorTest.cs:184)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1326,16 +1152,10 @@ MonoBehaviour:
       name: OnMouseAsButton_CorrectUnitIsSelected
       fullName: SectorTest.OnMouseAsButton_CorrectUnitIsSelected
       resultStatus: 0
-      duration: 0.0392978
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nSectorTest.Setup
-        () (at Assets/Unit Tests/SectorTest.cs:390)\r\nSectorTest+<OnMouseAsButton_CorrectUnitIsSelected>c__Iterator4.MoveNext
-        () (at Assets/Unit Tests/SectorTest.cs:99)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1344,16 +1164,10 @@ MonoBehaviour:
       name: SetOwner_SectorOwnerAndColorCorrect
       fullName: SectorTest.SetOwner_SectorOwnerAndColorCorrect
       resultStatus: 0
-      duration: 0.0407898
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nSectorTest.Setup
-        () (at Assets/Unit Tests/SectorTest.cs:390)\r\nSectorTest+<SetOwner_SectorOwnerAndColorCorrect>c__Iterator0.MoveNext
-        () (at Assets/Unit Tests/SectorTest.cs:16)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1362,8 +1176,8 @@ MonoBehaviour:
       name: UnitTest
       fullName: UnitTest
       resultStatus: 0
-      duration: 0.6133317
-      messages: One or more child tests had errors
+      duration: 0
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -1374,16 +1188,10 @@ MonoBehaviour:
       name: DestroySelf_UnitNotInSectorAndNotInPlayersUnitsList
       fullName: UnitTest.DestroySelf_UnitNotInSectorAndNotInPlayersUnitsList
       resultStatus: 0
-      duration: 0.0402541
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nUnitTest.Setup
-        () (at Assets/Unit Tests/UnitTest.cs:261)\r\nUnitTest+<DestroySelf_UnitNotInSectorAndNotInPlayersUnitsList>c__Iterator8.MoveNext
-        () (at Assets/Unit Tests/UnitTest.cs:191)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1392,16 +1200,10 @@ MonoBehaviour:
       name: LevelUp_UnitLevelDoesNotPastFive
       fullName: UnitTest.LevelUp_UnitLevelDoesNotPastFive
       resultStatus: 0
-      duration: 0.0466132
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nUnitTest.Setup
-        () (at Assets/Unit Tests/UnitTest.cs:261)\r\nUnitTest+<LevelUp_UnitLevelDoesNotPastFive>c__Iterator6.MoveNext
-        () (at Assets/Unit Tests/UnitTest.cs:155)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1410,16 +1212,10 @@ MonoBehaviour:
       name: LevelUp_UnitLevelIncreasesByOne
       fullName: UnitTest.LevelUp_UnitLevelIncreasesByOne
       resultStatus: 0
-      duration: 0.0379686
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nUnitTest.Setup
-        () (at Assets/Unit Tests/UnitTest.cs:261)\r\nUnitTest+<LevelUp_UnitLevelIncreasesByOne>c__Iterator5.MoveNext
-        () (at Assets/Unit Tests/UnitTest.cs:140)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1428,16 +1224,10 @@ MonoBehaviour:
       name: MoveToFriendly_UnitInCorrectSector
       fullName: UnitTest.MoveToFriendly_UnitInCorrectSector
       resultStatus: 0
-      duration: 0.0459199
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nUnitTest.Setup
-        () (at Assets/Unit Tests/UnitTest.cs:261)\r\nUnitTest+<MoveToFriendly_UnitInCorrectSector>c__Iterator2.MoveNext
-        () (at Assets/Unit Tests/UnitTest.cs:65)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1446,16 +1236,10 @@ MonoBehaviour:
       name: MoveToFriendlyFromNull_UnitInCorrectSector
       fullName: UnitTest.MoveToFriendlyFromNull_UnitInCorrectSector
       resultStatus: 0
-      duration: 0.0382079
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nUnitTest.Setup
-        () (at Assets/Unit Tests/UnitTest.cs:261)\r\nUnitTest+<MoveToFriendlyFromNull_UnitInCorrectSector>c__Iterator0.MoveNext
-        () (at Assets/Unit Tests/UnitTest.cs:17)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1464,16 +1248,10 @@ MonoBehaviour:
       name: MoveToNeutral_UnitInCorrectSector
       fullName: UnitTest.MoveToNeutral_UnitInCorrectSector
       resultStatus: 0
-      duration: 0.0384898
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nUnitTest.Setup
-        () (at Assets/Unit Tests/UnitTest.cs:261)\r\nUnitTest+<MoveToNeutral_UnitInCorrectSector>c__Iterator1.MoveNext
-        () (at Assets/Unit Tests/UnitTest.cs:39)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1482,16 +1260,10 @@ MonoBehaviour:
       name: SelectAndDeselect_SelectedTrueWhenSelectedFalseWhenDeselected
       fullName: UnitTest.SelectAndDeselect_SelectedTrueWhenSelectedFalseWhenDeselected
       resultStatus: 0
-      duration: 0.0392964
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nUnitTest.Setup
-        () (at Assets/Unit Tests/UnitTest.cs:261)\r\nUnitTest+<SelectAndDeselect_SelectedTrueWhenSelectedFalseWhenDeselected>c__Iterator7.MoveNext
-        () (at Assets/Unit Tests/UnitTest.cs:170)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1500,34 +1272,16 @@ MonoBehaviour:
       name: SwapPlaces_UnitsInCorrectNewSectors
       fullName: UnitTest.SwapPlaces_UnitsInCorrectNewSectors
       resultStatus: 0
-      duration: 0.0392757
-      messages: 'Unhandled log message: ''[Exception] NullReferenceException: Object
-        reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nUnitTest.Setup
-        () (at Assets/Unit Tests/UnitTest.cs:261)\r\nUnitTest+<SwapPlaces_UnitsInCorrectNewSectors>c__Iterator4.MoveNext
-        () (at Assets/Unit Tests/UnitTest.cs:110)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
       isSuite: 0
-    m_ResultText: "CreatePlayers_FourPlayersAreHuman (0.194s)\n---\nUnhandled log
-      message: '[Exception] NullReferenceException: Object reference not set to an
-      instance of an object'. Use UnityEngine.TestTools.LogAssert.Expect\n---\nPlayerUI.Initialize
-      (.Player player, Int32 player_id) (at Assets/Scripts/PlayerUI.cs:23)\r\nGameTest.Setup
-      () (at Assets/Unit Tests/GameTest.cs:348)\r\nGameTest+<CreatePlayers_FourPlayersAreHuman>c__Iterator0.MoveNext
-      () (at Assets/Unit Tests/GameTest.cs:18)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-      (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-      IntPtr)\n---\nNullReferenceException: Object reference not set to an instance
-      of an object"
-    m_ResultStacktrace: "PlayerUI.Initialize (.Player player, Int32 player_id) (at
-      Assets/Scripts/PlayerUI.cs:23)\r\nGameTest.Setup () (at Assets/Unit Tests/GameTest.cs:348)\r\nGameTest+<CreatePlayers_FourPlayersAreHuman>c__Iterator0.MoveNext
-      () (at Assets/Unit Tests/GameTest.cs:18)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-      (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-      IntPtr)\r\n\r\n"
+    m_ResultText: CreatePlayers_FourPlayersAreHuman (0.000s)
+    m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 5a59e50e
