@@ -81,9 +81,9 @@ public class Sector : MonoBehaviour {
         // set sector color to the color of the given player
         // or gray if null
         if (owner == null) {
-            gameObject.GetComponent<Renderer> ().material.color = Color.gray;
+            gameObject.GetComponent<Renderer>().material.color = Color.gray;
         } else {
-            gameObject.GetComponent<Renderer> ().material.color = owner.GetColor();
+            gameObject.GetComponent<Renderer>().sharedMaterial.color = owner.GetColor();
         }
     }
 

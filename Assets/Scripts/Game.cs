@@ -521,6 +521,17 @@ public class Game : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// 
+    /// Sets the actions remaining label.
+    /// 
+    /// </summary>
+    /// <param name="actionsRemaining">Text to set as the actions remaining label</param>
+    public void SetActionsRemainingLabel(UnityEngine.UI.Text actionsRemaining)
+    {
+        this.actionsRemaining = actionsRemaining;
+    }
+
     #region Function to check for defeated players and notify the others (Added by Jack 01/02/2018)
 
     /// <summary>

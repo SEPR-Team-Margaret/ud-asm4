@@ -248,6 +248,7 @@ public class PlayerTest
     public IEnumerator IsEliminated_PlayerWithNoUnitsAndNoLandmarksEliminated() {
         
         Setup();
+        game.InitializeMap();
 
         Player playerA = game.players[0];
 

@@ -160,7 +160,7 @@ public class Unit : MonoBehaviour {
         // and the target sector's unit to the unit
         this.sector = targetSector;
         targetSector.SetUnit(this);
-		Transform targetTransform = targetSector.transform.Find ("Units").transform;
+        Transform targetTransform = targetSector.transform.Find("Units").transform;
 
         // set the unit's transform to be a child of
         // the target sector's transform

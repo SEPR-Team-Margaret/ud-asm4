@@ -254,7 +254,16 @@ public class Player : MonoBehaviour {
             previousOwner.ownedSectors.Remove(sector);
 
         // set the sector's owner to this player
-        sector.SetOwner(this);
+        if (game.GetTestMode())
+        {
+            // if in test mode, do not color sector
+            sector.SetOwnerNoColour(this);
+        }
+        else
+        {
+            // otherwise, set owner normally
+            sector.SetOwner(this);
+        }
 
         // if the sector contains a landmark
         if (sector.GetLandmark() != null)
