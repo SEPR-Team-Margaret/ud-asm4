@@ -1,0 +1,4 @@
+Testing Notes:
+
+new conflict mechanism hella confusing - this will not stand
+Sector's MoveInto____Unit methods no longer affect turn state

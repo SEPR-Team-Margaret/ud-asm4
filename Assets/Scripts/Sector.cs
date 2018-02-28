@@ -386,7 +386,11 @@ public class Sector : MonoBehaviour {
         int attackingUnitRoll = Random.Range(1, (5 + attackingUnit.GetLevel())) + attackingUnit.GetOwner().GetAttack();
         int defendingUnitRoll = Random.Range(1, (5 + defendingUnit.GetLevel())) + defendingUnit.GetOwner().GetDefence();
 
+        return attackingUnitRoll > defendingUnitRoll;
+
         #region conflict resolution algorithm updated to make more fair (Modified by Dom 13/02/2018)
+
+        /*
 
         // diff = +ve attacker advantage 
         // diff = -ve defender advantage
@@ -420,6 +424,9 @@ public class Sector : MonoBehaviour {
                 return true;
             }
         }
+
+        */
+
         #endregion
     }
 

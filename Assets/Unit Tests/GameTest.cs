@@ -299,7 +299,7 @@ public class GameTest
         Setup();
         yield return null;
 
-        Sector landmark1 = map.sectors[1];
+        Sector landmark1 = map.sectors[0];
         Player playerA = players[0];
 
         // ensure 'landmark1' is a landmark
@@ -321,8 +321,8 @@ public class GameTest
         Setup();
         yield return null;
 
-        Sector landmark1 = map.sectors[1];
-        Sector landmark2 = map.sectors[7];
+        Sector landmark1 = map.sectors[0];
+        Sector landmark2 = map.sectors[10];
         Player playerA = players[0];
         Player playerB = players[1];
 
@@ -364,7 +364,7 @@ public class GameTest
         Setup();
         yield return null;
 
-        Sector landmark1 = map.sectors[1];
+        Sector landmark1 = map.sectors[0];
         Player playerA = players[0];
         Player playerB = players[1];
 

@@ -30,10 +30,15 @@ public class SaveGameTest
     [UnityTest]
     public IEnumerator SaveLoadGame()
     {
-        Game game = new Game();
+
+        Setup();
+
+   //     Game newGame = MonoBehaviour.Instantiate(this.game);
+   //     game.DisableTestMode();
         game.Initialize(true);
+        game.InitializeMap();
         SavedGame.Save("saveTest", game);
-        Game savedGame = new Game();
+        Game savedGame = MonoBehaviour.Instantiate(game);
         savedGame.Initialize(SavedGame.Load("saveTest"));
         Assert.AreSame(game, savedGame);
 

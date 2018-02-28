@@ -28,7 +28,7 @@ public class TestSetup
         // the "Map" asset is a copy of the 4x4 Test map, complete with
         // adjacent sectors and landmarks at (0,1), (1,3), (2,0), and (3,2),
         // but its script lacks references to the game & sectors
-        map = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Map")).GetComponent<Map>();
+        map = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Map 1")).GetComponent<Map>();
             
         // the "GUI" asset contains the PlayerUI object for each Player
         gui = MonoBehaviour.Instantiate(Resources.Load<GameObject>("GUI")).GetComponentsInChildren<PlayerUI>();

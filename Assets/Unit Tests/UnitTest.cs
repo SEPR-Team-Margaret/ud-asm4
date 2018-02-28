@@ -119,11 +119,20 @@ public class UnitTest
 
         Setup();
 
-        Unit unitA = map.sectors[0].GetUnit();
-        Unit unitB = map.sectors[1].GetUnit();
+        Unit unitA = MonoBehaviour.Instantiate(unitPrefab).GetComponent<Unit>();
+        Unit unitB = MonoBehaviour.Instantiate(unitPrefab).GetComponent<Unit>();
+
+        unitA.SetOwner(players[0]);
+        unitB.SetOwner(players[0]);
+        unitB.LevelUp();
         
         Sector sectorA = map.sectors[0];
         Sector sectorB = map.sectors[1];
+
+        sectorA.SetUnit(unitA);
+        sectorB.SetUnit(unitB);
+        unitA.SetSector(sectorA);
+        unitB.SetSector(sectorB);
 
         yield return null;
 
