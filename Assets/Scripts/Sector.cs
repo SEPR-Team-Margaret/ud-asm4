@@ -8,7 +8,7 @@ public class Sector : MonoBehaviour {
     [SerializeField] private Sector[] adjacentSectors;
 	[SerializeField] private Landmark landmark;
     [SerializeField] private bool VC = false;
-    [SerializeField] private bool PunishmentCard = false;
+    [SerializeField] private PunishmentCard punishmentCard;
 
     #region Getters and Setters
 
@@ -143,6 +143,13 @@ public class Sector : MonoBehaviour {
     /// <param name="landmark">Landmark object to be set on this sector</param>
 	public void SetLandmark(Landmark landmark) {
         this.landmark = landmark;
+    }
+
+    public PunishmentCard GetPunishmentCard() {
+        return punishmentCard;
+    }
+    public void SetPunishmentCard(PunishmentCard pc) {
+        this.punishmentCard = pc;
     }
 
     #endregion

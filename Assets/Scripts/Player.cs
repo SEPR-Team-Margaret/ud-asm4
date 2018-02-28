@@ -18,7 +18,10 @@ public class Player : MonoBehaviour {
     [SerializeField] private bool human;
     [SerializeField] private bool neutral;
     [SerializeField] private bool active = false;
-    
+    [SerializeField] private List<PunishmentCard> punishmentCards;
+
+    #region Getters and Setters
+
     public Game GetGame() {
         return game;
     }
@@ -38,8 +41,6 @@ public class Player : MonoBehaviour {
 	public void SetGui(PlayerUI gui) {
 		this.gui = gui;
 	}
-
-    #region Getters and Setters
 
     /// <summary>
     /// 
@@ -147,6 +148,37 @@ public class Player : MonoBehaviour {
             neutral = false;
         }
     }
+
+    /// <summary>
+    /// 
+    /// Gets the list of Punishment Cards this player has
+    /// 
+    /// </summary>
+	public List<PunishmentCard> GetPunishmentCards() {
+		return punishmentCards;
+    }
+
+    /// <summary>
+    /// 
+    /// Adds punishment card to the list of punishment cards for the player
+    /// 
+    /// </summary>
+    /// <param name="val">An instance of a punishment card to be added to the list</param>
+	public void AddPunishmentCards(PunishmentCard card) {
+		punishmentCards.Add (card);
+
+    }
+
+	/// <summary>
+	/// 
+	/// Removes punishment card from the list of punishment cards for the player
+	/// 
+	/// </summary>
+	/// <param name="val">An instance of a punishment card to be removed from the list</param>
+	public void RemovePunishmentCards(PunishmentCard card) {
+		punishmentCards.Remove (card);
+
+	}
 
     #endregion
 
@@ -295,6 +327,9 @@ public class Player : MonoBehaviour {
 
         }
 
+		if (sector.GetPunishmentCard() != null) {
+			AddPunishmentCards (sector.GetPunishmentCard ());
+		}
 
     }
 
