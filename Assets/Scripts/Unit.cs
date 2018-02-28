@@ -9,8 +9,11 @@ public class Unit : MonoBehaviour {
     [SerializeField] private int level;
     [SerializeField] private Color color;
     [SerializeField] private bool selected = false;
+    [SerializeField] private string unitName;
+	[SerializeField] private bool unitFrozen = false; // NEW ADDITION FOR FREEZING UNITS PUNISHMENT CARD
+	[SerializeField] private int frozenCounter = 0;
 
-	[SerializeField] private Material level1Material;
+    [SerializeField] private Material level1Material;
 	[SerializeField] private Material level2Material;
 	[SerializeField] private Material level3Material;
 	[SerializeField] private Material level4Material;
@@ -33,11 +36,18 @@ public class Unit : MonoBehaviour {
         level = 1;
         color = owner.GetColor();
 
+        unitName = GenerateName();
+
         // set the material color to the player color
         GetComponent<Renderer>().material.color = color;
 
         // place the unit in the sector
         MoveTo(sector);
+
+    }
+
+    private string GenerateName() {
+        return null;
 
     }
 
@@ -150,36 +160,39 @@ public class Unit : MonoBehaviour {
     /// <param name="targetSector">The sector to move this unit to</param>
     public void MoveTo(Sector targetSector) {
         
-        // clear the unit's current sector
-        if (this.sector != null)
-        {
-            this.sector.ClearUnit();
-        }   
+		if (this.unitFrozen == false) {
+			// clear the unit's current sector
+			if (this.sector != null) {
+				this.sector.ClearUnit ();
+			}   
 
-        // set the unit's sector to the target sector
-        // and the target sector's unit to the unit
-        this.sector = targetSector;
-        targetSector.SetUnit(this);
-		Transform targetTransform = targetSector.transform.Find ("Units").transform;
+			// set the unit's sector to the target sector
+			// and the target sector's unit to the unit
+			this.sector = targetSector;
+			targetSector.SetUnit (this);
+			Transform targetTransform = targetSector.transform.Find ("Units").transform;
 
-        // set the unit's transform to be a child of
-        // the target sector's transform
-        transform.SetParent(targetTransform);
+			// set the unit's transform to be a child of
+			// the target sector's transform
+			transform.SetParent (targetTransform);
 
-        // align the transform to the sector
-        transform.position = targetTransform.position;
+			// align the transform to the sector
+			transform.position = targetTransform.position;
 
 
-        // if the target sector belonged to a different 
-        // player than the unit, capture it and level up
-        if (targetSector.GetOwner() != this.owner)
-        {
-            // level up
-            LevelUp();
+			// if the target sector belonged to a different 
+			// player than the unit, capture it and level up
+			if (targetSector.GetOwner () != this.owner) {
+				// level up
+				LevelUp ();
 
-            // capture the target sector for the owner of this unit
-            owner.Capture(targetSector);
-        }
+				// capture the target sector for the owner of this unit
+				owner.Capture (targetSector);
+			}
+		} 
+		else {
+			Debug.Log ("This unit is frozen! -- need to implement UI for this");
+		}
 
     }
 
@@ -293,5 +306,26 @@ public class Unit : MonoBehaviour {
         owner.units.Remove(this);
         Destroy(this.gameObject);
     }
-        
+
+	public void FreezeUnit() {
+		unitFrozen = true;
+		frozenCounter = 3;
+	}
+
+	public void UnFreezeUnit() {
+		unitFrozen = false;
+		frozenCounter = 0;
+	}
+
+	public bool IsFrozen(){
+		return unitFrozen;
+	}
+
+	public int GetFrozenCounter(){
+		return frozenCounter;
+	}
+
+	public void DecrementFrozenCounter(){
+		frozenCounter--;
+	}
 }

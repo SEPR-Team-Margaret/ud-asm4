@@ -50,7 +50,7 @@ public class PlayerTest
         Setup();
 
         // capturing landmark
-        Sector landmarkedSector = map.sectors[1]; 
+        Sector landmarkedSector = map.sectors[0]; 
         landmarkedSector.Initialize();
         Landmark landmark = landmarkedSector.GetLandmark();
         Player playerA = game.players[0];
@@ -85,7 +85,7 @@ public class PlayerTest
         Setup();
 
         // capturing landmark
-        Sector landmarkedSector = map.sectors[1]; 
+        Sector landmarkedSector = map.sectors[0]; 
         landmarkedSector.Initialize();
         Landmark landmark = landmarkedSector.GetLandmark();
         Player playerA = game.players[0];
@@ -120,7 +120,7 @@ public class PlayerTest
         Setup();
 
         // capturing landmark
-        Sector landmarkedSector = map.sectors[1]; 
+        Sector landmarkedSector = map.sectors[0]; 
         landmarkedSector.Initialize();
         Landmark landmark = landmarkedSector.GetLandmark();
         Player playerA = game.players[0];
@@ -150,7 +150,7 @@ public class PlayerTest
         Setup();
 
         // capturing landmark
-        Sector landmarkedSector = map.sectors[1]; 
+        Sector landmarkedSector = map.sectors[0]; 
         landmarkedSector.Initialize();
         Landmark landmark = landmarkedSector.GetLandmark();
         Player playerA = game.players[0];
@@ -179,7 +179,7 @@ public class PlayerTest
         
         Setup();
 
-        Sector landmarkedSector = map.sectors[1]; 
+        Sector landmarkedSector = map.sectors[0]; 
         Player playerA = game.players[0];
 
         // ensure that 'landmarkedSector' is a landmark and does not contain a unit
@@ -201,7 +201,7 @@ public class PlayerTest
 
         Setup();
 
-        Sector landmarkedSector = map.sectors[1]; 
+        Sector landmarkedSector = map.sectors[0]; 
         Player playerA = game.players[0];
 
         // ensure that 'landmarkedSector' is a landmark and contains a Level 5 unit
@@ -225,7 +225,7 @@ public class PlayerTest
 
         Setup();
 
-        Sector landmarkedSector = map.sectors[1]; 
+        Sector landmarkedSector = map.sectors[0]; 
         Player playerA = game.players[0];
         Player playerB = game.players[1];
         landmarkedSector.SetUnit(null);
@@ -248,6 +248,7 @@ public class PlayerTest
     public IEnumerator IsEliminated_PlayerWithNoUnitsAndNoLandmarksEliminated() {
         
         Setup();
+        game.InitializeMap();
 
         Player playerA = game.players[0];
 

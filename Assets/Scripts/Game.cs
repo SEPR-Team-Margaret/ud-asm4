@@ -29,7 +29,12 @@ public class Game : MonoBehaviour {
     public bool triggerDialog = false;
 
     public bool[] eliminatedPlayers;
-        
+
+
+    public void Start() {
+        Names.Init();
+    }
+
     //modified by Peter
     /// <summary>
     /// 
@@ -418,6 +423,19 @@ public class Game : MonoBehaviour {
                 break;                
             }
         }
+
+		for (int i = 0; i < players.Length; i++) {
+			for (int j = 0; j < players [i].units.Count (); j++) {
+				if (players [i].units [j].IsFrozen ()) {
+					if (players [i].units [j].GetFrozenCounter () > 0) {
+						players [i].units [j].DecrementFrozenCounter ();
+					} 
+					else {
+						players [i].units [j].UnFreezeUnit ();
+					}
+				}
+			}
+		}
     }
 
     /// <summary>
@@ -519,6 +537,17 @@ public class Game : MonoBehaviour {
             default:
                 break;
         }
+    }
+
+    /// <summary>
+    /// 
+    /// Sets the actions remaining label.
+    /// 
+    /// </summary>
+    /// <param name="actionsRemaining">Text to set as the actions remaining label</param>
+    public void SetActionsRemainingLabel(UnityEngine.UI.Text actionsRemaining)
+    {
+        this.actionsRemaining = actionsRemaining;
     }
 
     #region Function to check for defeated players and notify the others (Added by Jack 01/02/2018)

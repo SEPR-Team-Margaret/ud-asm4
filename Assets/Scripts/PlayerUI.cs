@@ -71,6 +71,6 @@ public class PlayerUI : MonoBehaviour {
     /// 
     /// </summary>
 	public void Deactivate() {
-		header.color = defaultHeaderColor;
+        header.color = defaultHeaderColor;
 	}
 }

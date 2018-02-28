@@ -8,7 +8,7 @@ public class Sector : MonoBehaviour {
     [SerializeField] private Sector[] adjacentSectors;
 	[SerializeField] private Landmark landmark;
     [SerializeField] private bool VC = false;
-    [SerializeField] private bool PunishmentCard = false;
+    [SerializeField] private PunishmentCard punishmentCard;
 
     #region Getters and Setters
 
@@ -81,9 +81,9 @@ public class Sector : MonoBehaviour {
         // set sector color to the color of the given player
         // or gray if null
         if (owner == null) {
-            gameObject.GetComponent<Renderer> ().material.color = Color.gray;
+            gameObject.GetComponent<Renderer>().material.color = Color.gray;
         } else {
-            gameObject.GetComponent<Renderer> ().material.color = owner.GetColor();
+            gameObject.GetComponent<Renderer>().sharedMaterial.color = owner.GetColor();
         }
     }
 
@@ -143,6 +143,13 @@ public class Sector : MonoBehaviour {
     /// <param name="landmark">Landmark object to be set on this sector</param>
 	public void SetLandmark(Landmark landmark) {
         this.landmark = landmark;
+    }
+
+    public PunishmentCard GetPunishmentCard() {
+        return punishmentCard;
+    }
+    public void SetPunishmentCard(PunishmentCard pc) {
+        this.punishmentCard = pc;
     }
 
     #endregion
@@ -386,7 +393,11 @@ public class Sector : MonoBehaviour {
         int attackingUnitRoll = Random.Range(1, (5 + attackingUnit.GetLevel())) + attackingUnit.GetOwner().GetAttack();
         int defendingUnitRoll = Random.Range(1, (5 + defendingUnit.GetLevel())) + defendingUnit.GetOwner().GetDefence();
 
+        return attackingUnitRoll > defendingUnitRoll;
+
         #region conflict resolution algorithm updated to make more fair (Modified by Dom 13/02/2018)
+
+        /*
 
         // diff = +ve attacker advantage 
         // diff = -ve defender advantage
@@ -420,6 +431,9 @@ public class Sector : MonoBehaviour {
                 return true;
             }
         }
+
+        */
+
         #endregion
     }
 
