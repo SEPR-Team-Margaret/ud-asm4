@@ -13,7 +13,7 @@ public class Map : MonoBehaviour {
     public Sector[] sectors;
 
     [SerializeField] private int maxPunishmentCardsOnMap = 3;
-    [SerializeField] private int numPunishmentCardsOnMap = 0;
+    [SerializeField] private int numPunishmentCardsOnMap = 0; // current number of punishment cards on map
 
     public int NumPunishmentCardsOnMap
     {

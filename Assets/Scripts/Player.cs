@@ -18,8 +18,7 @@ public class Player : MonoBehaviour {
     [SerializeField] private bool human;
     [SerializeField] private bool neutral;
     [SerializeField] private bool active = false;
-    [SerializeField] private PunishmentCard punishmentCard;
-    [SerializeField] private int numPunishmentCards;
+    [SerializeField] private List<PunishmentCard> punishmentCards;
 
     #region Getters and Setters
 
@@ -152,44 +151,34 @@ public class Player : MonoBehaviour {
 
     /// <summary>
     /// 
-    /// Gets the number of Punishment Cards this player has
+    /// Gets the list of Punishment Cards this player has
     /// 
     /// </summary>
-    public int GetPunishmentCards() {
-        return numPunishmentCards;
+	public List<PunishmentCard> GetPunishmentCards() {
+		return punishmentCards;
     }
 
     /// <summary>
     /// 
-    /// Sets the number of Punishment Cards this player has
+    /// Adds punishment card to the list of punishment cards for the player
     /// 
     /// </summary>
-    /// <param name="val">An integer value that numPunishmentCards will be set to, if val is greater than or equal to 0.</param>
-    public void SetPunishmentCards(int val) {
-        if (val >= 0) {
-            numPunishmentCards = val;
-        }
-        else {
-            Debug.LogWarning("numPunishmentCards is being set to " + val + ", which is less than 0.");
-        }
+    /// <param name="val">An instance of a punishment card to be added to the list</param>
+	public void AddPunishmentCards(PunishmentCard card) {
+		punishmentCards.Add (card);
 
     }
 
-    /// <summary>
-    /// 
-    /// Sets the number of Punishment Cards this player has.
-    /// Defaults to 0 if numPunishmentCards becomes less than 0.
-    /// 
-    /// </summary>
-    /// <param name="val">An integer value that numPunishmentCards will have added to it.</param>
-    public void AddPunishmentCards(int val) {
-        numPunishmentCards += val;
+	/// <summary>
+	/// 
+	/// Removes punishment card from the list of punishment cards for the player
+	/// 
+	/// </summary>
+	/// <param name="val">An instance of a punishment card to be removed from the list</param>
+	public void RemovePunishmentCards(PunishmentCard card) {
+		punishmentCards.Remove (card);
 
-        if (numPunishmentCards < 0) {
-            numPunishmentCards = 0;
-            Debug.LogWarning("Punishment Cards is being set to a value less than 0");
-        }
-    }
+	}
 
     #endregion
 
@@ -329,6 +318,9 @@ public class Player : MonoBehaviour {
 
         }
 
+		if (sector.GetPunishmentCard() != null) {
+			AddPunishmentCards (sector.GetPunishmentCard ());
+		}
 
     }
 

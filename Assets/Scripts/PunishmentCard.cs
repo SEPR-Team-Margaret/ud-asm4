@@ -6,8 +6,9 @@ public class PunishmentCard : MonoBehaviour {
 
     [SerializeField] private Player owner;
     [SerializeField] private Sector sector;
-    [SerializeField] private enum Effect {Type1, Type2, Funny};
+    [SerializeField] private enum Effect {FreezeUnit, SkipTurn, NullifyResource};
     [SerializeField] private Map map;
+	private Effect effect;
 
     #region Getters and Setters
 
@@ -17,6 +18,9 @@ public class PunishmentCard : MonoBehaviour {
         if (map == null) {
             Debug.LogWarning("Map object or Map Script not found!");
         }
+
+		Effect[] arrayOfEffects = { Effect.FreezeUnit, Effect.SkipTurn, Effect.NullifyResource };
+		effect = arrayOfEffects [(Mathf.RoundToInt (Random.Range (0, 2)))];
     }
 
     public void SetSector(Sector sect) {
@@ -69,5 +73,22 @@ public class PunishmentCard : MonoBehaviour {
         return null;
         
     }
+
+	public void usePunishmentCard() {
+		switch (effect) {
+			case Effect.FreezeUnit:
+				//Freeze unit card
+				//pass in a selected unit
+			//selectedUnit.FreezeUnit();
+				break;
+			case Effect.SkipTurn:
+				//Skip a turn
+
+				break;
+			case Effect.NullifyResource:
+				//Nullify resource
+				break;
+		}
+	}
     
 }

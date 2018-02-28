@@ -423,6 +423,19 @@ public class Game : MonoBehaviour {
                 break;                
             }
         }
+
+		for (int i = 0; i < players.Length; i++) {
+			for (int j = 0; j < players [i].units.Count (); j++) {
+				if (players [i].units [j].IsFrozen ()) {
+					if (players [i].units [j].GetFrozenCounter () > 0) {
+						players [i].units [j].DecrementFrozenCounter ();
+					} 
+					else {
+						players [i].units [j].UnFreezeUnit ();
+					}
+				}
+			}
+		}
     }
 
     /// <summary>
