@@ -160,7 +160,7 @@ public class Unit : MonoBehaviour {
     /// <param name="targetSector">The sector to move this unit to</param>
     public void MoveTo(Sector targetSector) {
         
-		if (this.unitFrozen = false) {
+		if (this.unitFrozen == false) {
 			// clear the unit's current sector
 			if (this.sector != null) {
 				this.sector.ClearUnit ();
