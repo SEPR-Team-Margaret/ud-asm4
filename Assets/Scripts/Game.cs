@@ -826,7 +826,6 @@ public class Game : MonoBehaviour {
         Unit unit = Instantiate(sectors[sectorIndex].GetOwner().GetUnitPrefab()).GetComponent<Unit>();
         unit.Initialize(sectors[sectorIndex].GetOwner(), sectors[sectorIndex]);
         unit.SetLevel(level);
-        unit.UpdateUnitMaterial();
         unit.MoveTo(sectors[sectorIndex]);
         sectors[sectorIndex].GetOwner().units.Add(unit);
     }
