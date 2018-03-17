@@ -14,13 +14,13 @@ MonoBehaviour:
   m_PixelRect:
     serializedVersion: 2
     x: 0
-    y: 43
-    width: 1680
-    height: 967
+    y: 42
+    width: 1920
+    height: 998
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -41,9 +41,9 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1680
-    height: 967
-  m_MinSize: {x: 950, y: 300}
+    width: 1920
+    height: 998
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -61,7 +61,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1680
+    width: 1920
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -81,8 +81,8 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 947
-    width: 1680
+    y: 978
+    width: 1920
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -104,12 +104,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
-    width: 1680
-    height: 917
+    width: 1920
+    height: 948
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 118
+  controlID: 7725
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -128,12 +128,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1190
-    height: 917
+    width: 1360
+    height: 948
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 49
+  controlID: 7619
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -152,12 +152,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1190
-    height: 549
+    width: 1360
+    height: 568
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 50
+  controlID: 7620
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -174,8 +174,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 357
-    height: 549
+    width: 408
+    height: 568
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 13}
@@ -197,10 +197,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 357
+    x: 408
     y: 0
-    width: 833
-    height: 549
+    width: 952
+    height: 568
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 12}
@@ -209,7 +209,7 @@ MonoBehaviour:
   - {fileID: 12}
   - {fileID: 15}
   m_Selected: 1
-  m_LastSelected: 0
+  m_LastSelected: 2
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -225,9 +225,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 549
-    width: 1190
-    height: 368
+    y: 568
+    width: 1360
+    height: 380
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
   m_ActualView: {fileID: 16}
@@ -236,7 +236,7 @@ MonoBehaviour:
   - {fileID: 17}
   - {fileID: 18}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 1
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -251,10 +251,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1190
+    x: 1360
     y: 0
-    width: 490
-    height: 917
+    width: 560
+    height: 948
   m_MinSize: {x: 277, y: 71}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 19}
@@ -284,11 +284,12 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-    x: 359
-    y: 92
-    width: 829
-    height: 528
-  m_MaximizeOnPlay: 0
+    x: 410
+    y: 91
+    width: 948
+    height: 547
+  m_PersistentViewDataDictionary: {fileID: 0}
+  m_MaximizeOnPlay: 1
   m_Gizmos: 0
   m_Stats: 0
   m_SelectedSizes: 05000000000000000000000000000000000000000000000000000000000000000000000000000000
@@ -296,10 +297,10 @@ MonoBehaviour:
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-    m_HBaseRangeMin: -414.5
-    m_HBaseRangeMax: 414.5
-    m_VBaseRangeMin: -233.15625
-    m_VBaseRangeMax: 233.15625
+    m_HBaseRangeMin: -471.1111
+    m_HBaseRangeMax: 471.1111
+    m_VBaseRangeMin: -265
+    m_VBaseRangeMax: 265
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -316,25 +317,25 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 829
-      height: 511
+      width: 948
+      height: 530
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 414.5, y: 255.5}
+    m_Translation: {x: 474, y: 265}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -414.5
-      y: -255.5
-      width: 829
-      height: 511
+      x: -474
+      y: -265
+      width: 948
+      height: 530
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 829, y: 528}
+  m_LastWindowPixelSize: {x: 948, y: 547}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -361,28 +362,29 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 92
-    width: 355
-    height: 528
+    y: 91
+    width: 406
+    height: 547
+  m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: fa8bfeff94a8feff28bafeff50bafeff4249ffff4859ffff206affff000000008e680000106a0000466c00008a6c0000da6d0000186e00008a6e0000
+    scrollPos: {x: 0, y: 358}
+    m_SelectedIDs: c4cbf6ff
+    m_LastClickedID: -603196
+    m_ExpandedIDs: f248f7ff42d4fbff74aefcff7e1cfeffea3fffff1681ffff28f2ffff0cf8ffff00000000b0360000d2360000323800004c3a0000803b00003a3c0000ac3c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Remaining_Actions_Value
-      m_OriginalName: Remaining_Actions_Value
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 26918
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
@@ -413,19 +415,20 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-    x: 359
-    y: 92
-    width: 829
-    height: 528
+    x: 410
+    y: 91
+    width: 948
+    height: 547
+  m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
   lastFramingTime: 4018.8739008222183
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -42.70598, y: -3.1612759, z: 31.639114}
+    m_Target: {x: -0.12882233, y: -145.01859, z: -153.23383}
     speed: 2
-    m_Value: {x: -42.70598, y: -3.1612759, z: 31.639114}
+    m_Value: {x: -0.12882233, y: -145.01859, z: -153.23383}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -434,6 +437,7 @@ MonoBehaviour:
     showSkybox: 1
     showFlares: 1
     showImageEffects: 1
+    showParticleSystems: 1
   grid:
     xGrid:
       m_Target: 0
@@ -448,18 +452,19 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.00051193306, y: 0.84573203, z: -0.5336071, w: 0.0008125174}
+    m_Target: {x: -0.035097882, y: -0.9394902, z: 0.3253531, w: -0.10134952}
     speed: 2
-    m_Value: {x: 0.00051193306, y: 0.84573203, z: -0.5336071, w: 0.0008125174}
+    m_Value: {x: 0.035097882, y: 0.9394902, z: -0.3253531, w: 0.101349525}
   m_Size:
-    m_Target: 436.659
+    m_Target: 258.90277
     speed: 2
-    m_Value: 436.659
+    m_Value: 258.90277
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
-  m_LastSceneViewRotation: {x: 0, y: 0, z: 0, w: 0}
+  m_ShowGlobalGrid: 1
+  m_LastSceneViewRotation: {x: 0.11411815, y: 0.013651039, z: -0.0015682471, w: 0.9933722}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -487,10 +492,11 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 365
-    y: 92
-    width: 633
-    height: 295
+    x: 410
+    y: 91
+    width: 948
+    height: 547
+  m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -514,9 +520,10 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 641
-    width: 1188
-    height: 347
+    y: 659
+    width: 1358
+    height: 359
+  m_PersistentViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
     m_ClassNames: []
@@ -529,19 +536,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: H:\SEPR\Git\ud-asm4
+  m_LastProjectPath: C:\Luke\Unity\ud-asm4
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 42}
-    m_SelectedIDs: 703b0000
-    m_LastClickedID: 15216
-    m_ExpandedIDs: 00000000b4390000783c00008e3e0000903e000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 46}
+    m_SelectedIDs: bc300000
+    m_LastClickedID: 12476
+    m_ExpandedIDs: 00000000bc300000ec3300008c3600009236000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -569,7 +576,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b4390000dc3b0000783c00008e3e0000903e0000
+    m_ExpandedIDs: 00000000bc300000ec3300008c3600009236000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -647,9 +654,10 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 738
-    width: 1311
-    height: 250
+    y: 659
+    width: 1358
+    height: 359
+  m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -671,11 +679,11 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 715
-    y: 740
-    width: 681
-    height: 247
-  m_IsSceneBased: 0
+    x: 0
+    y: 659
+    width: 1358
+    height: 359
+  m_PersistentViewDataDictionary: {fileID: 0}
   m_TestTypeToolbarIndex: 0
   m_PlayModeTestListGUI:
     m_Window: {fileID: 18}
@@ -691,695 +699,595 @@ MonoBehaviour:
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[H:/SEPR/Git/ud-asm4/Library/ScriptAssemblies/Assembly-CSharp.dll][suite]'
+      isSuite: 0
+    - id: '[C:/Luke/Unity/ud-asm4/Library/ScriptAssemblies/Assembly-CSharp.dll][suite]'
       name: Assembly-CSharp.dll
-      fullName: H:/SEPR/Git/ud-asm4/Library/ScriptAssemblies/Assembly-CSharp.dll
-      resultStatus: 2
-      duration: 3.236039
-      messages: One or more child tests had errors
+      fullName: C:/Luke/Unity/ud-asm4/Library/ScriptAssemblies/Assembly-CSharp.dll
+      resultStatus: 0
+      duration: 0
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][suite]'
+      isSuite: 1
+    - id: '[Assembly-CSharp][GameTest][suite]'
       name: GameTest
       fullName: GameTest
-      resultStatus: 2
-      duration: 1.0748097
-      messages: One or more child tests had errors
+      resultStatus: 0
+      duration: 0
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest.CreatePlayers_FourPlayersAreHuman]'
+      isSuite: 1
+    - id: '[Assembly-CSharp][GameTest.CreatePlayers_FourPlayersAreHuman]'
       name: CreatePlayers_FourPlayersAreHuman
       fullName: GameTest.CreatePlayers_FourPlayersAreHuman
-      resultStatus: 1
-      duration: 0.2368304
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest.CreatePlayers_ThreePlayersHumanAndOneNeutral]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][GameTest.CreatePlayers_ThreePlayersHumanAndOneNeutral]'
       name: CreatePlayers_ThreePlayersHumanAndOneNeutral
       fullName: GameTest.CreatePlayers_ThreePlayersHumanAndOneNeutral
-      resultStatus: 1
-      duration: 0.0334186
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest.EndGame_GameEndsCorrectlyWithNoCurrentPlayerAndNoActivePlayersAndNoTurnState]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][GameTest.EndGame_GameEndsCorrectlyWithNoCurrentPlayerAndNoActivePlayersAndNoTurnState]'
       name: EndGame_GameEndsCorrectlyWithNoCurrentPlayerAndNoActivePlayersAndNoTurnState
       fullName: GameTest.EndGame_GameEndsCorrectlyWithNoCurrentPlayerAndNoActivePlayersAndNoTurnState
-      resultStatus: 2
-      duration: 0.0403068
-      messages: 'Unhandled log message: [Exception] UnassignedReferenceException:
-        The variable texture of Dialog has not been assigned.
-
-        You probably need to assign the texture variable of the Dialog script in the
-        inspector.'
-      output: "UnassignedReferenceException: The variable texture of Dialog has not
-        been assigned.\nYou probably need to assign the texture variable of the Dialog
-        script in the inspector.\r\n"
-      stacktrace: "Dialog.SetDialogType (DialogType type) (at Assets/Scripts/Dialog.cs:33)\r\nGame.EndGame
-        () (at Assets/Scripts/Game.cs:614)\r\nGameTest+<EndGame_GameEndsCorrectlyWithNoCurrentPlayerAndNoActivePlayersAndNoTurnState>c__IteratorC.MoveNext
-        () (at Assets/Unit Tests/GameTest.cs:348)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\n\r\n"
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest.GetWinner_NoWinnerWhenAPlayerHasLandmarkAndAnotherHasUnits]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][GameTest.GetWinner_NoWinnerWhenAPlayerHasLandmarkAndAnotherHasUnits]'
       name: GetWinner_NoWinnerWhenAPlayerHasLandmarkAndAnotherHasUnits
       fullName: GameTest.GetWinner_NoWinnerWhenAPlayerHasLandmarkAndAnotherHasUnits
-      resultStatus: 2
-      duration: 0.0336224
-      messages: 'Unhandled log message: [Exception] NullReferenceException: Object
-        reference not set to an instance of an object'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "GameTest+<GetWinner_NoWinnerWhenAPlayerHasLandmarkAndAnotherHasUnits>c__IteratorB.MoveNext
-        () (at Assets/Unit Tests/GameTest.cs:325)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\n\r\n"
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest.GetWinner_NoWinnerWhenMultiplePlayersOwningLandmarks]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][GameTest.GetWinner_NoWinnerWhenMultiplePlayersOwningLandmarks]'
       name: GetWinner_NoWinnerWhenMultiplePlayersOwningLandmarks
       fullName: GameTest.GetWinner_NoWinnerWhenMultiplePlayersOwningLandmarks
-      resultStatus: 2
-      duration: 0.0335508
-      messages: 'Unhandled log message: [Exception] NullReferenceException: Object
-        reference not set to an instance of an object'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "GameTest+<GetWinner_NoWinnerWhenMultiplePlayersOwningLandmarks>c__Iterator9.MoveNext
-        () (at Assets/Unit Tests/GameTest.cs:283)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\n\r\n"
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest.GetWinner_NoWinnerWhenMultiplePlayersWithUnits]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][GameTest.GetWinner_NoWinnerWhenMultiplePlayersWithUnits]'
       name: GetWinner_NoWinnerWhenMultiplePlayersWithUnits
       fullName: GameTest.GetWinner_NoWinnerWhenMultiplePlayersWithUnits
-      resultStatus: 2
-      duration: 0.0331793
-      messages: 'Unhandled log message: [Exception] NullReferenceException: Object
-        reference not set to an instance of an object'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "GameTest+<GetWinner_NoWinnerWhenMultiplePlayersWithUnits>c__IteratorA.MoveNext
-        () (at Assets/Unit Tests/GameTest.cs:306)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest.GetWinner_OnePlayerWithLandmarksAndUnitsWins]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][GameTest.GetWinner_OnePlayerWithLandmarksAndUnitsWins]'
       name: GetWinner_OnePlayerWithLandmarksAndUnitsWins
       fullName: GameTest.GetWinner_OnePlayerWithLandmarksAndUnitsWins
-      resultStatus: 2
-      duration: 0.0363552
-      messages: 'Unhandled log message: [Exception] NullReferenceException: Object
-        reference not set to an instance of an object'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "GameTest+<GetWinner_OnePlayerWithLandmarksAndUnitsWins>c__Iterator8.MoveNext
-        () (at Assets/Unit Tests/GameTest.cs:260)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\n\r\n"
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest.InitializeMap_OneLandmarkAllocatedWithUnitPerPlayer]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][GameTest.InitializeMap_OneLandmarkAllocatedWithUnitPerPlayer]'
       name: InitializeMap_OneLandmarkAllocatedWithUnitPerPlayer
       fullName: GameTest.InitializeMap_OneLandmarkAllocatedWithUnitPerPlayer
-      resultStatus: 2
-      duration: 0.0402618
-      messages: 'Unhandled log message: [Error] Not allowed to access Renderer.material
-        on prefab object. Use Renderer.sharedMaterial instead'
-      output: "Not allowed to access Renderer.material on prefab object. Use Renderer.sharedMaterial
-        instead\r\nNullReferenceException: Object reference not set to an instance
-        of an object\r\n"
-      stacktrace: "UnityEngine.Renderer:get_material()\r\nSector:SetOwner(Player)
-        (at Assets/Scripts/Sector.cs:84)\r\nSector:Initialize() (at Assets/Scripts/Sector.cs:167)\r\nGame:InitializeMap()
-        (at Assets/Scripts/Game.cs:281)\r\n<InitializeMap_OneLandmarkAllocatedWithUnitPerPlayer>c__Iterator2:MoveNext()
-        (at Assets/Unit Tests/GameTest.cs:61)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest.NeutralPlayerTurn_EnsureNeutralPlayerMovesCorrectly]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][GameTest.NeutralPlayerTurn_EnsureNeutralPlayerMovesCorrectly]'
       name: NeutralPlayerTurn_EnsureNeutralPlayerMovesCorrectly
       fullName: GameTest.NeutralPlayerTurn_EnsureNeutralPlayerMovesCorrectly
-      resultStatus: 2
-      duration: 0.0332245
-      messages: 'Unhandled log message: [Error] Setting the parent of a transform
-        which resides in a prefab is disabled to prevent data corruption.'
-      output: "Setting the parent of a transform which resides in a prefab is disabled
-        to prevent data corruption.\r\nNot allowed to access Renderer.material on
-        prefab object. Use Renderer.sharedMaterial instead\r\nNullReferenceException:
-        Object reference not set to an instance of an object\r\n"
-      stacktrace: "UnityEngine.Transform:SetParent(Transform)\r\nUnit:MoveTo(Sector)
-        (at Assets/Scripts/Unit.cs:175)\r\n<NeutralPlayerTurn_EnsureNeutralPlayerMovesCorrectly>c__Iterator6:MoveNext()
-        (at Assets/Unit Tests/GameTest.cs:207)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest.NextPlayer_CurrentPlayerChangesToNextPlayerEachTime]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][GameTest.NextPlayer_CurrentPlayerChangesToNextPlayerEachTime]'
       name: NextPlayer_CurrentPlayerChangesToNextPlayerEachTime
       fullName: GameTest.NextPlayer_CurrentPlayerChangesToNextPlayerEachTime
-      resultStatus: 2
-      duration: 0.0335478
-      messages: 'Unhandled log message: [Exception] NullReferenceException: Object
-        reference not set to an instance of an object'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "GameTest+<NextPlayer_CurrentPlayerChangesToNextPlayerEachTime>c__Iterator4.MoveNext
-        () (at Assets/Unit Tests/GameTest.cs:122)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\n\r\n"
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest.NextPlayer_EliminatedPlayersAreSkipped]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][GameTest.NextPlayer_EliminatedPlayersAreSkipped]'
       name: NextPlayer_EliminatedPlayersAreSkipped
       fullName: GameTest.NextPlayer_EliminatedPlayersAreSkipped
-      resultStatus: 2
-      duration: 0.0331898
-      messages: 'Unhandled log message: [Exception] NullReferenceException: Object
-        reference not set to an instance of an object'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "GameTest+<NextPlayer_EliminatedPlayersAreSkipped>c__Iterator5.MoveNext
-        () (at Assets/Unit Tests/GameTest.cs:167)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest.NextTurnState_TurnStateProgressesCorrectly]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][GameTest.NextTurnState_TurnStateProgressesCorrectly]'
       name: NextTurnState_TurnStateProgressesCorrectly
       fullName: GameTest.NextTurnState_TurnStateProgressesCorrectly
-      resultStatus: 2
-      duration: 0.0332423
-      messages: 'Unhandled log message: [Exception] UnassignedReferenceException:
-        The variable texture of Dialog has not been assigned.
-
-        You probably need to assign the texture variable of the Dialog script in the
-        inspector.'
-      output: "UnassignedReferenceException: The variable texture of Dialog has not
-        been assigned.\nYou probably need to assign the texture variable of the Dialog
-        script in the inspector.\r\n"
-      stacktrace: "Dialog.SetDialogType (DialogType type) (at Assets/Scripts/Dialog.cs:42)\r\nGame.CheckForDefeatedPlayers
-        () (at Assets/Scripts/Game.cs:544)\r\nGame.NextTurnState () (at Assets/Scripts/Game.cs:490)\r\nGameTest+<NextTurnState_TurnStateProgressesCorrectly>c__Iterator7.MoveNext
-        () (at Assets/Unit Tests/GameTest.cs:231)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest.NoUnitSelected_ReturnsFalseWhenUnitIsSelected]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][GameTest.NoUnitSelected_ReturnsFalseWhenUnitIsSelected]'
       name: NoUnitSelected_ReturnsFalseWhenUnitIsSelected
       fullName: GameTest.NoUnitSelected_ReturnsFalseWhenUnitIsSelected
-      resultStatus: 2
-      duration: 0.0334111
-      messages: 'Unhandled log message: [Exception] NullReferenceException: Object
-        reference not set to an instance of an object'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "GameTest+<NoUnitSelected_ReturnsFalseWhenUnitIsSelected>c__Iterator3.MoveNext
-        () (at Assets/Unit Tests/GameTest.cs:107)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest][suite]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][PlayerTest][suite]'
       name: PlayerTest
       fullName: PlayerTest
-      resultStatus: 2
-      duration: 0.6013862
-      messages: One or more child tests had errors
+      resultStatus: 0
+      duration: 0
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest.CaptureLandmark_BothPlayersBeerAmountCorrect]'
+      isSuite: 1
+    - id: '[Assembly-CSharp][PlayerTest.CaptureLandmark_BothPlayersBeerAmountCorrect]'
       name: CaptureLandmark_BothPlayersBeerAmountCorrect
       fullName: PlayerTest.CaptureLandmark_BothPlayersBeerAmountCorrect
-      resultStatus: 1
-      duration: 0.0331029
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest.CaptureLandmark_BothPlayersKnowledgeAmountCorrect]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][PlayerTest.CaptureLandmark_BothPlayersKnowledgeAmountCorrect]'
       name: CaptureLandmark_BothPlayersKnowledgeAmountCorrect
       fullName: PlayerTest.CaptureLandmark_BothPlayersKnowledgeAmountCorrect
-      resultStatus: 1
-      duration: 0.0330938
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest.CaptureLandmark_NeutralLandmarkPlayerBeerAmountCorrect]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][PlayerTest.CaptureLandmark_NeutralLandmarkPlayerBeerAmountCorrect]'
       name: CaptureLandmark_NeutralLandmarkPlayerBeerAmountCorrect
       fullName: PlayerTest.CaptureLandmark_NeutralLandmarkPlayerBeerAmountCorrect
-      resultStatus: 1
-      duration: 0.0331847
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest.CaptureLandmark_NeutralLandmarkPlayerKnowledgeAmountCorrect]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][PlayerTest.CaptureLandmark_NeutralLandmarkPlayerKnowledgeAmountCorrect]'
       name: CaptureLandmark_NeutralLandmarkPlayerKnowledgeAmountCorrect
       fullName: PlayerTest.CaptureLandmark_NeutralLandmarkPlayerKnowledgeAmountCorrect
-      resultStatus: 1
-      duration: 0.0329356
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest.CaptureSector_ChangesOwner]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][PlayerTest.CaptureSector_ChangesOwner]'
       name: CaptureSector_ChangesOwner
       fullName: PlayerTest.CaptureSector_ChangesOwner
-      resultStatus: 1
-      duration: 0.0232488
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest.IsEliminated_PlayerWithNoUnitsAndNoLandmarksEliminated]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][PlayerTest.IsEliminated_PlayerWithNoUnitsAndNoLandmarksEliminated]'
       name: IsEliminated_PlayerWithNoUnitsAndNoLandmarksEliminated
       fullName: PlayerTest.IsEliminated_PlayerWithNoUnitsAndNoLandmarksEliminated
-      resultStatus: 2
-      duration: 0.0331644
-      messages: 'Unhandled log message: [Error] Destroying assets is not permitted
-        to avoid data loss.
-
-        If you really want to remove an asset use DestroyImmediate (theObject, true);'
-      output: "Destroying assets is not permitted to avoid data loss.\nIf you really
-        want to remove an asset use DestroyImmediate (theObject, true);\r\nDestroying
-        assets is not permitted to avoid data loss.\nIf you really want to remove
-        an asset use DestroyImmediate (theObject, true);\r\nAssertionException:   Expected:
-        True\r\n  But was:  False\r\n\r\n"
-      stacktrace: "UnityEngine.Object:Destroy(Object)\r\nUnit:DestroySelf() (at Assets/Scripts/Unit.cs:302)\r\n<IsEliminated_PlayerWithNoUnitsAndNoLandmarksEliminated>c__Iterator8:MoveNext()
-        (at Assets/Unit Tests/PlayerTest.cs:258)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest.SpawnUnits_NotSpawnedWhenLandmarkNotOwned]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][PlayerTest.SpawnUnits_NotSpawnedWhenLandmarkNotOwned]'
       name: SpawnUnits_NotSpawnedWhenLandmarkNotOwned
       fullName: PlayerTest.SpawnUnits_NotSpawnedWhenLandmarkNotOwned
-      resultStatus: 1
-      duration: 0.0329603
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest.SpawnUnits_NotSpawnedWhenLandmarkOwnedAndOccupied]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][PlayerTest.SpawnUnits_NotSpawnedWhenLandmarkOwnedAndOccupied]'
       name: SpawnUnits_NotSpawnedWhenLandmarkOwnedAndOccupied
       fullName: PlayerTest.SpawnUnits_NotSpawnedWhenLandmarkOwnedAndOccupied
-      resultStatus: 1
-      duration: 0.0329226
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest.SpawnUnits_SpawnedWhenLandmarkOwnedAndUnoccupied]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][PlayerTest.SpawnUnits_SpawnedWhenLandmarkOwnedAndUnoccupied]'
       name: SpawnUnits_SpawnedWhenLandmarkOwnedAndUnoccupied
       fullName: PlayerTest.SpawnUnits_SpawnedWhenLandmarkOwnedAndUnoccupied
-      resultStatus: 1
-      duration: 0.0379712
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SaveGameTest][suite]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][SaveGameTest][suite]'
       name: SaveGameTest
       fullName: SaveGameTest
-      resultStatus: 2
-      duration: 0.1325711
-      messages: One or more child tests had errors
+      resultStatus: 0
+      duration: 0
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SaveGameTest.Load]'
+      isSuite: 1
+    - id: '[Assembly-CSharp][SaveGameTest.Load]'
       name: Load
       fullName: SaveGameTest.Load
-      resultStatus: 1
-      duration: 0.0331104
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SaveGameTest.SaveLoadGame]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][SaveGameTest.SaveLoadGame]'
       name: SaveLoadGame
       fullName: SaveGameTest.SaveLoadGame
-      resultStatus: 2
-      duration: 0.0332562
-      messages: 'Unhandled log message: [Exception] NullReferenceException: Object
-        reference not set to an instance of an object'
-      output: "You are trying to create a MonoBehaviour using the 'new' keyword.  This
-        is not allowed.  MonoBehaviours can only be added using AddComponent().  Alternatively,
-        your script can inherit from ScriptableObject or no base class at all\r\nNullReferenceException:
-        Object reference not set to an instance of an object\r\n"
-      stacktrace: "Game.Initialize (Boolean neutralPlayer) (at Assets/Scripts/Game.cs:49)\r\nSaveGameTest+<SaveLoadGame>c__Iterator0.MoveNext
-        () (at Assets/Unit Tests/SaveGameTest.cs:34)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SectorTest][suite]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][SectorTest][suite]'
       name: SectorTest
       fullName: SectorTest
-      resultStatus: 2
-      duration: 0.7373268
-      messages: One or more child tests had errors
+      resultStatus: 0
+      duration: 0
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SectorTest.AdjacentSelectedUnit_SectorsAreAdjacent]'
+      isSuite: 1
+    - id: '[Assembly-CSharp][SectorTest.AdjacentSelectedUnit_SectorsAreAdjacent]'
       name: AdjacentSelectedUnit_SectorsAreAdjacent
       fullName: SectorTest.AdjacentSelectedUnit_SectorsAreAdjacent
-      resultStatus: 2
-      duration: 0.0331735
-      messages: 'Unhandled log message: [Exception] NullReferenceException: Object
-        reference not set to an instance of an object'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "SectorTest+<AdjacentSelectedUnit_SectorsAreAdjacent>c__IteratorA.MoveNext
-        () (at Assets/Unit Tests/SectorTest.cs:332)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SectorTest.ClearUnit_UnitRemovedFromSector]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][SectorTest.ClearUnit_UnitRemovedFromSector]'
       name: ClearUnit_UnitRemovedFromSector
       fullName: SectorTest.ClearUnit_UnitRemovedFromSector
-      resultStatus: 1
-      duration: 0.0331022
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SectorTest.Highlight_SectorColourCorrect]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][SectorTest.Highlight_SectorColourCorrect]'
       name: Highlight_SectorColourCorrect
       fullName: SectorTest.Highlight_SectorColourCorrect
-      resultStatus: 1
-      duration: 0.0330989
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SectorTest.Initialize_OwnedAndNotOwnedSectorsOwnerAndColor]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][SectorTest.Initialize_OwnedAndNotOwnedSectorsOwnerAndColor]'
       name: Initialize_OwnedAndNotOwnedSectorsOwnerAndColor
       fullName: SectorTest.Initialize_OwnedAndNotOwnedSectorsOwnerAndColor
-      resultStatus: 1
-      duration: 0.033088
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SectorTest.MoveIntoFriendlyUnit_UnitsSwapSectorsAndTurnStateProgressed]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][SectorTest.MoveIntoFriendlyUnit_UnitsSwapSectorsAndTurnStateProgressed]'
       name: MoveIntoFriendlyUnit_UnitsSwapSectorsAndTurnStateProgressed
       fullName: SectorTest.MoveIntoFriendlyUnit_UnitsSwapSectorsAndTurnStateProgressed
-      resultStatus: 2
-      duration: 0.0328794
-      messages: 'Unhandled log message: [Exception] NullReferenceException: Object
-        reference not set to an instance of an object'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "SectorTest+<MoveIntoFriendlyUnit_UnitsSwapSectorsAndTurnStateProgressed>c__Iterator6.MoveNext
-        () (at Assets/Unit Tests/SectorTest.cs:214)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SectorTest.MoveIntoHostileUnit_AttackingUnitTakesSectorAndLevelUpAndTurnEnd]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][SectorTest.MoveIntoHostileUnit_AttackingUnitTakesSectorAndLevelUpAndTurnEnd]'
       name: MoveIntoHostileUnit_AttackingUnitTakesSectorAndLevelUpAndTurnEnd
       fullName: SectorTest.MoveIntoHostileUnit_AttackingUnitTakesSectorAndLevelUpAndTurnEnd
-      resultStatus: 2
-      duration: 0.0413679
-      messages: 'Unhandled log message: [Exception] NullReferenceException: Object
-        reference not set to an instance of an object'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "SectorTest.ResetSectors (.Sector sectorA, .Sector sectorB) (at
-        Assets/Unit Tests/SectorTest.cs:347)\r\nSectorTest+<MoveIntoHostileUnit_AttackingUnitTakesSectorAndLevelUpAndTurnEnd>c__Iterator7.MoveNext
-        () (at Assets/Unit Tests/SectorTest.cs:247)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SectorTest.MoveIntoHostileUnit_DefendingUnitDefendsSectorAndTurnEnd]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][SectorTest.MoveIntoHostileUnit_DefendingUnitDefendsSectorAndTurnEnd]'
       name: MoveIntoHostileUnit_DefendingUnitDefendsSectorAndTurnEnd
       fullName: SectorTest.MoveIntoHostileUnit_DefendingUnitDefendsSectorAndTurnEnd
-      resultStatus: 2
-      duration: 0.0331635
-      messages: 'Unhandled log message: [Exception] NullReferenceException: Object
-        reference not set to an instance of an object'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "SectorTest.ResetSectors (.Sector sectorA, .Sector sectorB) (at
-        Assets/Unit Tests/SectorTest.cs:347)\r\nSectorTest+<MoveIntoHostileUnit_DefendingUnitDefendsSectorAndTurnEnd>c__Iterator8.MoveNext
-        () (at Assets/Unit Tests/SectorTest.cs:273)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SectorTest.MoveIntoHostileUnit_TieConflict_DefendingUnitDefendsSectorAndTurnEnd]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][SectorTest.MoveIntoHostileUnit_TieConflict_DefendingUnitDefendsSectorAndTurnEnd]'
       name: MoveIntoHostileUnit_TieConflict_DefendingUnitDefendsSectorAndTurnEnd
       fullName: SectorTest.MoveIntoHostileUnit_TieConflict_DefendingUnitDefendsSectorAndTurnEnd
-      resultStatus: 2
-      duration: 0.0332335
-      messages: 'Unhandled log message: [Exception] NullReferenceException: Object
-        reference not set to an instance of an object'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "SectorTest.ResetSectors (.Sector sectorA, .Sector sectorB) (at
-        Assets/Unit Tests/SectorTest.cs:347)\r\nSectorTest+<MoveIntoHostileUnit_TieConflict_DefendingUnitDefendsSectorAndTurnEnd>c__Iterator9.MoveNext
-        () (at Assets/Unit Tests/SectorTest.cs:302)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SectorTest.MoveIntoUnoccupiedSector_NewSectorHasUnitAndOldDoesNotAndTurnStateProgressed]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][SectorTest.MoveIntoUnoccupiedSector_NewSectorHasUnitAndOldDoesNotAndTurnStateProgressed]'
       name: MoveIntoUnoccupiedSector_NewSectorHasUnitAndOldDoesNotAndTurnStateProgressed
       fullName: SectorTest.MoveIntoUnoccupiedSector_NewSectorHasUnitAndOldDoesNotAndTurnStateProgressed
-      resultStatus: 2
-      duration: 0.0332659
-      messages: 'Unhandled log message: [Exception] NullReferenceException: Object
-        reference not set to an instance of an object'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "SectorTest+<MoveIntoUnoccupiedSector_NewSectorHasUnitAndOldDoesNotAndTurnStateProgressed>c__Iterator5.MoveNext
-        () (at Assets/Unit Tests/SectorTest.cs:193)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SectorTest.OnMouseAsButton_CorrectUnitIsSelected]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][SectorTest.OnMouseAsButton_CorrectUnitIsSelected]'
       name: OnMouseAsButton_CorrectUnitIsSelected
       fullName: SectorTest.OnMouseAsButton_CorrectUnitIsSelected
-      resultStatus: 2
-      duration: 0.033197
-      messages: 'Unhandled log message: [Exception] NullReferenceException: Object
-        reference not set to an instance of an object'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "SectorTest+<OnMouseAsButton_CorrectUnitIsSelected>c__Iterator4.MoveNext
-        () (at Assets/Unit Tests/SectorTest.cs:107)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SectorTest.SetOwner_SectorOwnerAndColorCorrect]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][SectorTest.SetOwner_SectorOwnerAndColorCorrect]'
       name: SetOwner_SectorOwnerAndColorCorrect
       fullName: SectorTest.SetOwner_SectorOwnerAndColorCorrect
-      resultStatus: 2
-      duration: 0.032753
-      messages: 'Unhandled log message: [Exception] NullReferenceException: Object
-        reference not set to an instance of an object'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "SectorTest+<SetOwner_SectorOwnerAndColorCorrect>c__Iterator0.MoveNext
-        () (at Assets/Unit Tests/SectorTest.cs:29)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][UnitTest][suite]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][UnitTest][suite]'
       name: UnitTest
       fullName: UnitTest
-      resultStatus: 2
-      duration: 0.5392259
-      messages: One or more child tests had errors
+      resultStatus: 0
+      duration: 0
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][UnitTest.DestroySelf_UnitNotInSectorAndNotInPlayersUnitsList]'
+      isSuite: 1
+    - id: '[Assembly-CSharp][UnitTest.DestroySelf_UnitNotInSectorAndNotInPlayersUnitsList]'
       name: DestroySelf_UnitNotInSectorAndNotInPlayersUnitsList
       fullName: UnitTest.DestroySelf_UnitNotInSectorAndNotInPlayersUnitsList
-      resultStatus: 2
-      duration: 0.0331774
-      messages: 'Unhandled log message: [Exception] NullReferenceException: Object
-        reference not set to an instance of an object'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "UnitTest+<DestroySelf_UnitNotInSectorAndNotInPlayersUnitsList>c__Iterator8.MoveNext
-        () (at Assets/Unit Tests/UnitTest.cs:197)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][UnitTest.LevelUp_UnitLevelDoesNotPastFive]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][UnitTest.LevelUp_UnitLevelDoesNotPastFive]'
       name: LevelUp_UnitLevelDoesNotPastFive
       fullName: UnitTest.LevelUp_UnitLevelDoesNotPastFive
-      resultStatus: 1
-      duration: 0.0330778
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][UnitTest.LevelUp_UnitLevelIncreasesByOne]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][UnitTest.LevelUp_UnitLevelIncreasesByOne]'
       name: LevelUp_UnitLevelIncreasesByOne
       fullName: UnitTest.LevelUp_UnitLevelIncreasesByOne
-      resultStatus: 1
-      duration: 0.0419121
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][UnitTest.MoveToFriendly_UnitInCorrectSector]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][UnitTest.MoveToFriendly_UnitInCorrectSector]'
       name: MoveToFriendly_UnitInCorrectSector
       fullName: UnitTest.MoveToFriendly_UnitInCorrectSector
-      resultStatus: 2
-      duration: 0.033255
-      messages: 'Unhandled log message: [Exception] NullReferenceException: Object
-        reference not set to an instance of an object'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "UnitTest+<MoveToFriendly_UnitInCorrectSector>c__Iterator2.MoveNext
-        () (at Assets/Unit Tests/UnitTest.cs:79)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp.dll][UnitTest.MoveToFriendlyFromNull_UnitInCorrectSector]'
-      name: MoveToFriendlyFromNull_UnitInCorrectSector
-      fullName: UnitTest.MoveToFriendlyFromNull_UnitInCorrectSector
-      resultStatus: 2
-      duration: 0.0333165
-      messages: 'Unhandled log message: [Exception] NullReferenceException: Object
-        reference not set to an instance of an object'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "UnitTest+<MoveToFriendlyFromNull_UnitInCorrectSector>c__Iterator0.MoveNext
-        () (at Assets/Unit Tests/UnitTest.cs:31)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp.dll][UnitTest.MoveToNeutral_UnitInCorrectSector]'
-      name: MoveToNeutral_UnitInCorrectSector
-      fullName: UnitTest.MoveToNeutral_UnitInCorrectSector
-      resultStatus: 2
-      duration: 0.0332236
-      messages: 'Unhandled log message: [Exception] NullReferenceException: Object
-        reference not set to an instance of an object'
-      output: "NullReferenceException: Object reference not set to an instance of
-        an object\r\n"
-      stacktrace: "UnitTest+<MoveToNeutral_UnitInCorrectSector>c__Iterator1.MoveNext
-        () (at Assets/Unit Tests/UnitTest.cs:54)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp.dll][UnitTest.SelectAndDeselect_SelectedTrueWhenSelectedFalseWhenDeselected]'
-      name: SelectAndDeselect_SelectedTrueWhenSelectedFalseWhenDeselected
-      fullName: UnitTest.SelectAndDeselect_SelectedTrueWhenSelectedFalseWhenDeselected
-      resultStatus: 1
-      duration: 0.0331116
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][UnitTest.SwapPlaces_UnitsInCorrectNewSectors]'
-      name: SwapPlaces_UnitsInCorrectNewSectors
-      fullName: UnitTest.SwapPlaces_UnitsInCorrectNewSectors
-      resultStatus: 2
-      duration: 0.0350288
-      messages: 'Unhandled log message: [Error] Setting the parent of a transform
-        which resides in a prefab is disabled to prevent data corruption.'
-      output: "Setting the parent of a transform which resides in a prefab is disabled
-        to prevent data corruption.\r\nSetting the parent of a transform which resides
-        in a prefab is disabled to prevent data corruption.\r\nAssertionException:
-        \  Expected: True\r\n  But was:  False\r\n\r\n"
-      stacktrace: "UnityEngine.Transform:SetParent(Transform)\r\nUnit:SwapPlacesWith(Unit)
-        (at Assets/Scripts/Unit.cs:220)\r\n<SwapPlaces_UnitsInCorrectNewSectors>c__Iterator4:MoveNext()
-        (at Assets/Unit Tests/UnitTest.cs:130)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      isSuite: 0
+    - id: '[Assembly-CSharp][UnitTest.MoveToFriendlyFromNull_UnitInCorrectSector]'
+      name: MoveToFriendlyFromNull_UnitInCorrectSector
+      fullName: UnitTest.MoveToFriendlyFromNull_UnitInCorrectSector
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp][UnitTest.MoveToNeutral_UnitInCorrectSector]'
+      name: MoveToNeutral_UnitInCorrectSector
+      fullName: UnitTest.MoveToNeutral_UnitInCorrectSector
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp][UnitTest.SelectAndDeselect_SelectedTrueWhenSelectedFalseWhenDeselected]'
+      name: SelectAndDeselect_SelectedTrueWhenSelectedFalseWhenDeselected
+      fullName: UnitTest.SelectAndDeselect_SelectedTrueWhenSelectedFalseWhenDeselected
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp][UnitTest.SwapPlaces_UnitsInCorrectNewSectors]'
+      name: SwapPlaces_UnitsInCorrectNewSectors
+      fullName: UnitTest.SwapPlaces_UnitsInCorrectNewSectors
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
     m_ResultText: "NextTurnState_TurnStateProgressesCorrectly (0.033s)\n---\nUnhandled
       log message: [Exception] UnassignedReferenceException: The variable texture
       of Dialog has not been assigned.\nYou probably need to assign the texture variable
@@ -1418,6 +1326,13 @@ MonoBehaviour:
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 0}
       m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: 0
+      availableCategories: []
   m_EditModeTestListGUI:
     m_Window: {fileID: 18}
     newResultList:
@@ -1432,6 +1347,7 @@ MonoBehaviour:
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
+      isSuite: 0
     - id: '[H:/SEPR/Git/ud-asm4/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll][suite]'
       name: Assembly-CSharp-Editor.dll
       fullName: H:/SEPR/Git/ud-asm4/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
@@ -1443,6 +1359,7 @@ MonoBehaviour:
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
+      isSuite: 0
     - id: '[Assembly-CSharp-Editor.dll][NewEditModeTest][suite]'
       name: NewEditModeTest
       fullName: NewEditModeTest
@@ -1454,6 +1371,7 @@ MonoBehaviour:
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
+      isSuite: 0
     - id: '[Assembly-CSharp-Editor.dll][NewEditModeTest.NewEditModeTestSimplePasses]'
       name: NewEditModeTestSimplePasses
       fullName: NewEditModeTest.NewEditModeTestSimplePasses
@@ -1465,6 +1383,7 @@ MonoBehaviour:
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
+      isSuite: 0
     - id: '[Assembly-CSharp-Editor.dll][NewEditModeTest.NewEditModeTestWithEnumeratorPasses]'
       name: NewEditModeTestWithEnumeratorPasses
       fullName: NewEditModeTest.NewEditModeTestWithEnumeratorPasses
@@ -1476,6 +1395,7 @@ MonoBehaviour:
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
+      isSuite: 0
     m_ResultText: NewEditModeTest (0.000s)
     m_ResultStacktrace: 
     m_TestListState:
@@ -1500,6 +1420,13 @@ MonoBehaviour:
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 0}
       m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: 0
+      availableCategories: []
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1522,10 +1449,11 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1192
-    y: 92
-    width: 488
-    height: 896
+    x: 1362
+    y: 91
+    width: 558
+    height: 927
+  m_PersistentViewDataDictionary: {fileID: 0}
   m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
   m_PreviewResizer:
