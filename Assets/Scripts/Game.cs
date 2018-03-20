@@ -30,6 +30,8 @@ public class Game : MonoBehaviour {
 
     public bool[] eliminatedPlayers;
 
+    public List<string> eliminatedUnits;
+
 
     public void Start() {
         Names.Init();

@@ -339,6 +339,10 @@ public class Sector : MonoBehaviour {
         {
             // destroy defending unit
             defendingUnit.DestroySelf();
+            GameObject gameManagerObject = GameObject.Find("GameManager");
+            Game game = gameManagerObject.GetComponent<Game>();
+
+            game.eliminatedUnits.Add(defendingUnit.unitName);
 
             // move the attacking unit into this sector
             attackingUnit.MoveTo(this);
@@ -349,6 +353,10 @@ public class Sector : MonoBehaviour {
         {
             // destroy attacking unit
             attackingUnit.DestroySelf();
+            GameObject gameManagerObject = GameObject.Find("GameManager");
+            Game game = gameManagerObject.GetComponent<Game>();
+
+            game.eliminatedUnits.Add(attackingUnit.unitName);
         }      
         
         // removed automatically end turn after attacking (Modified by Dom 13/02/18)

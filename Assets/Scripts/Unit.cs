@@ -9,7 +9,7 @@ public class Unit : MonoBehaviour {
     [SerializeField] private int level;
     [SerializeField] private Color color;
     [SerializeField] private bool selected = false;
-    [SerializeField] private string unitName;
+    [SerializeField] public string unitName;
 	[SerializeField] private bool unitFrozen = false; // NEW ADDITION FOR FREEZING UNITS PUNISHMENT CARD
 	[SerializeField] private int frozenCounter = 0;
     
