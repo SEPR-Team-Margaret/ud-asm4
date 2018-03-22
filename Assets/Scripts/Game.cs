@@ -15,7 +15,7 @@ public class Game : MonoBehaviour {
 
     public const int NUMBER_OF_PLAYERS = 4;
     
-    public enum TurnState { Move1, Move2, EndOfTurn, NULL };
+    public enum TurnState { Move1, Move2, EndOfTurn, SelectUnit, UseCard, NULL };
     [SerializeField] private TurnState turnState;
     [SerializeField] private bool gameFinished = false;
     [SerializeField] private bool testMode = false;

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class UnitSprite {
@@ -29,7 +30,18 @@ public class UnitSprite {
     public void SetHead(int headID) {
         MeshRenderer renderer = this.headGO.GetComponent<MeshRenderer>();
         string resourceLC = "UnitSprites/Head/head" + headID.ToString() + ".mat";
-        renderer.material = (Material)Resources.Load(resourceLC);
+
+        Debug.Log(Application.dataPath + "/Resources/" + resourceLC);
+        Debug.Log(File.Exists(Application.dataPath + "/Resources/" + resourceLC));
+        Debug.Log(resourceLC);
+
+        Material temp = Resources.Load<Material>(resourceLC);
+
+        Debug.Log(temp);
+
+        renderer.material = temp;
+
+        //This doesn't seem to work, the path is returning a null material for some reason...
     }
 
     public void SetBody(int bodyID) {

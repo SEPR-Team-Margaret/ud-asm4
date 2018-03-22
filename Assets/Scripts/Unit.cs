@@ -242,7 +242,7 @@ public class Unit : MonoBehaviour {
     public void Select() {
         
         selected = true;
-        sector.ApplyHighlightAdjacent();
+        //sector.ApplyHighlightAdjacent();
     }
 
     /// <summary>
@@ -253,7 +253,7 @@ public class Unit : MonoBehaviour {
     public void Deselect() {
         
         selected = false;
-        sector.RevertHighlightAdjacent();
+        //sector.RevertHighlightAdjacent();
     }
 
     /// <summary>
@@ -288,4 +288,9 @@ public class Unit : MonoBehaviour {
 	public void DecrementFrozenCounter(){
 		frozenCounter--;
 	}
+
+    void OnMouseOver() {
+        Debug.Log("Mouse is over GameObject.");
+    }
+    
 }

@@ -2,6 +2,8 @@
 
 public class Sector : MonoBehaviour {
 
+    [SerializeField] private Color DEFAULT_COLOR = new Color(10f,10f,10f);
+
     [SerializeField] private Map map;
     [SerializeField] private Unit unit;
     [SerializeField] private Player owner;
@@ -9,6 +11,9 @@ public class Sector : MonoBehaviour {
 	[SerializeField] private Landmark landmark;
     [SerializeField] private bool VC = false;
     [SerializeField] private PunishmentCard punishmentCard;
+
+    [SerializeField] private bool isHighlighted;
+
 
     #region Getters and Setters
 
@@ -81,9 +86,9 @@ public class Sector : MonoBehaviour {
         // set sector color to the color of the given player
         // or gray if null
         if (owner == null) {
-            gameObject.GetComponent<Renderer> ().material.color = Color.gray;
+            gameObject.GetComponent<Renderer>().material.color = Color.gray;
         } else {
-            gameObject.GetComponent<Renderer> ().material.color = owner.GetColor();
+            gameObject.GetComponent<Renderer>().material.color = owner.GetColor();
         }
     }
 
@@ -152,6 +157,13 @@ public class Sector : MonoBehaviour {
         this.punishmentCard = pc;
     }
 
+    public bool IsHighlighted() {
+        return isHighlighted;
+    }
+    public void SetIsHighlighted(bool flag) {
+        this.isHighlighted = flag;
+    }
+
     #endregion
 
     /// <summary>
@@ -181,14 +193,16 @@ public class Sector : MonoBehaviour {
     /// </summary>
     /// <param name="amount"></param>
     public void ApplyHighlight(float amount) {
+        if (!this.IsHighlighted()) {
+            Renderer renderer = GetComponent<Renderer>();
+            Color currentColor = renderer.material.color;
+            Color offset = new Vector4(amount, amount, amount, 1);
+            Color newColor = currentColor + offset;
 
+            renderer.material.color = newColor;
 
-        Renderer renderer = GetComponent<Renderer>();
-        Color currentColor = renderer.material.color;
-        Color offset = new Vector4(amount, amount, amount, 1);
-        Color newColor = currentColor + offset;
-
-        renderer.material.color = newColor;
+            SetIsHighlighted(true);
+        }
     }
 
     /// <summary>
@@ -197,14 +211,19 @@ public class Sector : MonoBehaviour {
     /// 
     /// </summary>
     /// <param name="amount"></param>
-    public void RevertHighlight(float amount) {
-        
-        Renderer renderer = GetComponent<Renderer>();
-        Color currentColor = renderer.material.color;
-        Color offset = new Vector4(amount, amount, amount, 1);
-        Color newColor = currentColor - offset;
+    public void RevertHighlight() {
+        if (this.IsHighlighted()) {
+            Renderer renderer = GetComponent<Renderer>();
+            Color currentColor = renderer.material.color;
+            
+            if(this.owner != null) {
+                renderer.material.color = this.owner.GetColor();
+            } else {
+                renderer.material.color = Color.gray;
+            }
 
-        renderer.material.color = newColor;
+            SetIsHighlighted(false);
+        }
     }
 
     /// <summary>
@@ -215,7 +234,10 @@ public class Sector : MonoBehaviour {
     public void ApplyHighlightAdjacent() {
         foreach (Sector adjacentSector in adjacentSectors)
         {
-            adjacentSector.ApplyHighlight(0.2f);
+            if (!adjacentSector.IsHighlighted()) {
+                adjacentSector.ApplyHighlight(0.2f);
+                adjacentSector.SetIsHighlighted(true);
+            }
         }
     }
 
@@ -227,7 +249,10 @@ public class Sector : MonoBehaviour {
     public void RevertHighlightAdjacent() {
         foreach (Sector adjacentSector in adjacentSectors)
         {
-            adjacentSector.RevertHighlight(0.2f);
+            if (adjacentSector.IsHighlighted()) {
+                adjacentSector.RevertHighlight();
+                adjacentSector.SetIsHighlighted(false);
+            }
         }
     }
 
@@ -263,6 +288,7 @@ public class Sector : MonoBehaviour {
         {
             // select this sector's unit
             unit.Select();
+            this.ApplyHighlightAdjacent();
         }
 
         // if this sector's unit is already selected
@@ -270,6 +296,7 @@ public class Sector : MonoBehaviour {
         {
             // deselect this sector's unit           
             unit.Deselect();
+            this.RevertHighlightAdjacent();
         }
 
         // if this sector is adjacent to the sector containing
@@ -294,7 +321,10 @@ public class Sector : MonoBehaviour {
             else if (unit.GetOwner() != selectedUnit.GetOwner())
                 MoveIntoHostileUnit(selectedUnit, this.unit);
             
-            map.game.NextTurnState(); // adavance to next turn phase when action take (Modified by Dom 13/02/2018)
+            map.game.NextTurnState(); // advance to next turn phase when action take (Modified by Dom 13/02/2018)
+            this.RevertHighlight();
+            Debug.Log("Reverted Highlight");
+            this.RevertHighlightAdjacent();
         }
     }
 
@@ -438,4 +468,33 @@ public class Sector : MonoBehaviour {
         #endregion
     }
 
+    void OnMouseEnter() {
+        if(this.unit != null) {
+            if(this.unit.GetOwner() == map.game.currentPlayer) {
+                if (!this.IsHighlighted() && !this.unit.IsSelected()) {
+                    ApplyHighlight(0.2f);
+                }
+                if (!this.IsHighlighted() && this.unit.IsSelected()) {
+                    ApplyHighlight(0.4f);
+                }
+            }
+        }
+    }
+    void OnMouseExit() {
+        //The mouse is no longer hovering over the GameObject so output this message each frame
+        if (this.unit != null) {
+            if (this.IsHighlighted() && !this.unit.IsSelected() && this.unit.GetOwner() == map.game.currentPlayer) {
+                RevertHighlight();
+                RevertHighlightAdjacent();
+            }
+
+        }
+        
+    }
+
+        /*if (this.unit != null) {
+            
+        } else {
+            
+        }*/
 }
