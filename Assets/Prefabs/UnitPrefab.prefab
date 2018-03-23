@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33544575814997718}
   - component: {fileID: 64547746913163182}
   - component: {fileID: 23960488391298268}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 33082540147523968}
   - component: {fileID: 64306422351897216}
   - component: {fileID: 23795541138129114}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,6 +56,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4393685762452168}
   - component: {fileID: 114450384450235030}
+  - component: {fileID: 114512075856825088}
+  - component: {fileID: 65721830232127010}
   m_Layer: 8
   m_Name: UnitPrefab
   m_TagString: Untagged
@@ -74,7 +76,7 @@ GameObject:
   - component: {fileID: 33240286803070390}
   - component: {fileID: 64626849364698072}
   - component: {fileID: 23916879233517450}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +94,7 @@ GameObject:
   - component: {fileID: 33298639121630152}
   - component: {fileID: 64164436649990174}
   - component: {fileID: 23923266568884002}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: Background_Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +112,7 @@ GameObject:
   - component: {fileID: 33987150146720460}
   - component: {fileID: 64424815655664030}
   - component: {fileID: 23932673819518048}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -475,6 +477,18 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65721830232127010
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1532194049575530}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114450384450235030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -486,3 +500,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d840433de5d4bcd4c843efe2fc177fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114512075856825088
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1532194049575530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd006aa75699db04297fa7416708d6b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 0}
+  sector: {fileID: 0}
+  level: 0
+  selected: 0
+  unitName: 
+  unitFrozen: 0
+  frozenCounter: 0
