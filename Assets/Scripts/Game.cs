@@ -15,7 +15,7 @@ public class Game : MonoBehaviour {
 
     public const int NUMBER_OF_PLAYERS = 4;
     
-    public enum TurnState { Move1, Move2, EndOfTurn, NULL };
+    public enum TurnState { Move1, Move2, EndOfTurn, SelectUnit, UseCard, NULL };
     [SerializeField] private TurnState turnState;
     [SerializeField] private bool gameFinished = false;
     [SerializeField] private bool testMode = false;
@@ -29,6 +29,8 @@ public class Game : MonoBehaviour {
     public bool triggerDialog = false;
 
     public bool[] eliminatedPlayers;
+
+    public List<string> eliminatedUnits;
 
 
     public void Start() {
@@ -837,7 +839,6 @@ public class Game : MonoBehaviour {
         Unit unit = Instantiate(sectors[sectorIndex].GetOwner().GetUnitPrefab()).GetComponent<Unit>();
         unit.Initialize(sectors[sectorIndex].GetOwner(), sectors[sectorIndex]);
         unit.SetLevel(level);
-        unit.UpdateUnitMaterial();
         unit.MoveTo(sectors[sectorIndex]);
         sectors[sectorIndex].GetOwner().units.Add(unit);
     }

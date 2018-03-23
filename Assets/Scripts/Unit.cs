@@ -2,22 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class Unit : MonoBehaviour {
 
     [SerializeField] private Player owner;
     [SerializeField] private Sector sector;
     [SerializeField] private int level;
-    [SerializeField] private Color color;
     [SerializeField] private bool selected = false;
-    [SerializeField] private string unitName;
+    [SerializeField] public string unitName;
 	[SerializeField] private bool unitFrozen = false; // NEW ADDITION FOR FREEZING UNITS PUNISHMENT CARD
 	[SerializeField] private int frozenCounter = 0;
 
-    [SerializeField] private Material level1Material;
-	[SerializeField] private Material level2Material;
-	[SerializeField] private Material level3Material;
-	[SerializeField] private Material level4Material;
-	[SerializeField] private Material level5Material;
+    [SerializeField] private UnitSprite sprite;
     
     /// <summary>
     /// 
@@ -34,12 +31,10 @@ public class Unit : MonoBehaviour {
         // set the owner, level, and color of the unit
         owner = player;
         level = 1;
-        color = owner.GetColor();
 
         unitName = GenerateName();
 
-        // set the material color to the player color
-        GetComponent<Renderer>().material.color = color;
+        sprite = new UnitSprite(gameObject);
 
         // place the unit in the sector
         MoveTo(sector);
@@ -117,19 +112,10 @@ public class Unit : MonoBehaviour {
     /// 
     /// </summary>
     /// <returns>This units colour</returns>
-    public Color GetColor() {
-        return color;
+    private Color GetColor() {
+        return owner.GetColor();
     }
 
-    /// <summary>
-    /// 
-    /// Sets this unit's colour
-    /// 
-    /// </summary>
-    /// <param name="color">This units colour</param>
-    public void SetColor(Color color) {
-        this.color = color;
-    }
 
     /// <summary>
     /// 
@@ -244,35 +230,9 @@ public class Unit : MonoBehaviour {
 
 			// increase level
 			level++;
-            UpdateUnitMaterial();
 		}
 		
 	}
-
-    public void UpdateUnitMaterial()
-    {
-        switch (level)
-        {
-            case 2:
-                this.gameObject.GetComponent<MeshRenderer>().material = level2Material;
-                break;
-            case 3:
-                this.gameObject.GetComponent<MeshRenderer>().material = level3Material;
-                break;
-            case 4:
-                this.gameObject.GetComponent<MeshRenderer>().material = level4Material;
-                break;
-            case 5:
-                this.gameObject.GetComponent<MeshRenderer>().material = level5Material;
-                break;
-            default:
-                this.gameObject.GetComponent<MeshRenderer>().material = level1Material;
-                break;
-        }
-
-        // set material color to match owner color
-        GetComponent<Renderer>().material.color = color;
-    }
 
     /// <summary>
     /// 
@@ -282,7 +242,7 @@ public class Unit : MonoBehaviour {
     public void Select() {
         
         selected = true;
-        sector.ApplyHighlightAdjacent();
+        //sector.ApplyHighlightAdjacent();
     }
 
     /// <summary>
@@ -293,7 +253,7 @@ public class Unit : MonoBehaviour {
     public void Deselect() {
         
         selected = false;
-        sector.RevertHighlightAdjacent();
+        //sector.RevertHighlightAdjacent();
     }
 
     /// <summary>
@@ -328,4 +288,9 @@ public class Unit : MonoBehaviour {
 	public void DecrementFrozenCounter(){
 		frozenCounter--;
 	}
+
+    void OnMouseOver() {
+        Debug.Log("Mouse is over GameObject.");
+    }
+    
 }
