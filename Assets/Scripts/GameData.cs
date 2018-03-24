@@ -12,30 +12,18 @@ public class GameData
     public bool gameFinished;
     public bool testMode;
     public int currentPlayerID; // Index from 0
-    
+
     // Players
     // Attack
-    public int player1Attack;
-    public int player2Attack;
-    public int player3Attack;
-    public int player4Attack;
+    public int[] playerAttack = new int[4];
     // Defence
-    public int player1Defence;
-    public int player2Defence;
-    public int player3Defence;
-    public int player4Defence;
+    public int[] playerDefence = new int[4];
 
     // Color
-    public Color player1Color;
-    public Color player2Color;
-    public Color player3Color;
-    public Color player4Color;
+    public Color[] playerColor = new Color[4];
 
     // Controller (Human, Neutral or None)
-    public string player1Controller;
-    public string player2Controller;
-    public string player3Controller;
-    public string player4Controller;
+    public string[] playerController;
 
     // Sectors
     // Owner
@@ -127,28 +115,24 @@ public class GameData
         Player[] players = game.GetPlayers();
 
         // Attack
-        this.player1Attack = players[0].GetAttack();
-        this.player2Attack = players[1].GetAttack();
-        this.player3Attack = players[2].GetAttack();
-        this.player4Attack = players[3].GetAttack();
+        for (int i = 0; i < 4; i++) {
+            this.playerAttack[i] = players[i].GetAttack();
+        }
 
         // Defence
-        this.player1Defence = players[0].GetDefence();
-        this.player2Defence = players[1].GetDefence();
-        this.player3Defence = players[2].GetDefence();
-        this.player4Defence = players[3].GetDefence();
+        for (int i = 0; i < 4; i++) {
+            this.playerDefence[i] = players[i].GetDefence();
+        }
 
         // Color
-        this.player1Color = players[0].GetColor();
-        this.player2Color = players[1].GetColor();
-        this.player3Color = players[2].GetColor();
-        this.player4Color = players[3].GetColor();
+        for (int i = 0; i < 4; i++) {
+            this.playerColor[i] = players[i].GetColor();
+        }
 
         // Controller (Human, Neutral or None)
-        this.player1Controller = players[0].GetController();
-        this.player2Controller = players[1].GetController();
-        this.player3Controller = players[2].GetController();
-        this.player4Controller = players[3].GetController();
+        for (int i = 0; i < 4; i++) {
+            this.playerController[i] = players[i].GetController();
+        }
 
         // Sectors
         Sector[] sectors = game.GetSectors();

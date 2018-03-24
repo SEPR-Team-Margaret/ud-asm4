@@ -8,10 +8,10 @@ using UnityEngine;
 [System.Serializable]
 public class Game : MonoBehaviour {
 
-    public Player[] players; 
+    [SerializeField] public Player[] players; 
 	public GameObject gameMap;
-    public Player currentPlayer;
-    public Sector[] sectors;
+    [SerializeField] public Player currentPlayer;
+    [SerializeField] public Sector[] sectors;
 
     public const int NUMBER_OF_PLAYERS = 4;
     
@@ -28,7 +28,7 @@ public class Game : MonoBehaviour {
 
     public bool triggerDialog = false;
 
-    public bool[] eliminatedPlayers;
+    [SerializeField] public bool[] eliminatedPlayers;
 
     public List<string> eliminatedUnits;
 
@@ -229,6 +229,11 @@ public class Game : MonoBehaviour {
     /// <param name="neutralPlayer">True if neutral player enabled else false</param>
     public void CreatePlayers(bool neutralPlayer)
     {
+        // set player ids
+        for (int i = 0; i < NUMBER_OF_PLAYERS; i++) {
+            players[i].SetID(i);
+        }
+
         // mark the specified number of players as human
         if (!neutralPlayer)
         {
@@ -251,11 +256,17 @@ public class Game : MonoBehaviour {
         }
 
 
+        players[0].SetGui(GameObject.Find("Player1UI").GetComponent<PlayerUI>());
+        players[1].SetGui(GameObject.Find("Player2UI").GetComponent<PlayerUI>());
+        players[2].SetGui(GameObject.Find("Player3UI").GetComponent<PlayerUI>());
+        players[3].SetGui(GameObject.Find("Player4UI").GetComponent<PlayerUI>());
+
         // give all players a reference to this game
         // and initialize their GUIs
         for (int i = 0; i < NUMBER_OF_PLAYERS; i++)
         {
             players[i].SetGame(this);
+            
             players[i].GetGui().Initialize(players[i], i + 1);
         }
 
@@ -278,10 +289,9 @@ public class Game : MonoBehaviour {
         sectors = gameMap.GetComponentsInChildren<Sector>();
 
 		// initialize each sector
-        foreach (Sector sector in sectors)
-		{
-            sector.Initialize();
-		}
+        for (int i = 0; i < sectors.Length; i ++) {
+            sectors[i].Initialize(i);
+        }
             
 		// get an array of all sectors containing landmarks
         Sector[] landmarkedSectors = GetLandmarkedSectors(sectors);
@@ -670,7 +680,7 @@ public class Game : MonoBehaviour {
     /// 
     /// </summary>
     /// <param name="savedGame">The saved game state</param>
-    public void Initialize(GameData savedGame)
+    public void Initialize(Game savedGame)
     {
         gameMap = GameObject.Find("Map");
 
@@ -680,7 +690,7 @@ public class Game : MonoBehaviour {
         UnityEngine.UI.Button endTurnButton = GameObject.Find("End_Turn_Button").GetComponent<UnityEngine.UI.Button>();
         endTurnButton.onClick.AddListener(EndTurn);
 
-        if (savedGame.player4Controller.Equals("human"))
+        if (savedGame.players[4].Equals("human"))
         {
             CreatePlayers(false);
         } else
@@ -692,113 +702,26 @@ public class Game : MonoBehaviour {
         this.turnState = savedGame.turnState;
         this.gameFinished = savedGame.gameFinished;
         this.testMode = savedGame.testMode;
-        this.currentPlayer = players[savedGame.currentPlayerID];
+        this.currentPlayer = savedGame.currentPlayer;
         currentPlayer.GetGui().Activate();
-        players[savedGame.currentPlayerID].SetActive(true);
+        this.currentPlayer.SetActive(true);
 
-        // set player attack bonus
-        players[0].SetAttack(savedGame.player1Attack);
-        players[1].SetAttack(savedGame.player2Attack);
-        players[2].SetAttack(savedGame.player3Attack);
-        players[3].SetAttack(savedGame.player4Attack);
-
-        // set player defence bonus
-        players[0].SetDefence(savedGame.player1Defence);
-        players[1].SetDefence(savedGame.player2Defence);
-        players[2].SetDefence(savedGame.player3Defence);
-        players[3].SetDefence(savedGame.player4Defence);
-
-        // set player colour
-        players[0].SetColor(savedGame.player1Color);
-        players[1].SetColor(savedGame.player2Color);
-        players[2].SetColor(savedGame.player3Color);
-        players[3].SetColor(savedGame.player4Color);
-
-        // set player colour
-        players[0].SetController(savedGame.player1Controller);
-        players[1].SetController(savedGame.player2Controller);
-        players[2].SetController(savedGame.player3Controller);
-        players[3].SetController(savedGame.player4Controller);
+        for (int i = 0; i < 4; i++) {
+            this.players[i].OnLoad(savedGame.players[i]);
+        }
+        
 
         // get an array of all sectors
         sectors = gameMap.GetComponentsInChildren<Sector>();
 
         // initialize each sector
-        foreach (Sector sector in sectors)
-        {
-            sector.Initialize();
+        for (int i = 0; i < sectors.Length; i++) {
+            sectors[i].Initialize(i);
         }
 
-        // set sector owners
-        SetupSectorOwner(0, savedGame.sector01Owner);
-        SetupSectorOwner(1, savedGame.sector02Owner);
-        SetupSectorOwner(2, savedGame.sector03Owner);
-        SetupSectorOwner(3, savedGame.sector04Owner);
-        SetupSectorOwner(4, savedGame.sector05Owner);
-        SetupSectorOwner(5, savedGame.sector06Owner);
-        SetupSectorOwner(6, savedGame.sector07Owner);
-        SetupSectorOwner(7, savedGame.sector08Owner);
-        SetupSectorOwner(8, savedGame.sector09Owner);
-        SetupSectorOwner(9, savedGame.sector10Owner);
-        SetupSectorOwner(10, savedGame.sector11Owner);
-        SetupSectorOwner(11, savedGame.sector12Owner);
-        SetupSectorOwner(12, savedGame.sector13Owner);
-        SetupSectorOwner(13, savedGame.sector14Owner);
-        SetupSectorOwner(14, savedGame.sector15Owner);
-        SetupSectorOwner(15, savedGame.sector16Owner);
-        SetupSectorOwner(16, savedGame.sector17Owner);
-        SetupSectorOwner(17, savedGame.sector18Owner);
-        SetupSectorOwner(18, savedGame.sector19Owner);
-        SetupSectorOwner(19, savedGame.sector20Owner);
-        SetupSectorOwner(20, savedGame.sector21Owner);
-        SetupSectorOwner(21, savedGame.sector22Owner);
-        SetupSectorOwner(22, savedGame.sector23Owner);
-        SetupSectorOwner(23, savedGame.sector24Owner);
-        SetupSectorOwner(24, savedGame.sector25Owner);
-        SetupSectorOwner(25, savedGame.sector26Owner);
-        SetupSectorOwner(26, savedGame.sector27Owner);
-        SetupSectorOwner(27, savedGame.sector28Owner);
-        SetupSectorOwner(28, savedGame.sector29Owner);
-        SetupSectorOwner(29, savedGame.sector30Owner);
-        SetupSectorOwner(30, savedGame.sector31Owner);
-        SetupSectorOwner(31, savedGame.sector32Owner);
-
-        // set unit level in sectors
-        SetupUnit(0, savedGame.sector01Level);
-        SetupUnit(1, savedGame.sector02Level);
-        SetupUnit(2, savedGame.sector03Level);
-        SetupUnit(3, savedGame.sector04Level);
-        SetupUnit(4, savedGame.sector05Level);
-        SetupUnit(5, savedGame.sector06Level);
-        SetupUnit(6, savedGame.sector07Level);
-        SetupUnit(7, savedGame.sector08Level);
-        SetupUnit(8, savedGame.sector09Level);
-        SetupUnit(9, savedGame.sector10Level);
-        SetupUnit(10, savedGame.sector11Level);
-        SetupUnit(11, savedGame.sector12Level);
-        SetupUnit(12, savedGame.sector13Level);
-        SetupUnit(13, savedGame.sector14Level);
-        SetupUnit(14, savedGame.sector15Level);
-        SetupUnit(15, savedGame.sector16Level);
-        SetupUnit(16, savedGame.sector17Level);
-        SetupUnit(17, savedGame.sector18Level);
-        SetupUnit(18, savedGame.sector19Level);
-        SetupUnit(19, savedGame.sector20Level);
-        SetupUnit(20, savedGame.sector21Level);
-        SetupUnit(21, savedGame.sector22Level);
-        SetupUnit(22, savedGame.sector23Level);
-        SetupUnit(23, savedGame.sector24Level);
-        SetupUnit(24, savedGame.sector25Level);
-        SetupUnit(25, savedGame.sector26Level);
-        SetupUnit(26, savedGame.sector27Level);
-        SetupUnit(27, savedGame.sector28Level);
-        SetupUnit(28, savedGame.sector29Level);
-        SetupUnit(29, savedGame.sector30Level);
-        SetupUnit(30, savedGame.sector31Level);
-        SetupUnit(31, savedGame.sector32Level);
-
-        //set VC sector
-        if (savedGame.VCSector != -1) sectors[savedGame.VCSector].SetVC(true);
+        for (int i = 0; i < sectors.Length; i++) {
+            this.sectors[i].OnLoad(savedGame.sectors[i]);
+        }
 
         UpdateGUI();
 

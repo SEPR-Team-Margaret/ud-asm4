@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
+[System.Serializable]
 public class UnitSprite {
-    private GameObject unitGO;
+    [System.NonSerialized] private GameObject unitGO;
 
-    private GameObject headGO;
-    [SerializeField] private int currentHead;
+    [System.NonSerialized] private GameObject headGO;
+    [SerializeField] public int currentHead;
 
-    private GameObject bodyGO;
-    [SerializeField] private int currentBody;
+    [System.NonSerialized] private GameObject bodyGO;
+    [SerializeField] public int currentBody;
 
-    private GameObject hatGO;
-    [SerializeField] private int currentHat;
+    [System.NonSerialized] private GameObject hatGO;
+    [SerializeField] public int currentHat;
 
     public UnitSprite(GameObject unit, int head = 0, int body = 0, int hat = 0) {
         unitGO = unit;

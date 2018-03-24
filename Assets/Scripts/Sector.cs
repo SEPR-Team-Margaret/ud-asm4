@@ -2,13 +2,16 @@
 
 public class Sector : MonoBehaviour {
 
-    [SerializeField] private Color DEFAULT_COLOR = new Color(10f,10f,10f);
+    [SerializeField] public int sectorID;
 
-    [SerializeField] private Map map;
+    [System.NonSerialized] private Color DEFAULT_COLOR = new Color(10f,10f,10f);
+
+    [System.NonSerialized] private Map map;
     [SerializeField] private Unit unit;
-    [SerializeField] private Player owner;
-    [SerializeField] private Sector[] adjacentSectors;
-	[SerializeField] private Landmark landmark;
+    [System.NonSerialized] private Player owner;
+    [SerializeField] private int ownerID;
+    [System.NonSerialized] private Sector[] adjacentSectors;
+    [SerializeField] private Landmark landmark;
     [SerializeField] private bool VC = false;
     [SerializeField] private PunishmentCard punishmentCard;
 
@@ -79,9 +82,14 @@ public class Sector : MonoBehaviour {
     /// </summary>
     /// <param name="owner">Player object of the new owner of this sector or null if there is no owner</param
     public void SetOwner (Player owner) {
-        
+
         // set sector owner to the given player
         this.owner = owner;
+        if (owner == null) {
+            this.ownerID = -1;
+        } else { 
+            this.ownerID = owner.playerID;
+        }
 
         // set sector color to the color of the given player
         // or gray if null
@@ -173,7 +181,13 @@ public class Sector : MonoBehaviour {
     /// sets owner and unit to null
     /// 
     /// </summary>
-    public void Initialize() {
+    public void Initialize(int id) {
+
+        this.sectorID = id;
+
+        this.map = GameObject.Find("Map").GetComponent<Map>();
+
+        this.adjacentSectors = map.GetAdj(id);
 
 		// set no owner
 		SetOwner(null);
@@ -499,9 +513,23 @@ public class Sector : MonoBehaviour {
         
     }
 
-        /*if (this.unit != null) {
-            
+    public void OnLoad(Sector savedData) {
+        this.unit = savedData.unit;
+        this.unit.OnLoad(savedData.unit);
+
+        if (savedData.ownerID == -1) {
+            this.owner = null;
         } else {
-            
-        }*/
+            this.owner = map.game.players[savedData.ownerID];
+        }
+
+        this.landmark = savedData.landmark;
+        this.landmark.OnLoad(savedData.landmark);
+
+        this.VC = savedData.VC;
+        this.punishmentCard = savedData.punishmentCard;
+        this.punishmentCard.OnLoad(savedData.punishmentCard);
+        this.isHighlighted = savedData.isHighlighted;
+    }
+    
 }

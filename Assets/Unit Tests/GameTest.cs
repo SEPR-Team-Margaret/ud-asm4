@@ -303,7 +303,7 @@ public class GameTest
         Player playerA = players[0];
 
         // ensure 'landmark1' is a landmark
-        landmark1.Initialize();
+        landmark1.Initialize(0);
         Assert.IsNotNull(landmark1.GetLandmark());
 
         // ensure winner is found if only 1 player owns a landmark
@@ -327,8 +327,8 @@ public class GameTest
         Player playerB = players[1];
 
         // ensure'landmark1' and 'landmark2' are landmarks
-        landmark1.Initialize();
-        landmark2.Initialize();
+        landmark1.Initialize(0);
+        landmark2.Initialize(0);
         Assert.IsNotNull(landmark1.GetLandmark());
         Assert.IsNotNull(landmark2.GetLandmark());
 
@@ -369,7 +369,7 @@ public class GameTest
         Player playerB = players[1];
 
         // ensure 'landmark1' is a landmark
-        landmark1.Initialize();
+        landmark1.Initialize(0);
         Assert.IsNotNull(landmark1.GetLandmark());
 
         // ensure no winner is found if 1 player has a landmark

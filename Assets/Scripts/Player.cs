@@ -4,21 +4,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[System.Serializable]
 public class Player : MonoBehaviour {
+    [SerializeField] public int playerID;
 
-	public List <Sector> ownedSectors;
-    public List <Unit> units;
+    [System.NonSerialized] public List <Sector> ownedSectors = new List<Sector>();
+    [System.NonSerialized] public List <Unit> units = new List<Unit>();
 
-    [SerializeField] private Game game;
-    [SerializeField] private GameObject unitPrefab;
-	[SerializeField] private PlayerUI gui;
+    [System.NonSerialized] private Game game;
+    [System.NonSerialized] private GameObject unitPrefab;
+    [System.NonSerialized] private PlayerUI gui;
     [SerializeField] private int attack = 0;
     [SerializeField] private int defence = 0;
     [SerializeField] private Color color;
     [SerializeField] private bool human;
     [SerializeField] private bool neutral;
     [SerializeField] private bool active = false;
-    [SerializeField] private List<PunishmentCard> punishmentCards;
+    [SerializeField] private List<PunishmentCard> punishmentCards = new List<PunishmentCard>();
 
     #region Getters and Setters
 
@@ -245,6 +247,10 @@ public class Player : MonoBehaviour {
         this.active = active;
     }
 
+    public void SetID(int id) {
+        this.playerID = id;
+    }
+
     /// <summary>
     /// 
     /// called when this player is eliminated in order to pass all sectors owned by this player to the player that eliminated this player
@@ -346,6 +352,10 @@ public class Player : MonoBehaviour {
             if (sector.GetLandmark() != null && sector.GetUnit() == null)
             {
                 // instantiate a new unit at the sector
+                if (unitPrefab == null) {
+                    unitPrefab = (GameObject)Resources.Load("unitPrefab");
+                }
+                
                 Unit newUnit = Instantiate(unitPrefab).GetComponent<Unit>();
 
                 // initialize the new unit
@@ -396,6 +406,16 @@ public class Player : MonoBehaviour {
 
         // otherwise, return false
         return false;
+    }
+
+    public void OnLoad(Player savedData) {
+        this.attack = savedData.attack;
+        this.defence = savedData.defence;
+        this.color = savedData.color;
+        this.human = savedData.human;
+        this.neutral = savedData.neutral;
+        this.active = savedData.active;
+        this.punishmentCards = savedData.punishmentCards;
     }
     
 }

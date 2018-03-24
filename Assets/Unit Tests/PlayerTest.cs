@@ -51,7 +51,7 @@ public class PlayerTest
 
         // capturing landmark
         Sector landmarkedSector = map.sectors[0]; 
-        landmarkedSector.Initialize();
+        landmarkedSector.Initialize(0);
         Landmark landmark = landmarkedSector.GetLandmark();
         Player playerA = game.players[0];
         Player playerB = game.players[1];
@@ -86,7 +86,7 @@ public class PlayerTest
 
         // capturing landmark
         Sector landmarkedSector = map.sectors[0]; 
-        landmarkedSector.Initialize();
+        landmarkedSector.Initialize(0);
         Landmark landmark = landmarkedSector.GetLandmark();
         Player playerA = game.players[0];
         Player playerB = game.players[1];
@@ -121,7 +121,7 @@ public class PlayerTest
 
         // capturing landmark
         Sector landmarkedSector = map.sectors[0]; 
-        landmarkedSector.Initialize();
+        landmarkedSector.Initialize(0);
         Landmark landmark = landmarkedSector.GetLandmark();
         Player playerA = game.players[0];
 
@@ -151,7 +151,7 @@ public class PlayerTest
 
         // capturing landmark
         Sector landmarkedSector = map.sectors[0]; 
-        landmarkedSector.Initialize();
+        landmarkedSector.Initialize(0);
         Landmark landmark = landmarkedSector.GetLandmark();
         Player playerA = game.players[0];
 
@@ -183,7 +183,7 @@ public class PlayerTest
         Player playerA = game.players[0];
 
         // ensure that 'landmarkedSector' is a landmark and does not contain a unit
-        landmarkedSector.Initialize();
+        landmarkedSector.Initialize(0);
         landmarkedSector.SetUnit(null);
         Assert.IsNotNull(landmarkedSector.GetLandmark());
 
@@ -205,7 +205,7 @@ public class PlayerTest
         Player playerA = game.players[0];
 
         // ensure that 'landmarkedSector' is a landmark and contains a Level 5 unit
-        landmarkedSector.Initialize();
+        landmarkedSector.Initialize(0);
         landmarkedSector.SetUnit(MonoBehaviour.Instantiate(playerA.GetUnitPrefab()).GetComponent<Unit>());
         landmarkedSector.GetUnit().SetLevel(5);
         landmarkedSector.GetUnit().SetOwner(playerA);
@@ -231,7 +231,7 @@ public class PlayerTest
         landmarkedSector.SetUnit(null);
 
         // ensure that 'landmarkedSector' is a landmark and does not contain a unit
-        landmarkedSector.Initialize();
+        landmarkedSector.Initialize(0);
         landmarkedSector.SetUnit(null);
         Assert.IsNotNull(landmarkedSector.GetLandmark());
 

@@ -48,4 +48,9 @@ public class Landmark : MonoBehaviour {
     public void SetAmount(int amount) {
         this.amount = amount;
     }
+
+    public void OnLoad(Landmark savedData) {
+        this.resourceType = savedData.resourceType;
+        this.amount = savedData.amount;
+}
 }

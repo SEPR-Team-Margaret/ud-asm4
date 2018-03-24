@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
+[System.Serializable]
 public class Unit : MonoBehaviour {
 
-    [SerializeField] private Player owner;
-    [SerializeField] private Sector sector;
+    [System.NonSerialized] private Player owner;
+    [SerializeField] private int ownerID;
+    [System.NonSerialized] private Sector sector;
+    [SerializeField] private int sectorID;
     [SerializeField] private int level;
     [SerializeField] private bool selected = false;
     [SerializeField] public string unitName;
@@ -64,6 +66,7 @@ public class Unit : MonoBehaviour {
     /// <param name="owner">The player that owns this unit</param>
     public void SetOwner(Player owner) {
         this.owner = owner;
+        this.ownerID = this.owner.playerID;
     }
 
     /// <summary>
@@ -84,6 +87,7 @@ public class Unit : MonoBehaviour {
     /// <param name="sector">The sector that this unit is on</param>
     public void SetSector(Sector sector) {
         this.sector = sector;
+        this.sectorID = sector.sectorID;
     }
 
     /// <summary>
@@ -291,6 +295,24 @@ public class Unit : MonoBehaviour {
 
     void OnMouseOver() {
         Debug.Log("Mouse is over GameObject.");
+    }
+
+    public void OnLoad(Unit savedData) {
+        Game game = GameObject.Find("GameManager").GetComponent<Game>();
+        this.ownerID = savedData.ownerID;
+        this.owner = game.players[savedData.ownerID];
+        this.sector = game.sectors[savedData.sectorID];
+        this.sectorID = savedData.sectorID;
+        this.level = savedData.level;
+        this.selected = savedData.selected;
+        this.unitName = savedData.unitName;
+        this.unitFrozen = savedData.unitFrozen;
+        this.frozenCounter = savedData.frozenCounter;
+
+        this.sprite = new UnitSprite(this.gameObject,
+            savedData.sprite.currentHead,
+            savedData.sprite.currentBody,
+            savedData.sprite.currentHat);
     }
     
 }

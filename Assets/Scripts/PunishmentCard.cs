@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class PunishmentCard : MonoBehaviour {
 
-    [SerializeField] private Player owner;
-    [SerializeField] private Sector sector;
-    [SerializeField] private enum Effect {FreezeUnit, SkipTurn, NullifyResource};
-    [SerializeField] private Map map;
-	private Effect effect;
+    [System.NonSerialized] private Player owner;
+    [SerializeField] private int playerID;
+    [System.NonSerialized] private Sector sector;
+    [SerializeField] private int sectorID;
+    private enum Effect {FreezeUnit, SkipTurn, NullifyResource};
+    [System.NonSerialized] private Map map;
+    [SerializeField] private Effect effect;
 
     #region Getters and Setters
 
@@ -90,5 +93,14 @@ public class PunishmentCard : MonoBehaviour {
 				break;
 		}
 	}
+
+    public void OnLoad(PunishmentCard savedData) {
+        Game game = GameObject.Find("GameManager").GetComponent<Game>();
+        this.playerID = savedData.playerID;
+        this.owner = game.players[savedData.playerID];
+        this.sectorID = savedData.sectorID;
+        this.sector = game.sectors[savedData.sectorID];
+        this.effect = savedData.effect;
+}
     
 }

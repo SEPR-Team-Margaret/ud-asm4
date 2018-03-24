@@ -47,13 +47,13 @@ public class SectorTest
         Sector sectorWithoutLandmark = map.sectors[1];
         Sector sectorWithLandmark = map.sectors[0];
 
-        sectorWithoutLandmark.Initialize();
+        sectorWithoutLandmark.Initialize(0);
         Assert.IsNull(sectorWithoutLandmark.GetOwner());
         Assert.IsTrue(sectorWithoutLandmark.gameObject.GetComponent<Renderer>().material.color.Equals(Color.gray));
         Assert.IsNull(sectorWithoutLandmark.GetUnit());
         Assert.IsNull(sectorWithoutLandmark.GetLandmark());
 
-        sectorWithLandmark.Initialize();
+        sectorWithLandmark.Initialize(0);
         Assert.IsNull(sectorWithLandmark.GetOwner());
         Assert.IsTrue(sectorWithLandmark.gameObject.GetComponent<Renderer>().material.color.Equals(Color.gray));
         Assert.IsNull(sectorWithLandmark.GetUnit());
