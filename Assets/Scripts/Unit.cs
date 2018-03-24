@@ -13,11 +13,11 @@ public class Unit : MonoBehaviour {
     [SerializeField] private int level;
     [SerializeField] private bool selected = false;
     [SerializeField] public string unitName;
-	[SerializeField] private bool unitFrozen = false; // NEW ADDITION FOR FREEZING UNITS PUNISHMENT CARD
-	[SerializeField] private int frozenCounter = 0;
+    [SerializeField] private bool unitFrozen = false; // NEW ADDITION FOR FREEZING UNITS PUNISHMENT CARD
+    [SerializeField] private int frozenCounter = 0;
 
     [SerializeField] private UnitSprite sprite;
-    
+
     /// <summary>
     /// 
     /// Initializes the unit on the passed sector and assigns it to the passed player
@@ -27,8 +27,7 @@ public class Unit : MonoBehaviour {
     /// </summary>
     /// <param name="player">The player the unit belongs to</param>
     /// <param name="sector">The sector the unit is on</param>
-    public void Initialize(Player player, Sector sector)
-    {
+    public void Initialize(Player player, Sector sector) {
 
         // set the owner, level, and color of the unit
         owner = player;
@@ -140,7 +139,7 @@ public class Unit : MonoBehaviour {
     public void SetSelected(bool selected) {
         this.selected = selected;
     }
-    
+
     /// <summary>
     /// 
     /// Moves this unit to the passed sector
@@ -149,40 +148,40 @@ public class Unit : MonoBehaviour {
     /// </summary>
     /// <param name="targetSector">The sector to move this unit to</param>
     public void MoveTo(Sector targetSector) {
-        
-		if (this.unitFrozen == false) {
-			// clear the unit's current sector
-			if (this.sector != null) {
-				this.sector.ClearUnit ();
-			}   
 
-			// set the unit's sector to the target sector
-			// and the target sector's unit to the unit
-			this.sector = targetSector;
-			targetSector.SetUnit (this);
-			Transform targetTransform = targetSector.transform.Find ("Units").transform;
+        if (this.unitFrozen == false) {
+            // clear the unit's current sector
+            if (this.sector != null) {
+                this.sector.ClearUnit();
+            }
 
-			// set the unit's transform to be a child of
-			// the target sector's transform
-			transform.SetParent (targetTransform);
+            // set the unit's sector to the target sector
+            // and the target sector's unit to the unit
+            this.sector = targetSector;
+            targetSector.SetUnit(this);
+            Transform targetTransform = targetSector.transform.Find("Units").transform;
 
-			// align the transform to the sector
-			transform.position = targetTransform.position;
+            // set the unit's transform to be a child of
+            // the target sector's transform
+            transform.SetParent(targetTransform);
+
+            // align the transform to the sector
+            transform.position = targetTransform.position;
 
 
-			// if the target sector belonged to a different 
-			// player than the unit, capture it and level up
-			if (targetSector.GetOwner () != this.owner) {
-				// level up
-				LevelUp ();
+            // if the target sector belonged to a different 
+            // player than the unit, capture it and level up
+            if (targetSector.GetOwner() != this.owner) {
+                // level up
+                LevelUp();
 
-				// capture the target sector for the owner of this unit
-				owner.Capture (targetSector);
-			}
-		} 
-		else {
-			Debug.Log ("This unit is frozen! -- need to implement UI for this");
-		}
+                // capture the target sector for the owner of this unit
+                owner.Capture(targetSector);
+            }
+        }
+        else {
+            Debug.Log("This unit is frozen! -- need to implement UI for this");
+        }
 
     }
 
@@ -193,7 +192,7 @@ public class Unit : MonoBehaviour {
     /// </summary>
     /// <param name="otherUnit">The unit to be swapped with this one</param>
     public void SwapPlacesWith(Unit otherUnit) {
-        
+
         // swap the sectors' references to the units
         this.sector.SetUnit(otherUnit);
         otherUnit.sector.SetUnit(this);
@@ -201,23 +200,22 @@ public class Unit : MonoBehaviour {
 
         // get the index of this unit's sector in the map's list of sectors
         int tempSectorIndex = -1;
-        for (int i = 0; i < this.owner.GetGame().gameMap.GetComponent<Map>().sectors.Length; i++)
-        {
+        for (int i = 0; i < this.owner.GetGame().gameMap.GetComponent<Map>().sectors.Length; i++) {
             if (this.sector == this.owner.GetGame().gameMap.GetComponent<Map>().sectors[i])
                 tempSectorIndex = i;
         }
 
         // swap the units' references to their sectors
         this.sector = otherUnit.sector;
-        otherUnit.sector = this.owner.GetGame().gameMap.GetComponent<Map>().sectors[tempSectorIndex] ;
-                
-        // realign transforms for each unit
-		this.transform.SetParent(this.sector.transform.Find("Units").transform);
-		this.transform.position = this.sector.transform.Find("Units").position;
+        otherUnit.sector = this.owner.GetGame().gameMap.GetComponent<Map>().sectors[tempSectorIndex];
 
-		otherUnit.transform.SetParent(otherUnit.sector.transform.Find("Units").transform);
-		otherUnit.transform.position = otherUnit.sector.transform.Find("Units").position;
-        
+        // realign transforms for each unit
+        this.transform.SetParent(this.sector.transform.Find("Units").transform);
+        this.transform.position = this.sector.transform.Find("Units").position;
+
+        otherUnit.transform.SetParent(otherUnit.sector.transform.Find("Units").transform);
+        otherUnit.transform.position = otherUnit.sector.transform.Find("Units").position;
+
     }
 
     /// <summary>
@@ -230,13 +228,13 @@ public class Unit : MonoBehaviour {
 
         // level up the unit, capping at Level 5
 
-		if (level < 5) {
+        if (level < 5) {
 
-			// increase level
-			level++;
-		}
-		
-	}
+            // increase level
+            level++;
+        }
+
+    }
 
     /// <summary>
     /// 
@@ -244,7 +242,7 @@ public class Unit : MonoBehaviour {
     /// 
     /// </summary>
     public void Select() {
-        
+
         selected = true;
         //sector.ApplyHighlightAdjacent();
     }
@@ -255,7 +253,7 @@ public class Unit : MonoBehaviour {
     /// 
     /// </summary>
     public void Deselect() {
-        
+
         selected = false;
         //sector.RevertHighlightAdjacent();
     }
@@ -265,33 +263,33 @@ public class Unit : MonoBehaviour {
     /// safely destroy the unit by removing it from its owner's list of units before destroying
     /// 
     /// </summary>
-    public void DestroySelf() { 
+    public void DestroySelf() {
         sector.ClearUnit();
         owner.units.Remove(this);
         Destroy(this.gameObject);
     }
 
-	public void FreezeUnit() {
-		unitFrozen = true;
-		frozenCounter = 3;
-	}
+    public void FreezeUnit() {
+        unitFrozen = true;
+        frozenCounter = 3;
+    }
 
-	public void UnFreezeUnit() {
-		unitFrozen = false;
-		frozenCounter = 0;
-	}
+    public void UnFreezeUnit() {
+        unitFrozen = false;
+        frozenCounter = 0;
+    }
 
-	public bool IsFrozen(){
-		return unitFrozen;
-	}
+    public bool IsFrozen() {
+        return unitFrozen;
+    }
 
-	public int GetFrozenCounter(){
-		return frozenCounter;
-	}
+    public int GetFrozenCounter() {
+        return frozenCounter;
+    }
 
-	public void DecrementFrozenCounter(){
-		frozenCounter--;
-	}
+    public void DecrementFrozenCounter() {
+        frozenCounter--;
+    }
 
     /*void OnMouseOver() {
         Debug.Log("Mouse is over GameObject.");
@@ -313,5 +311,5 @@ public class Unit : MonoBehaviour {
             savedData.sprite.currentHead,
             savedData.sprite.currentBody,
             savedData.sprite.currentHat);
-    
+    }
 }

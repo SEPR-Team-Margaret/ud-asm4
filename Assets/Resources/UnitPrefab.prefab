@@ -511,10 +511,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd006aa75699db04297fa7416708d6b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  owner: {fileID: 0}
-  sector: {fileID: 0}
+  ownerID: 0
+  sectorID: 0
   level: 0
   selected: 0
   unitName: 
   unitFrozen: 0
   frozenCounter: 0
+  sprite:
+    currentHead: 0
+    currentBody: 0
+    currentHat: 0
