@@ -29,30 +29,21 @@ public class UnitSprite {
 
     public void SetHead(int headID) {
         MeshRenderer renderer = this.headGO.GetComponent<MeshRenderer>();
-        string resourceLC = "UnitSprites/Head/head" + headID.ToString() + ".mat";
-
-        Debug.Log(Application.dataPath + "/Resources/" + resourceLC);
-        Debug.Log(File.Exists(Application.dataPath + "/Resources/" + resourceLC));
-        Debug.Log(resourceLC);
-
-        Material temp = Resources.Load<Material>(resourceLC);
-
-        Debug.Log(temp);
-
-        renderer.material = temp;
+        string resourceLC = "UnitSprites/Head/head" + headID.ToString();
+        renderer.material = (Material)Resources.Load(resourceLC);
 
         //This doesn't seem to work, the path is returning a null material for some reason...
     }
 
     public void SetBody(int bodyID) {
         MeshRenderer renderer = this.bodyGO.GetComponent<MeshRenderer>();
-        string resourceLC = "UnitSprites/Body/body" + bodyID.ToString() + ".mat";
+        string resourceLC = "UnitSprites/Body/body" + bodyID.ToString();
         renderer.material = (Material)Resources.Load(resourceLC);
     }
 
     public void SetHat(int hatID) {
         MeshRenderer renderer = this.hatGO.GetComponent<MeshRenderer>();
-        string resourceLC = "UnitSprites/Hat/hat" + hatID.ToString() + ".mat";
+        string resourceLC = "UnitSprites/Hat/hat" + hatID.ToString();
         renderer.material = (Material)Resources.Load(resourceLC);
     }
 }
