@@ -14,9 +14,11 @@ public class Game : MonoBehaviour {
     public Sector[] sectors;
 
     public const int NUMBER_OF_PLAYERS = 4;
-    
+
     public enum TurnState { Move1, Move2, EndOfTurn, SelectUnit, UseCard, NULL };
     [SerializeField] private TurnState turnState;
+    [SerializeField] public TurnState prevState;
+    
     [SerializeField] private bool gameFinished = false;
     [SerializeField] private bool testMode = false;
     public string saveFilePath;
@@ -93,6 +95,18 @@ public class Game : MonoBehaviour {
     /// <param name="turnState">The state the current turn state should be set to</param>
     public void SetTurnState(TurnState turnState) {
         this.turnState = turnState;
+    }
+
+    /// <summary>
+    /// 
+    /// Intended for use with reverting from SelectUnit and UseCard states to previous move states.
+    /// 
+    /// </summary>
+    /// <param name="turnState">The state the current turn state should be set to</param>
+    public void RevertTurnState() {
+        TurnState temp = this.prevState;
+        this.prevState = turnState;
+        this.turnState = temp;
     }
 
     /// <summary>
@@ -480,20 +494,47 @@ public class Game : MonoBehaviour {
         switch (turnState)
         {
             case TurnState.Move1:
+                Debug.Log("Move1 Initiated");
                 if (!currentPlayer.hasUnits())
                 {
+                    this.prevState = turnState;
                     turnState = TurnState.EndOfTurn;
+                    Debug.LogWarning(currentPlayer + " has no units.");
                     break;
                 }
+                this.prevState = turnState;
                 turnState = TurnState.Move2;
                 break;
 
             case TurnState.Move2:
+                Debug.Log("Move2 Initiated");
+                this.prevState = turnState;
                 turnState = TurnState.EndOfTurn;
                 break;
 
             case TurnState.EndOfTurn:
+                Debug.Log("EndOfTurn Initiated");
+                this.prevState = turnState;
                 turnState = TurnState.Move1;
+                break;
+
+            case TurnState.SelectUnit:
+                Debug.Log("SelectUnit Initiated");
+                if (this.prevState == TurnState.Move1) {
+                    this.prevState = turnState;
+                    this.turnState = TurnState.Move2;
+                } else if (this.prevState == TurnState.Move2) {
+                    this.prevState = turnState;
+                    this.EndTurn();
+                } else {
+                    Debug.LogWarning("Previous State not updated correctly: currentState: " + this.turnState + ", prevState: " + this.prevState+".");
+                }
+                break;
+
+            case TurnState.UseCard:
+                Debug.Log("UseCardd Initiated");
+                turnState = this.prevState;
+                this.prevState = TurnState.UseCard;
                 break;
 
             default:
@@ -534,6 +575,17 @@ public class Game : MonoBehaviour {
 
             case TurnState.EndOfTurn:
                 actionsRemaining.text = "0";
+                break;
+
+            case TurnState.SelectUnit:
+            case TurnState.UseCard:
+                if (this.prevState == TurnState.Move1) {
+                    actionsRemaining.text = "2";
+                } else if (this.prevState == TurnState.Move2) {
+                    actionsRemaining.text = "1";
+                } else {
+                    actionsRemaining.text = "0";
+                }
                 break;
 
             default:
@@ -586,8 +638,30 @@ public class Game : MonoBehaviour {
     public void EndTurn() {
 
         // end the current turn
-
         turnState = TurnState.EndOfTurn;
+
+        // if the current turn has ended and test mode is not enabled
+        if (turnState == TurnState.EndOfTurn) {
+
+            // if there is no winner yet
+            if (GetWinner() == null) {
+                // start the next player's turn
+                // Swapped by Jack
+                NextTurnState();
+                NextPlayer();
+
+                // skip eliminated players
+                while (currentPlayer.IsEliminated())
+                    NextPlayer();
+
+                // spawn units for the next player
+                currentPlayer.SpawnUnits();
+            } else
+                if (!gameFinished)
+                EndGame();
+        } else {
+            Debug.LogWarning("State was somehow changed from EOT, currentState: " + this.turnState + ", prevState: " + this.prevState + ".");
+        }
     }
 
     /// <summary>
@@ -867,29 +941,7 @@ public class Game : MonoBehaviour {
             dialog.SetDialogData("PLAYER 1");
             dialog.Show();
         }
-        // if the current turn has ended and test mode is not enabled
-        if (turnState == TurnState.EndOfTurn)
-        {
-
-            // if there is no winner yet
-            if (GetWinner() == null)
-            {
-                // start the next player's turn
-                // Swapped by Jack
-                NextTurnState();
-                NextPlayer();
-
-                // skip eliminated players
-                while (currentPlayer.IsEliminated())
-                    NextPlayer();
-
-                // spawn units for the next player
-                currentPlayer.SpawnUnits();
-            }
-            else
-                if (!gameFinished)
-                EndGame();
-        }
+        
     }
     
     private void OnApplicationQuit()

@@ -108,7 +108,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 342}
   m_MaxSize: {x: 12008, y: 8042}
   vertical: 1
-  controlID: 23653
+  controlID: 35
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 342}
   m_MaxSize: {x: 12008, y: 8042}
   vertical: 0
-  controlID: 23654
+  controlID: 36
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 342}
   m_MaxSize: {x: 8006, y: 8042}
   vertical: 1
-  controlID: 23764
+  controlID: 37
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 23765
+  controlID: 38
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -199,8 +199,8 @@ MonoBehaviour:
     y: 0
     width: 436
     height: 550
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -251,8 +251,8 @@ MonoBehaviour:
     y: 550
     width: 1449
     height: 398
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 17}
@@ -390,24 +390,24 @@ MonoBehaviour:
     height: 529
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 4e2c0000
-    m_LastClickedID: 0
-    m_ExpandedIDs: 8458f9ff1881f9ff7af0ffff00f2ffff62f6ffff000000009a340000063500003c350000dc35000042360000c636000012370000723700009e3800001a390000203a0000643a0000da3a00000c3b00005c3b0000
+    scrollPos: {x: 0, y: 240}
+    m_SelectedIDs: 96f8ffff
+    m_LastClickedID: -1898
+    m_ExpandedIDs: b4f5ffff98fbffff00000000043600007a360000fc360000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: sector_23
+      m_OriginalName: sector_23
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 13176
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 9}
     m_SearchString: 
@@ -477,11 +477,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.00025668723, y: 0.71798265, z: -0.696061, w: 0.00026602577}
     speed: 2
-    m_Value: {x: 0.0002566872, y: 0.7179826, z: -0.69606096, w: 0.00026602575}
+    m_Value: {x: 0.00025668723, y: 0.71798265, z: -0.69606096, w: 0.00026602575}
   m_Size:
-    m_Target: 781.25854
+    m_Target: 778.0976
     speed: 2
-    m_Value: 781.25854
+    m_Value: 778.0976
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -559,19 +559,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Resources/UnitSprites/Head
+    - Assets/Scripts
   m_ViewMode: 1
-  m_StartGridSize: 64
+  m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Resources/UnitSprites/Head
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Luke\Unity\ud-asm4
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 44}
-    m_SelectedIDs: ec440400
-    m_LastClickedID: 279788
-    m_ExpandedIDs: 00000000ce2c00009a2e0000f63000001a3300006a34000076340000e644040000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 72}
+    m_SelectedIDs: 4e2a0000
+    m_LastClickedID: 10830
+    m_ExpandedIDs: 00000000a42700006c290000e62b00000a2d00006e2e0000e82f0000f82f000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -599,7 +599,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ce2c00009a2e0000f63000001a3300006a34000076340000e644040000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000a42700006c290000e62b00000a2d00006e2e0000e82f0000f82f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -624,9 +624,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 4e2c0000
-    m_LastClickedInstanceID: 11342
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -652,7 +652,7 @@ MonoBehaviour:
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 64
+    m_GridSize: 16
   m_DirectoriesAreaWidth: 116
 --- !u!114 &18
 MonoBehaviour:
@@ -870,18 +870,6 @@ MonoBehaviour:
     - id: '[Assembly-CSharp][GameTest.NextPlayer_EliminatedPlayersAreSkipped]'
       name: NextPlayer_EliminatedPlayersAreSkipped
       fullName: GameTest.NextPlayer_EliminatedPlayersAreSkipped
-      resultStatus: 0
-      duration: 0
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-    - id: '[Assembly-CSharp][GameTest.NextTurnState_TurnStateProgressesCorrectly]'
-      name: NextTurnState_TurnStateProgressesCorrectly
-      fullName: GameTest.NextTurnState_TurnStateProgressesCorrectly
       resultStatus: 0
       duration: 0
       messages: 

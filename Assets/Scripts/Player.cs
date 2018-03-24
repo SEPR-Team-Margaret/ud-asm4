@@ -397,5 +397,17 @@ public class Player : MonoBehaviour {
         // otherwise, return false
         return false;
     }
+
+    public void UseCard(int index) {
+        game.SetTurnState(Game.TurnState.UseCard);
+        PunishmentCard selectedCard = punishmentCards[index];
+        if (selectedCard != null) {
+            selectedCard.Use();
+            this.punishmentCards.RemoveAt(index);
+        } else {
+            Debug.LogWarning("Somehow passed a null card index, or a null card was found: "+index.ToString());
+        }
+        
+    }
     
 }

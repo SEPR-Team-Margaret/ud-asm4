@@ -289,8 +289,8 @@ public class Unit : MonoBehaviour {
 		frozenCounter--;
 	}
 
-    void OnMouseOver() {
+    /*void OnMouseOver() {
         Debug.Log("Mouse is over GameObject.");
-    }
+    }*/
     
 }
