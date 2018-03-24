@@ -77,7 +77,7 @@ public class PunishmentCard : MonoBehaviour {
         
     }
 
-	public void usePunishmentCard() {
+	public void Use() {
 		switch (effect) {
 			case Effect.FreezeUnit:
 				//Freeze unit card
@@ -92,7 +92,13 @@ public class PunishmentCard : MonoBehaviour {
 				//Nullify resource
 				break;
 		}
+
+        this.End();
 	}
+
+    private void End() {
+        this.map.game.RevertTurnState();
+    }
 
     public void OnLoad(PunishmentCard savedData) {
         Game game = GameObject.Find("GameManager").GetComponent<Game>();
@@ -102,5 +108,5 @@ public class PunishmentCard : MonoBehaviour {
         this.sector = game.sectors[savedData.sectorID];
         this.effect = savedData.effect;
 }
-    
+
 }

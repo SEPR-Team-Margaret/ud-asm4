@@ -293,9 +293,9 @@ public class Unit : MonoBehaviour {
 		frozenCounter--;
 	}
 
-    void OnMouseOver() {
+    /*void OnMouseOver() {
         Debug.Log("Mouse is over GameObject.");
-    }
+    }*/
 
     public void OnLoad(Unit savedData) {
         Game game = GameObject.Find("GameManager").GetComponent<Game>();
@@ -313,6 +313,5 @@ public class Unit : MonoBehaviour {
             savedData.sprite.currentHead,
             savedData.sprite.currentBody,
             savedData.sprite.currentHat);
-    }
     
 }

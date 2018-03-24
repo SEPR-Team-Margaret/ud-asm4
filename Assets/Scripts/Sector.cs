@@ -292,54 +292,61 @@ public class Sector : MonoBehaviour {
     
     public void OnMouseUpAsButtonAccessible() {
 
+        Debug.Log("CurrentState: "+map.game.GetTurnState() + " | PrevState: "+ map.game.prevState.ToString());
         // a method of OnMouseUpAsButton that is 
         // accessible to other objects for testing
 
 
         // if this sector contains a unit and belongs to the
         // current active player, and if no unit is selected
-        if (unit != null && owner.IsActive() && map.game.NoUnitSelected())
-        {
-            // select this sector's unit
-            unit.Select();
-            this.ApplyHighlightAdjacent();
+        if (map.game.GetTurnState() == Game.TurnState.Move1 || map.game.GetTurnState() == Game.TurnState.Move2) {
+            if (unit != null && owner.IsActive() && map.game.NoUnitSelected()) {
+                // select this sector's unit
+                unit.Select();
+                this.ApplyHighlightAdjacent();
+                this.map.game.prevState = map.game.GetTurnState();
+                this.map.game.SetTurnState(Game.TurnState.SelectUnit);
+            }
+        } else if (map.game.GetTurnState() == Game.TurnState.SelectUnit) {
+            // if this sector's unit is already selected
+            if (unit != null && unit.IsSelected()) {
+                // deselect this sector's unit           
+                unit.Deselect();
+                this.RevertHighlightAdjacent();
+                this.map.game.RevertTurnState();
+            }
+            // if this sector is adjacent to the sector containing the selected unit
+            else if (AdjacentSelectedUnit() != null) {
+                // get the selected unit
+                Unit selectedUnit = AdjacentSelectedUnit();
+
+                // deselect the selected unit
+                selectedUnit.Deselect();
+
+                // if this sector is unoccupied
+                if (unit == null)
+                    MoveIntoUnoccupiedSector(selectedUnit);
+
+                // if the sector is occupied by a friendly unit
+                else if (unit.GetOwner() == selectedUnit.GetOwner())
+                    MoveIntoFriendlyUnit(selectedUnit);
+
+                // if the sector is occupied by a hostile unit
+                else if (unit.GetOwner() != selectedUnit.GetOwner())
+                    MoveIntoHostileUnit(selectedUnit, this.unit);
+
+                map.game.NextTurnState(); // advance to next turn phase when action take (Modified by Dom 13/02/2018)
+                this.RevertHighlight();
+                this.RevertHighlightAdjacent();
+            }
+
         }
 
-        // if this sector's unit is already selected
-        else if (unit != null && unit.IsSelected())
-        {
-            // deselect this sector's unit           
-            unit.Deselect();
-            this.RevertHighlightAdjacent();
-        }
 
-        // if this sector is adjacent to the sector containing
-        // the selected unit
-        else if (AdjacentSelectedUnit() != null)
-        {
-            // get the selected unit
-            Unit selectedUnit = AdjacentSelectedUnit();
 
-            // deselect the selected unit
-            selectedUnit.Deselect();
 
-            // if this sector is unoccupied
-            if (unit == null)
-                MoveIntoUnoccupiedSector(selectedUnit);
 
-            // if the sector is occupied by a friendly unit
-            else if (unit.GetOwner() == selectedUnit.GetOwner())
-                MoveIntoFriendlyUnit(selectedUnit);
-
-            // if the sector is occupied by a hostile unit
-            else if (unit.GetOwner() != selectedUnit.GetOwner())
-                MoveIntoHostileUnit(selectedUnit, this.unit);
-            
-            map.game.NextTurnState(); // advance to next turn phase when action take (Modified by Dom 13/02/2018)
-            this.RevertHighlight();
-            Debug.Log("Reverted Highlight");
-            this.RevertHighlightAdjacent();
-        }
+        
     }
 
     /// <summary>
