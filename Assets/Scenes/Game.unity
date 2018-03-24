@@ -216,7 +216,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 5379455}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3170333, y: 2.19, z: 0.08819999}
+  m_LocalPosition: {x: -0.3170333, y: 1, z: 0.08819999}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 918769885}
@@ -387,18 +387,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 918769886}
-  - {fileID: 704808530}
-  - {fileID: 1723041533}
-  - {fileID: 796509343}
-  - {fileID: 1155640400}
-  - {fileID: 493240949}
-  - {fileID: 1846041886}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -486,17 +477,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 2120657127}
-  - {fileID: 1656115562}
-  - {fileID: 1152496385}
-  - {fileID: 217717016}
-  - {fileID: 1647300173}
-  - {fileID: 331780287}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -1142,11 +1125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6fe4d8b41ec0b9418be61d4379ca3ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ownedSectors: []
-  units: []
-  game: {fileID: 369558830}
-  unitPrefab: {fileID: 1532194049575530, guid: e261b19da2e84924fa6db2b5e2b54def, type: 2}
-  gui: {fileID: 25781009}
+  playerID: 0
   attack: 0
   defence: 0
   color: {r: 0.8039216, g: 0, b: 0, a: 1}
@@ -1586,7 +1565,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 123780296}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.10233329, y: 2.19, z: 0.30099994}
+  m_LocalPosition: {x: -0.10233329, y: 1, z: 0.30099994}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 699414679}
@@ -1773,15 +1752,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 565838941}
-  - {fileID: 1208763422}
-  - {fileID: 699414680}
-  - {fileID: 839985103}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -1947,14 +1920,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 331780287}
-  - {fileID: 764776711}
-  - {fileID: 565838941}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -2012,6 +1980,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 051670c6c8693604ba3a453596e757ef, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 051670c6c8693604ba3a453596e757ef, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 051670c6c8693604ba3a453596e757ef, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 051670c6c8693604ba3a453596e757ef, type: 3}
   m_IsPrefabParent: 0
@@ -2041,7 +2021,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 198614163}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2942333, y: 2.19, z: 0.28779995}
+  m_LocalPosition: {x: -0.2942333, y: 1, z: 0.28779995}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 331780286}
@@ -2085,6 +2065,10 @@ Prefab:
     - target: {fileID: 400000, guid: 516355cb5b260e34eb0f95f8d397c253, type: 3}
       propertyPath: m_RootOrder
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 516355cb5b260e34eb0f95f8d397c253, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 516355cb5b260e34eb0f95f8d397c253, type: 3}
@@ -2236,15 +2220,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 1984087422}
-  - {fileID: 735652240}
-  - {fileID: 1656115562}
-  - {fileID: 1152496385}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -2380,6 +2358,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 23
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 647994821e4289c4ab03ab99eaaa9f28, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 647994821e4289c4ab03ab99eaaa9f28, type: 3}
   m_IsPrefabParent: 0
@@ -2425,6 +2407,10 @@ Prefab:
     - target: {fileID: 400000, guid: 97e5dbfca6af6144daeac75cdaf98dee, type: 3}
       propertyPath: m_RootOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 97e5dbfca6af6144daeac75cdaf98dee, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97e5dbfca6af6144daeac75cdaf98dee, type: 3}
@@ -2537,7 +2523,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 216702243}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1241333, y: 2.19, z: 0.19899997}
+  m_LocalPosition: {x: -0.1241333, y: 1, z: 0.19899997}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 745472829}
@@ -2612,16 +2598,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 12300213}
-  - {fileID: 1152496385}
-  - {fileID: 1647300173}
-  - {fileID: 331780287}
-  - {fileID: 796509343}
+  ownerID: 0
   landmark: {fileID: 233223232}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -2956,7 +2935,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 262939878}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5990332, y: 2.19, z: 0.06459998}
+  m_LocalPosition: {x: -0.5990332, y: 1, z: 0.06459998}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 1984087421}
@@ -3000,6 +2979,10 @@ Prefab:
     - target: {fileID: 400000, guid: bb701b7b55ccbe342ac22478ebbbb59c, type: 3}
       propertyPath: m_RootOrder
       value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bb701b7b55ccbe342ac22478ebbbb59c, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb701b7b55ccbe342ac22478ebbbb59c, type: 3}
@@ -3249,6 +3232,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3a33b71a55a431d4c890feb5e39d3342, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a33b71a55a431d4c890feb5e39d3342, type: 3}
   m_IsPrefabParent: 0
@@ -3403,19 +3390,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 12300213}
-  - {fileID: 217717016}
-  - {fileID: 764776711}
-  - {fileID: 188522733}
-  - {fileID: 565838941}
-  - {fileID: 839985103}
-  - {fileID: 1723041533}
-  - {fileID: 796509343}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -3503,15 +3480,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 1155640400}
-  - {fileID: 493240949}
-  - {fileID: 1846041886}
-  - {fileID: 1615274803}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -3720,6 +3691,7 @@ MonoBehaviour:
   currentPlayer: {fileID: 78266717}
   sectors: []
   turnState: 0
+  prevState: 0
   gameFinished: 0
   testMode: 0
   saveFilePath: 
@@ -3928,7 +3900,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 385658422}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.056333333, y: 2.19, z: 0.15999998}
+  m_LocalPosition: {x: -0.056333333, y: 1, z: 0.15999998}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 1615274802}
@@ -4856,11 +4828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6fe4d8b41ec0b9418be61d4379ca3ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ownedSectors: []
-  units: []
-  game: {fileID: 369558830}
-  unitPrefab: {fileID: 1532194049575530, guid: e261b19da2e84924fa6db2b5e2b54def, type: 2}
-  gui: {fileID: 748083290}
+  playerID: 0
   attack: 0
   defence: 0
   color: {r: 1, g: 1, b: 1, a: 1}
@@ -5073,15 +5041,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 10711851}
-  - {fileID: 1155640400}
-  - {fileID: 1846041886}
-  - {fileID: 347052334}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -5196,7 +5158,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 537696784}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.48433328, y: 2.19, z: 0.18899995}
+  m_LocalPosition: {x: -0.48433328, y: 1, z: 0.18899995}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 1152496384}
@@ -5306,6 +5268,10 @@ Prefab:
     - target: {fileID: 400000, guid: 46d2ffb77ddc23b43b5103e1338048ef, type: 3}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 46d2ffb77ddc23b43b5103e1338048ef, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46d2ffb77ddc23b43b5103e1338048ef, type: 3}
@@ -5610,14 +5576,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 331780287}
-  - {fileID: 188522733}
-  - {fileID: 157737334}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -5675,6 +5636,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 97f09101a1c26d045989c20dc8adba06, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97f09101a1c26d045989c20dc8adba06, type: 3}
   m_IsPrefabParent: 0
@@ -5704,7 +5669,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 571185800}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.06973332, y: 2.19, z: 0.23739995}
+  m_LocalPosition: {x: -0.06973332, y: 1, z: 0.23739995}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 1208763420}
@@ -6131,7 +6096,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 618194740}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.23933327, y: 2.19, z: 0.40199995}
+  m_LocalPosition: {x: -0.23933327, y: 1, z: 0.40199995}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 188522732}
@@ -6159,7 +6124,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 623839783}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.21933328, y: 2.19, z: 0.14099997}
+  m_LocalPosition: {x: -0.21933328, y: 1, z: 0.14099997}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 493240948}
@@ -6187,7 +6152,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 643602891}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.14843334, y: 2.19, z: 0.40149993}
+  m_LocalPosition: {x: -0.14843334, y: 1, z: 0.40149993}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 565838940}
@@ -6658,6 +6623,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 539a0cdecd8235442a0fb1750b7fca99, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 539a0cdecd8235442a0fb1750b7fca99, type: 3}
   m_IsPrefabParent: 0
@@ -6734,14 +6703,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 157737334}
-  - {fileID: 1208763422}
-  - {fileID: 839985103}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -6829,17 +6793,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 1152496385}
-  - {fileID: 1826363245}
-  - {fileID: 1781388714}
-  - {fileID: 918769886}
-  - {fileID: 796509343}
-  - {fileID: 10711851}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -6971,11 +6927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6fe4d8b41ec0b9418be61d4379ca3ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ownedSectors: []
-  units: []
-  game: {fileID: 369558830}
-  unitPrefab: {fileID: 1532194049575530, guid: e261b19da2e84924fa6db2b5e2b54def, type: 2}
-  gui: {fileID: 1590918745}
+  playerID: 0
   attack: 0
   defence: 0
   color: {r: 0.6945231, g: 0, b: 0.9411765, a: 1}
@@ -7161,7 +7113,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 713322912}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.35423326, y: 2.19, z: 0.25839993}
+  m_LocalPosition: {x: -0.35423326, y: 1, z: 0.25839993}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 217717014}
@@ -7189,7 +7141,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 717166551}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.56813323, y: 2.19, z: 0.15799998}
+  m_LocalPosition: {x: -0.56813323, y: 1, z: 0.15799998}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 206610314}
@@ -7328,15 +7280,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 2120657127}
-  - {fileID: 1984087422}
-  - {fileID: 1656115562}
-  - {fileID: 206610315}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -7472,6 +7418,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 241c2b5f8d3a1f641a90cf217e52ecbe, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 241c2b5f8d3a1f641a90cf217e52ecbe, type: 3}
   m_IsPrefabParent: 0
@@ -7517,6 +7467,10 @@ Prefab:
     - target: {fileID: 400000, guid: 177f6d072eed95f43b4bbd9011552f71, type: 3}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 177f6d072eed95f43b4bbd9011552f71, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 177f6d072eed95f43b4bbd9011552f71, type: 3}
@@ -7594,16 +7548,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 1208763422}
-  - {fileID: 839985103}
-  - {fileID: 1723041533}
-  - {fileID: 1155640400}
-  - {fileID: 1615274803}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -7671,6 +7618,10 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 1f270fdddfd5d9d419449da50ea59c93, type: 2}
     - target: {fileID: 2300000, guid: 459968d8f28d3304f8dc7700d6d9dd0f, type: 3}
       propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 459968d8f28d3304f8dc7700d6d9dd0f, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7783,6 +7734,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 406ca383cc4138640afff7c7f3e6e7ff, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 406ca383cc4138640afff7c7f3e6e7ff, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 406ca383cc4138640afff7c7f3e6e7ff, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 406ca383cc4138640afff7c7f3e6e7ff, type: 3}
   m_IsPrefabParent: 0
@@ -7859,13 +7822,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 331780287}
-  - {fileID: 188522733}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -8178,12 +8137,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 2120657127}
+  ownerID: 0
   landmark: {fileID: 1291592236}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -8459,17 +8415,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 1152496385}
-  - {fileID: 704808530}
-  - {fileID: 217717016}
-  - {fileID: 331780287}
-  - {fileID: 1723041533}
-  - {fileID: 10711851}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -8588,7 +8536,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 811960462}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.51643324, y: 2.19, z: 0.076999985}
+  m_LocalPosition: {x: -0.51643324, y: 1, z: 0.076999985}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 1085659044}
@@ -8710,6 +8658,10 @@ Prefab:
     - target: {fileID: 400000, guid: e638c70913ef5654e9b60207186b8305, type: 3}
       propertyPath: m_RootOrder
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e638c70913ef5654e9b60207186b8305, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e638c70913ef5654e9b60207186b8305, type: 3}
@@ -8865,16 +8817,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 331780287}
-  - {fileID: 157737334}
-  - {fileID: 1208763422}
-  - {fileID: 699414680}
-  - {fileID: 1723041533}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -9189,6 +9134,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 343262a003ca52046aae4eaf50f217c9, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 343262a003ca52046aae4eaf50f217c9, type: 3}
   m_IsPrefabParent: 0
@@ -9368,7 +9317,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 914541558}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6368332, y: 2.19, z: 0.19769996}
+  m_LocalPosition: {x: -0.6368332, y: 1, z: 0.19769996}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 1656115561}
@@ -9443,15 +9392,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 1781388714}
-  - {fileID: 704808530}
-  - {fileID: 10711851}
-  - {fileID: 1846041886}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -9689,6 +9632,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 77b7e36d73ba4cd4ea02d2de149679be, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 77b7e36d73ba4cd4ea02d2de149679be, type: 3}
   m_IsPrefabParent: 0
@@ -9780,7 +9727,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 975897492}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2573333, y: 2.19, z: 0.18899995}
+  m_LocalPosition: {x: -0.2573333, y: 1, z: 0.18899995}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 10711850}
@@ -9808,7 +9755,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 987292259}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.42733327, y: 2.19, z: 0.299}
+  m_LocalPosition: {x: -0.42733327, y: 1, z: 0.299}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 12300212}
@@ -10161,7 +10108,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1002187704}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1363333, y: 2.19, z: 0.09799998}
+  m_LocalPosition: {x: -0.1363333, y: 1, z: 0.09799998}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 347052333}
@@ -10286,6 +10233,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 21
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1f56e48592d70774da1fa826d7780800, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1f56e48592d70774da1fa826d7780800, type: 3}
   m_IsPrefabParent: 0
@@ -10315,7 +10266,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1026648274}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2313333, y: 2.19, z: 0.067}
+  m_LocalPosition: {x: -0.2313333, y: 1, z: 0.067}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 1846041885}
@@ -10360,6 +10311,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 19
       objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 541c6155a500efe47abd045992a81c80, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 541c6155a500efe47abd045992a81c80, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 541c6155a500efe47abd045992a81c80, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 541c6155a500efe47abd045992a81c80, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 541c6155a500efe47abd045992a81c80, type: 3}
   m_IsPrefabParent: 0
@@ -10389,7 +10356,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1039054146}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.21233329, y: 2.19, z: 0.25299996}
+  m_LocalPosition: {x: -0.21233329, y: 1, z: 0.25299996}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 1723041532}
@@ -10485,7 +10452,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1063199747}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.34933326, y: 2.19, z: 0.15009996}
+  m_LocalPosition: {x: -0.34933326, y: 1, z: 0.15009996}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 704808529}
@@ -10624,6 +10591,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 96
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 89204d646b502394d96fae02318966ea, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 89204d646b502394d96fae02318966ea, type: 3}
   m_IsPrefabParent: 0
@@ -10696,14 +10667,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 1984087422}
-  - {fileID: 1152496385}
-  - {fileID: 1826363245}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -10925,7 +10891,7 @@ GameObject:
   - component: {fileID: 1113250525}
   - component: {fileID: 1113250524}
   - component: {fileID: 1113250523}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Roads
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11307,6 +11273,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 33e3711d917ba22408ebfbd6ad9fd3f9, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 33e3711d917ba22408ebfbd6ad9fd3f9, type: 3}
   m_IsPrefabParent: 0
@@ -11505,19 +11475,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 1656115562}
-  - {fileID: 206610315}
-  - {fileID: 12300213}
-  - {fileID: 1085659045}
-  - {fileID: 1826363245}
-  - {fileID: 704808530}
-  - {fileID: 1647300173}
-  - {fileID: 796509343}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -11605,15 +11565,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 10711851}
-  - {fileID: 745472830}
-  - {fileID: 493240949}
-  - {fileID: 347052334}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -11783,6 +11737,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ad2022716e216be4a98062396c75405b, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad2022716e216be4a98062396c75405b, type: 3}
   m_IsPrefabParent: 0
@@ -11933,16 +11891,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 157737334}
-  - {fileID: 699414680}
-  - {fileID: 839985103}
-  - {fileID: 745472830}
-  - {fileID: 1615274803}
+  ownerID: 0
   landmark: {fileID: 846368695}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -12052,7 +12003,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1233575651}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.41443327, y: 2.19, z: 0.21799998}
+  m_LocalPosition: {x: -0.41443327, y: 1, z: 0.21799998}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 1647300172}
@@ -12926,6 +12877,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 2ef7b141bd1e21d44a019a6fc3945a59, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2ef7b141bd1e21d44a019a6fc3945a59, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 2ef7b141bd1e21d44a019a6fc3945a59, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ef7b141bd1e21d44a019a6fc3945a59, type: 3}
   m_IsPrefabParent: 0
@@ -12973,11 +12936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6fe4d8b41ec0b9418be61d4379ca3ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ownedSectors: []
-  units: []
-  game: {fileID: 369558830}
-  unitPrefab: {fileID: 1532194049575530, guid: e261b19da2e84924fa6db2b5e2b54def, type: 2}
-  gui: {fileID: 1507163498}
+  playerID: 0
   attack: 0
   defence: 0
   color: {r: 0, g: 0.8039216, b: 0, a: 1}
@@ -13193,11 +13152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6fe4d8b41ec0b9418be61d4379ca3ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ownedSectors: []
-  units: []
-  game: {fileID: 369558830}
-  unitPrefab: {fileID: 1532194049575530, guid: e261b19da2e84924fa6db2b5e2b54def, type: 2}
-  gui: {fileID: 722604580}
+  playerID: 0
   attack: 0
   defence: 0
   color: {r: 0.8039216, g: 0.8039216, b: 0, a: 1}
@@ -13309,6 +13264,10 @@ Prefab:
     - target: {fileID: 400000, guid: 0461d598fb89c0d41bf51ca21bf20d3f, type: 3}
       propertyPath: m_RootOrder
       value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0461d598fb89c0d41bf51ca21bf20d3f, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0461d598fb89c0d41bf51ca21bf20d3f, type: 3}
@@ -13479,7 +13438,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1421098232}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13664,7 +13623,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1456577962}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.16533327, y: 2.19, z: 0.15999998}
+  m_LocalPosition: {x: -0.16533327, y: 1, z: 0.15999998}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 1155640399}
@@ -13965,6 +13924,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: af101b6da9a734d43a06286ba3b12d0c, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: af101b6da9a734d43a06286ba3b12d0c, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: af101b6da9a734d43a06286ba3b12d0c, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af101b6da9a734d43a06286ba3b12d0c, type: 3}
   m_IsPrefabParent: 0
@@ -13994,7 +13965,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1517938429}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2883333, y: 2.19, z: 0.36699992}
+  m_LocalPosition: {x: -0.2883333, y: 1, z: 0.36699992}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 764776710}
@@ -14366,7 +14337,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1568639851}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7307332, y: 2.19, z: 0.21389998}
+  m_LocalPosition: {x: -0.7307332, y: 1, z: 0.21389998}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 2120657126}
@@ -14959,14 +14930,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 1208763422}
-  - {fileID: 745472830}
-  - {fileID: 347052334}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -15112,14 +15078,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 12300213}
-  - {fileID: 1152496385}
-  - {fileID: 217717016}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -15207,16 +15168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 2120657127}
-  - {fileID: 735652240}
-  - {fileID: 206610315}
-  - {fileID: 12300213}
-  - {fileID: 1152496385}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -15441,7 +15395,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1697981529}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1703333, y: 2.19, z: 0.30099994}
+  m_LocalPosition: {x: -0.1703333, y: 1, z: 0.30099994}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 839985102}
@@ -15590,16 +15544,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 331780287}
-  - {fileID: 839985103}
-  - {fileID: 796509343}
-  - {fileID: 10711851}
-  - {fileID: 745472830}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -15640,7 +15587,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1728596164}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2843333, y: 2.19, z: 0.22999996}
+  m_LocalPosition: {x: -0.2843333, y: 1, z: 0.22999996}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 796509342}
@@ -15796,6 +15743,10 @@ Prefab:
     - target: {fileID: 400000, guid: 5ea1c52e8daef334696104f56b025273, type: 3}
       propertyPath: m_RootOrder
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5ea1c52e8daef334696104f56b025273, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ea1c52e8daef334696104f56b025273, type: 3}
@@ -16141,14 +16092,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 1826363245}
-  - {fileID: 918769886}
-  - {fileID: 704808530}
+  ownerID: 0
   landmark: {fileID: 1381155730}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -16189,7 +16135,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1787264814}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.096133314, y: 2.19, z: 0.3611}
+  m_LocalPosition: {x: -0.096133314, y: 1, z: 0.3611}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 157737333}
@@ -16668,15 +16614,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 1152496385}
-  - {fileID: 1085659045}
-  - {fileID: 1781388714}
-  - {fileID: 704808530}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -16916,15 +16856,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 918769886}
-  - {fileID: 10711851}
-  - {fileID: 493240949}
-  - {fileID: 347052334}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -17188,7 +17122,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1922698028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.64633334, y: 2.19, z: 0.135}
+  m_LocalPosition: {x: -0.64633334, y: 1, z: 0.135}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 735652239}
@@ -17314,6 +17248,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b2acf9a0d1e123e4dbdb630ce4d2c691, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2acf9a0d1e123e4dbdb630ce4d2c691, type: 3}
   m_IsPrefabParent: 0
@@ -17343,7 +17281,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1944276424}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8009, y: 2.19, z: 0.1763}
+  m_LocalPosition: {x: -0.8009, y: 1, z: 0.1763}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 772535079}
@@ -17468,15 +17406,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 2120657127}
-  - {fileID: 1085659045}
-  - {fileID: 735652240}
-  - {fileID: 206610315}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -17517,7 +17449,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1994184042}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.44733334, y: 2.19, z: 0.08699998}
+  m_LocalPosition: {x: -0.44733334, y: 1, z: 0.08699998}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 1826363244}
@@ -18385,16 +18317,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dd3e5e284a9cf4a9a1830ada983450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_COLOR: {r: 128, g: 128, b: 128, a: 1}
-  map: {fileID: 1730143025}
+  sectorID: 0
   unit: {fileID: 0}
-  owner: {fileID: 0}
-  adjacentSectors:
-  - {fileID: 772535081}
-  - {fileID: 1984087422}
-  - {fileID: 735652240}
-  - {fileID: 1656115562}
-  - {fileID: 12300213}
+  ownerID: 0
   landmark: {fileID: 0}
   VC: 0
   punishmentCard: {fileID: 0}
@@ -18575,7 +18500,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2136777296}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3733333, y: 2.19, z: 0.060599998}
+  m_LocalPosition: {x: -0.3733333, y: 1, z: 0.060599998}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 1781388712}

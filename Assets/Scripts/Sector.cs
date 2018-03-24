@@ -3,8 +3,8 @@
 public class Sector : MonoBehaviour {
 
     [SerializeField] public int sectorID;
-
-    [System.NonSerialized] private Color DEFAULT_COLOR = new Color(10f,10f,10f);
+    //SEE HERE
+    [System.NonSerialized] private Color DEFAULT_COLOR = new Color(255,40,40);
 
     [System.NonSerialized] private Map map;
     [SerializeField] private Unit unit;
@@ -93,10 +93,13 @@ public class Sector : MonoBehaviour {
 
         // set sector color to the color of the given player
         // or gray if null
+        Renderer renderer = GetComponent<Renderer>();
         if (owner == null) {
-            gameObject.GetComponent<Renderer>().material.color = Color.gray;
+            Debug.Log(DEFAULT_COLOR);
+            //SEE HERE
+            renderer.material.color = Color.cyan;
         } else {
-            gameObject.GetComponent<Renderer>().material.color = owner.GetColor();
+            renderer.material.color = owner.GetColor();
         }
     }
 
@@ -233,7 +236,8 @@ public class Sector : MonoBehaviour {
             if(this.owner != null) {
                 renderer.material.color = this.owner.GetColor();
             } else {
-                renderer.material.color = Color.gray;
+                //SEE HERE
+                renderer.material.color = DEFAULT_COLOR;
             }
 
             SetIsHighlighted(false);
@@ -322,6 +326,7 @@ public class Sector : MonoBehaviour {
 
                 // deselect the selected unit
                 selectedUnit.Deselect();
+                Sector OriginSector = selectedUnit.GetSector();
 
                 // if this sector is unoccupied
                 if (unit == null)
@@ -335,17 +340,17 @@ public class Sector : MonoBehaviour {
                 else if (unit.GetOwner() != selectedUnit.GetOwner())
                     MoveIntoHostileUnit(selectedUnit, this.unit);
 
+                OriginSector.RevertHighlight();
+                OriginSector.RevertHighlightAdjacent();
+                if (map.game.prevState == Game.TurnState.Move1) {
+                    Debug.Log("Apply Highlighting");
+                    this.ApplyHighlight(0.4f);
+                }
                 map.game.NextTurnState(); // advance to next turn phase when action take (Modified by Dom 13/02/2018)
-                this.RevertHighlight();
-                this.RevertHighlightAdjacent();
+                
             }
 
         }
-
-
-
-
-
         
     }
 
@@ -497,27 +502,28 @@ public class Sector : MonoBehaviour {
     }
 
     void OnMouseEnter() {
-        if(this.unit != null) {
-            if(this.unit.GetOwner() == map.game.currentPlayer) {
-                if (!this.IsHighlighted() && !this.unit.IsSelected()) {
-                    ApplyHighlight(0.2f);
-                }
-                if (!this.IsHighlighted() && this.unit.IsSelected()) {
+        if(map.game.GetTurnState() == Game.TurnState.Move1 || map.game.GetTurnState() == Game.TurnState.Move2) {
+            if(this.unit != null) {
+                if(this.unit.GetOwner() == map.game.currentPlayer) {
                     ApplyHighlight(0.4f);
                 }
             }
+        } else if (map.game.GetTurnState() == Game.TurnState.SelectUnit) {
+
         }
     }
     void OnMouseExit() {
         //The mouse is no longer hovering over the GameObject so output this message each frame
-        if (this.unit != null) {
-            if (this.IsHighlighted() && !this.unit.IsSelected() && this.unit.GetOwner() == map.game.currentPlayer) {
-                RevertHighlight();
-                RevertHighlightAdjacent();
+        if (map.game.GetTurnState() == Game.TurnState.Move1 || map.game.GetTurnState() == Game.TurnState.Move2) {
+            if (this.unit != null) {
+                if (this.unit.GetOwner() == map.game.currentPlayer) {
+                    RevertHighlight();
+                }
             }
+        } else if (map.game.GetTurnState() == Game.TurnState.SelectUnit) {
 
         }
-        
+
     }
 
     public void OnLoad(Sector savedData) {
