@@ -4,7 +4,7 @@ public class Sector : MonoBehaviour {
 
     [SerializeField] public int sectorID;
     //SEE HERE
-    [System.NonSerialized] private Color DEFAULT_COLOR = new Color(255,40,40);
+    [System.NonSerialized] private Color DEFAULT_COLOR = Color.cyan;
 
     [System.NonSerialized] private Map map;
     [SerializeField] private Unit unit;
@@ -97,7 +97,7 @@ public class Sector : MonoBehaviour {
         if (owner == null) {
             Debug.Log(DEFAULT_COLOR);
             //SEE HERE
-            renderer.material.color = Color.cyan;
+            renderer.material.color = DEFAULT_COLOR;
         } else {
             renderer.material.color = owner.GetColor();
         }

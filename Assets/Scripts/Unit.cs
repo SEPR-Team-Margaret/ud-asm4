@@ -17,6 +17,9 @@ public class Unit : MonoBehaviour {
     [SerializeField] private int frozenCounter = 0;
 
     [SerializeField] private UnitSprite sprite;
+    [System.NonSerialized] private GameObject popup;
+    [System.NonSerialized] private UnityEngine.UI.Text popupName;
+    [System.NonSerialized] private UnityEngine.UI.Text popupLevel;
 
     /// <summary>
     /// 
@@ -37,13 +40,49 @@ public class Unit : MonoBehaviour {
 
         sprite = new UnitSprite(gameObject);
 
+        popup = gameObject.transform.Find("Popup").gameObject;
+        popupName = popup.transform.Find("Name").GetComponent<UnityEngine.UI.Text>();
+        popupLevel = popup.transform.Find("Level").GetComponent<UnityEngine.UI.Text>();
+
+        popupName.text = unitName;
+        popupLevel.text = "1st Year";
+
         // place the unit in the sector
         MoveTo(sector);
 
     }
 
     private string GenerateName() {
-        return null;
+
+        string[] firstNames = new string[] 
+            { "James", "John" , "Rob"  , "Mike" , "Pat"  , "Will" , "David", "Joe"  , "Tom"  , "Jack" , 
+              "Dan"  , "Paul" , "Mark" , "Steve", "Ed"   , "Brian", "Al"   , "Harry", "Adam" , "Nick" ,
+              "Ron"  , "Tony" , "Kevin", "Jason", "Matt" , "Gary" , "Tim"  , "Jose" , "Larry", "Roger",
+              "Jeff" , "Frank", "Scott", "Eric" , "Andy" , "Ray"  , "Greg" , "Josh" , "Jerry", "Ralph",
+              "Sam"  , "Ben"  , "Luke" , "Ollie", "Marty", "Bruce" , "Louis", "Peter", "Roy"  , "Todd" ,
+              "Mary" , "Linda", "Barb" , "Liz"  , "Jenny", "Maria", "Susan", "Marge", "Lilly", "Rosa" ,
+              "Lisa" , "Nancy", "Karen", "Betty", "Helen", "Sandy", "Donna", "Carol", "Tina" , "Cindy",
+              "Ruth" , "Laura", "Sarah", "Kim"  , "Debby", "Jess" , "Amy"  , "Anna" , "Kathy", "Ellen",
+              "Pam"  , "Jane" , "Anne" , "Chris", "Jean" , "Rose" , "Irene", "Judy" , "Emily", "Emma" ,
+              "Ava"  , "Wendy", "Clara", "Jill" , "Erica", "Dana" , "Beth" , "Tara" , "Lucy" , "Elena"
+            };
+        string[] lastNames = new string[] 
+            { "Smith" , "Jones" , "Brown" , "Miller", "Taylor", "Wilson", "Davis" , "White" , "Clark" ,
+              "Hall"  , "Thomas", "Moore" , "Hill"  , "Walker", "Wrigt" , "Martin", "Wood"  , "Allen" ,
+              "Lewis" , "Scott" , "Young" , "Adams" , "Green" , "Evans" , "King"  , "Baker" , "John"  ,
+              "Harris", "James" , "Lee"   , "Turner", "Parker", "Cook"  , "Morris", "Bell"  , "Ward"  ,
+              "Watson", "Morgan", "Davies", "Cooper", "Rogers", "Gray"  , "Hughes", "Carter", "Murphy",
+              "Henry" , "Foster", "Shaw"  , "Reed"  , "Howard", "Fisher", "May"   , "Church", "Mills" ,
+              "Kelly" , "Price" , "Murray", "Palmer", "Cox"   , "Bailey", "Nelson", "Mason" , "Butler",
+              "Hunt"  , "Graham", "Ross"  , "Stone" , "Porter", "Gibson", "West"  , "Brooks", "Ellis" ,
+              "Barnes", "Wells" , "Hart"  , "Ford"  , "Cole"  , "Fox"   , "Holmes", "Day"   , "Long"  ,
+              "Grant" , "Hunter", "Webb"  , "Gordon", "Perry" , "Black" , "Lane"  , "Warren", "Burns"
+            };
+
+        string firstName = (string) firstNames.GetValue(Random.Range(0, firstNames.Length));
+        string lastName = (string) lastNames.GetValue(Random.Range(0, lastNames.Length));
+
+        return (firstName + " " + lastName);
 
     }
 
@@ -234,6 +273,34 @@ public class Unit : MonoBehaviour {
             level++;
         }
 
+        // update unit level in popup
+
+        switch (level)
+        {
+            
+            case 1:
+                popupLevel.text = "1st Year";
+                break;
+
+            case 2:
+                popupLevel.text = "2nd Year";
+                break;
+
+            case 3:
+                popupLevel.text = "3rd Year";
+                break;
+
+            case 4:
+                popupLevel.text = "4th Year";
+                break;
+
+            case 5:
+                popupLevel.text = "Postgrad";
+                break;
+
+            default:
+                break;
+        }
     }
 
     /// <summary>
@@ -312,4 +379,17 @@ public class Unit : MonoBehaviour {
             savedData.sprite.currentBody,
             savedData.sprite.currentHat);
     }
+
+    void OnMouseOver() {
+        popup.SetActive(true);
+    }
+
+    void OnMouseExit() {
+        popup.SetActive(false);
+    }
+
+    void OnMouseUpAsButton() {
+        sector.OnMouseUpAsButtonAccessible();
+    }
+
 }

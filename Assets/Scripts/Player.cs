@@ -353,7 +353,7 @@ public class Player : MonoBehaviour {
             {
                 // instantiate a new unit at the sector
                 if (unitPrefab == null) {
-                    unitPrefab = (GameObject)Resources.Load("unitPrefab");
+                    unitPrefab = (GameObject)Resources.Load("Unit");
                 }
                 
                 Unit newUnit = Instantiate(unitPrefab).GetComponent<Unit>();
@@ -429,5 +429,4 @@ public class Player : MonoBehaviour {
         }
         
     }
-    
 }
