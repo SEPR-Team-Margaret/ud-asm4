@@ -273,8 +273,14 @@ public class Game : MonoBehaviour {
         players[0].SetGui(GameObject.Find("Player1UI").GetComponent<PlayerUI>());
         players[1].SetGui(GameObject.Find("Player2UI").GetComponent<PlayerUI>());
         players[2].SetGui(GameObject.Find("Player3UI").GetComponent<PlayerUI>());
-        players[3].SetGui(GameObject.Find("Player4UI").GetComponent<PlayerUI>());
-
+        if (!neutralPlayer)
+        {
+            players[3].SetGui(GameObject.Find("Player4UI").GetComponent<PlayerUI>());
+        }
+        else
+        {
+            players[3].SetGui(GameObject.Find("PlayerNeutralUI").GetComponent<PlayerUI>());
+        }
         // give all players a reference to this game
         // and initialize their GUIs
         for (int i = 0; i < NUMBER_OF_PLAYERS; i++)

@@ -23,17 +23,17 @@ public class TestSetup
         // initialize the game, map, and players with any references needed
         // the "GameManager" asset contains a copy of the GameManager object
         // in the 4x4 Test, but its script lacks references to players & the map
-        game = MonoBehaviour.Instantiate(Resources.Load<GameObject>("GameManager")).GetComponent<Game>();
+        game = MonoBehaviour.Instantiate(Resources.Load<GameObject>("GameManager 1")).GetComponent<Game>();
 
         // the "Map" asset is a copy of the 4x4 Test map, complete with
         // adjacent sectors and landmarks at (0,1), (1,3), (2,0), and (3,2),
         // but its script lacks references to the game & sectors
-        map = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Map 1")).GetComponent<Map>();
+        map = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Map")).GetComponent<Map>();
             
         // the "GUI" asset contains the PlayerUI object for each Player
         gui = MonoBehaviour.Instantiate(Resources.Load<GameObject>("GUI")).GetComponentsInChildren<PlayerUI>();
 
-        unitPrefab = Resources.Load<GameObject>("UnitCubeP1");
+        unitPrefab = Resources.Load<GameObject>("Unit");
 
         guiPlane = Resources.Load<GameObject>("Plane");
 
@@ -48,9 +48,11 @@ public class TestSetup
         game.gameMap = map.gameObject;
         game.eliminatedPlayers = new bool[4];
         game.SetActionsRemainingLabel(guiPlane.gameObject.GetComponentInChildren<UnityEngine.UI.Text>());
+        game.gameObject.name = "GameManager";
 
         map.game = game;
         map.sectors = map.GetComponentsInChildren<Sector>();
+        map.gameObject.name = "Map";
 
         game.players[0].SetColor(Color.red);
         game.players[1].SetColor(Color.magenta);
@@ -61,6 +63,7 @@ public class TestSetup
             game.players[i].SetGui(gui[i]);
             game.players[i].SetGame(game);
             game.players[i].GetGui().Initialize(game.players[i], i + 1);
+            game.players[i].SetUnitPrefab((GameObject)Resources.Load("Unit"));
         }
         GameObject.Find("PlayerNeutral").GetComponent<Player>().SetGui(GameObject.Find("PlayerNeutralUI").GetComponent<PlayerUI>());
 

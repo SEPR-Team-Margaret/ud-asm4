@@ -36,6 +36,10 @@ public class Player : MonoBehaviour {
         return unitPrefab;
     }
 
+    public void SetUnitPrefab(GameObject prefab) {
+        unitPrefab = prefab;
+    }
+
 	public PlayerUI GetGui() {
 		return gui;
 	}

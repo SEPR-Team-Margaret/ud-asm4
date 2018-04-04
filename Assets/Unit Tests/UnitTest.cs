@@ -21,6 +21,14 @@ public class UnitTest
         this.unitPrefab = t.GetUnitPrefab();
     }
 
+    private void Cleanup() {
+
+        GameObject.Destroy(game.gameObject);
+        GameObject.Destroy(map.gameObject);
+        GameObject.Destroy(gui[0].GetComponentInParent<Canvas>().gameObject);
+
+    }
+
     [UnityTest]
     public IEnumerator MoveToFriendlyFromNull_UnitInCorrectSector() {
         
@@ -39,6 +47,8 @@ public class UnitTest
         unit.MoveTo(sectorA);
         Assert.IsTrue(unit.GetSector() == sectorA);
         Assert.IsTrue(sectorA.GetUnit() == unit);
+
+        Cleanup();
 
         yield return null;
     }
@@ -66,6 +76,8 @@ public class UnitTest
         Assert.IsTrue(sectorB.GetUnit() == unit);
         Assert.IsNull(sectorA.GetUnit());
 
+        Cleanup();
+
         yield return null;
     }
 
@@ -87,6 +99,8 @@ public class UnitTest
 
         unit.MoveTo(sectorA);
         Assert.IsTrue(unit.GetLevel() == 1);
+
+        Cleanup();
 
         yield return null;
     }
@@ -111,6 +125,8 @@ public class UnitTest
         Assert.IsTrue(unit.GetLevel() == 2);
         Assert.IsTrue(sectorA.GetOwner() == unit.GetOwner());
 
+        Cleanup();
+
         yield return null;
     }
 
@@ -124,7 +140,7 @@ public class UnitTest
 
         unitA.SetOwner(players[0]);
         unitB.SetOwner(players[0]);
-        unitB.LevelUp();
+        unitB.SetLevel(2);
         
         Sector sectorA = map.sectors[0];
         Sector sectorB = map.sectors[1];
@@ -142,6 +158,8 @@ public class UnitTest
         Assert.IsTrue(unitB.GetSector() == sectorA); // unitB in sectorA
         Assert.IsTrue(sectorA.GetUnit() == unitB); // sectorA has unitB
 
+        Cleanup();
+
         yield return null;
     }
 
@@ -150,12 +168,15 @@ public class UnitTest
         
         Setup();
 
-        Unit unit = MonoBehaviour.Instantiate(unitPrefab).GetComponent<Unit>();
+        game.InitializeMap();
+        Unit unit = game.sectors[0].GetUnit();
 
         // ensure LevelUp increments level as expected
         unit.SetLevel(1);
         unit.LevelUp();
         Assert.IsTrue(unit.GetLevel() == 2);
+
+        Cleanup();
 
         yield return null;
     }
@@ -165,12 +186,15 @@ public class UnitTest
         
         Setup();
 
-        Unit unit = MonoBehaviour.Instantiate(unitPrefab).GetComponent<Unit>();
+        game.InitializeMap();
+        Unit unit = game.sectors[0].GetUnit();
 
         // ensure LevelUp does not increment past 5
         unit.SetLevel(5);
         unit.LevelUp();
         Assert.IsTrue(unit.GetLevel() == 5);
+
+        Cleanup();
 
         yield return null;
     }
@@ -191,6 +215,8 @@ public class UnitTest
 
         unit.Deselect();
         Assert.IsFalse(unit.IsSelected());
+
+        Cleanup();
 
         yield return null;
     }
@@ -215,6 +241,8 @@ public class UnitTest
 
         Assert.IsNull(sector.GetUnit()); // unit not on sector 
         Assert.IsFalse(player.units.Contains(unit)); // unit not in list of players units
+
+        Cleanup();
 
         yield return null;
     }

@@ -21,6 +21,14 @@ public class GameTest
         this.gui = t.GetPlayerUIs();
     }
 
+    private void Cleanup() {
+        
+        GameObject.Destroy(game.gameObject);
+        GameObject.Destroy(map.gameObject);
+        GameObject.Destroy(gui[0].GetComponentInParent<Canvas>().gameObject);
+      
+    }
+
     [UnityTest]
     public IEnumerator CreatePlayers_FourPlayersAreHuman() {
         
@@ -31,6 +39,8 @@ public class GameTest
         Assert.IsTrue(game.GetComponent<Game>().players[1].IsHuman());
         Assert.IsTrue(game.GetComponent<Game>().players[2].IsHuman());
         Assert.IsTrue(game.GetComponent<Game>().players[3].IsHuman());
+
+        Cleanup();
 
         yield return null;
     }
@@ -48,6 +58,8 @@ public class GameTest
         Assert.IsTrue(game.GetComponent<Game>().players[1].IsHuman());
         Assert.IsTrue(game.GetComponent<Game>().players[2].IsHuman());
         Assert.IsTrue(game.GetComponent<Game>().players[3].IsNeutral());
+
+        Cleanup();
 
         yield return null;
     }
@@ -82,6 +94,8 @@ public class GameTest
             }
         }
 
+        Cleanup();
+
         yield return null;    
     }
 
@@ -110,6 +124,8 @@ public class GameTest
 
         // assert that NoUnitSelected returns false
         Assert.IsFalse(game.NoUnitSelected());
+
+        Cleanup();
 
         yield return null;
     }
@@ -158,6 +174,8 @@ public class GameTest
         Assert.IsFalse(playerD.IsActive());
         Assert.IsTrue(playerA.IsActive());
 
+        Cleanup();
+
         yield return null;
     }
 
@@ -177,13 +195,15 @@ public class GameTest
         playerD.units.Add(MonoBehaviour.Instantiate(playerD.GetUnitPrefab()).GetComponent<Unit>()); // make player D not eliminated
 
         game.SetTurnState(Game.TurnState.EndOfTurn);
-        game.UpdateAccessible(); // removes players that should be eliminated (A and B)
+        game.EndTurn(); // removes players that should be eliminated (A and B)
 
         // ensure eliminated players are skipped
         Assert.IsTrue(game.currentPlayer == playerC);
         Assert.IsFalse(playerA.IsActive());
         Assert.IsFalse(playerB.IsActive());
         Assert.IsTrue(playerC.IsActive());
+
+        Cleanup();
 
         yield return null;
     }
@@ -223,6 +243,8 @@ public class GameTest
             Assert.IsNotNull(chosenSector);
             Assert.IsTrue(chosenSector.GetOwner() == null || sector.GetOwner().IsNeutral() && !sector.IsVC());
         }
+
+        Cleanup();
 
         yield return null;
     }
@@ -312,6 +334,8 @@ public class GameTest
         playerA.units.Add(MonoBehaviour.Instantiate(playerA.GetUnitPrefab()).GetComponent<Unit>());
         Assert.IsNotNull(game.GetWinner());
 
+        Cleanup();
+
         yield return null;
     }
 
@@ -322,7 +346,7 @@ public class GameTest
         yield return null;
 
         Sector landmark1 = map.sectors[0];
-        Sector landmark2 = map.sectors[10];
+        Sector landmark2 = map.sectors[9];
         Player playerA = players[0];
         Player playerB = players[1];
 
@@ -337,6 +361,8 @@ public class GameTest
         playerA.ownedSectors.Add(landmark1);
         playerB.ownedSectors.Add(landmark2);
         Assert.IsNull(game.GetWinner());
+
+        Cleanup();
 
         yield return null;
     }
@@ -354,6 +380,8 @@ public class GameTest
         playerA.units.Add(MonoBehaviour.Instantiate(playerA.GetUnitPrefab()).GetComponent<Unit>());
         playerB.units.Add(MonoBehaviour.Instantiate(playerB.GetUnitPrefab()).GetComponent<Unit>());
         Assert.IsNull(game.GetWinner());
+
+        Cleanup();
 
         yield return null;
     }
@@ -379,6 +407,8 @@ public class GameTest
         playerB.units.Add(MonoBehaviour.Instantiate(playerB.GetUnitPrefab()).GetComponent<Unit>());
         Assert.IsNull(game.GetWinner());
 
+        Cleanup();
+
         yield return null;
     }
         
@@ -389,6 +419,9 @@ public class GameTest
         yield return null;
 
         game.currentPlayer = game.players[0];
+
+        Assert.IsNotNull(GameObject.Find("Map"));
+            
         game.InitializeMap();
         for (int i = 1; i < game.players.Length; i++)
         {
@@ -411,6 +444,8 @@ public class GameTest
 
         // ensure turn state is NULL
         Assert.IsTrue(game.GetTurnState() == Game.TurnState.NULL);
+
+        Cleanup();
 
         yield return null;
     }

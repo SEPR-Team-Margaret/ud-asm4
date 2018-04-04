@@ -125,7 +125,14 @@ public class Unit : MonoBehaviour {
     /// <param name="sector">The sector that this unit is on</param>
     public void SetSector(Sector sector) {
         this.sector = sector;
-        this.sectorID = sector.sectorID;
+        if (sector != null)
+        {
+            this.sectorID = sector.sectorID;
+        }
+        else
+        {
+            this.sectorID = -1;
+        }
     }
 
     /// <summary>

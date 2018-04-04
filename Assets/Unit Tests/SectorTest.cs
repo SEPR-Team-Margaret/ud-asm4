@@ -19,6 +19,14 @@ public class SectorTest
         this.gui = t.GetPlayerUIs();
     }
 
+    private void Cleanup() {
+
+        GameObject.Destroy(game.gameObject);
+        GameObject.Destroy(map.gameObject);
+        GameObject.Destroy(gui[0].GetComponentInParent<Canvas>().gameObject);
+
+    }
+
     [UnityTest]
     public IEnumerator SetOwner_SectorOwnerAndColorCorrect() {
         
@@ -34,7 +42,9 @@ public class SectorTest
 
         sector.SetOwner(null);
         Assert.IsNull(sector.GetOwner());
-        Assert.IsTrue(sector.gameObject.GetComponent<Renderer>().material.color.Equals(Color.gray));
+        Assert.IsTrue(sector.gameObject.GetComponent<Renderer>().material.color.Equals(sector.GetDefaultColor()));
+
+        Cleanup();
 
         yield return null;
     }
@@ -49,15 +59,17 @@ public class SectorTest
 
         sectorWithoutLandmark.Initialize(0);
         Assert.IsNull(sectorWithoutLandmark.GetOwner());
-        Assert.IsTrue(sectorWithoutLandmark.gameObject.GetComponent<Renderer>().material.color.Equals(Color.gray));
+        Assert.IsTrue(sectorWithoutLandmark.gameObject.GetComponent<Renderer>().material.color.Equals(sectorWithoutLandmark.GetDefaultColor()));
         Assert.IsNull(sectorWithoutLandmark.GetUnit());
         Assert.IsNull(sectorWithoutLandmark.GetLandmark());
 
         sectorWithLandmark.Initialize(0);
         Assert.IsNull(sectorWithLandmark.GetOwner());
-        Assert.IsTrue(sectorWithLandmark.gameObject.GetComponent<Renderer>().material.color.Equals(Color.gray));
+        Assert.IsTrue(sectorWithLandmark.gameObject.GetComponent<Renderer>().material.color.Equals(sectorWithoutLandmark.GetDefaultColor()));
         Assert.IsNull(sectorWithLandmark.GetUnit());
         Assert.IsNotNull(sectorWithLandmark.GetLandmark());
+
+        Cleanup();
 
         yield return null;
     }
@@ -95,7 +107,9 @@ public class SectorTest
 
         sector.ClearUnit();
         Assert.IsNull(sector.GetUnit());
-        
+
+        Cleanup();
+
         yield return null;
     }
 
@@ -103,6 +117,8 @@ public class SectorTest
     public IEnumerator OnMouseAsButton_CorrectUnitIsSelected() {
         
         Setup();
+
+        game.InitializeMap();
 
         Sector sectorA = map.sectors[0];
         Sector sectorB = map.sectors[1];
@@ -126,11 +142,10 @@ public class SectorTest
             Assert.IsFalse(sector == sectorA);
         }
 
-        sectorA.SetUnit(unitA);
-        unitA.SetSector(sectorA);
-
         sectorA.SetOwner(playerA);
-        unitA.SetOwner(playerA);
+        sectorA.ClearUnit();
+        unitA.Initialize(playerA, sectorA);
+
         unitB.SetOwner(playerB);
 
         playerA.units.Add(unitA);
@@ -174,12 +189,15 @@ public class SectorTest
         // test clicking on a sector adjacent to a selected unit
         unitA.SetSelected(true);
         unitB.SetSelected(false);
+        game.SetTurnState(Game.TurnState.SelectUnit);
 
         sectorB.OnMouseUpAsButtonAccessible();
         Assert.IsFalse(unitA.IsSelected());
 
         // only need to test deselection;
         // other interactions covered in smaller tests below
+
+        Cleanup();
 
         yield return null;
     }
@@ -201,6 +219,8 @@ public class SectorTest
         Assert.IsNotNull(sectorB.GetUnit());
         Assert.IsNull(sectorA.GetUnit());
  //       Assert.IsTrue(game.GetTurnState() == Game.TurnState.Move2);
+
+        Cleanup();
 
         yield return null;
     }
@@ -231,6 +251,8 @@ public class SectorTest
         Assert.IsTrue(sectorB.GetUnit().GetLevel() == 5); // level 2 unit now in sectorB => units have swapped locations
   //      Assert.IsTrue(game.GetTurnState() == Game.TurnState.Move2);
 
+        Cleanup();
+
         yield return null;
     }
 
@@ -251,10 +273,13 @@ public class SectorTest
         sectorA.GetOwner().SetAttack(99); // to ensure the sectorA unit will win any conflict (attacking)
         sectorB.GetOwner().SetDefence(0);
 
+        Debug.Log(sectorA.GetUnit().GetLevel());
         sectorB.MoveIntoHostileUnit(sectorA.GetUnit(), sectorB.GetUnit());
-        Assert.IsNull(sectorA.GetUnit()); // attackingg unit moved out of sectorA
+        Assert.IsNull(sectorA.GetUnit()); // attacking unit moved out of sectorA
         Assert.IsTrue(sectorB.GetUnit().GetLevel() == 2); // attacking unit that moved to sectorB gained a level (the unit won the conflict)
  //       Assert.IsTrue(game.GetTurnState() == Game.TurnState.EndOfTurn);
+
+        Cleanup();
 
         yield return null;
     }
@@ -281,6 +306,8 @@ public class SectorTest
         Assert.IsNull(sectorA.GetUnit()); // attacking unit destroyed
         Assert.IsTrue(sectorB.GetUnit().GetLevel() == 1); // defending unit did not gain a level following defence
  //       Assert.IsTrue(game.GetTurnState() == Game.TurnState.EndOfTurn);
+
+        Cleanup();
 
         yield return null;
     }
@@ -313,6 +340,8 @@ public class SectorTest
         Assert.IsTrue(sectorB.GetUnit().GetLevel() == -4); // defending unit did not gain a level following defence
  //       Assert.IsTrue(game.GetTurnState() == Game.TurnState.EndOfTurn);
 
+        Cleanup();
+
         yield return null;
     }
 
@@ -320,6 +349,8 @@ public class SectorTest
     public IEnumerator AdjacentSelectedUnit_SectorsAreAdjacent() {
         
         Setup();
+
+        game.InitializeMap();
 
         Sector sectorA = map.sectors[0];
         Sector sectorB = map.sectors[1];
@@ -340,6 +371,8 @@ public class SectorTest
         sectorA.GetUnit().SetSelected(true);
         Assert.IsNotNull(sectorB.AdjacentSelectedUnit());
 
+        Cleanup();
+
         yield return null;
     }
     
@@ -347,16 +380,12 @@ public class SectorTest
         
         // re-initialize sectors for in between test cases in MoveIntoHostileUnitTest
 
-        sectorA.SetUnit(MonoBehaviour.Instantiate(players[0].GetUnitPrefab()).GetComponent<Unit>());
-        sectorA.GetUnit().SetSector(sectorA);
-        sectorA.GetUnit().SetOwner(players[0]);
         sectorA.SetOwner(players[0]);
-        sectorA.GetUnit().SetLevel(1);
+        sectorA.SetUnit(MonoBehaviour.Instantiate(players[0].GetUnitPrefab()).GetComponent<Unit>());
+        sectorA.GetUnit().Initialize(players[0], sectorA);
 
-        sectorB.SetUnit(MonoBehaviour.Instantiate(players[0].GetUnitPrefab()).GetComponent<Unit>());
-        sectorB.GetUnit().SetSector(sectorB);
-        sectorB.GetUnit().SetOwner(players[1]);
         sectorB.SetOwner(players[1]);
-        sectorB.GetUnit().SetLevel(1);
+        sectorB.SetUnit(MonoBehaviour.Instantiate(players[0].GetUnitPrefab()).GetComponent<Unit>());
+        sectorB.GetUnit().Initialize(players[1], sectorB);
     }
 }

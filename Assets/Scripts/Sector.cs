@@ -22,6 +22,16 @@ public class Sector : MonoBehaviour {
 
     /// <summary>
     /// 
+    /// Gets the default color for the sector.
+    /// 
+    /// </summary>
+    /// <returns>The default color for the sector.</returns>
+    public Color GetDefaultColor() {
+        return this.DEFAULT_COLOR;
+    }
+
+    /// <summary>
+    /// 
     /// Returns if this sector contains the vice chancelor
     /// 
     /// </summary>

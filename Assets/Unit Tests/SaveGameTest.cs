@@ -23,6 +23,14 @@ public class SaveGameTest
         this.unitPrefab = t.GetUnitPrefab();
     }
 
+    private void Cleanup() {
+
+        GameObject.Destroy(game.gameObject);
+        GameObject.Destroy(map.gameObject);
+        GameObject.Destroy(gui[0].GetComponentInParent<Canvas>().gameObject);
+
+    }
+
     /// <summary>
     /// Check when saving and loading a game, the game object is the same
     /// </summary>
@@ -33,6 +41,8 @@ public class SaveGameTest
 
         Setup();
 
+        try {
+            
    //     Game newGame = MonoBehaviour.Instantiate(this.game);
    //     game.DisableTestMode();
         game.Initialize(true);
@@ -41,7 +51,10 @@ public class SaveGameTest
         Game savedGame = MonoBehaviour.Instantiate(game);
         savedGame.Initialize(SavedGame.Load("saveTest"));
         Assert.AreSame(game, savedGame);
-
+        
+        } finally {
+            Cleanup();
+        }
         yield return null;
     }
 
@@ -51,8 +64,16 @@ public class SaveGameTest
     [UnityTest]
     public IEnumerator Load()
     {
+
+        Setup();
+
+        try {
+
         Assert.IsNull(SavedGame.Load(""));
 
+        } finally {
+            Cleanup();
+        }
         yield return null;
     }
 }

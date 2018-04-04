@@ -19,6 +19,14 @@ public class PlayerTest
         this.gui = t.GetPlayerUIs();
     }
 
+    private void Cleanup() {
+
+        GameObject.Destroy(game.gameObject);
+        GameObject.Destroy(map.gameObject);
+        GameObject.Destroy(gui[0].GetComponentInParent<Canvas>().gameObject);
+
+    }
+
     [UnityTest]
     public IEnumerator CaptureSector_ChangesOwner() {
         
@@ -40,6 +48,8 @@ public class PlayerTest
         {
             Assert.IsFalse(previousOwner.ownedSectors.Contains(map.sectors[0])); // sector has been removed from previous owner list
         }
+
+        Cleanup();
 
         yield return null;
     }
@@ -76,6 +86,8 @@ public class PlayerTest
         Assert.IsTrue(attackerBeerBeforeCapture + landmark.GetAmount() == playerA.GetAttack());
         Assert.IsTrue(defenderBeerBeforeCapture - landmark.GetAmount() == previousOwner.GetAttack());
 
+        Cleanup();
+
         yield return null;
     }
 
@@ -111,6 +123,8 @@ public class PlayerTest
         Assert.IsTrue(attackerKnowledgeBeforeCapture + landmark.GetAmount() == playerA.GetDefence());
         Assert.IsTrue(defenderKnowledgeBeforeCapture - landmark.GetAmount() == previousOwner.GetDefence());
 
+        Cleanup();
+
         yield return null;
     }
 
@@ -140,7 +154,9 @@ public class PlayerTest
 
         // ensure resources are gained correctly
         Assert.IsTrue(playerA.GetAttack() - oldBeer == landmark.GetAmount());
-        
+
+        Cleanup();
+
         yield return null;
     }
 
@@ -171,6 +187,8 @@ public class PlayerTest
         // ensure resources are gained correctly
         Assert.IsTrue(playerA.GetDefence() - oldKnowledge == landmark.GetAmount());
 
+        Cleanup();
+
         yield return null;
     }
 
@@ -192,6 +210,8 @@ public class PlayerTest
 
         // ensure a unit has been spawned for playerA in landmarkedSector
         Assert.IsTrue(playerA.units.Contains(landmarkedSector.GetUnit()));
+
+        Cleanup();
 
         yield return null;
     }
@@ -217,6 +237,8 @@ public class PlayerTest
         // ensure a Level 1 unit has not spawned over the Level 5 unit already in landmarkedSector
         Assert.IsTrue(landmarkedSector.GetUnit().GetLevel() == 5);
 
+        Cleanup();
+
         yield return null;
     }
 
@@ -240,6 +262,8 @@ public class PlayerTest
 
         // ensure no unit is spawned at landmarkedSector
         Assert.IsNull(landmarkedSector.GetUnit());
+
+        Cleanup();
 
         yield return null;
     }
@@ -269,6 +293,8 @@ public class PlayerTest
             }
         }
         Assert.IsTrue(playerA.IsEliminated());
+
+        Cleanup();
 
         yield return null;
     }
