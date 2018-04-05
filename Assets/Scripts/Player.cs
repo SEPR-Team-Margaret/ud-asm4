@@ -20,6 +20,7 @@ public class Player : MonoBehaviour {
     [SerializeField] private bool human;
     [SerializeField] private bool neutral;
     [SerializeField] private bool active = false;
+	[SerializeField] public bool skipTurn = false;
     [SerializeField] private List<PunishmentCard> punishmentCards = new List<PunishmentCard>();
 
     #region Getters and Setters
@@ -412,6 +413,24 @@ public class Player : MonoBehaviour {
         return false;
     }
 
+	/// <summary>
+	/// 
+	/// readies the player to have their next turn skipped (changes a boolean)
+	/// 
+	/// </summary>
+	public void SkipTurnOn() {
+		skipTurn = true;
+	}
+
+	/// <summary>
+	/// 
+	/// readies the player to have their next turn as normal (changes a boolean)
+	/// 
+	/// </summary>
+	public void SkipTurnOff() {
+		skipTurn = false;
+	}
+
     public void OnLoad(Player savedData) {
         this.attack = savedData.attack;
         this.defence = savedData.defence;
@@ -419,6 +438,7 @@ public class Player : MonoBehaviour {
         this.human = savedData.human;
         this.neutral = savedData.neutral;
         this.active = savedData.active;
+		this.skipTurn = savedData.skipTurn;
         this.punishmentCards = savedData.punishmentCards;
     }
 

@@ -445,6 +445,15 @@ public class Game : MonoBehaviour {
                 int nextPlayerIndex = (i + 1) % NUMBER_OF_PLAYERS; // set index to next player, loop if end reached
                 
                 currentPlayer = players[nextPlayerIndex];
+
+				// current player is to be skipped, change to not skip for next turn, move to player after skipped player (skipping this turn)
+
+				if (currentPlayer.skipTurn == true) {
+					currentPlayer.SkipTurnOff ();
+					nextPlayerIndex = (i + 1) % NUMBER_OF_PLAYERS;
+					currentPlayer = players [nextPlayerIndex];
+				}
+
                 players[nextPlayerIndex].SetActive(true);
                 players[nextPlayerIndex].GetGui().Activate();
                 if (currentPlayer.IsNeutral() && !currentPlayer.IsEliminated())

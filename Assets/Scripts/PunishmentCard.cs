@@ -82,11 +82,11 @@ public class PunishmentCard : MonoBehaviour {
 			case Effect.FreezeUnit:
 				//Freeze unit card
 				//pass in a selected unit
-			//selectedUnit.FreezeUnit();
+			//selectedUnit.FreezeUnit();		-- need to come up with a way of selecting a unit, freeze boolean in place and ready
 				break;
 			case Effect.SkipTurn:
 				//Skip a turn
-
+			//selectedPlayer.skipTurnOn();		-- need to come up with a way of selecting player, skip turn on and off ready
 				break;
 			case Effect.NullifyResource:
 				//Nullify resource
