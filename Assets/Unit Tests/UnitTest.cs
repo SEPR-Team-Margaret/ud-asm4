@@ -19,6 +19,8 @@ public class UnitTest
         this.players = t.GetPlayers();
         this.gui = t.GetPlayerUIs();
         this.unitPrefab = t.GetUnitPrefab();
+
+        game.InitializeMap();
     }
 
     private void Cleanup() {
@@ -168,7 +170,7 @@ public class UnitTest
         
         Setup();
 
-        game.InitializeMap();
+//        game.InitializeMap();
         Unit unit = game.sectors[0].GetUnit();
 
         // ensure LevelUp increments level as expected
@@ -186,7 +188,7 @@ public class UnitTest
         
         Setup();
 
-        game.InitializeMap();
+//        game.InitializeMap();
         Unit unit = game.sectors[0].GetUnit();
 
         // ensure LevelUp does not increment past 5

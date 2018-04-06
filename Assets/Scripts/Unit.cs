@@ -214,16 +214,15 @@ public class Unit : MonoBehaviour {
             // align the transform to the sector
             transform.position = targetTransform.position;
 
-
             // if the target sector belonged to a different 
-            // player than the unit, capture it and level up
+            // player than the unit, level up
             if (targetSector.GetOwner() != this.owner) {
-                // level up
                 LevelUp();
-
-                // capture the target sector for the owner of this unit
-                owner.Capture(targetSector);
             }
+
+            // capture the target sector for the owner of this unit
+            owner.Capture(targetSector);
+
         }
         else {
             Debug.Log("This unit is frozen! -- need to implement UI for this");

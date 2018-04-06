@@ -321,6 +321,8 @@ public class GameTest
         Setup();
         yield return null;
 
+        game.InitializeMap();
+
         Sector landmark1 = map.sectors[0];
         Player playerA = players[0];
 
@@ -344,6 +346,8 @@ public class GameTest
         
         Setup();
         yield return null;
+
+        game.InitializeMap();
 
         Sector landmark1 = map.sectors[0];
         Sector landmark2 = map.sectors[9];
@@ -372,6 +376,8 @@ public class GameTest
         
         Setup();
 
+        game.InitializeMap();
+
         Player playerA = players[0];
         Player playerB = players[1];
 
@@ -391,6 +397,8 @@ public class GameTest
         
         Setup();
         yield return null;
+
+        game.InitializeMap();
 
         Sector landmark1 = map.sectors[0];
         Player playerA = players[0];

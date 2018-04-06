@@ -17,6 +17,8 @@ public class SectorTest
         this.map = t.GetMap();
         this.players = t.GetPlayers();
         this.gui = t.GetPlayerUIs();
+
+        game.InitializeMap();
     }
 
     private void Cleanup() {
@@ -100,7 +102,7 @@ public class SectorTest
         
         Setup();
 
-        game.InitializeMap();
+//        game.InitializeMap();
 
         Sector sector = map.sectors[0];
         Assert.NotNull(sector.GetUnit());
@@ -118,7 +120,7 @@ public class SectorTest
         
         Setup();
 
-        game.InitializeMap();
+//        game.InitializeMap();
 
         Sector sectorA = map.sectors[0];
         Sector sectorB = map.sectors[1];
@@ -211,8 +213,9 @@ public class SectorTest
         Sector sectorA = map.sectors[0];
         Sector sectorB = map.sectors[1];
 
-        sectorA.SetUnit(MonoBehaviour.Instantiate(players[0].GetUnitPrefab()).GetComponent<Unit>());
-        sectorA.GetUnit().SetSector(sectorA);
+        MonoBehaviour.Instantiate(players[0].GetUnitPrefab()).GetComponent<Unit>().Initialize(players[0],sectorA);
+//        sectorA.SetUnit(MonoBehaviour.Instantiate(players[0].GetUnitPrefab()).GetComponent<Unit>());
+//        sectorA.GetUnit().SetSector(sectorA);
         sectorB.SetUnit(null);
 
         sectorB.MoveIntoUnoccupiedSector(sectorA.GetUnit());
@@ -273,8 +276,10 @@ public class SectorTest
         sectorA.GetOwner().SetAttack(99); // to ensure the sectorA unit will win any conflict (attacking)
         sectorB.GetOwner().SetDefence(0);
 
-        Debug.Log(sectorA.GetUnit().GetLevel());
+        Unit unit = sectorA.GetUnit();
+        Debug.Log(unit.GetLevel());
         sectorB.MoveIntoHostileUnit(sectorA.GetUnit(), sectorB.GetUnit());
+        Debug.Log(unit.GetLevel());
         Assert.IsNull(sectorA.GetUnit()); // attacking unit moved out of sectorA
         Assert.IsTrue(sectorB.GetUnit().GetLevel() == 2); // attacking unit that moved to sectorB gained a level (the unit won the conflict)
  //       Assert.IsTrue(game.GetTurnState() == Game.TurnState.EndOfTurn);
@@ -350,7 +355,7 @@ public class SectorTest
         
         Setup();
 
-        game.InitializeMap();
+//        game.InitializeMap();
 
         Sector sectorA = map.sectors[0];
         Sector sectorB = map.sectors[1];
@@ -385,7 +390,7 @@ public class SectorTest
         sectorA.GetUnit().Initialize(players[0], sectorA);
 
         sectorB.SetOwner(players[1]);
-        sectorB.SetUnit(MonoBehaviour.Instantiate(players[0].GetUnitPrefab()).GetComponent<Unit>());
+        sectorB.SetUnit(MonoBehaviour.Instantiate(players[1].GetUnitPrefab()).GetComponent<Unit>());
         sectorB.GetUnit().Initialize(players[1], sectorB);
     }
 }

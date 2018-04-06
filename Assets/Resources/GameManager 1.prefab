@@ -210,6 +210,7 @@ MonoBehaviour:
   human: 0
   neutral: 0
   active: 0
+  skipTurn: 0
   punishmentCards: []
 --- !u!114 &114097629133152642
 MonoBehaviour:
@@ -241,6 +242,7 @@ MonoBehaviour:
   human: 0
   neutral: 0
   active: 0
+  skipTurn: 0
   punishmentCards: []
 --- !u!114 &114401768910022906
 MonoBehaviour:
@@ -260,6 +262,7 @@ MonoBehaviour:
   human: 0
   neutral: 0
   active: 0
+  skipTurn: 0
   punishmentCards: []
 --- !u!114 &114450370372720928
 MonoBehaviour:
@@ -279,39 +282,7 @@ MonoBehaviour:
   - {fileID: 114038893902559586}
   gameMap: {fileID: 0}
   currentPlayer: {fileID: 114401768910022906}
-  sectors:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  sectors: []
   turnState: 0
   prevState: 0
   gameFinished: 0
@@ -322,6 +293,8 @@ MonoBehaviour:
   triggerDialog: 0
   eliminatedPlayers: 
   eliminatedUnits: []
+  punishmentCardPrefab: {fileID: 1810561049532340, guid: e4ff7b2d264670d4bbb4abdf4aed1531,
+    type: 2}
 --- !u!114 &114484694959646322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -340,6 +313,7 @@ MonoBehaviour:
   human: 0
   neutral: 0
   active: 0
+  skipTurn: 0
   punishmentCards: []
 --- !u!114 &114576021392961582
 MonoBehaviour:
@@ -359,6 +333,7 @@ MonoBehaviour:
   human: 0
   neutral: 0
   active: 0
+  skipTurn: 0
   punishmentCards: []
 --- !u!114 &114892064059001934
 MonoBehaviour:

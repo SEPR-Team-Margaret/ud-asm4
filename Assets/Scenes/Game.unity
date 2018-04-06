@@ -1127,6 +1127,7 @@ MonoBehaviour:
   human: 0
   neutral: 0
   active: 0
+  skipTurn: 0
   punishmentCards: []
 --- !u!1001 &85890179
 Prefab:
@@ -3693,6 +3694,8 @@ MonoBehaviour:
   triggerDialog: 0
   eliminatedPlayers: 
   eliminatedUnits: []
+  punishmentCardPrefab: {fileID: 1810561049532340, guid: e4ff7b2d264670d4bbb4abdf4aed1531,
+    type: 2}
 --- !u!4 &369558831
 Transform:
   m_ObjectHideFlags: 0
@@ -4828,6 +4831,7 @@ MonoBehaviour:
   human: 0
   neutral: 0
   active: 0
+  skipTurn: 0
   punishmentCards: []
 --- !u!1 &479891776
 GameObject:
@@ -6031,6 +6035,52 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400004, guid: 754ccb419f6477f4787f073e493ff671, type: 3}
   m_PrefabInternal: {fileID: 593203826}
+--- !u!1001 &614512815
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4495611831995856, guid: e4ff7b2d264670d4bbb4abdf4aed1531, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -46.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4495611831995856, guid: e4ff7b2d264670d4bbb4abdf4aed1531, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 8.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4495611831995856, guid: e4ff7b2d264670d4bbb4abdf4aed1531, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 36.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4495611831995856, guid: e4ff7b2d264670d4bbb4abdf4aed1531, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4495611831995856, guid: e4ff7b2d264670d4bbb4abdf4aed1531, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4495611831995856, guid: e4ff7b2d264670d4bbb4abdf4aed1531, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4495611831995856, guid: e4ff7b2d264670d4bbb4abdf4aed1531, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4495611831995856, guid: e4ff7b2d264670d4bbb4abdf4aed1531, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810561049532340, guid: e4ff7b2d264670d4bbb4abdf4aed1531, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e4ff7b2d264670d4bbb4abdf4aed1531, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &615618498
 Prefab:
   m_ObjectHideFlags: 0
@@ -6941,6 +6991,7 @@ MonoBehaviour:
   human: 0
   neutral: 0
   active: 0
+  skipTurn: 0
   punishmentCards: []
 --- !u!1 &708372742
 GameObject:
@@ -12946,6 +12997,7 @@ MonoBehaviour:
   human: 0
   neutral: 0
   active: 0
+  skipTurn: 0
   punishmentCards: []
 --- !u!1 &1376084320 stripped
 GameObject:
@@ -13162,6 +13214,7 @@ MonoBehaviour:
   human: 0
   neutral: 0
   active: 0
+  skipTurn: 0
   punishmentCards: []
 --- !u!1001 &1392050394
 Prefab:

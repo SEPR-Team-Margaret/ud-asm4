@@ -15,16 +15,7 @@ public class PunishmentCard : MonoBehaviour {
 
     #region Getters and Setters
 
-    private void Start() {
-        map = GameObject.Find("Map").GetComponent<Map>();
-
-        if (map == null) {
-            Debug.LogWarning("Map object or Map Script not found!");
-        }
-
-		Effect[] arrayOfEffects = { Effect.FreezeUnit, Effect.SkipTurn, Effect.NullifyResource };
-		effect = arrayOfEffects [(Mathf.RoundToInt (Random.Range (0, 2)))];
-    }
+    private void Start() {}
 
     public void SetSector(Sector sect) {
         sector = sect;
@@ -32,15 +23,33 @@ public class PunishmentCard : MonoBehaviour {
 
     #endregion
 
-    public void Initialize(Player player, Sector sector) {
+    public void Initialize(/*Player player, Sector sector*/) {
+        
+        map = GameObject.Find("Map").GetComponent<Map>();
+
+        if (map == null) {
+            Debug.LogWarning("Map object or Map Script not found!");
+        }
+
+        Effect[] arrayOfEffects = { Effect.FreezeUnit, Effect.SkipTurn, Effect.NullifyResource };
+        effect = arrayOfEffects [(Mathf.RoundToInt (Random.Range (0, 2)))];
+
         if (map.NumPunishmentCardsOnMap >= map.MaxPunishmentCardsOnMap) {
-            Destroy(this);
+            Destroy(this.gameObject);
         } else {
             map.NumPunishmentCardsOnMap += 1;
         }
-        owner = player;
+        owner = null/*player*/;
         sector = RandomizeSector();
-
+        if (sector != null)
+        {
+            Transform targetTransform = sector.transform.Find("Units").transform;
+            this.transform.position = targetTransform.position;
+        }
+        else
+        {
+            Debug.Log("failed to find valid sector");
+        }
     }
 
     private Sector RandomizeSector() {
@@ -51,7 +60,10 @@ public class PunishmentCard : MonoBehaviour {
             numbers.Add(i+1);
         }
         Sector sect = findValidSector(sectors, numbers);
-        sect.SetPunishmentCard(this);
+        if (sect != null)
+        {
+            sect.SetPunishmentCard(this);
+        }
         return sect;
 
     }
@@ -68,7 +80,7 @@ public class PunishmentCard : MonoBehaviour {
                 return sect;
             } else {
                 nums.RemoveAt(rand-1);
-                findValidSector(sectors, nums);
+                return findValidSector(sectors, nums);
             }
         }
 

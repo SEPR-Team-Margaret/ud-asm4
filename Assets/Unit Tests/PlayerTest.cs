@@ -17,6 +17,8 @@ public class PlayerTest
         this.map = t.GetMap();
         this.players = t.GetPlayers();
         this.gui = t.GetPlayerUIs();
+
+        game.InitializeMap();
     }
 
     private void Cleanup() {
@@ -272,7 +274,6 @@ public class PlayerTest
     public IEnumerator IsEliminated_PlayerWithNoUnitsAndNoLandmarksEliminated() {
         
         Setup();
-        game.InitializeMap();
 
         Player playerA = game.players[0];
 

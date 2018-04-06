@@ -34,6 +34,8 @@ public class Game : MonoBehaviour {
 
     public List<string> eliminatedUnits;
 
+    [SerializeField] private GameObject punishmentCardPrefab;
+
 
     public void Start() {
         Names.Init();
@@ -465,6 +467,7 @@ public class Game : MonoBehaviour {
             }
         }
 
+        // decrement the frozen counter of any frozen units
 		for (int i = 0; i < players.Length; i++) {
 			for (int j = 0; j < players [i].units.Count (); j++) {
 				if (players [i].units [j].IsFrozen ()) {
@@ -477,6 +480,13 @@ public class Game : MonoBehaviour {
 				}
 			}
 		}
+
+        // chance to spawn a punishment card
+        float chance = UnityEngine.Random.value;
+        if (chance < 0.35f)
+        {
+            MonoBehaviour.Instantiate(punishmentCardPrefab).GetComponent<PunishmentCard>().Initialize(/*null,null*/);
+        }
     }
 
     /// <summary>

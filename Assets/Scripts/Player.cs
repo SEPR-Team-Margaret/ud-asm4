@@ -288,45 +288,51 @@ public class Player : MonoBehaviour {
         // store a copy of the sector's previous owner
         Player previousOwner = sector.GetOwner();
 
-        // add the sector to the list of owned sectors
-        ownedSectors.Add(sector);
-
-        // remove the sector from the previous owner's
-        // list of sectors
-        if (previousOwner != null)
-            previousOwner.ownedSectors.Remove(sector);
-
-        // set the sector's owner to this player
-        if (game.GetTestMode())
+        // if the sector previously belonged to a different player
+        if (previousOwner != this)
         {
-            // if in test mode, do not color sector
-            sector.SetOwnerNoColour(this);
-        }
-        else
-        {
-            // otherwise, set owner normally
-            sector.SetOwner(this);
-        }
 
-        // if the sector contains a landmark
-        if (sector.GetLandmark() != null)
-        {
-            Landmark landmark = sector.GetLandmark();
+            // add the sector to the list of owned sectors
+            ownedSectors.Add(sector);
 
-            // remove the landmark's resource bonus from the previous
-            // owner and add it to this player
-            if (landmark.GetResourceType() == Landmark.ResourceType.Attack)
+            // remove the sector from the previous owner's
+            // list of sectors
+            if (previousOwner != null)
+                previousOwner.ownedSectors.Remove(sector);
+
+            // set the sector's owner to this player
+            if (game.GetTestMode())
             {
-                this.attack += landmark.GetAmount();
-                if (previousOwner != null)
-                    previousOwner.attack -= landmark.GetAmount();
+                // if in test mode, do not color sector
+                sector.SetOwnerNoColour(this);
             }
-            else if (landmark.GetResourceType() == Landmark.ResourceType.Defence)
+            else
             {
-                this.defence += landmark.GetAmount();
-                if (previousOwner != null)
-                    previousOwner.defence -= landmark.GetAmount();
+                // otherwise, set owner normally
+                sector.SetOwner(this);
             }
+
+            // if the sector contains a landmark
+            if (sector.GetLandmark() != null)
+            {
+                Landmark landmark = sector.GetLandmark();
+
+                // remove the landmark's resource bonus from the previous
+                // owner and add it to this player
+                if (landmark.GetResourceType() == Landmark.ResourceType.Attack)
+                {
+                    this.attack += landmark.GetAmount();
+                    if (previousOwner != null)
+                        previousOwner.attack -= landmark.GetAmount();
+                }
+                else if (landmark.GetResourceType() == Landmark.ResourceType.Defence)
+                {
+                    this.defence += landmark.GetAmount();
+                    if (previousOwner != null)
+                        previousOwner.defence -= landmark.GetAmount();
+                }
+            }
+
         }
 
         if (sector.IsVC())
@@ -340,6 +346,9 @@ public class Player : MonoBehaviour {
 
 		if (sector.GetPunishmentCard() != null) {
 			AddPunishmentCards (sector.GetPunishmentCard ());
+            sector.GetPunishmentCard().gameObject.SetActive(false);
+            sector.SetPunishmentCard(null);
+            game.gameMap.GetComponent<Map>().NumPunishmentCardsOnMap -= 1;
 		}
 
     }
