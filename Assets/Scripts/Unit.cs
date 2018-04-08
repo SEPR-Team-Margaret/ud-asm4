@@ -388,10 +388,12 @@ public class Unit : MonoBehaviour {
 
     void OnMouseOver() {
         popup.SetActive(true);
+        sector.OnMouseEnterAccessible();
     }
 
     void OnMouseExit() {
         popup.SetActive(false);
+        sector.OnMouseExitAccessible();
     }
 
     void OnMouseUpAsButton() {

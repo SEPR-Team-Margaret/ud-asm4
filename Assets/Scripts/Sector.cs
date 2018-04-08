@@ -512,6 +512,11 @@ public class Sector : MonoBehaviour {
     }
 
     void OnMouseEnter() {
+        OnMouseEnterAccessible();
+    }
+
+    public void OnMouseEnterAccessible() {
+
         if(map.game.GetTurnState() == Game.TurnState.Move1 || map.game.GetTurnState() == Game.TurnState.Move2) {
             if(this.unit != null) {
                 if(this.unit.GetOwner() == map.game.currentPlayer) {
@@ -522,7 +527,13 @@ public class Sector : MonoBehaviour {
 
         }
     }
+
     void OnMouseExit() {
+        OnMouseExitAccessible();
+    }
+
+    public void OnMouseExitAccessible() {
+
         //The mouse is no longer hovering over the GameObject so output this message each frame
         if (map.game.GetTurnState() == Game.TurnState.Move1 || map.game.GetTurnState() == Game.TurnState.Move2) {
             if (this.unit != null) {
@@ -533,7 +544,6 @@ public class Sector : MonoBehaviour {
         } else if (map.game.GetTurnState() == Game.TurnState.SelectUnit) {
 
         }
-
     }
 
     public void OnLoad(Sector savedData) {

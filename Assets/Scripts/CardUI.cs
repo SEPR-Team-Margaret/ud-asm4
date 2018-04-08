@@ -9,6 +9,8 @@ public class CardUI : MonoBehaviour {
     [SerializeField] private UnityEngine.UI.Text title;
     [SerializeField] private UnityEngine.UI.Text description;
     [SerializeField] private UnityEngine.UI.Text number;
+    [SerializeField] private UnityEngine.UI.Button menuButton;
+    [SerializeField] private UnityEngine.UI.Button endTurnButton;
     [SerializeField] private int index;
 
     public void Initialize(Player player) {
@@ -19,6 +21,8 @@ public class CardUI : MonoBehaviour {
         title = transform.Find("Card_Title").GetComponent<UnityEngine.UI.Text>();
         description = transform.Find("Card_Description").GetComponent<UnityEngine.UI.Text>();
         number = transform.Find("Card_Number").GetComponentInChildren<UnityEngine.UI.Text>();
+        menuButton = GameObject.Find("Menu_Button").GetComponent<UnityEngine.UI.Button>();
+        endTurnButton = GameObject.Find("End_Turn_Button").GetComponent<UnityEngine.UI.Button>();
 
         index = 0;
 
@@ -41,11 +45,19 @@ public class CardUI : MonoBehaviour {
         ShowCard(index);
         this.gameObject.SetActive(true);
 
+        // set UI buttons to IgnoreRaycast layer
+        menuButton.interactable = false;
+        endTurnButton.interactable = false;
+
     }
 
     public void HideUI() {
 
         this.gameObject.SetActive(false);
+
+        // set UI buttons to UI layer
+        menuButton.interactable = true;
+        endTurnButton.interactable = true;
 
     }
 
