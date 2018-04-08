@@ -26,7 +26,7 @@ public class Game : MonoBehaviour {
 
     [SerializeField] private UnityEngine.UI.Text actionsRemaining;
 
-    [SerializeField] Dialog dialog;
+    [SerializeField] public Dialog dialog;
 
     public bool triggerDialog = false;
 
@@ -283,13 +283,21 @@ public class Game : MonoBehaviour {
         {
             players[3].SetGui(GameObject.Find("PlayerNeutralUI").GetComponent<PlayerUI>());
         }
+
+        players[0].SetCardUI(GameObject.Find("Player1CardUI").GetComponent<CardUI>());
+        players[1].SetCardUI(GameObject.Find("Player2CardUI").GetComponent<CardUI>());
+        players[2].SetCardUI(GameObject.Find("Player3CardUI").GetComponent<CardUI>());
+        players[3].SetCardUI(GameObject.Find("Player4CardUI").GetComponent<CardUI>());
+
+
         // give all players a reference to this game
-        // and initialize their GUIs
+        // and initialize their GUIs and CardUIs
         for (int i = 0; i < NUMBER_OF_PLAYERS; i++)
         {
             players[i].SetGame(this);
             
             players[i].GetGui().Initialize(players[i], i + 1);
+            players[i].GetCardUI().Initialize(players[i]);
         }
 
         eliminatedPlayers = new bool[NUMBER_OF_PLAYERS]; // always 4 players in game

@@ -14,6 +14,7 @@ public class Player : MonoBehaviour {
     [System.NonSerialized] private Game game;
     [System.NonSerialized] private GameObject unitPrefab;
     [System.NonSerialized] private PlayerUI gui;
+    [System.NonSerialized] private CardUI cardGUI;
     [SerializeField] private int attack = 0;
     [SerializeField] private int defence = 0;
     [SerializeField] private Color color;
@@ -48,6 +49,14 @@ public class Player : MonoBehaviour {
 	public void SetGui(PlayerUI gui) {
 		this.gui = gui;
 	}
+
+    public CardUI GetCardUI() {
+        return cardGUI;
+    }
+
+    public void SetCardUI(CardUI cardGUI) {
+        this.cardGUI = cardGUI;
+    }
 
     /// <summary>
     /// 

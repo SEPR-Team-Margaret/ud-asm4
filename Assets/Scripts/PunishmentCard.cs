@@ -9,7 +9,7 @@ public class PunishmentCard : MonoBehaviour {
     [SerializeField] private int playerID;
     [System.NonSerialized] private Sector sector;
     [SerializeField] private int sectorID;
-    private enum Effect {FreezeUnit, SkipTurn, NullifyResource};
+    public enum Effect {FreezeUnit, SkipTurn, NullifyResource};
     [System.NonSerialized] private Map map;
     [SerializeField] private Effect effect;
 
@@ -19,6 +19,10 @@ public class PunishmentCard : MonoBehaviour {
 
     public void SetSector(Sector sect) {
         sector = sect;
+    }
+
+    public Effect GetEffect() {
+        return effect;
     }
 
     #endregion
