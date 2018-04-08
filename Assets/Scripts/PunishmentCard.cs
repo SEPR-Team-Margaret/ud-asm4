@@ -76,7 +76,7 @@ public class PunishmentCard : MonoBehaviour {
         else {
             int rand = Mathf.RoundToInt(Random.Range(1, size));
             Sector sect = sectors[rand-1];
-            if (sect.GetPunishmentCard() == null && sect.GetUnit() == null) {
+            if (sect.GetPunishmentCard() == null && sect.GetUnit() == null && sect.GetLandmark() == null) {
                 return sect;
             } else {
                 nums.RemoveAt(rand-1);

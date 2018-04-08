@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 65908406930447258}
   - component: {fileID: 23943762059543796}
   - component: {fileID: 114567121021214734}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PunishmentCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1810561049532340}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -46.6, y: 8.2, z: 36.9}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.75, y: 0.01, z: 5.25}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -50,13 +50,13 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1810561049532340}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: acf89f3226216894d993f717b117d9f2, type: 2}
+  - {fileID: 2100000, guid: 7ae6b3ff45bae144e9d60210d9e75ebe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
