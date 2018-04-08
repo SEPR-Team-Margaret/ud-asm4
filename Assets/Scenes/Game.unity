@@ -7835,9 +7835,9 @@ MonoBehaviour:
   title: {fileID: 0}
   description: {fileID: 0}
   number: {fileID: 0}
-  index: 0
   menuButton: {fileID: 0}
   endTurnButton: {fileID: 0}
+  index: 0
 --- !u!1 &661196215
 GameObject:
   m_ObjectHideFlags: 0
@@ -11991,9 +11991,9 @@ MonoBehaviour:
   title: {fileID: 0}
   description: {fileID: 0}
   number: {fileID: 0}
-  index: 0
   menuButton: {fileID: 0}
   endTurnButton: {fileID: 0}
+  index: 0
 --- !u!1 &1000579394
 GameObject:
   m_ObjectHideFlags: 0
@@ -15104,7 +15104,7 @@ Transform:
   m_LocalScale: {x: 20, y: 1, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1290551406
 Prefab:
@@ -18745,7 +18745,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4352110984978704, guid: 988da3023825cb341a09171d6c10e36c, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 223193282122044732, guid: 988da3023825cb341a09171d6c10e36c,
         type: 2}
@@ -21220,9 +21220,9 @@ MonoBehaviour:
   title: {fileID: 0}
   description: {fileID: 0}
   number: {fileID: 0}
-  index: 0
   menuButton: {fileID: 0}
   endTurnButton: {fileID: 0}
+  index: 0
 --- !u!1 &1903372875
 GameObject:
   m_ObjectHideFlags: 0
@@ -21405,9 +21405,9 @@ MonoBehaviour:
   title: {fileID: 0}
   description: {fileID: 0}
   number: {fileID: 0}
-  index: 0
   menuButton: {fileID: 0}
   endTurnButton: {fileID: 0}
+  index: 0
 --- !u!1 &1922698028
 GameObject:
   m_ObjectHideFlags: 0

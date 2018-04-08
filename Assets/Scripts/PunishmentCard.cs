@@ -109,11 +109,12 @@ public class PunishmentCard : MonoBehaviour {
 				break;
 		}
 
-        this.End();
+        this.map.game.RevertTurnState();
+
+        Destroy(this.gameObject);
 	}
 
     private void End() {
-        this.map.game.RevertTurnState();
     }
 
     public void OnLoad(PunishmentCard savedData) {

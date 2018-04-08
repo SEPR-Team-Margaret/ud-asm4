@@ -68,7 +68,7 @@ public class CardUI : MonoBehaviour {
         {
             case PunishmentCard.Effect.FreezeUnit:
                 title.text = "Freeze Unit";
-                description.text = "Render one hostile unit unable to move for 1 round.";
+                description.text = "Render one unit unable to move for 1 round.";
                 break;
 
             case PunishmentCard.Effect.NullifyResource:
@@ -112,6 +112,7 @@ public class CardUI : MonoBehaviour {
     public void UseCard() {
 
         player.UseCard(index);
+        HideUI();
 
     }
 }
