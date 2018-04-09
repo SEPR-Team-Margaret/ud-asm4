@@ -212,7 +212,7 @@ public class SectorTest
         
         Setup();
 
-        game.SetTurnState(Game.TurnState.Move1);
+        game.SetTurnState(Game.TurnState.Move);
         Sector sectorA = map.sectors[0];
         Sector sectorB = map.sectors[1];
 
@@ -236,7 +236,7 @@ public class SectorTest
         
         Setup();
 
-        game.SetTurnState(Game.TurnState.Move1);
+        game.SetTurnState(Game.TurnState.Move);
         Sector sectorA = map.sectors[0];
         Sector sectorB = map.sectors[1];
 
@@ -267,7 +267,7 @@ public class SectorTest
         
         Setup();
 
-        game.SetTurnState(Game.TurnState.Move1);
+        game.SetTurnState(Game.TurnState.Move);
         Sector sectorA = map.sectors[0];
         Sector sectorB = map.sectors[1];
 
@@ -297,7 +297,7 @@ public class SectorTest
         
         Setup();
 
-        game.SetTurnState(Game.TurnState.Move1);
+        game.SetTurnState(Game.TurnState.Move);
         Sector sectorA = map.sectors[0];
         Sector sectorB = map.sectors[1];
 
@@ -305,7 +305,7 @@ public class SectorTest
         // and sectorB's unit will be the defending unit
 
         // setup units such that the defending unit wins
-        game.SetTurnState(Game.TurnState.Move1);
+        game.SetTurnState(Game.TurnState.Move);
         ResetSectors(sectorA, sectorB);
         sectorA.GetOwner().SetAttack(0);
         sectorB.GetOwner().SetDefence(99); //to ensure the sectorB unit will win any conflict (defending)
@@ -325,7 +325,7 @@ public class SectorTest
         
         Setup();
 
-        game.SetTurnState(Game.TurnState.Move1);
+        game.SetTurnState(Game.TurnState.Move);
         Sector sectorA = map.sectors[0];
         Sector sectorB = map.sectors[1];
 
@@ -336,7 +336,7 @@ public class SectorTest
 
         // *** UNITCONTROLLER DESTROYSELF METHOD NEEDS TO CLEAR UNIT ***
 
-        game.SetTurnState(Game.TurnState.Move1);
+        game.SetTurnState(Game.TurnState.Move);
         ResetSectors(sectorA, sectorB);
         sectorA.GetUnit().SetLevel(-4);
         sectorA.GetOwner().SetAttack(0);

@@ -15,7 +15,7 @@ public class Game : MonoBehaviour {
 
     public const int NUMBER_OF_PLAYERS = 4;
 
-    public enum TurnState { Move1, Move2, EndOfTurn, SelectUnit, UseCard, NULL };
+    public enum TurnState { Move, EndOfTurn, SelectUnit, UseCard, NULL };
     [SerializeField] private TurnState turnState;
     [SerializeField] public TurnState prevState;
     
@@ -68,7 +68,7 @@ public class Game : MonoBehaviour {
         InitializeMap();
 
         // initialize the turn state
-        turnState = TurnState.Move1;
+        turnState = TurnState.Move;
 
         // set Player 1 as the current player
         currentPlayer = players[0];
@@ -241,6 +241,14 @@ public class Game : MonoBehaviour {
     /// <returns>The number of actions remaining.</returns>
     public int GetActionsRemaining() {
         return actionsRemaining;
+    }
+
+    /// <summary>
+    /// Sets the number of actions remaining.
+    /// </summary>
+    /// <param name="actionsRemaining">Actions remaining.</param>
+    public void SetActionsRemaining(int actionsRemaining) {
+        this.actionsRemaining = actionsRemaining;
     }
 
     /// <summary>
@@ -564,8 +572,8 @@ public class Game : MonoBehaviour {
 
         switch (turnState)
         {
-            case TurnState.Move1:
-                Debug.Log("Move1 Initiated");
+            case TurnState.Move:
+                Debug.Log("Move Initiated");
                 if (!currentPlayer.hasUnits())
                 {
                     this.prevState = turnState;
@@ -574,34 +582,49 @@ public class Game : MonoBehaviour {
                     break;
                 }
                 this.prevState = turnState;
-                turnState = TurnState.Move2;
                 actionsRemaining -= 1;
+                if (actionsRemaining != 0)
+                {
+                    turnState = TurnState.Move;
+                }
+                else
+                {
+                    turnState = TurnState.EndOfTurn;
+                    EndTurn();
+                }
                 break;
-
-            case TurnState.Move2:
-                Debug.Log("Move2 Initiated");
+                /*
+            case TurnState.Move:
+                Debug.Log("Move Initiated");
                 this.prevState = turnState;
                 turnState = TurnState.EndOfTurn;
                 actionsRemaining -= 1;
                 break;
-
+*/
             case TurnState.EndOfTurn:
                 Debug.Log("EndOfTurn Initiated");
                 this.prevState = turnState;
-                turnState = TurnState.Move1;
+                turnState = TurnState.Move;
                 actionsRemaining = 2;
                 break;
 
             case TurnState.SelectUnit:
                 Debug.Log("SelectUnit Initiated");
-                if (this.prevState == TurnState.Move1) {
-                    this.prevState = turnState;
-                    this.turnState = TurnState.Move2;
-                    actionsRemaining -= 1;
-                } else if (this.prevState == TurnState.Move2) {
+                if (this.prevState == TurnState.Move) {
                     this.prevState = turnState;
                     actionsRemaining -= 1;
-                    this.EndTurn();
+                    if (actionsRemaining != 0)
+                    {
+                        turnState = TurnState.Move;
+                    }
+                    else
+                    {
+                        turnState = TurnState.EndOfTurn;
+                        EndTurn();
+                    }
+                } else if (this.prevState == TurnState.UseCard) {
+                    this.prevState = turnState;
+                    this.turnState = TurnState.Move;
                 } else {
                     Debug.LogWarning("Previous State not updated correctly: currentState: " + this.turnState + ", prevState: " + this.prevState+".");
                 }
@@ -609,8 +632,11 @@ public class Game : MonoBehaviour {
 
             case TurnState.UseCard:
                 Debug.Log("UseCardd Initiated");
-                turnState = this.prevState;
+          /*      turnState = this.prevState;
                 this.prevState = TurnState.UseCard;
+                */
+                this.prevState = turnState;
+                this.turnState = TurnState.Move;
                 break;
 
             default:
@@ -641,20 +667,21 @@ public class Game : MonoBehaviour {
     {
         switch (turnState)
         {
-            case TurnState.Move1:
-                actionsRemainingLabel.text = "2";
+            case TurnState.Move:
+                actionsRemainingLabel.text = actionsRemaining.ToString();
                 break;
-
+                /*
             case TurnState.Move2:
                 actionsRemainingLabel.text = "1";
                 break;
-
+*/
             case TurnState.EndOfTurn:
                 actionsRemainingLabel.text = "0";
                 break;
 
             case TurnState.SelectUnit:
             case TurnState.UseCard:
+                /*
                 if (this.prevState == TurnState.Move1) {
                     actionsRemainingLabel.text = "2";
                 } else if (this.prevState == TurnState.Move2) {
@@ -662,6 +689,8 @@ public class Game : MonoBehaviour {
                 } else {
                     actionsRemainingLabel.text = "0";
                 }
+                */
+                actionsRemainingLabel.text = actionsRemaining.ToString();
                 break;
 
             default:
@@ -839,6 +868,7 @@ public class Game : MonoBehaviour {
             CreatePlayers(true);
         }
 
+        /*
         // set global game settings
         if (actionsRemaining == 2)
         {
@@ -852,6 +882,8 @@ public class Game : MonoBehaviour {
         {
             Debug.LogWarning("loaded invalid number of actions remaining; defaulting to 2");
         }
+        */
+        this.turnState = TurnState.Move;
         //this.turnState = savedGame.turnState;
 
         this.gameFinished = savedGame.gameFinished;

@@ -313,24 +313,38 @@ public class Sector : MonoBehaviour {
 
         // if this sector contains a unit and belongs to the
         // current active player, and if no unit is selected
-        if (map.game.GetTurnState() == Game.TurnState.Move1 || map.game.GetTurnState() == Game.TurnState.Move2) {
-            if (unit != null && owner.IsActive() && map.game.NoUnitSelected()) {
+        if (map.game.GetTurnState() == Game.TurnState.Move/*1 || map.game.GetTurnState() == Game.TurnState.Move2*/)
+        {
+            if (unit != null && owner.IsActive() && map.game.NoUnitSelected())
+            {
+                if (unit.IsFrozen())
+                {
+                    // show info dialog
+                    map.game.dialog.SetDialogType(Dialog.DialogType.ShowText);
+                    map.game.dialog.SetDialogData("Frozen!", (unit.unitName + " can't move"));
+                    map.game.dialog.Show();
+                    return;
+                }
                 // select this sector's unit
                 unit.Select();
                 this.ApplyHighlightAdjacent();
                 this.map.game.prevState = map.game.GetTurnState();
                 this.map.game.SetTurnState(Game.TurnState.SelectUnit);
             }
-        } else if (map.game.GetTurnState() == Game.TurnState.SelectUnit) {
+        }
+        else if (map.game.GetTurnState() == Game.TurnState.SelectUnit && map.game.prevState != Game.TurnState.UseCard)
+        {
             // if this sector's unit is already selected
-            if (unit != null && unit.IsSelected()) {
+            if (unit != null && unit.IsSelected())
+            {
                 // deselect this sector's unit           
                 unit.Deselect();
                 this.RevertHighlightAdjacent();
                 this.map.game.RevertTurnState();
             }
             // if this sector is adjacent to the sector containing the selected unit
-            else if (AdjacentSelectedUnit() != null) {
+            else if (AdjacentSelectedUnit() != null)
+            {
                 // get the selected unit
                 Unit selectedUnit = AdjacentSelectedUnit();
 
@@ -352,16 +366,33 @@ public class Sector : MonoBehaviour {
 
                 OriginSector.RevertHighlight();
                 OriginSector.RevertHighlightAdjacent();
-                if (map.game.prevState == Game.TurnState.Move1) {
+                /*
+                if (map.game.prevState == Game.TurnState.Move)
+                {
                     Debug.Log("Apply Highlighting");
                     this.ApplyHighlight(0.4f);
                 }
+                */
                 map.game.NextTurnState(); // advance to next turn phase when action take (Modified by Dom 13/02/2018)
                 
             }
 
         }
-        
+        else if (map.game.GetTurnState() == Game.TurnState.SelectUnit && map.game.prevState == Game.TurnState.UseCard)
+        {
+            // freeze the selected unit
+            if (unit != null && unit.GetOwner() != map.game.currentPlayer)
+            {
+                // show info dialog
+                map.game.dialog.SetDialogType(Dialog.DialogType.ShowText);
+                map.game.dialog.SetDialogData("Frozen!", (unit.unitName + " can't move"));
+                map.game.dialog.Show();
+
+                unit.FreezeUnit();
+                map.game.prevState = map.game.GetTurnState();
+                map.game.SetTurnState(Game.TurnState.Move);
+            }
+        }
     }
 
     /// <summary>
@@ -384,6 +415,18 @@ public class Sector : MonoBehaviour {
     /// </summary>
     /// <param name="otherUnit">Unit object of the unit on the adjacent sector to be switched onto this sector</param>
     public void MoveIntoFriendlyUnit(Unit otherUnit) {
+
+        if (unit.IsFrozen())
+        {
+            // show info dialog
+            map.game.dialog.SetDialogType(Dialog.DialogType.ShowText);
+            map.game.dialog.SetDialogData("Frozen!", (unit.unitName + " can't move"));
+            map.game.dialog.Show();
+
+            // restore wasted action
+            map.game.SetActionsRemaining(map.game.GetActionsRemaining() + 1);
+            return;
+        }
 
         // swap the two units
         this.unit.SwapPlacesWith(otherUnit);
@@ -517,7 +560,7 @@ public class Sector : MonoBehaviour {
 
     public void OnMouseEnterAccessible() {
 
-        if(map.game.GetTurnState() == Game.TurnState.Move1 || map.game.GetTurnState() == Game.TurnState.Move2) {
+        if(map.game.GetTurnState() == Game.TurnState.Move/*1 || map.game.GetTurnState() == Game.TurnState.Move2*/) {
             if(this.unit != null) {
                 if(this.unit.GetOwner() == map.game.currentPlayer) {
                     ApplyHighlight(0.4f);
@@ -535,7 +578,7 @@ public class Sector : MonoBehaviour {
     public void OnMouseExitAccessible() {
 
         //The mouse is no longer hovering over the GameObject so output this message each frame
-        if (map.game.GetTurnState() == Game.TurnState.Move1 || map.game.GetTurnState() == Game.TurnState.Move2) {
+        if (map.game.GetTurnState() == Game.TurnState.Move/*1 || map.game.GetTurnState() == Game.TurnState.Move2*/) {
             if (this.unit != null) {
                 if (this.unit.GetOwner() == map.game.currentPlayer) {
                     RevertHighlight();
@@ -573,6 +616,7 @@ public class Sector : MonoBehaviour {
         {
             PunishmentCard card = MonoBehaviour.Instantiate(map.game.GetPunishmentCardPrefab()).GetComponent<PunishmentCard>();
             card.Initialize(this, savedData.sectorPunishmentCardEffect[sectorID]);
+            this.punishmentCard = card;
         }
 
         this.VC = savedData.VCSector == sectorID;

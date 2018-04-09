@@ -108,7 +108,7 @@ public class PunishmentCard : MonoBehaviour {
         else {
             int rand = Mathf.RoundToInt(Random.Range(1, size));
             Sector sect = sectors[rand-1];
-            if (sect.GetPunishmentCard() == null && sect.GetUnit() == null && sect.GetLandmark() == null) {
+            if (sect.GetPunishmentCard() == null && sect.GetUnit() == null && sect.GetLandmark() == null && sect.IsVC() == false) {
                 return sect;
             } else {
                 nums.RemoveAt(rand-1);
@@ -122,22 +122,31 @@ public class PunishmentCard : MonoBehaviour {
     }
 
 	public void Use() {
+
 		switch (effect) {
-			case Effect.FreezeUnit:
-				//Freeze unit card
-				//pass in a selected unit
-			//selectedUnit.FreezeUnit();		-- need to come up with a way of selecting a unit, freeze boolean in place and ready
-				break;
+            case Effect.FreezeUnit:
+                //Freeze unit card
+
+                // show instruction window
+                map.game.dialog.SetDialogType(Dialog.DialogType.ShowText);
+                map.game.dialog.SetDialogData("Freeze a Unit", "Select a unit to freeze");
+                map.game.dialog.Show();
+
+                // set game turn state to SelectUnit with UseCard as the previous state
+                map.game.prevState = Game.TurnState.UseCard;
+                map.game.SetTurnState(Game.TurnState.SelectUnit);
+				
+                break;
 			case Effect.SkipTurn:
-				//Skip a turn
+                //Skip a turn
 			//selectedPlayer.skipTurnOn();		-- need to come up with a way of selecting player, skip turn on and off ready
 				break;
 			case Effect.NullifyResource:
-				//Nullify resource
+                //Nullify resource
 				break;
 		}
 
-        this.map.game.RevertTurnState();
+        //this.map.game.RevertTurnState();
 
         Destroy(this.gameObject);
 	}

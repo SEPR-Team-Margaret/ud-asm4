@@ -11,7 +11,7 @@ public class CardUI : MonoBehaviour {
     [SerializeField] private UnityEngine.UI.Text number;
     [SerializeField] private UnityEngine.UI.Button menuButton;
     [SerializeField] private UnityEngine.UI.Button endTurnButton;
-    [SerializeField] private int index;
+    [SerializeField] private int index = 0;
 
     public void Initialize(Player player) {
         
@@ -37,7 +37,7 @@ public class CardUI : MonoBehaviour {
         if (player.GetPunishmentCards().Count == 0)
         {
             player.GetGame().dialog.SetDialogType(Dialog.DialogType.ShowText);
-            player.GetGame().dialog.SetDialogData("No Cards", "You don't have any punishment cards!");
+            player.GetGame().dialog.SetDialogData("No Cards", "You have no punishment cards!");
             player.GetGame().dialog.Show();
             return;
         }

@@ -422,6 +422,8 @@ public class Player : MonoBehaviour {
                 // the sector's unit parameters
                 units.Add(newUnit);
                 sector.SetUnit(newUnit);
+
+                newUnit.gameObject.SetActive(true);
             }
 		}
 	}
