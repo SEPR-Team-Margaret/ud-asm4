@@ -37,7 +37,9 @@ public class PlayerTest
         
         Setup();
 
-        Player previousOwner = map.sectors[0].GetOwner();
+        Player previousOwner = game.players[0];
+        previousOwner.Capture(map.sectors[0]);
+
      //   bool run = false; // used to decide whether to check previous players sector list (if no previous owner, do not look in list)
 
        // if (map.sectors[0].GetOwner() != null)
@@ -45,9 +47,9 @@ public class PlayerTest
        //     run = true;
        // }
 
-        game.players[0].Capture(map.sectors[0]);
-        Assert.AreSame(map.sectors[0].GetOwner(), game.players[0]); // owner stored in sector
-        Assert.IsTrue(game.players[0].ownedSectors.Contains(map.sectors[0])); // sector is stored as owned by the player
+        game.players[1].Capture(map.sectors[0]);
+        Assert.AreSame(map.sectors[0].GetOwner(), game.players[1]); // owner stored in sector
+        Assert.IsTrue(game.players[1].ownedSectors.Contains(map.sectors[0])); // sector is stored as owned by the player
 
 		if (/*run == true*/previousOwner != null) // if sector had previous owner
         {
