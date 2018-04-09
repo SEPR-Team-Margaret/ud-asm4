@@ -8,14 +8,22 @@ using UnityEngine.UI;
 public class Dialog : MonoBehaviour
 {
 
+	private Game game;
+
     public GameObject texture;
 
     private DialogType type;
 
+	public Dropdown skipPlayer;
+
     public enum DialogType
     {
-        EndGame, PlayerElimated, SaveQuit, ShowText
+        EndGame, PlayerElimated, SaveQuit, ShowText, SelectTurnSkip
     }
+
+	void Start() {
+		this.game = GameObject.Find("GameManager").GetComponent<Game>();
+	}
 
     /// <summary>
     /// 
@@ -25,7 +33,7 @@ public class Dialog : MonoBehaviour
     /// <param name="type">The type that this dialog should be set up in the form of</param>
     public void SetDialogType(DialogType type)
     {
-        // Updates the dialog with the different buttons needed for each mode
+		// Updates the dialog with the different buttons needed for each mode
         this.type = type;
         switch (type)
         {
@@ -37,6 +45,7 @@ public class Dialog : MonoBehaviour
                 texture.transform.GetChild(4).gameObject.SetActive(true);
                 texture.transform.GetChild(5).gameObject.SetActive(false);
                 texture.transform.GetChild(6).gameObject.SetActive(false);
+				texture.transform.GetChild(7).gameObject.SetActive(false);
                 break;
             case DialogType.PlayerElimated:
                 texture.transform.GetChild(0).GetComponent<Text>().text = "ELIMINATED!";
@@ -46,6 +55,7 @@ public class Dialog : MonoBehaviour
                 texture.transform.GetChild(4).gameObject.SetActive(false);
                 texture.transform.GetChild(5).gameObject.SetActive(false);
                 texture.transform.GetChild(6).gameObject.SetActive(false);
+				texture.transform.GetChild(7).gameObject.SetActive(false);
                 break;
             case DialogType.SaveQuit:
                 texture.transform.GetChild(0).GetComponent<Text>().text = "PAUSED";
@@ -55,6 +65,7 @@ public class Dialog : MonoBehaviour
                 texture.transform.GetChild(4).gameObject.SetActive(true);
                 texture.transform.GetChild(5).gameObject.SetActive(true);
                 texture.transform.GetChild(6).gameObject.SetActive(true);
+				texture.transform.GetChild(7).gameObject.SetActive(true);
                 break;
             case DialogType.ShowText:
                 texture.transform.GetChild(0).GetComponent<Text>().text = "";
@@ -64,8 +75,19 @@ public class Dialog : MonoBehaviour
                 texture.transform.GetChild(4).gameObject.SetActive(false);
                 texture.transform.GetChild(5).gameObject.SetActive(false);
                 texture.transform.GetChild(6).gameObject.SetActive(false);
+				texture.transform.GetChild(7).gameObject.SetActive(false);
                 break;
-
+			case DialogType.SelectTurnSkip:
+				CreateSkipPlayerList ();
+				texture.transform.GetChild(0).GetComponent<Text>().text = "SKIP TURN";
+				texture.transform.GetChild(1).GetComponent<Text>().text = "Select a player to miss a turn";
+				texture.transform.GetChild(2).gameObject.SetActive(false);
+				texture.transform.GetChild(3).gameObject.SetActive(false);
+				texture.transform.GetChild(4).gameObject.SetActive(false);
+				texture.transform.GetChild(5).gameObject.SetActive(false);
+				texture.transform.GetChild(6).gameObject.SetActive(false);
+				texture.transform.GetChild(7).gameObject.SetActive(true);
+				break;
         }
     }
 
@@ -147,4 +169,21 @@ public class Dialog : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+	/// <summary>
+	/// 
+	/// Creates the list of players, not the current player, and adds them as options to the skip player dropdown
+	/// 
+	/// </summary>
+	public void CreateSkipPlayerList(){
+		List<string> listElements = new List<string>();
+		foreach (Player player in game.players){
+			if (game.currentPlayer != player) {
+				listElements.Add("Player " + (player.playerID+1));
+			}
+		}
+		Debug.Log (listElements);
+		skipPlayer = texture.transform.GetChild (7).GetComponent<Dropdown> ();
+		skipPlayer.ClearOptions();
+		skipPlayer.AddOptions(listElements);
+	}
 }

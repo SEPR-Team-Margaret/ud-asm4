@@ -994,5 +994,14 @@ public class Game : MonoBehaviour {
         Debug.Log("Player " + (Array.IndexOf(players, currentPlayer) + 1) + " has won " + bonus + " points");
     }
 
-
+	/// <summary>
+	/// 
+	/// Triggers the skip turn dialog
+	/// 
+	/// </summary>
+	public void OpenSkipTurnMenu()
+	{
+		dialog.SetDialogType(Dialog.DialogType.SelectTurnSkip);
+		dialog.Show();
+	}
 }

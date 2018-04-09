@@ -12,10 +12,13 @@ public class PunishmentCard : MonoBehaviour {
     public enum Effect {FreezeUnit, SkipTurn, NullifyResource};
     [System.NonSerialized] private Map map;
     [SerializeField] private Effect effect;
+	private Game game;
 
     #region Getters and Setters
 
-    private void Start() {}
+    private void Start() {
+		this.game = GameObject.Find("GameManager").GetComponent<Game>();
+	}
 
     public void SetSector(Sector sect) {
         sector = sect;
@@ -131,6 +134,7 @@ public class PunishmentCard : MonoBehaviour {
 			case Effect.SkipTurn:
 				//Skip a turn
 			//selectedPlayer.skipTurnOn();		-- need to come up with a way of selecting player, skip turn on and off ready
+				game.OpenSkipTurnMenu();
 				break;
 			case Effect.NullifyResource:
 				//Nullify resource
