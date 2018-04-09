@@ -449,15 +449,30 @@ public class Player : MonoBehaviour {
 		skipTurn = false;
 	}
 
-    public void OnLoad(Player savedData) {
-        this.attack = savedData.attack;
-        this.defence = savedData.defence;
-        this.color = savedData.color;
-        this.human = savedData.human;
-        this.neutral = savedData.neutral;
-        this.active = savedData.active;
-		this.skipTurn = savedData.skipTurn;
-        this.punishmentCards = savedData.punishmentCards;
+    public void OnLoad(GameData savedData, int playerID) {
+
+        GameObject unitPrefab = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Unit"));
+        this.SetUnitPrefab(unitPrefab);
+        unitPrefab.gameObject.SetActive(false);
+
+  //      this.attack = savedData.playerAttack[playerID];
+  //      this.defence = savedData.playerDefence[playerID];
+        this.color = savedData.playerColor[playerID];
+
+        if (savedData.playerController[playerID] == "human")
+        {
+            this.human = true;
+            this.neutral = false;
+        }
+        else
+        {
+            this.human = false;
+            this.neutral = true;
+        }
+            
+        this.active = savedData.currentPlayerID == playerID;
+        this.skipTurn = savedData.playerSkip[playerID];
+ //       this.punishmentCards = savedData.punishmentCards;
     }
 
     public void UseCard(int index) {

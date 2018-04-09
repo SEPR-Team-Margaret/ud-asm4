@@ -18,11 +18,12 @@ public static class SavedGame
     public static bool Save(string fileName, Game game)
     {
         string filePath = Application.persistentDataPath + "/";
-        Game gameData = new Game();
-        //gameData.SetupGameData(game); // Creates a serializable set of properties
+        GameData gameData = new GameData();
+
+        gameData.SetupGameData(game); // Creates a serializable set of properties
         try
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(Game));
+            XmlSerializer serializer = new XmlSerializer(typeof(GameData));
             using (StreamWriter w = new StreamWriter(filePath + fileName + ".xml"))
             {
                 serializer.Serialize(w, gameData);
@@ -40,15 +41,15 @@ public static class SavedGame
     /// </summary>
     /// <param name="fileName">The file to be loaded, exclusing the extension</param>
     /// <returns>True if game setup correctly, false if not</returns>
-    public static Game Load(string fileName)
+    public static GameData Load(string fileName)
     {
         string filePath = Application.persistentDataPath + "/";
         try
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(Game));
+            XmlSerializer serializer = new XmlSerializer(typeof(GameData));
             using (StreamReader r = new StreamReader(filePath + fileName + ".xml"))
             {
-                Game savedGame = (Game)serializer.Deserialize(r);
+                GameData savedGame = (GameData)serializer.Deserialize(r);
                 // Access to saved game like -> savedGame.currentPlayerID
                 // Calls to instantiate methods
                 return savedGame;
@@ -76,10 +77,10 @@ public static class SavedGame
         string filePath = Application.persistentDataPath + "/";
         try
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(Game));
+            XmlSerializer serializer = new XmlSerializer(typeof(GameData));
             using (StreamReader r = new StreamReader(filePath + fileName + ".xml"))
             {
-                Game savedGame = (Game)serializer.Deserialize(r);
+                GameData savedGame = (GameData)serializer.Deserialize(r);
                 // Access to saved game like -> savedGame.currentPlayerID
                 // Calls to instantiate methods
                 if (savedGame != null) {

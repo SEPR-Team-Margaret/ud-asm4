@@ -546,23 +546,36 @@ public class Sector : MonoBehaviour {
         }
     }
 
-    public void OnLoad(Sector savedData) {
-        this.unit = savedData.unit;
-        this.unit.OnLoad(savedData.unit);
+    public void OnLoad(GameData savedData) {
 
-        if (savedData.ownerID == -1) {
+        if (savedData.sectorOwner[sectorID] == -1) {
             this.owner = null;
+            this.ownerID = -1;
         } else {
-            this.owner = map.game.players[savedData.ownerID];
+            map.game.players[savedData.sectorOwner[sectorID]].Capture(this);
+//            this.owner = map.game.players[savedData.sectorOwner[sectorID]];
+//            this.ownerID = map.game.players[savedData.sectorOwner[sectorID]].playerID;
         }
 
+        if (savedData.sectorLevel[sectorID] != -1)
+        {
+            this.unit = MonoBehaviour.Instantiate(map.game.players[0].GetUnitPrefab()).GetComponent<Unit>();
+            this.unit.Initialize(this.owner, this);
+            this.unit.OnLoad(savedData,sectorID);
+        }
+
+        /*
         this.landmark = savedData.landmark;
         this.landmark.OnLoad(savedData.landmark);
+        */
 
-        this.VC = savedData.VC;
+        this.VC = savedData.VCSector == sectorID;
+
+        /*
         this.punishmentCard = savedData.punishmentCard;
         this.punishmentCard.OnLoad(savedData.punishmentCard);
         this.isHighlighted = savedData.isHighlighted;
+        */
     }
     
 }

@@ -12,6 +12,7 @@ public class SaveGameTest
     private Player[] players;
     private PlayerUI[] gui;
     private GameObject unitPrefab;
+    private GameObject book;
 
     private void Setup()
     {
@@ -21,6 +22,7 @@ public class SaveGameTest
         this.players = t.GetPlayers();
         this.gui = t.GetPlayerUIs();
         this.unitPrefab = t.GetUnitPrefab();
+        this.book = t.GetBook();
     }
 
     private void Cleanup() {
@@ -28,6 +30,7 @@ public class SaveGameTest
         GameObject.Destroy(game.gameObject);
         GameObject.Destroy(map.gameObject);
         GameObject.Destroy(gui[0].GetComponentInParent<Canvas>().gameObject);
+        GameObject.Destroy(book);
 
     }
 

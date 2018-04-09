@@ -8,7 +8,8 @@ public class SectorTest
 	private Game game;
 	private Map map;
     private Player[] players;
-	private PlayerUI[] gui;
+    private PlayerUI[] gui;
+    private GameObject book;
 
     private void Setup()
     {
@@ -17,6 +18,7 @@ public class SectorTest
         this.map = t.GetMap();
         this.players = t.GetPlayers();
         this.gui = t.GetPlayerUIs();
+        this.book = t.GetBook();
 
         game.InitializeMap();
     }
@@ -26,6 +28,7 @@ public class SectorTest
         GameObject.Destroy(game.gameObject);
         GameObject.Destroy(map.gameObject);
         GameObject.Destroy(gui[0].GetComponentInParent<Canvas>().gameObject);
+        GameObject.Destroy(book);
 
     }
 

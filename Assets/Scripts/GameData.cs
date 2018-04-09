@@ -12,6 +12,7 @@ public class GameData
     public bool gameFinished;
     public bool testMode;
     public int currentPlayerID; // Index from 0
+    public int actionsRemaining;
 
     // Players
     // Attack
@@ -22,12 +23,17 @@ public class GameData
     // Color
     public Color[] playerColor = new Color[4];
 
-    // Controller (Human, Neutral or None)
-    public string[] playerController;
+    // Controller (Human, Neutral)
+    public string[] playerController = new string[4];
+
+    // Skip
+    public bool[] playerSkip = new bool[4];
 
     // Sectors
     // Owner
     // Player ID index from 0, -1 for none (player1 index = 0)
+    public int[] sectorOwner = new int[32];
+    /*
     public int sector01Owner;
     public int sector02Owner;
     public int sector03Owner;
@@ -60,8 +66,11 @@ public class GameData
     public int sector30Owner;
     public int sector31Owner;
     public int sector32Owner;
+    */
 
     // Level (-1 for none)
+    public int[] sectorLevel = new int[32];
+    /*
     public int sector01Level;
     public int sector02Level;
     public int sector03Level;
@@ -94,6 +103,19 @@ public class GameData
     public int sector30Level;
     public int sector31Level;
     public int sector32Level;
+    */
+
+    // Active  (-1 for none)
+    public int sectorActive = -1;
+
+    // Name
+    public string[] sectorName = new string[32];
+
+    // Frozen
+    public bool[] sectorFrozen = new bool[32];
+
+    // Frozen Counter
+    public int[] sectorFrozenCounter = new int[32];
 
     // Vice Chancelor
     // Sector number
@@ -110,6 +132,7 @@ public class GameData
         this.gameFinished = game.IsFinished();
         this.testMode = game.GetTestMode();
         this.currentPlayerID = game.GetPlayerID(game.GetCurrentPlayer());
+        this.actionsRemaining = game.GetActionsRemaining();
         
         // Player properties
         Player[] players = game.GetPlayers();
@@ -134,10 +157,20 @@ public class GameData
             this.playerController[i] = players[i].GetController();
         }
 
+        // Skip
+        for (int i = 0; i < 4; i++) {
+            this.playerSkip[i] = players[i].skipTurn;
+        }
+
         // Sectors
         Sector[] sectors = game.GetSectors();
 
         // Owner
+        for (int i = 0; i < 32; i++)
+        {
+            this.sectorOwner[i] = game.GetPlayerID(sectors[i].GetOwner());
+        }
+        /*
         this.sector01Owner = game.GetPlayerID(sectors[0].GetOwner());
         this.sector02Owner = game.GetPlayerID(sectors[1].GetOwner());
         this.sector03Owner = game.GetPlayerID(sectors[2].GetOwner());
@@ -170,8 +203,14 @@ public class GameData
         this.sector30Owner = game.GetPlayerID(sectors[29].GetOwner());
         this.sector31Owner = game.GetPlayerID(sectors[30].GetOwner());
         this.sector32Owner = game.GetPlayerID(sectors[31].GetOwner());
+        */
 
         // Level
+        for (int i = 0; i < 32; i++)
+        {
+            this.sectorLevel[i] = sectors[i].GetLevel();
+        }
+        /*
         this.sector01Level = sectors[0].GetLevel();
         this.sector02Level = sectors[1].GetLevel();
         this.sector03Level = sectors[2].GetLevel();
@@ -204,7 +243,56 @@ public class GameData
         this.sector30Level = sectors[29].GetLevel();
         this.sector31Level = sectors[30].GetLevel();
         this.sector32Level = sectors[31].GetLevel();
+        */
 
+        // Active
+        for (int i = 0; i < 32; i++)
+        {
+            if (sectors[i].GetUnit() != null && sectors[i].GetUnit().IsSelected())
+            {
+                sectorActive = i;
+                break;
+            }
+        }
+
+        // Name
+        for (int i = 0; i < 32; i++)
+        {
+            if (sectors[i].GetUnit() != null)
+            {
+                sectorName[i] = sectors[i].GetUnit().unitName;
+            }
+            else
+            {
+                sectorName[i] = null;
+            }
+        }
+
+        // Frozen
+        for (int i = 0; i < 32; i++)
+        {
+            if (sectors[i].GetUnit() != null)
+            {
+                sectorFrozen[i] = sectors[i].GetUnit().IsFrozen();
+            }
+            else
+            {
+                sectorFrozen[i] = false;
+            }
+        }
+
+        // Frozen Counter
+        for (int i = 0; i < 32; i++)
+        {
+            if (sectors[i].GetUnit() != null)
+            {
+                sectorFrozenCounter[i] = sectors[i].GetUnit().GetFrozenCounter();
+            }
+            else
+            {
+                sectorFrozenCounter[i] = 0;
+            }
+        }
         // Vice Chancelor
         this.VCSector = game.GetVCSectorID();
     }

@@ -9,7 +9,7 @@ public class TestSetup
     private Player[] players;
     private PlayerUI[] gui;
     private GameObject unitPrefab;
-    private GameObject guiPlane;
+    private GameObject book;
     private Dialog dialog;
 
 
@@ -35,9 +35,10 @@ public class TestSetup
 
         unitPrefab = Resources.Load<GameObject>("Unit");
 
-        guiPlane = Resources.Load<GameObject>("Plane");
+        book = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Book"));
 
         dialog = game.gameObject.GetComponentInChildren<Dialog>();
+
 
         // the "Scenery" asset contains the camera and light source of the 4x4 Test
         // can uncomment to view scene as tests run, but significantly reduces speed
@@ -47,7 +48,7 @@ public class TestSetup
         // set up references between objects
         game.gameMap = map.gameObject;
         game.eliminatedPlayers = new bool[4];
-        game.SetActionsRemainingLabel(guiPlane.gameObject.GetComponentInChildren<UnityEngine.UI.Text>());
+        game.SetActionsRemainingLabel(book.gameObject.GetComponentInChildren<UnityEngine.UI.Text>());
         game.gameObject.name = "GameManager";
 
         map.game = game;
@@ -104,6 +105,11 @@ public class TestSetup
     public GameObject GetUnitPrefab()
     {
         return this.unitPrefab;
+    }
+
+    public GameObject GetBook() 
+    {
+        return book;
     }
     
 }

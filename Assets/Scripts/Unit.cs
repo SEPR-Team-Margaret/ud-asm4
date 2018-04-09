@@ -368,22 +368,28 @@ public class Unit : MonoBehaviour {
         Debug.Log("Mouse is over GameObject.");
     }*/
 
-    public void OnLoad(Unit savedData) {
+    public void OnLoad(GameData savedData, int sectorID) {
+        
         Game game = GameObject.Find("GameManager").GetComponent<Game>();
-        this.ownerID = savedData.ownerID;
-        this.owner = game.players[savedData.ownerID];
-        this.sector = game.sectors[savedData.sectorID];
-        this.sectorID = savedData.sectorID;
-        this.level = savedData.level;
-        this.selected = savedData.selected;
-        this.unitName = savedData.unitName;
-        this.unitFrozen = savedData.unitFrozen;
-        this.frozenCounter = savedData.frozenCounter;
-
+        this.ownerID = savedData.sectorOwner[sectorID];
+        this.owner = game.players[savedData.sectorOwner[sectorID]];
+        this.sector = game.sectors[sectorID];
+        this.sectorID = sectorID;
+        this.level = savedData.sectorLevel[sectorID];
+ //       this.selected = savedData.sectorActive == sectorID;
+        this.unitName = savedData.sectorName[sectorID];
+        this.unitFrozen = savedData.sectorFrozen[sectorID];
+        this.frozenCounter = savedData.sectorFrozenCounter[sectorID];
+        /*
         this.sprite = new UnitSprite(this.gameObject,
             savedData.sprite.currentHead,
             savedData.sprite.currentBody,
             savedData.sprite.currentHat);
+            */
+        this.popupName.text = this.unitName;
+        this.level -= 1;
+        this.LevelUp();
+        this.gameObject.SetActive(true);
     }
 
     void OnMouseOver() {

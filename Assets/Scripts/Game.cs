@@ -24,7 +24,8 @@ public class Game : MonoBehaviour {
     public string saveFilePath;
     private bool isSaveQuitMenuOpen = false;
 
-    [SerializeField] private UnityEngine.UI.Text actionsRemaining;
+    [SerializeField] private UnityEngine.UI.Text actionsRemainingLabel;
+    [SerializeField] private int actionsRemaining = 2;
 
     [SerializeField] public Dialog dialog;
 
@@ -52,7 +53,7 @@ public class Game : MonoBehaviour {
         if (testMode) return;
         #region Setup GUI components (Added by Dom 06/02/2018)
         // initialize the game
-        actionsRemaining = GameObject.Find("Remaining_Actions_Value").GetComponent<UnityEngine.UI.Text>();
+        actionsRemainingLabel = GameObject.Find("Remaining_Actions_Value").GetComponent<UnityEngine.UI.Text>();
 
         UnityEngine.UI.Button endTurnButton = GameObject.Find("End_Turn_Button").GetComponent<UnityEngine.UI.Button>();
         endTurnButton.onClick.AddListener(EndTurn);
@@ -232,6 +233,14 @@ public class Game : MonoBehaviour {
             }
         }
         return -1;
+    }
+
+    /// <summary>
+    /// Gets the number of actions remaining.
+    /// </summary>
+    /// <returns>The number of actions remaining.</returns>
+    public int GetActionsRemaining() {
+        return actionsRemaining;
     }
 
     //Re-done by Peter
@@ -547,18 +556,21 @@ public class Game : MonoBehaviour {
                 }
                 this.prevState = turnState;
                 turnState = TurnState.Move2;
+                actionsRemaining -= 1;
                 break;
 
             case TurnState.Move2:
                 Debug.Log("Move2 Initiated");
                 this.prevState = turnState;
                 turnState = TurnState.EndOfTurn;
+                actionsRemaining -= 1;
                 break;
 
             case TurnState.EndOfTurn:
                 Debug.Log("EndOfTurn Initiated");
                 this.prevState = turnState;
                 turnState = TurnState.Move1;
+                actionsRemaining = 2;
                 break;
 
             case TurnState.SelectUnit:
@@ -566,8 +578,10 @@ public class Game : MonoBehaviour {
                 if (this.prevState == TurnState.Move1) {
                     this.prevState = turnState;
                     this.turnState = TurnState.Move2;
+                    actionsRemaining -= 1;
                 } else if (this.prevState == TurnState.Move2) {
                     this.prevState = turnState;
+                    actionsRemaining -= 1;
                     this.EndTurn();
                 } else {
                     Debug.LogWarning("Previous State not updated correctly: currentState: " + this.turnState + ", prevState: " + this.prevState+".");
@@ -609,25 +623,25 @@ public class Game : MonoBehaviour {
         switch (turnState)
         {
             case TurnState.Move1:
-                actionsRemaining.text = "2";
+                actionsRemainingLabel.text = "2";
                 break;
 
             case TurnState.Move2:
-                actionsRemaining.text = "1";
+                actionsRemainingLabel.text = "1";
                 break;
 
             case TurnState.EndOfTurn:
-                actionsRemaining.text = "0";
+                actionsRemainingLabel.text = "0";
                 break;
 
             case TurnState.SelectUnit:
             case TurnState.UseCard:
                 if (this.prevState == TurnState.Move1) {
-                    actionsRemaining.text = "2";
+                    actionsRemainingLabel.text = "2";
                 } else if (this.prevState == TurnState.Move2) {
-                    actionsRemaining.text = "1";
+                    actionsRemainingLabel.text = "1";
                 } else {
-                    actionsRemaining.text = "0";
+                    actionsRemainingLabel.text = "0";
                 }
                 break;
 
@@ -644,7 +658,7 @@ public class Game : MonoBehaviour {
     /// <param name="actionsRemaining">Text to set as the actions remaining label</param>
     public void SetActionsRemainingLabel(UnityEngine.UI.Text actionsRemaining)
     {
-        this.actionsRemaining = actionsRemaining;
+        this.actionsRemainingLabel = actionsRemaining;
     }
 
     #region Function to check for defeated players and notify the others (Added by Jack 01/02/2018)
@@ -787,17 +801,18 @@ public class Game : MonoBehaviour {
     /// 
     /// </summary>
     /// <param name="savedGame">The saved game state</param>
-    public void Initialize(Game savedGame)
+    public void Initialize(GameData savedGame)
     {
         gameMap = GameObject.Find("Map");
 
         // initialize the game
-        actionsRemaining = GameObject.Find("Remaining_Actions_Value").GetComponent<UnityEngine.UI.Text>();
+        actionsRemainingLabel = GameObject.Find("Remaining_Actions_Value").GetComponent<UnityEngine.UI.Text>();
+        actionsRemaining = savedGame.actionsRemaining;
 
         UnityEngine.UI.Button endTurnButton = GameObject.Find("End_Turn_Button").GetComponent<UnityEngine.UI.Button>();
         endTurnButton.onClick.AddListener(EndTurn);
 
-        if (savedGame.players[4].Equals("human"))
+        if (savedGame.playerController[3] == "human")
         {
             CreatePlayers(false);
         } else
@@ -806,15 +821,28 @@ public class Game : MonoBehaviour {
         }
 
         // set global game settings
-        this.turnState = savedGame.turnState;
+        if (actionsRemaining == 2)
+        {
+            this.turnState = TurnState.Move1;
+        }
+        else if (actionsRemaining == 1)
+        {
+            this.turnState = TurnState.Move2;
+        }
+        else
+        {
+            Debug.LogWarning("loaded invalid number of actions remaining; defaulting to 2");
+        }
+        //this.turnState = savedGame.turnState;
+
         this.gameFinished = savedGame.gameFinished;
         this.testMode = savedGame.testMode;
-        this.currentPlayer = savedGame.currentPlayer;
+        this.currentPlayer = this.players[savedGame.currentPlayerID];
         currentPlayer.GetGui().Activate();
         this.currentPlayer.SetActive(true);
 
         for (int i = 0; i < 4; i++) {
-            this.players[i].OnLoad(savedGame.players[i]);
+            this.players[i].OnLoad(savedGame, i);
         }
         
 
@@ -827,7 +855,7 @@ public class Game : MonoBehaviour {
         }
 
         for (int i = 0; i < sectors.Length; i++) {
-            this.sectors[i].OnLoad(savedGame.sectors[i]);
+            this.sectors[i].OnLoad(savedGame);
         }
 
         UpdateGUI();

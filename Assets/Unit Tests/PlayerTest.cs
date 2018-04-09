@@ -9,6 +9,7 @@ public class PlayerTest
     private Map map;
 	private Player[] players;
 	private PlayerUI[] gui;
+    private GameObject book;
 
     private void Setup()
     {
@@ -17,6 +18,7 @@ public class PlayerTest
         this.map = t.GetMap();
         this.players = t.GetPlayers();
         this.gui = t.GetPlayerUIs();
+        this.book = t.GetBook();
 
         game.InitializeMap();
     }
@@ -26,6 +28,7 @@ public class PlayerTest
         GameObject.Destroy(game.gameObject);
         GameObject.Destroy(map.gameObject);
         GameObject.Destroy(gui[0].GetComponentInParent<Canvas>().gameObject);
+        GameObject.Destroy(book);
 
     }
 
@@ -252,6 +255,7 @@ public class PlayerTest
         Sector landmarkedSector = map.sectors[0]; 
         Player playerA = game.players[0];
         Player playerB = game.players[1];
+        playerA.ownedSectors.Clear();
         landmarkedSector.SetUnit(null);
 
         // ensure that 'landmarkedSector' is a landmark and does not contain a unit
