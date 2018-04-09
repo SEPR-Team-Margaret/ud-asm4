@@ -464,8 +464,8 @@ public class Sector : MonoBehaviour {
         // return 'true' if attacking unit wins;
         // return 'false' if defending unit wins
         
-        int attackingUnitRoll = Random.Range(1, (5 + attackingUnit.GetLevel())) + attackingUnit.GetOwner().GetAttack();
-        int defendingUnitRoll = Random.Range(1, (5 + defendingUnit.GetLevel())) + defendingUnit.GetOwner().GetDefence();
+        int attackingUnitRoll = Random.Range(1, (5 + attackingUnit.GetLevel())) + attackingUnit.GetOwner().GetAttack() + attackingUnit.GetOwner().GetAttackBonus();
+        int defendingUnitRoll = Random.Range(1, (5 + defendingUnit.GetLevel())) + defendingUnit.GetOwner().GetDefence() + defendingUnit.GetOwner().GetDefenceBonus();
 
         return attackingUnitRoll > defendingUnitRoll;
 

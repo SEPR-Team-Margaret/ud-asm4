@@ -51,8 +51,8 @@ public class PlayerUI : MonoBehaviour {
 	public void UpdateDisplay() {
 
 		percentOwned.text = Mathf.Round(100 * player.ownedSectors.Count / numberOfSectors).ToString() + "%";
-		attack.text = player.GetAttack().ToString();
-		defence.text = player.GetDefence().ToString();
+        attack.text = (player.GetAttack() + player.GetAttackBonus()).ToString();
+        defence.text = (player.GetDefence() + player.GetDefenceBonus()).ToString();
 
 	}
 

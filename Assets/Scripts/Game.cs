@@ -483,6 +483,17 @@ public class Game : MonoBehaviour {
 
                 players[nextPlayerIndex].SetActive(true);
                 players[nextPlayerIndex].GetGui().Activate();
+
+                // decrement the player's resource bonus from the PVC minigame, if any
+                if (players[nextPlayerIndex].GetAttackBonus() > 0)
+                {
+                    players[nextPlayerIndex].SetAttackBonus(players[nextPlayerIndex].GetAttackBonus() - 1);
+                }
+                if (players[nextPlayerIndex].GetDefenceBonus() > 0)
+                {
+                    players[nextPlayerIndex].SetDefenceBonus(players[nextPlayerIndex].GetDefenceBonus() - 1);
+                }
+
                 if (currentPlayer.IsNeutral() && !currentPlayer.IsEliminated())
                 {
                     NeutralPlayerTurn();
@@ -952,12 +963,25 @@ public class Game : MonoBehaviour {
         int rewardLevel = PlayerPrefs.GetInt("_mgScore");
         // REWARD TO BE ADDED TO PLAYER
         int bonus = 1; 
-        if (rewardLevel == 10)
+        if (rewardLevel <= 3)
+        {
+            bonus = 1;
+        }
+        else if (rewardLevel <= 6)
+        {
+            bonus = 2;
+        }
+        else if (rewardLevel <= 9)
+        {
+            bonus = 3;
+        }
+        else
         {
             bonus = 4;
         }
-        currentPlayer.SetAttack(currentPlayer.GetAttack() + bonus);
-        currentPlayer.SetDefence(currentPlayer.GetDefence() + bonus);
+
+        currentPlayer.SetAttackBonus(currentPlayer.GetAttackBonus() + bonus);
+        currentPlayer.SetDefenceBonus(currentPlayer.GetDefenceBonus() + bonus);
 
         dialog.SetDialogType(Dialog.DialogType.ShowText);
 

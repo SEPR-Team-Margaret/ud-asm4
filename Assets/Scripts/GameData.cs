@@ -18,10 +18,10 @@ public class GameData
     public int actionsRemaining;
 
     // Players
-    // Attack
-    public int[] playerAttack = new int[4];
-    // Defence
-    public int[] playerDefence = new int[4];
+    // Attack Bonus from PVC minigame
+    public int[] playerAttackBonus = new int[4];
+    // Defence Bonus from PVC minigame
+    public int[] playerDefenceBonus = new int[4];
 
     // Color
     public Color[] playerColor = new Color[4];
@@ -149,12 +149,12 @@ public class GameData
 
         // Attack
         for (int i = 0; i < 4; i++) {
-            this.playerAttack[i] = players[i].GetAttack();
+            this.playerAttackBonus[i] = players[i].GetAttackBonus();
         }
 
         // Defence
         for (int i = 0; i < 4; i++) {
-            this.playerDefence[i] = players[i].GetDefence();
+            this.playerDefenceBonus[i] = players[i].GetDefenceBonus();
         }
 
         // Color

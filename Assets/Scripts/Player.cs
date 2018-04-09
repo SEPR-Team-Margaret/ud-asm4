@@ -16,7 +16,9 @@ public class Player : MonoBehaviour {
     [System.NonSerialized] private PlayerUI gui;
     [System.NonSerialized] private CardUI cardGUI;
     [SerializeField] private int attack = 0;
+    [SerializeField] private int attackBonus = 0;
     [SerializeField] private int defence = 0;
+    [SerializeField] private int defenceBonus = 0;
     [SerializeField] private Color color;
     [SerializeField] private bool human;
     [SerializeField] private bool neutral;
@@ -79,6 +81,22 @@ public class Player : MonoBehaviour {
     }
 
     /// <summary>
+    /// Gets the attack bonus from the PVC minigame.
+    /// </summary>
+    /// <returns>The attack bonus from the PVC minigame.</returns>
+    public int GetAttackBonus() {
+        return attackBonus;
+    }
+
+    /// <summary>
+    /// Sets the attack bonus from the PVC minigame.
+    /// </summary>
+    /// <param name="attackBonus">Attack bonus.</param>
+    public void SetAttackBonus(int attackBonus) {
+        this.attackBonus = attackBonus;
+    }
+
+    /// <summary>
     /// 
     /// gets this player's defence
     /// 
@@ -96,6 +114,22 @@ public class Player : MonoBehaviour {
     /// <param name="defence">The player's defence bonus</param>
     public void SetDefence(int defence) {
         this.defence = defence;
+    }
+
+    /// <summary>
+    /// Gets the defence bonus from the PVC minigame.
+    /// </summary>
+    /// <returns>The defence bonus from the PVC minigame.</returns>
+    public int GetDefenceBonus() {
+        return defenceBonus;
+    }
+
+    /// <summary>
+    /// Sets the defence bonus from the PVC minigame.
+    /// </summary>
+    /// <param name="defenceBonus">Defence bonus.</param>
+    public void SetDefenceBonus(int defenceBonus) {
+        this.defenceBonus = defenceBonus;
     }
     
     /// <summary>
@@ -455,8 +489,8 @@ public class Player : MonoBehaviour {
         this.SetUnitPrefab(unitPrefab);
         unitPrefab.gameObject.SetActive(false);
 
-  //      this.attack = savedData.playerAttack[playerID];
-  //      this.defence = savedData.playerDefence[playerID];
+        this.attackBonus = savedData.playerAttackBonus[playerID];
+        this.defenceBonus = savedData.playerDefenceBonus[playerID];
         this.color = savedData.playerColor[playerID];
 
         if (savedData.playerController[playerID] == "human")
