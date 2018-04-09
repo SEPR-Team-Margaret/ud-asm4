@@ -17,12 +17,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
-    width: 1264
-    height: 612
-  m_MinSize: {x: 683, y: 492}
-  m_MaxSize: {x: 14004, y: 14042}
+    width: 1440
+    height: 760
+  m_MinSize: {x: 681, y: 342}
+  m_MaxSize: {x: 12006, y: 8042}
   vertical: 1
-  controlID: 27094
+  controlID: 5028
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -45,11 +45,12 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-    x: 204
-    y: 19
-    width: 748
-    height: 320
-  m_MaximizeOnPlay: 1
+    x: 359
+    y: 94
+    width: 726
+    height: 468
+  m_PersistentViewDataDictionary: {fileID: 0}
+  m_MaximizeOnPlay: 0
   m_Gizmos: 0
   m_Stats: 0
   m_SelectedSizes: 05000000000000000000000000000000000000000000000000000000000000000000000000000000
@@ -57,10 +58,10 @@ MonoBehaviour:
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-    m_HBaseRangeMin: -269.33334
-    m_HBaseRangeMax: 269.33334
-    m_VBaseRangeMin: -151.5
-    m_VBaseRangeMax: 151.5
+    m_HBaseRangeMin: -363
+    m_HBaseRangeMax: 363
+    m_VBaseRangeMin: -204.1875
+    m_VBaseRangeMax: 204.1875
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -77,25 +78,25 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 748
-      height: 303
+      width: 726
+      height: 451
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 374, y: 151.5}
+    m_Translation: {x: 363, y: 225.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -374
-      y: -151.5
-      width: 748
-      height: 303
+      x: -363
+      y: -225.5
+      width: 726
+      height: 451
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 748, y: 320}
+  m_LastWindowPixelSize: {x: 726, y: 468}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -112,17 +113,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 4}
-  - {fileID: 14}
+  - {fileID: 15}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1264
-    height: 612
-  m_MinSize: {x: 683, y: 492}
-  m_MaxSize: {x: 14004, y: 14042}
+    width: 1440
+    height: 760
+  m_MinSize: {x: 681, y: 342}
+  m_MaxSize: {x: 12006, y: 8042}
   vertical: 0
-  controlID: 27095
+  controlID: 5029
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,12 +142,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 954
-    height: 612
-  m_MinSize: {x: 406, y: 492}
-  m_MaxSize: {x: 10002, y: 14042}
+    width: 1087
+    height: 760
+  m_MinSize: {x: 406, y: 342}
+  m_MaxSize: {x: 8006, y: 8042}
   vertical: 1
-  controlID: 27049
+  controlID: 5030
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,12 +166,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 954
-    height: 341
+    width: 1087
+    height: 489
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 27019
+  controlID: 5031
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -187,8 +188,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 202
-    height: 341
+    width: 357
+    height: 489
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 7}
@@ -218,15 +219,16 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 8
-    y: 100
-    width: 200
-    height: 320
+    x: 0
+    y: 94
+    width: 355
+    height: 468
+  m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 08dee2ff
-    m_LastClickedID: -1909240
-    m_ExpandedIDs: 08fbe5ffb806e8ff843ce8ffcc97eaffd497eaffe297eaffc463ecff5e94edff8494edffa2d0efff66dfefff8cdfefff10f1efff00fbefff26fbefff4c7cf0ff7089f0ff9689f0ff620bf1ff121df1ff381df1ff26c1f1ff6ed0f1ff94d0f1ffa667f2ff5473f2ff7a73f2ffba0bf3ffea14f3ff1015f3ff2425f3ff2630f3ff7230f3ff6c42f3ff8652f3ffac52f3ff78e8f3ff8800f4ffae00f4ffe2f4f5ff8a16f6ffb016f6ff4226f6ff3833f6ff5e33f6ffc63cf8ff4cb7faff72b7faff4ac0fcffeac9fcff10cafcff3ad9fcffc4e6fcffeae6fcff3cf6fcff56fffcff7cfffcfffe0efdff5621fdff7c21fdffec30fdff063dfdff2c3dfdff984cfdfff457fdff1a58fdffaa67fdffec70fdff1271fdff5882fdffb28bfdffd88bfdff509bfdffdcb1fdff02b2fdffb6b9ffffd6f8ffff0000000064b40000d2b40000dab400005cb5000068b50000622102000a230200a427020026280200
+    m_SelectedIDs: 783d0000
+    m_LastClickedID: 15736
+    m_ExpandedIDs: acaffeffb6affeffc6affeffd028ffffd628ffffee28fffff428fffffa28ffff0029ffff7c7cffff827cffffa07cffffa67cffffac7cffffbe7cfffff6f3ffff10f4ffff0cf7ffff00000000da3900007e3a0000d63c00005c3d0000923d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -263,10 +265,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 202
+    x: 357
     y: 0
-    width: 752
-    height: 341
+    width: 730
+    height: 489
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 2}
@@ -298,19 +300,20 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-    x: 212
-    y: 100
-    width: 748
-    height: 320
+    x: 359
+    y: 94
+    width: 726
+    height: 468
+  m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 209839.395295226
+  lastFramingTime: 975.7095285839506
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 305.8704, y: 133.67168, z: 25.165094}
+    m_Target: {x: -42.17223, y: -787.0262, z: -17.634268}
     speed: 2
-    m_Value: {x: 305.8704, y: 133.67168, z: 25.165094}
+    m_Value: {x: -42.17223, y: -787.0262, z: -17.634268}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -319,6 +322,7 @@ MonoBehaviour:
     showSkybox: 1
     showFlares: 1
     showImageEffects: 1
+    showParticleSystems: 1
   grid:
     xGrid:
       m_Target: 0
@@ -333,17 +337,18 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.07532497, y: 0.005909932, z: -0.0004492072, w: 0.99714833}
+    m_Target: {x: 0.001286597, y: 0.7252502, z: -0.6884829, w: 0.0013565822}
     speed: 2
-    m_Value: {x: -0.07532497, y: -0.0059099314, z: 0.00044920717, w: -0.9971483}
+    m_Value: {x: 0.001286597, y: 0.7252502, z: -0.6884829, w: 0.0013565822}
   m_Size:
-    m_Target: 355.95135
+    m_Target: 895.2463
     speed: 2
-    m_Value: 355.95135
+    m_Value: 895.2463
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
+  m_ShowGlobalGrid: 1
   m_LastSceneViewRotation: {x: 0.11411815, y: 0.013651039, z: -0.0015682471, w: 0.9933722}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
@@ -376,6 +381,7 @@ MonoBehaviour:
     y: 91
     width: 948
     height: 547
+  m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -391,17 +397,18 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 341
-    width: 954
+    y: 489
+    width: 1087
     height: 271
-  m_MinSize: {x: 232, y: 271}
-  m_MaxSize: {x: 10002, y: 10021}
-  m_ActualView: {fileID: 12}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 12}
   - {fileID: 13}
-  m_Selected: 0
-  m_LastSelected: 1
+  - {fileID: 14}
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -424,10 +431,11 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 8
-    y: 441
-    width: 952
+    x: 0
+    y: 583
+    width: 1085
     height: 250
+  m_PersistentViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
     m_ClassNames: []
@@ -440,19 +448,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Images
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Images
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Sam\Documents\Year 2\SEPR\Assessment 4\ud-asm4
+  m_LastProjectPath: /Users/Ben/Documents/Git/ud-asm4
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 38310000
-    m_LastClickedID: 12600
-    m_ExpandedIDs: 00000000b02d0000c02f000038310000423200004a330000ac340000163600002236000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 193}
+    m_SelectedIDs: 70340000
+    m_LastClickedID: 13424
+    m_ExpandedIDs: 000000009231000090330000ec350000e236000042380000b4390000bc39000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -480,7 +488,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b02d0000c02f000038310000423200004a330000ac340000163600002236000000ca9a3bffffff7f
+    m_ExpandedIDs: 000000009231000090330000ec350000e236000042380000b4390000bc39000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -505,10 +513,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 08dee2ff
-    m_LastClickedInstanceID: -1909240
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c62300003832000000340000
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -557,70 +565,12 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 8
-    y: 441
-    width: 952
+    x: 0
+    y: 583
+    width: 1085
     height: 250
+  m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &14
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 954
-    y: 0
-    width: 310
-    height: 612
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 15}
-  m_Panes:
-  - {fileID: 15}
-  - {fileID: 16}
-  m_Selected: 0
-  m_LastSelected: 1
---- !u!114 &15
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12019, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AutoRepaintOnSceneChange: 0
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Inspector
-    m_Image: {fileID: -6905738622615590433, guid: 0000000000000000d000000000000000,
-      type: 0}
-    m_Tooltip: 
-  m_DepthBufferBits: 0
-  m_Pos:
-    serializedVersion: 2
-    x: 964
-    y: 100
-    width: 308
-    height: 591
-  m_ScrollPosition: {x: 0, y: 307.95508}
-  m_InspectorMode: 0
-  m_PreviewResizer:
-    m_CachedPref: 160
-    m_ControlHash: -371814159
-    m_PrefName: Preview_InspectorPreview
-  m_PreviewWindow: {fileID: 0}
---- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -641,1111 +591,612 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 964
-    y: 100
-    width: 308
-    height: 590
-  m_IsSceneBased: 0
+    x: 0
+    y: 659
+    width: 1358
+    height: 359
+  m_PersistentViewDataDictionary: {fileID: 0}
   m_TestTypeToolbarIndex: 0
   m_PlayModeTestListGUI:
-    m_Window: {fileID: 16}
+    m_Window: {fileID: 14}
     newResultList:
-    - id: '[University Domination]'
+    - id: '[University Domination][suite]'
       name: University Domination
       fullName: University Domination
-      resultStatus: 2
-      duration: 4.9033275
-      messages: One or more child tests had errors
+      resultStatus: 0
+      duration: 0
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll]'
+      isSuite: 1
+    - id: '[/Users/Ben/Documents/Git/ud-asm4/Library/ScriptAssemblies/Assembly-CSharp.dll][suite]'
       name: Assembly-CSharp.dll
-      fullName: C:/Users/Sam/Documents/Year 2/SEPR/Assessment 4/ud-asm4/Library/ScriptAssemblies/Assembly-CSharp.dll
-      resultStatus: 2
-      duration: 4.832115
-      messages: One or more child tests had errors
+      fullName: /Users/Ben/Documents/Git/ud-asm4/Library/ScriptAssemblies/Assembly-CSharp.dll
+      resultStatus: 0
+      duration: 0
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest]'
+      isSuite: 1
+    - id: '[Assembly-CSharp][GameTest][suite]'
       name: GameTest
       fullName: GameTest
-      resultStatus: 1
-      duration: 1.5015728
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][CreatePlayers_FourPlayersAreHuman]'
+      isSuite: 1
+    - id: '[Assembly-CSharp][GameTest.CreatePlayers_FourPlayersAreHuman]'
       name: CreatePlayers_FourPlayersAreHuman
       fullName: GameTest.CreatePlayers_FourPlayersAreHuman
-      resultStatus: 1
-      duration: 0.3650642
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][CreatePlayers_ThreePlayersHumanAndOneNeutral]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][GameTest.CreatePlayers_ThreePlayersHumanAndOneNeutral]'
       name: CreatePlayers_ThreePlayersHumanAndOneNeutral
       fullName: GameTest.CreatePlayers_ThreePlayersHumanAndOneNeutral
-      resultStatus: 1
-      duration: 0.0329754
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][EndGame_GameEndsCorrectlyWithNoCurrentPlayerAndNoActivePlayersAndNoTurnState]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][GameTest.EndGame_GameEndsCorrectlyWithNoCurrentPlayerAndNoActivePlayersAndNoTurnState]'
       name: EndGame_GameEndsCorrectlyWithNoCurrentPlayerAndNoActivePlayersAndNoTurnState
       fullName: GameTest.EndGame_GameEndsCorrectlyWithNoCurrentPlayerAndNoActivePlayersAndNoTurnState
-      resultStatus: 1
-      duration: 0.1047971
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_05\r\nGAME
-        FINISHED\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][GetWinner_NoWinnerWhenAPlayerHasLandmarkAndAnotherHasUnits]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][GameTest.GetWinner_NoWinnerWhenAPlayerHasLandmarkAndAnotherHasUnits]'
       name: GetWinner_NoWinnerWhenAPlayerHasLandmarkAndAnotherHasUnits
       fullName: GameTest.GetWinner_NoWinnerWhenAPlayerHasLandmarkAndAnotherHasUnits
-      resultStatus: 1
-      duration: 0.0694635
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_29\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][GetWinner_NoWinnerWhenMultiplePlayersOwningLandmarks]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][GameTest.GetWinner_NoWinnerWhenMultiplePlayersOwningLandmarks]'
       name: GetWinner_NoWinnerWhenMultiplePlayersOwningLandmarks
       fullName: GameTest.GetWinner_NoWinnerWhenMultiplePlayersOwningLandmarks
-      resultStatus: 1
-      duration: 0.0664552
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_15\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][GetWinner_NoWinnerWhenMultiplePlayersWithUnits]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][GameTest.GetWinner_NoWinnerWhenMultiplePlayersWithUnits]'
       name: GetWinner_NoWinnerWhenMultiplePlayersWithUnits
       fullName: GameTest.GetWinner_NoWinnerWhenMultiplePlayersWithUnits
-      resultStatus: 1
-      duration: 0.0812712
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_12\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][GetWinner_OnePlayerWithLandmarksAndUnitsWins]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][GameTest.GetWinner_OnePlayerWithLandmarksAndUnitsWins]'
       name: GetWinner_OnePlayerWithLandmarksAndUnitsWins
       fullName: GameTest.GetWinner_OnePlayerWithLandmarksAndUnitsWins
-      resultStatus: 1
-      duration: 0.0672999
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_23\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][InitializeMap_OneLandmarkAllocatedWithUnitPerPlayer]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][GameTest.InitializeMap_OneLandmarkAllocatedWithUnitPerPlayer]'
       name: InitializeMap_OneLandmarkAllocatedWithUnitPerPlayer
       fullName: GameTest.InitializeMap_OneLandmarkAllocatedWithUnitPerPlayer
-      resultStatus: 1
-      duration: 0.072684
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_14\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][NeutralPlayerTurn_EnsureNeutralPlayerMovesCorrectly]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][GameTest.NeutralPlayerTurn_EnsureNeutralPlayerMovesCorrectly]'
       name: NeutralPlayerTurn_EnsureNeutralPlayerMovesCorrectly
       fullName: GameTest.NeutralPlayerTurn_EnsureNeutralPlayerMovesCorrectly
-      resultStatus: 1
-      duration: 0.070072
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_05\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][NextPlayer_CurrentPlayerChangesToNextPlayerEachTime]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][GameTest.NextPlayer_CurrentPlayerChangesToNextPlayerEachTime]'
       name: NextPlayer_CurrentPlayerChangesToNextPlayerEachTime
       fullName: GameTest.NextPlayer_CurrentPlayerChangesToNextPlayerEachTime
-      resultStatus: 1
-      duration: 0.0500903
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][NextPlayer_EliminatedPlayersAreSkipped]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][GameTest.NextPlayer_EliminatedPlayersAreSkipped]'
       name: NextPlayer_EliminatedPlayersAreSkipped
       fullName: GameTest.NextPlayer_EliminatedPlayersAreSkipped
-      resultStatus: 1
-      duration: 0.0441528
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "EndOfTurn Initiated\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][NoUnitSelected_ReturnsFalseWhenUnitIsSelected]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][GameTest.NoUnitSelected_ReturnsFalseWhenUnitIsSelected]'
       name: NoUnitSelected_ReturnsFalseWhenUnitIsSelected
       fullName: GameTest.NoUnitSelected_ReturnsFalseWhenUnitIsSelected
-      resultStatus: 1
-      duration: 0.067125
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_17\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][PlayerTest][suite]'
       name: PlayerTest
       fullName: PlayerTest
-      resultStatus: 1
-      duration: 0.9756748
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest][CaptureLandmark_BothPlayersBeerAmountCorrect]'
+      isSuite: 1
+    - id: '[Assembly-CSharp][PlayerTest.CaptureLandmark_BothPlayersBeerAmountCorrect]'
       name: CaptureLandmark_BothPlayersBeerAmountCorrect
       fullName: PlayerTest.CaptureLandmark_BothPlayersBeerAmountCorrect
-      resultStatus: 1
-      duration: 0.0716054
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_06\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest][CaptureLandmark_BothPlayersKnowledgeAmountCorrect]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][PlayerTest.CaptureLandmark_BothPlayersKnowledgeAmountCorrect]'
       name: CaptureLandmark_BothPlayersKnowledgeAmountCorrect
       fullName: PlayerTest.CaptureLandmark_BothPlayersKnowledgeAmountCorrect
-      resultStatus: 1
-      duration: 0.072326
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_31\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest][CaptureLandmark_NeutralLandmarkPlayerBeerAmountCorrect]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][PlayerTest.CaptureLandmark_NeutralLandmarkPlayerBeerAmountCorrect]'
       name: CaptureLandmark_NeutralLandmarkPlayerBeerAmountCorrect
       fullName: PlayerTest.CaptureLandmark_NeutralLandmarkPlayerBeerAmountCorrect
-      resultStatus: 1
-      duration: 0.0885753
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_24\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest][CaptureLandmark_NeutralLandmarkPlayerKnowledgeAmountCorrect]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][PlayerTest.CaptureLandmark_NeutralLandmarkPlayerKnowledgeAmountCorrect]'
       name: CaptureLandmark_NeutralLandmarkPlayerKnowledgeAmountCorrect
       fullName: PlayerTest.CaptureLandmark_NeutralLandmarkPlayerKnowledgeAmountCorrect
-      resultStatus: 1
-      duration: 0.0731223
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_21\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest][CaptureSector_ChangesOwner]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][PlayerTest.CaptureSector_ChangesOwner]'
       name: CaptureSector_ChangesOwner
       fullName: PlayerTest.CaptureSector_ChangesOwner
-      resultStatus: 1
-      duration: 0.0695826
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_08\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest][IsEliminated_PlayerWithNoUnitsAndNoLandmarksEliminated]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][PlayerTest.IsEliminated_PlayerWithNoUnitsAndNoLandmarksEliminated]'
       name: IsEliminated_PlayerWithNoUnitsAndNoLandmarksEliminated
       fullName: PlayerTest.IsEliminated_PlayerWithNoUnitsAndNoLandmarksEliminated
-      resultStatus: 1
-      duration: 0.0728939
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_06\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest][SpawnUnits_NotSpawnedWhenLandmarkNotOwned]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][PlayerTest.SpawnUnits_NotSpawnedWhenLandmarkNotOwned]'
       name: SpawnUnits_NotSpawnedWhenLandmarkNotOwned
       fullName: PlayerTest.SpawnUnits_NotSpawnedWhenLandmarkNotOwned
-      resultStatus: 1
-      duration: 0.081193
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_21\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest][SpawnUnits_NotSpawnedWhenLandmarkOwnedAndOccupied]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][PlayerTest.SpawnUnits_NotSpawnedWhenLandmarkOwnedAndOccupied]'
       name: SpawnUnits_NotSpawnedWhenLandmarkOwnedAndOccupied
       fullName: PlayerTest.SpawnUnits_NotSpawnedWhenLandmarkOwnedAndOccupied
-      resultStatus: 1
-      duration: 0.071605
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_05\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest][SpawnUnits_SpawnedWhenLandmarkOwnedAndUnoccupied]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][PlayerTest.SpawnUnits_SpawnedWhenLandmarkOwnedAndUnoccupied]'
       name: SpawnUnits_SpawnedWhenLandmarkOwnedAndUnoccupied
       fullName: PlayerTest.SpawnUnits_SpawnedWhenLandmarkOwnedAndUnoccupied
-      resultStatus: 1
-      duration: 0.072335
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_04\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SaveGameTest]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][SaveGameTest][suite]'
       name: SaveGameTest
       fullName: SaveGameTest
-      resultStatus: 2
-      duration: 0.1833449
-      messages: One or more child tests had errors
+      resultStatus: 0
+      duration: 0
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SaveGameTest][Load]'
+      isSuite: 1
+    - id: '[Assembly-CSharp][SaveGameTest.Load]'
       name: Load
       fullName: SaveGameTest.Load
-      resultStatus: 2
-      duration: 0.0424645
-      messages: 'Unhandled log message: [Exception] InvalidOperationException: To
-        be XML serializable, types which inherit from IEnumerable must have an implementation
-        of Add(System.Object) at all levels of their inheritance hierarchy. UnityEngine.Transform
-        does not implement Add(System.Object).'
-      output: "InvalidOperationException: To be XML serializable, types which inherit
-        from IEnumerable must have an implementation of Add(System.Object) at all
-        levels of their inheritance hierarchy. UnityEngine.Transform does not implement
-        Add(System.Object).\r\n"
-      stacktrace: "System.Xml.Serialization.TypeData.get_ListItemType ()\r\nSystem.Xml.Serialization.TypeData.get_ListItemTypeData
-        ()\r\nSystem.Xml.Serialization.TypeData..ctor (System.Type type, System.String
-        elementName, Boolean isPrimitive, System.Xml.Serialization.TypeData mappedType,
-        System.Xml.Schema.XmlSchemaPatternFacet facet)\r\nSystem.Xml.Serialization.TypeData..ctor
-        (System.Type type, System.String elementName, Boolean isPrimitive)\r\nSystem.Xml.Serialization.TypeTranslator.GetTypeData
-        (System.Type runtimeType, System.String xmlDataType)\r\nSystem.Xml.Serialization.TypeTranslator.GetTypeData
-        (System.Type type)\r\nSystem.Xml.Serialization.XmlReflectionImporter.GetReflectionMembers
-        (System.Type type)\r\nSystem.Xml.Serialization.XmlReflectionImporter.ImportClassMapping
-        (System.Xml.Serialization.TypeData typeData, System.Xml.Serialization.XmlRootAttribute
-        root, System.String defaultNamespace)\r\nSystem.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping
-        (System.Xml.Serialization.TypeData typeData, System.Xml.Serialization.XmlRootAttribute
-        root, System.String defaultNamespace)\r\nRethrow as InvalidOperationException:
-        There was an error reflecting type 'Game'.\r\nSystem.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping
-        (System.Xml.Serialization.TypeData typeData, System.Xml.Serialization.XmlRootAttribute
-        root, System.String defaultNamespace)\r\nSystem.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping
-        (System.Type type, System.Xml.Serialization.XmlRootAttribute root, System.String
-        defaultNamespace)\r\nSystem.Xml.Serialization.XmlSerializer..ctor (System.Type
-        type, System.Xml.Serialization.XmlAttributeOverrides overrides, System.Type[]
-        extraTypes, System.Xml.Serialization.XmlRootAttribute root, System.String
-        defaultNamespace)\r\nSystem.Xml.Serialization.XmlSerializer..ctor (System.Type
-        type)\r\nSavedGame.Load (System.String fileName) (at Assets/Scripts/SavedGame.cs:48)\r\nSaveGameTest+<Load>c__Iterator1.MoveNext
-        () (at Assets/Unit Tests/SaveGameTest.cs:72)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SaveGameTest][SaveLoadGame]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][SaveGameTest.SaveLoadGame]'
       name: SaveLoadGame
       fullName: SaveGameTest.SaveLoadGame
-      resultStatus: 2
-      duration: 0.0816445
-      messages: 'Unhandled log message: [Exception] InvalidOperationException: To
-        be XML serializable, types which inherit from IEnumerable must have an implementation
-        of Add(System.Object) at all levels of their inheritance hierarchy. UnityEngine.Transform
-        does not implement Add(System.Object).'
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_30\r\nYou
-        are trying to create a MonoBehaviour using the 'new' keyword.  This is not
-        allowed.  MonoBehaviours can only be added using AddComponent().  Alternatively,
-        your script can inherit from ScriptableObject or no base class at all\r\nInvalidOperationException:
-        To be XML serializable, types which inherit from IEnumerable must have an
-        implementation of Add(System.Object) at all levels of their inheritance hierarchy.
-        UnityEngine.Transform does not implement Add(System.Object).\r\n"
-      stacktrace: "System.Xml.Serialization.TypeData.get_ListItemType ()\r\nSystem.Xml.Serialization.TypeData.get_ListItemTypeData
-        ()\r\nSystem.Xml.Serialization.TypeData..ctor (System.Type type, System.String
-        elementName, Boolean isPrimitive, System.Xml.Serialization.TypeData mappedType,
-        System.Xml.Schema.XmlSchemaPatternFacet facet)\r\nSystem.Xml.Serialization.TypeData..ctor
-        (System.Type type, System.String elementName, Boolean isPrimitive)\r\nSystem.Xml.Serialization.TypeTranslator.GetTypeData
-        (System.Type runtimeType, System.String xmlDataType)\r\nSystem.Xml.Serialization.TypeTranslator.GetTypeData
-        (System.Type type)\r\nSystem.Xml.Serialization.XmlReflectionImporter.GetReflectionMembers
-        (System.Type type)\r\nSystem.Xml.Serialization.XmlReflectionImporter.ImportClassMapping
-        (System.Xml.Serialization.TypeData typeData, System.Xml.Serialization.XmlRootAttribute
-        root, System.String defaultNamespace)\r\nSystem.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping
-        (System.Xml.Serialization.TypeData typeData, System.Xml.Serialization.XmlRootAttribute
-        root, System.String defaultNamespace)\r\nRethrow as InvalidOperationException:
-        There was an error reflecting type 'Game'.\r\nSystem.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping
-        (System.Xml.Serialization.TypeData typeData, System.Xml.Serialization.XmlRootAttribute
-        root, System.String defaultNamespace)\r\nSystem.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping
-        (System.Type type, System.Xml.Serialization.XmlRootAttribute root, System.String
-        defaultNamespace)\r\nSystem.Xml.Serialization.XmlSerializer..ctor (System.Type
-        type, System.Xml.Serialization.XmlAttributeOverrides overrides, System.Type[]
-        extraTypes, System.Xml.Serialization.XmlRootAttribute root, System.String
-        defaultNamespace)\r\nSystem.Xml.Serialization.XmlSerializer..ctor (System.Type
-        type)\r\nSavedGame.Save (System.String fileName, .Game game) (at Assets/Scripts/SavedGame.cs:25)\r\nSaveGameTest+<SaveLoadGame>c__Iterator0.MoveNext
-        () (at Assets/Unit Tests/SaveGameTest.cs:50)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
-        (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
-        IntPtr)\r\n\r\n"
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SectorTest]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][SectorTest][suite]'
       name: SectorTest
       fullName: SectorTest
-      resultStatus: 1
-      duration: 1.1138203
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SectorTest][AdjacentSelectedUnit_SectorsAreAdjacent]'
+      isSuite: 1
+    - id: '[Assembly-CSharp][SectorTest.AdjacentSelectedUnit_SectorsAreAdjacent]'
       name: AdjacentSelectedUnit_SectorsAreAdjacent
       fullName: SectorTest.AdjacentSelectedUnit_SectorsAreAdjacent
-      resultStatus: 1
-      duration: 0.0775975
-      messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_02\r\n"
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp.dll][SectorTest][ClearUnit_UnitRemovedFromSector]'
-      name: ClearUnit_UnitRemovedFromSector
-      fullName: SectorTest.ClearUnit_UnitRemovedFromSector
-      resultStatus: 1
-      duration: 0.0722374
-      messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_27\r\n"
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp.dll][SectorTest][Initialize_OwnedAndNotOwnedSectorsOwnerAndColor]'
-      name: Initialize_OwnedAndNotOwnedSectorsOwnerAndColor
-      fullName: SectorTest.Initialize_OwnedAndNotOwnedSectorsOwnerAndColor
-      resultStatus: 1
-      duration: 0.0711241
-      messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_08\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\n"
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp.dll][SectorTest][MoveIntoFriendlyUnit_UnitsSwapSectorsAndTurnStateProgressed]'
-      name: MoveIntoFriendlyUnit_UnitsSwapSectorsAndTurnStateProgressed
-      fullName: SectorTest.MoveIntoFriendlyUnit_UnitsSwapSectorsAndTurnStateProgressed
-      resultStatus: 1
-      duration: 0.0838354
-      messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_25\r\n"
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp.dll][SectorTest][MoveIntoHostileUnit_AttackingUnitTakesSectorAndLevelUpAndTurnEnd]'
-      name: MoveIntoHostileUnit_AttackingUnitTakesSectorAndLevelUpAndTurnEnd
-      fullName: SectorTest.MoveIntoHostileUnit_AttackingUnitTakesSectorAndLevelUpAndTurnEnd
-      resultStatus: 1
-      duration: 0.0780477
-      messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_06\r\n1\r\n2\r\n"
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp.dll][SectorTest][MoveIntoHostileUnit_DefendingUnitDefendsSectorAndTurnEnd]'
-      name: MoveIntoHostileUnit_DefendingUnitDefendsSectorAndTurnEnd
-      fullName: SectorTest.MoveIntoHostileUnit_DefendingUnitDefendsSectorAndTurnEnd
-      resultStatus: 1
-      duration: 0.0710038
-      messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_11\r\n"
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp.dll][SectorTest][MoveIntoHostileUnit_TieConflict_DefendingUnitDefendsSectorAndTurnEnd]'
-      name: MoveIntoHostileUnit_TieConflict_DefendingUnitDefendsSectorAndTurnEnd
-      fullName: SectorTest.MoveIntoHostileUnit_TieConflict_DefendingUnitDefendsSectorAndTurnEnd
-      resultStatus: 1
-      duration: 0.0726205
-      messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_28\r\n"
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp.dll][SectorTest][MoveIntoUnoccupiedSector_NewSectorHasUnitAndOldDoesNotAndTurnStateProgressed]'
-      name: MoveIntoUnoccupiedSector_NewSectorHasUnitAndOldDoesNotAndTurnStateProgressed
-      fullName: SectorTest.MoveIntoUnoccupiedSector_NewSectorHasUnitAndOldDoesNotAndTurnStateProgressed
-      resultStatus: 1
-      duration: 0.0831835
-      messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_16\r\n"
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp.dll][SectorTest][OnMouseAsButton_CorrectUnitIsSelected]'
-      name: OnMouseAsButton_CorrectUnitIsSelected
-      fullName: SectorTest.OnMouseAsButton_CorrectUnitIsSelected
-      resultStatus: 1
-      duration: 0.0856582
-      messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_19\r\nCurrentState:
-        Move1 | PrevState: Move1\r\nCurrentState: SelectUnit | PrevState: Move1\r\nCurrentState:
-        Move1 | PrevState: SelectUnit\r\nCurrentState: Move1 | PrevState: SelectUnit\r\nCurrentState:
-        SelectUnit | PrevState: SelectUnit\r\nSelectUnit Initiated\r\nPrevious State
-        not updated correctly: currentState: SelectUnit, prevState: SelectUnit.\r\n"
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp.dll][SectorTest][SetOwner_SectorOwnerAndColorCorrect]'
-      name: SetOwner_SectorOwnerAndColorCorrect
-      fullName: SectorTest.SetOwner_SectorOwnerAndColorCorrect
-      resultStatus: 1
-      duration: 0.0765787
-      messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_04\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\n"
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp.dll][UnitTest]'
-      name: UnitTest
-      fullName: UnitTest
-      resultStatus: 1
-      duration: 0.907382
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][UnitTest][DestroySelf_UnitNotInSectorAndNotInPlayersUnitsList]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][SectorTest.ClearUnit_UnitRemovedFromSector]'
+      name: ClearUnit_UnitRemovedFromSector
+      fullName: SectorTest.ClearUnit_UnitRemovedFromSector
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp][SectorTest.Initialize_OwnedAndNotOwnedSectorsOwnerAndColor]'
+      name: Initialize_OwnedAndNotOwnedSectorsOwnerAndColor
+      fullName: SectorTest.Initialize_OwnedAndNotOwnedSectorsOwnerAndColor
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp][SectorTest.MoveIntoFriendlyUnit_UnitsSwapSectorsAndTurnStateProgressed]'
+      name: MoveIntoFriendlyUnit_UnitsSwapSectorsAndTurnStateProgressed
+      fullName: SectorTest.MoveIntoFriendlyUnit_UnitsSwapSectorsAndTurnStateProgressed
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp][SectorTest.MoveIntoHostileUnit_AttackingUnitTakesSectorAndLevelUpAndTurnEnd]'
+      name: MoveIntoHostileUnit_AttackingUnitTakesSectorAndLevelUpAndTurnEnd
+      fullName: SectorTest.MoveIntoHostileUnit_AttackingUnitTakesSectorAndLevelUpAndTurnEnd
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp][SectorTest.MoveIntoHostileUnit_DefendingUnitDefendsSectorAndTurnEnd]'
+      name: MoveIntoHostileUnit_DefendingUnitDefendsSectorAndTurnEnd
+      fullName: SectorTest.MoveIntoHostileUnit_DefendingUnitDefendsSectorAndTurnEnd
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp][SectorTest.MoveIntoHostileUnit_TieConflict_DefendingUnitDefendsSectorAndTurnEnd]'
+      name: MoveIntoHostileUnit_TieConflict_DefendingUnitDefendsSectorAndTurnEnd
+      fullName: SectorTest.MoveIntoHostileUnit_TieConflict_DefendingUnitDefendsSectorAndTurnEnd
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp][SectorTest.MoveIntoUnoccupiedSector_NewSectorHasUnitAndOldDoesNotAndTurnStateProgressed]'
+      name: MoveIntoUnoccupiedSector_NewSectorHasUnitAndOldDoesNotAndTurnStateProgressed
+      fullName: SectorTest.MoveIntoUnoccupiedSector_NewSectorHasUnitAndOldDoesNotAndTurnStateProgressed
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp][SectorTest.OnMouseAsButton_CorrectUnitIsSelected]'
+      name: OnMouseAsButton_CorrectUnitIsSelected
+      fullName: SectorTest.OnMouseAsButton_CorrectUnitIsSelected
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp][SectorTest.SetOwner_SectorOwnerAndColorCorrect]'
+      name: SetOwner_SectorOwnerAndColorCorrect
+      fullName: SectorTest.SetOwner_SectorOwnerAndColorCorrect
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp][UnitTest][suite]'
+      name: UnitTest
+      fullName: UnitTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+    - id: '[Assembly-CSharp][UnitTest.DestroySelf_UnitNotInSectorAndNotInPlayersUnitsList]'
       name: DestroySelf_UnitNotInSectorAndNotInPlayersUnitsList
       fullName: UnitTest.DestroySelf_UnitNotInSectorAndNotInPlayersUnitsList
-      resultStatus: 1
-      duration: 0.1075368
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_19\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][UnitTest][LevelUp_UnitLevelDoesNotPastFive]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][UnitTest.LevelUp_UnitLevelDoesNotPastFive]'
       name: LevelUp_UnitLevelDoesNotPastFive
       fullName: UnitTest.LevelUp_UnitLevelDoesNotPastFive
-      resultStatus: 1
-      duration: 0.0704521
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_03\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][UnitTest][LevelUp_UnitLevelIncreasesByOne]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][UnitTest.LevelUp_UnitLevelIncreasesByOne]'
       name: LevelUp_UnitLevelIncreasesByOne
       fullName: UnitTest.LevelUp_UnitLevelIncreasesByOne
-      resultStatus: 1
-      duration: 0.071273
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_31\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][UnitTest][MoveToFriendly_UnitInCorrectSector]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][UnitTest.MoveToFriendly_UnitInCorrectSector]'
       name: MoveToFriendly_UnitInCorrectSector
       fullName: UnitTest.MoveToFriendly_UnitInCorrectSector
-      resultStatus: 1
-      duration: 0.0731931
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_16\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][UnitTest][MoveToFriendlyFromNull_UnitInCorrectSector]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][UnitTest.MoveToFriendlyFromNull_UnitInCorrectSector]'
       name: MoveToFriendlyFromNull_UnitInCorrectSector
       fullName: UnitTest.MoveToFriendlyFromNull_UnitInCorrectSector
-      resultStatus: 1
-      duration: 0.0797906
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_08\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][UnitTest][MoveToNeutral_UnitInCorrectSector]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][UnitTest.MoveToNeutral_UnitInCorrectSector]'
       name: MoveToNeutral_UnitInCorrectSector
       fullName: UnitTest.MoveToNeutral_UnitInCorrectSector
-      resultStatus: 1
-      duration: 0.0694205
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_08\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][UnitTest][SelectAndDeselect_SelectedTrueWhenSelectedFalseWhenDeselected]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][UnitTest.SelectAndDeselect_SelectedTrueWhenSelectedFalseWhenDeselected]'
       name: SelectAndDeselect_SelectedTrueWhenSelectedFalseWhenDeselected
       fullName: UnitTest.SelectAndDeselect_SelectedTrueWhenSelectedFalseWhenDeselected
-      resultStatus: 1
-      duration: 0.0698586
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_11\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][UnitTest][SwapPlaces_UnitsInCorrectNewSectors]'
+      isSuite: 0
+    - id: '[Assembly-CSharp][UnitTest.SwapPlaces_UnitsInCorrectNewSectors]'
       name: SwapPlaces_UnitsInCorrectNewSectors
       fullName: UnitTest.SwapPlaces_UnitsInCorrectNewSectors
-      resultStatus: 1
-      duration: 0.089249
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "RGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-        1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-        1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-        1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_03\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    m_ResultText: "SpawnUnits_NotSpawnedWhenLandmarkNotOwned (0.081s)\n---\nRGBA(0.000,
-      1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-      1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-      1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-      1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-      1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-      1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-      1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-      1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-      1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-      1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-      1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000,
-      1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000,
-      1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nRGBA(0.000, 1.000,
-      1.000, 1.000)\r\nRGBA(0.000, 1.000, 1.000, 1.000)\r\nsector_21\r\nRGBA(0.000,
-      1.000, 1.000, 1.000)"
-    m_ResultStacktrace: 
+      isSuite: 0
+    m_ResultText: "NextTurnState_TurnStateProgressesCorrectly (0.033s)\n---\nUnhandled
+      log message: [Exception] UnassignedReferenceException: The variable texture
+      of Dialog has not been assigned.\nYou probably need to assign the texture variable
+      of the Dialog script in the inspector.\n---\nDialog.SetDialogType (DialogType
+      type) (at Assets/Scripts/Dialog.cs:42)\r\nGame.CheckForDefeatedPlayers () (at
+      Assets/Scripts/Game.cs:544)\r\nGame.NextTurnState () (at Assets/Scripts/Game.cs:490)\r\nGameTest+<NextTurnState_TurnStateProgressesCorrectly>c__Iterator7.MoveNext
+      () (at Assets/Unit Tests/GameTest.cs:231)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
+      (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
+      IntPtr)\n---\nUnassignedReferenceException: The variable texture of Dialog has
+      not been assigned.\nYou probably need to assign the texture variable of the
+      Dialog script in the inspector."
+    m_ResultStacktrace: "Dialog.SetDialogType (DialogType type) (at Assets/Scripts/Dialog.cs:42)\r\nGame.CheckForDefeatedPlayers
+      () (at Assets/Scripts/Game.cs:544)\r\nGame.NextTurnState () (at Assets/Scripts/Game.cs:490)\r\nGameTest+<NextTurnState_TurnStateProgressesCorrectly>c__Iterator7.MoveNext
+      () (at Assets/Unit Tests/GameTest.cs:231)\r\nUnityEngine.SetupCoroutine.InvokeMoveNext
+      (IEnumerator enumerator, IntPtr returnValueAddress) (at C:/buildslave/unity/build/Runtime/Export/Coroutines.cs:17)\r\nUnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator,
+      IntPtr)\r\n\r\n"
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ff0e19e0
-      m_LastClickedID: -535228673
-      m_ExpandedIDs: 3824249148c5a39a780766a1b42787b30acabaf9b35b7417493eed1eac342e52a71799646ea2816effffff7f
+      m_SelectedIDs: d440f181
+      m_LastClickedID: -2114895660
+      m_ExpandedIDs: 3824249148c5a39a780766a10acabaf9b35b7417493eed1eac342e52a71799646ea2816effffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1763,8 +1214,15 @@ MonoBehaviour:
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 0}
       m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: 0
+      availableCategories: []
   m_EditModeTestListGUI:
-    m_Window: {fileID: 16}
+    m_Window: {fileID: 14}
     newResultList:
     - id: '[University Domination][suite]'
       name: University Domination
@@ -1777,6 +1235,7 @@ MonoBehaviour:
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
+      isSuite: 0
     - id: '[H:/SEPR/Git/ud-asm4/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll][suite]'
       name: Assembly-CSharp-Editor.dll
       fullName: H:/SEPR/Git/ud-asm4/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
@@ -1788,6 +1247,7 @@ MonoBehaviour:
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
+      isSuite: 0
     - id: '[Assembly-CSharp-Editor.dll][NewEditModeTest][suite]'
       name: NewEditModeTest
       fullName: NewEditModeTest
@@ -1799,6 +1259,7 @@ MonoBehaviour:
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
+      isSuite: 0
     - id: '[Assembly-CSharp-Editor.dll][NewEditModeTest.NewEditModeTestSimplePasses]'
       name: NewEditModeTestSimplePasses
       fullName: NewEditModeTest.NewEditModeTestSimplePasses
@@ -1810,6 +1271,7 @@ MonoBehaviour:
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
+      isSuite: 0
     - id: '[Assembly-CSharp-Editor.dll][NewEditModeTest.NewEditModeTestWithEnumeratorPasses]'
       name: NewEditModeTestWithEnumeratorPasses
       fullName: NewEditModeTest.NewEditModeTestWithEnumeratorPasses
@@ -1821,6 +1283,7 @@ MonoBehaviour:
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
+      isSuite: 0
     m_ResultText: NewEditModeTest (0.000s)
     m_ResultStacktrace: 
     m_TestListState:
@@ -1845,3 +1308,69 @@ MonoBehaviour:
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 0}
       m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: 0
+      availableCategories: []
+--- !u!114 &15
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 1087
+    y: 0
+    width: 353
+    height: 760
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 16}
+  m_Panes:
+  - {fileID: 16}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &16
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12019, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AutoRepaintOnSceneChange: 0
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Inspector
+    m_Image: {fileID: -6905738622615590433, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_DepthBufferBits: 0
+  m_Pos:
+    serializedVersion: 2
+    x: 1089
+    y: 94
+    width: 351
+    height: 739
+  m_PersistentViewDataDictionary: {fileID: 0}
+  m_ScrollPosition: {x: 0, y: 0}
+  m_InspectorMode: 0
+  m_PreviewResizer:
+    m_CachedPref: 160
+    m_ControlHash: -371814159
+    m_PrefName: Preview_InspectorPreview
+  m_PreviewWindow: {fileID: 0}
