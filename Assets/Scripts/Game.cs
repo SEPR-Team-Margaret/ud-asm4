@@ -243,6 +243,14 @@ public class Game : MonoBehaviour {
         return actionsRemaining;
     }
 
+    /// <summary>
+    /// Gets the punishment card prefab.
+    /// </summary>
+    /// <returns>The punishment card prefab.</returns>
+    public GameObject GetPunishmentCardPrefab() {
+        return punishmentCardPrefab;
+    }
+
     //Re-done by Peter
     /// <summary>
     /// 

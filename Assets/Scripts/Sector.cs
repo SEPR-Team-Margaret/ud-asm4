@@ -569,6 +569,12 @@ public class Sector : MonoBehaviour {
         this.landmark.OnLoad(savedData.landmark);
         */
 
+        if (savedData.sectorPunishmentCard[sectorID] == true)
+        {
+            PunishmentCard card = MonoBehaviour.Instantiate(map.game.GetPunishmentCardPrefab()).GetComponent<PunishmentCard>();
+            card.Initialize(this, savedData.sectorPunishmentCardEffect[sectorID]);
+        }
+
         this.VC = savedData.VCSector == sectorID;
 
         /*

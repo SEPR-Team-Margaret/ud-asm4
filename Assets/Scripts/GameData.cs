@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 /// <summary>
 /// Serializable class to store all the properties of a game to initialise it
@@ -25,6 +28,9 @@ public class GameData
 
     // Controller (Human, Neutral)
     public string[] playerController = new string[4];
+
+    // Punishment Cards [FreezeUnit, NullifyResource, SkipTurn]
+    public string[] playerPunishmentCards = new string[4];
 
     // Skip
     public bool[] playerSkip = new bool[4];
@@ -117,6 +123,10 @@ public class GameData
     // Frozen Counter
     public int[] sectorFrozenCounter = new int[32];
 
+    // Punishment Card 
+    public bool[] sectorPunishmentCard = new bool[32];
+    public PunishmentCard.Effect[] sectorPunishmentCardEffect = new PunishmentCard.Effect[32];
+
     // Vice Chancelor
     // Sector number
     public int VCSector;
@@ -155,6 +165,34 @@ public class GameData
         // Controller (Human, Neutral or None)
         for (int i = 0; i < 4; i++) {
             this.playerController[i] = players[i].GetController();
+        }
+
+        // Punishment Cards [FreezeUnit, NullifyResource, SkipTurn]
+        for (int i = 0; i < 4; i++) {
+
+            List<PunishmentCard> punishmentCards = players[i].GetPunishmentCards();
+            int freezeUnitCards = 0;
+            int nullifyResourceCards = 0;
+            int skipTurnCards = 0;
+
+            for (int j = 0; j < punishmentCards.Count; j++)
+            {
+                if (punishmentCards[j].GetEffect() == PunishmentCard.Effect.FreezeUnit)
+                {
+                    freezeUnitCards += 1;
+                }
+                else if (punishmentCards[j].GetEffect() == PunishmentCard.Effect.NullifyResource)
+                {
+                    nullifyResourceCards += 1;
+                }
+                else if (punishmentCards[j].GetEffect() == PunishmentCard.Effect.SkipTurn)
+                {
+                    skipTurnCards += 1;
+                }
+            }
+
+            this.playerPunishmentCards[i] = freezeUnitCards.ToString() + "_" + nullifyResourceCards.ToString() + "_" + skipTurnCards.ToString();
+
         }
 
         // Skip
@@ -293,6 +331,21 @@ public class GameData
                 sectorFrozenCounter[i] = 0;
             }
         }
+
+        // Punishment Card
+        for (int i = 0; i < 32; i++)
+        {
+            if (sectors[i].GetPunishmentCard() == null)
+            {
+                sectorPunishmentCard[i] = false;
+            }
+            else
+            {
+                sectorPunishmentCard[i] = true;
+                sectorPunishmentCardEffect[i] = sectors[i].GetPunishmentCard().GetEffect();
+            }
+        }
+
         // Vice Chancelor
         this.VCSector = game.GetVCSectorID();
     }

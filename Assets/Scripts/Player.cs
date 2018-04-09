@@ -472,7 +472,39 @@ public class Player : MonoBehaviour {
             
         this.active = savedData.currentPlayerID == playerID;
         this.skipTurn = savedData.playerSkip[playerID];
+
  //       this.punishmentCards = savedData.punishmentCards;
+        string punishmentCardString = savedData.playerPunishmentCards[playerID];
+        char[] separator = new char[] { '_' };
+        string[] punishmentCardStringArray = punishmentCardString.Split(separator, 3);
+
+        int freezeUnitCards = Convert.ToInt32(punishmentCardStringArray[0]);
+        int nullifyResourceCards = Convert.ToInt32(punishmentCardStringArray[1]);
+        int skipTurnCards = Convert.ToInt32(punishmentCardStringArray[2]);
+
+        for (int i = 0; i < freezeUnitCards; i++)
+        {
+            PunishmentCard card = MonoBehaviour.Instantiate(game.GetPunishmentCardPrefab()).GetComponent<PunishmentCard>();
+            card.Initialize(null, PunishmentCard.Effect.FreezeUnit);
+            this.AddPunishmentCards(card);
+            card.gameObject.SetActive(false);
+        }
+
+        for (int i = 0; i < nullifyResourceCards; i++)
+        {
+            PunishmentCard card = MonoBehaviour.Instantiate(game.GetPunishmentCardPrefab()).GetComponent<PunishmentCard>();
+            card.Initialize(null, PunishmentCard.Effect.NullifyResource);
+            this.AddPunishmentCards(card);
+            card.gameObject.SetActive(false);
+        }
+
+        for (int i = 0; i < skipTurnCards; i++)
+        {
+            PunishmentCard card = MonoBehaviour.Instantiate(game.GetPunishmentCardPrefab()).GetComponent<PunishmentCard>();
+            card.Initialize(null, PunishmentCard.Effect.SkipTurn);
+            this.AddPunishmentCards(card);
+            card.gameObject.SetActive(false);
+        }
     }
 
     public void UseCard(int index) {

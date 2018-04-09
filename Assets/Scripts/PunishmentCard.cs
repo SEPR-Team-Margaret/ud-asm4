@@ -25,6 +25,10 @@ public class PunishmentCard : MonoBehaviour {
         return effect;
     }
 
+    public void SetEffect(Effect effect) {
+        this.effect = effect;
+    }
+
     #endregion
 
     public void Initialize(/*Player player, Sector sector*/) {
@@ -53,6 +57,30 @@ public class PunishmentCard : MonoBehaviour {
         else
         {
             Debug.Log("failed to find valid sector");
+        }
+    }
+
+    public void Initialize(Sector sector, Effect effect) {
+
+        map = GameObject.Find("Map").GetComponent<Map>();
+
+        if (map == null) {
+            Debug.LogWarning("Map object or Map Script not found!");
+        }
+
+        this.effect = effect;
+
+        if (map.NumPunishmentCardsOnMap >= map.MaxPunishmentCardsOnMap) {
+            Destroy(this.gameObject);
+        } else {
+            map.NumPunishmentCardsOnMap += 1;
+        }
+        owner = null;
+        this.sector = sector;
+        if (sector != null)
+        {
+            Transform targetTransform = sector.transform.Find("Units").transform;
+            this.transform.position = targetTransform.position;
         }
     }
 
