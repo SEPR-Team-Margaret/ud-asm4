@@ -142,8 +142,9 @@ public class PunishmentCard : MonoBehaviour {
                 break;
 			case Effect.SkipTurn:
                 //Skip a turn
-			//selectedPlayer.skipTurnOn();		-- need to come up with a way of selecting player, skip turn on and off ready
 				game.OpenSkipTurnMenu();
+				
+			//player.SkipTurnOn()
 				break;
 			case Effect.NullifyResource:
                 //Nullify resource
@@ -165,6 +166,6 @@ public class PunishmentCard : MonoBehaviour {
         this.sectorID = savedData.sectorID;
         this.sector = game.sectors[savedData.sectorID];
         this.effect = savedData.effect;
-}
+	}
 
 }

@@ -484,9 +484,11 @@ public class Game : MonoBehaviour {
 				// current player is to be skipped, change to not skip for next turn, move to player after skipped player (skipping this turn)
 
 				if (currentPlayer.skipTurn == true) {
+					Debug.Log ("Skip Me! " + currentPlayer.playerID);
 					currentPlayer.SkipTurnOff ();
-					nextPlayerIndex = (i + 1) % NUMBER_OF_PLAYERS;
+					nextPlayerIndex = (i + 2) % NUMBER_OF_PLAYERS;
 					currentPlayer = players [nextPlayerIndex];
+					Debug.Log ("New current player: " + currentPlayer.playerID);
 				}
 
                 players[nextPlayerIndex].SetActive(true);
@@ -1035,5 +1037,33 @@ public class Game : MonoBehaviour {
 	{
 		dialog.SetDialogType(Dialog.DialogType.SelectTurnSkip);
 		dialog.Show();
+	}
+
+	/// <summary>
+	/// 
+	/// Picks the player to apply the skip turn to by taking the value of item selected in drop down (only 3 options)
+	/// Then choses the correct player, based on the options the player would have had in their dropdown box
+	/// 
+	/// </summary>
+	public void SkipSelectedPlayer(){
+		int selectedPlayerInt = dialog.GetSelectedPlayer (); // gives the value of the option selected (0-2)
+
+		if (currentPlayer == players [0]) {
+			int[] player1options = { 1, 2, 3 };
+			players [player1options [selectedPlayerInt]].SkipTurnOn ();
+		} else if (currentPlayer == players [1]) {
+			int[] player2options = { 0, 2, 3 };
+			players [player2options [selectedPlayerInt]].SkipTurnOn ();
+		} else if (currentPlayer == players [2]) {
+			int[] player3options = { 0, 1, 3 };
+			players [player3options [selectedPlayerInt]].SkipTurnOn ();
+		} else if (currentPlayer == players [3]) {
+			int[] player4options = { 0, 1, 2 };
+			players [player4options [selectedPlayerInt]].SkipTurnOn ();
+		} else {
+			Debug.Log ("Something went wrong chosing the player to skip in game.cs");
+		}
+		dialog.Close();
+		NextTurnState ();
 	}
 }

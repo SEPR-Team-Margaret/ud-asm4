@@ -15,6 +15,7 @@ public class Dialog : MonoBehaviour
     private DialogType type;
 
 	public Dropdown skipPlayer;
+	List<string> listElements = new List<string>();
 
     public enum DialogType
     {
@@ -47,6 +48,7 @@ public class Dialog : MonoBehaviour
                 texture.transform.GetChild(6).gameObject.SetActive(false);
                 texture.transform.GetChild(7).gameObject.SetActive(true);
                 texture.transform.GetChild(8).gameObject.SetActive(false);
+				texture.transform.GetChild(9).gameObject.SetActive(false);
                 break;
             case DialogType.PlayerElimated:
                 texture.transform.GetChild(0).GetComponent<Text>().text = "ELIMINATED!";
@@ -58,6 +60,7 @@ public class Dialog : MonoBehaviour
                 texture.transform.GetChild(6).gameObject.SetActive(false);
                 texture.transform.GetChild(7).gameObject.SetActive(true);
                 texture.transform.GetChild(8).gameObject.SetActive(false);
+				texture.transform.GetChild(9).gameObject.SetActive(false);
                 break;
             case DialogType.SaveQuit:
                 texture.transform.GetChild(0).GetComponent<Text>().text = "PAUSED";
@@ -69,6 +72,7 @@ public class Dialog : MonoBehaviour
                 texture.transform.GetChild(6).gameObject.SetActive(true);
                 texture.transform.GetChild(7).gameObject.SetActive(true);
                 texture.transform.GetChild(8).gameObject.SetActive(false);
+				texture.transform.GetChild(9).gameObject.SetActive(false);
                 break;
             case DialogType.ShowText:
                 texture.transform.GetChild(0).GetComponent<Text>().text = "";
@@ -80,6 +84,7 @@ public class Dialog : MonoBehaviour
                 texture.transform.GetChild(6).gameObject.SetActive(true);
                 texture.transform.GetChild(7).gameObject.SetActive(true);
                 texture.transform.GetChild(8).gameObject.SetActive(false);
+				texture.transform.GetChild(9).gameObject.SetActive(false);
                 break;
 			case DialogType.SelectTurnSkip:
 				CreateSkipPlayerList ();
@@ -92,6 +97,7 @@ public class Dialog : MonoBehaviour
 				texture.transform.GetChild(6).gameObject.SetActive(false);
 				texture.transform.GetChild(7).gameObject.SetActive(true);
                 texture.transform.GetChild(8).gameObject.SetActive(true);
+				texture.transform.GetChild(9).gameObject.SetActive(true);
 				break;
         }
     }
@@ -183,7 +189,7 @@ public class Dialog : MonoBehaviour
 	/// 
 	/// </summary>
 	public void CreateSkipPlayerList(){
-		List<string> listElements = new List<string>();
+		listElements.Clear ();
 		foreach (Player player in game.players){
 			if (game.currentPlayer != player) {
 				listElements.Add("Player " + (player.playerID+1));
@@ -193,5 +199,9 @@ public class Dialog : MonoBehaviour
 		skipPlayer = texture.transform.GetChild (8).GetComponent<Dropdown> ();
 		skipPlayer.ClearOptions();
 		skipPlayer.AddOptions(listElements);
+	}
+
+	public int GetSelectedPlayer(){
+		return skipPlayer.value;
 	}
 }

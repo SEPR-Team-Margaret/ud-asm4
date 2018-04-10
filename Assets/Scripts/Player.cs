@@ -474,6 +474,7 @@ public class Player : MonoBehaviour {
 	/// </summary>
 	public void SkipTurnOn() {
 		skipTurn = true;
+		Debug.Log ("Skipturn: " + skipTurn + " for " + playerID);
 	}
 
 	/// <summary>
