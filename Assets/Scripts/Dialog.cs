@@ -45,7 +45,8 @@ public class Dialog : MonoBehaviour
                 texture.transform.GetChild(4).gameObject.SetActive(true);
                 texture.transform.GetChild(5).gameObject.SetActive(false);
                 texture.transform.GetChild(6).gameObject.SetActive(false);
-				texture.transform.GetChild(7).gameObject.SetActive(false);
+                texture.transform.GetChild(7).gameObject.SetActive(true);
+                texture.transform.GetChild(8).gameObject.SetActive(false);
                 break;
             case DialogType.PlayerElimated:
                 texture.transform.GetChild(0).GetComponent<Text>().text = "ELIMINATED!";
@@ -55,7 +56,8 @@ public class Dialog : MonoBehaviour
                 texture.transform.GetChild(4).gameObject.SetActive(false);
                 texture.transform.GetChild(5).gameObject.SetActive(false);
                 texture.transform.GetChild(6).gameObject.SetActive(false);
-				texture.transform.GetChild(7).gameObject.SetActive(false);
+                texture.transform.GetChild(7).gameObject.SetActive(true);
+                texture.transform.GetChild(8).gameObject.SetActive(false);
                 break;
             case DialogType.SaveQuit:
                 texture.transform.GetChild(0).GetComponent<Text>().text = "PAUSED";
@@ -65,7 +67,8 @@ public class Dialog : MonoBehaviour
                 texture.transform.GetChild(4).gameObject.SetActive(true);
                 texture.transform.GetChild(5).gameObject.SetActive(true);
                 texture.transform.GetChild(6).gameObject.SetActive(true);
-				texture.transform.GetChild(7).gameObject.SetActive(true);
+                texture.transform.GetChild(7).gameObject.SetActive(true);
+                texture.transform.GetChild(8).gameObject.SetActive(false);
                 break;
             case DialogType.ShowText:
                 texture.transform.GetChild(0).GetComponent<Text>().text = "";
@@ -74,8 +77,9 @@ public class Dialog : MonoBehaviour
                 texture.transform.GetChild(3).gameObject.SetActive(false);
                 texture.transform.GetChild(4).gameObject.SetActive(false);
                 texture.transform.GetChild(5).gameObject.SetActive(false);
-                texture.transform.GetChild(6).gameObject.SetActive(false);
-				texture.transform.GetChild(7).gameObject.SetActive(false);
+                texture.transform.GetChild(6).gameObject.SetActive(true);
+                texture.transform.GetChild(7).gameObject.SetActive(true);
+                texture.transform.GetChild(8).gameObject.SetActive(false);
                 break;
 			case DialogType.SelectTurnSkip:
 				CreateSkipPlayerList ();
@@ -87,6 +91,7 @@ public class Dialog : MonoBehaviour
 				texture.transform.GetChild(5).gameObject.SetActive(false);
 				texture.transform.GetChild(6).gameObject.SetActive(false);
 				texture.transform.GetChild(7).gameObject.SetActive(true);
+                texture.transform.GetChild(8).gameObject.SetActive(true);
 				break;
         }
     }
@@ -146,6 +151,9 @@ public class Dialog : MonoBehaviour
     public void Close()
     {
         Debug.Log("Closing");
+        GameObject info = GameObject.Find("Info");
+        UnityEngine.UI.Text text = info.GetComponent<UnityEngine.UI.Text>();
+        text.lineSpacing = 1.0f;
         texture.SetActive(false);
     }
 

@@ -510,7 +510,37 @@ public class Sector : MonoBehaviour {
         int attackingUnitRoll = Random.Range(1, (5 + attackingUnit.GetLevel())) + attackingUnit.GetOwner().GetAttack() + attackingUnit.GetOwner().GetAttackBonus();
         int defendingUnitRoll = Random.Range(1, (5 + defendingUnit.GetLevel())) + defendingUnit.GetOwner().GetDefence() + defendingUnit.GetOwner().GetDefenceBonus();
 
+        // display conflict resolution dialog (in place of the combat animation)
+        string title;
+        if (attackingUnitRoll > defendingUnitRoll)
+        {
+            title = "Victory!";
+        }
+        else
+        {
+            title = "Defeat!";
+        }
+
+        string body = (attackingUnit.unitName + " rolled a " + (attackingUnitRoll - (attackingUnit.GetOwner().GetAttack() + attackingUnit.GetOwner().GetAttackBonus())).ToString() + "\n" +
+                      " plus " + (attackingUnit.GetOwner().GetAttack() + attackingUnit.GetOwner().GetAttackBonus()).ToString() + " attack bonus \n\n" +
+                      defendingUnit.unitName + " rolled a " + (defendingUnitRoll - (defendingUnit.GetOwner().GetDefence() + defendingUnit.GetOwner().GetDefenceBonus())).ToString() + "\n" +
+                      " plus " + (defendingUnit.GetOwner().GetDefence() + defendingUnit.GetOwner().GetDefenceBonus()).ToString() + " defence bonus \n\n");
+        
+        if (attackingUnitRoll == defendingUnitRoll)
+        {
+            body = body + "Tie resolved in favor of the defender";
+        }
+
+
+        map.game.dialog.SetDialogType(Dialog.DialogType.ShowText);
+        map.game.dialog.SetDialogData(title, body);
+        map.game.dialog.Show();
+        GameObject info = GameObject.Find("Info");
+        UnityEngine.UI.Text text = info.GetComponent<UnityEngine.UI.Text>();
+        text.lineSpacing = 0.5f;
+
         return attackingUnitRoll > defendingUnitRoll;
+
 
         #region conflict resolution algorithm updated to make more fair (Modified by Dom 13/02/2018)
 
