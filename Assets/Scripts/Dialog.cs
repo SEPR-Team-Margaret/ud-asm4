@@ -190,7 +190,7 @@ public class Dialog : MonoBehaviour
 			}
 		}
 		Debug.Log (listElements);
-		skipPlayer = texture.transform.GetChild (7).GetComponent<Dropdown> ();
+		skipPlayer = texture.transform.GetChild (8).GetComponent<Dropdown> ();
 		skipPlayer.ClearOptions();
 		skipPlayer.AddOptions(listElements);
 	}
