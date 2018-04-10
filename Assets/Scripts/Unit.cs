@@ -18,6 +18,7 @@ public class Unit : MonoBehaviour {
 
     [SerializeField] private UnitSprite sprite;
     [System.NonSerialized] private GameObject popup;
+    [System.NonSerialized] private bool popupElevated = false;
     [System.NonSerialized] private UnityEngine.UI.Text popupName;
     [System.NonSerialized] private UnityEngine.UI.Text popupLevel;
 
@@ -394,11 +395,18 @@ public class Unit : MonoBehaviour {
 
     void OnMouseOver() {
         popup.SetActive(true);
+        if (!popupElevated)
+        {
+            transform.Translate(new Vector3(0.0f, 0.0f, 0.5f));
+            popupElevated = true;
+        }
         sector.OnMouseEnterAccessible();
     }
 
     void OnMouseExit() {
         popup.SetActive(false);
+        transform.Translate(new Vector3(0.0f, 0.0f, -0.5f));
+        popupElevated = false;
         sector.OnMouseExitAccessible();
     }
 
