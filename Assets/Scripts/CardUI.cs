@@ -39,11 +39,13 @@ public class CardUI : MonoBehaviour {
             player.GetGame().dialog.SetDialogType(Dialog.DialogType.ShowText);
             player.GetGame().dialog.SetDialogData("No Cards", "You have no punishment cards!");
             player.GetGame().dialog.Show();
+			SoundManager.PlaySound ("turnPage");
             return;
         }
 
         ShowCard(index);
         this.gameObject.SetActive(true);
+		SoundManager.PlaySound ("card");
 
         // set UI buttons to IgnoreRaycast layer
         menuButton.interactable = false;
@@ -54,6 +56,7 @@ public class CardUI : MonoBehaviour {
     public void HideUI() {
 
         this.gameObject.SetActive(false);
+		SoundManager.PlaySound ("cardReverse");
 
         // set UI buttons to UI layer
         menuButton.interactable = true;

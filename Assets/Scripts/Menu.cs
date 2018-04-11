@@ -15,6 +15,7 @@ public class Menu : MonoBehaviour {
     /// </summary>
     /// <param name="neutralPlayer">True if neutal player should be in the game, else false</param>
 	public void Play (bool neutralPlayer){
+		SoundManager.PlaySound("drawing");
         PlayerPrefs.SetInt("_gamemode", neutralPlayer ? 1 : 0);
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
 	}

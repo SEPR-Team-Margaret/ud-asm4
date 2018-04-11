@@ -208,7 +208,7 @@ public class Game : MonoBehaviour {
     /// </summary>
     public void OpenSaveQuitMenu()
     {
-        if (isSaveQuitMenuOpen)
+		if (isSaveQuitMenuOpen)
         {
             dialog.Close();
             isSaveQuitMenuOpen = false;
@@ -603,12 +603,12 @@ public class Game : MonoBehaviour {
                 actionsRemaining -= 1;
                 break;
 */
-            case TurnState.EndOfTurn:
-                Debug.Log("EndOfTurn Initiated");
-                this.prevState = turnState;
-                turnState = TurnState.Move;
-                actionsRemaining = 2;
-                break;
+			case TurnState.EndOfTurn:
+				Debug.Log ("EndOfTurn Initiated");
+				this.prevState = turnState;
+				turnState = TurnState.Move;
+				actionsRemaining = 2;
+	            break;
 
             case TurnState.SelectUnit:
                 Debug.Log("SelectUnit Initiated");
