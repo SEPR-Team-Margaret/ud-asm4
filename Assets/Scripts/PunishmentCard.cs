@@ -32,6 +32,10 @@ public class PunishmentCard : MonoBehaviour {
         this.effect = effect;
     }
 
+    public void SetGame (Game game) {
+        this.game = game;
+    }
+
     #endregion
 
     public void Initialize(/*Player player, Sector sector*/) {

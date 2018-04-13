@@ -541,6 +541,7 @@ public class Game : MonoBehaviour {
                 else
                 {
                     players[i].RestoreResources();
+                    players[i].GetGui().UpdateDisplay();
                 }
             }
         }

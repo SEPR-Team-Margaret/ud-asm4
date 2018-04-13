@@ -545,6 +545,8 @@ public class Player : MonoBehaviour {
 
         this.attackBonus = savedData.playerAttackBonus[playerID];
         this.defenceBonus = savedData.playerDefenceBonus[playerID];
+        this.resourcesNullified = savedData.playerNullified[playerID];
+        this.resourcesNullifiedCounter = savedData.playerNullifiedCounter[playerID];
         this.color = savedData.playerColor[playerID];
 
         if (savedData.playerController[playerID] == "human")
@@ -575,6 +577,7 @@ public class Player : MonoBehaviour {
             PunishmentCard card = MonoBehaviour.Instantiate(game.GetPunishmentCardPrefab()).GetComponent<PunishmentCard>();
             card.Initialize(null, PunishmentCard.Effect.FreezeUnit);
             this.AddPunishmentCards(card);
+            card.SetGame(game);
             card.gameObject.SetActive(false);
         }
 
@@ -583,6 +586,7 @@ public class Player : MonoBehaviour {
             PunishmentCard card = MonoBehaviour.Instantiate(game.GetPunishmentCardPrefab()).GetComponent<PunishmentCard>();
             card.Initialize(null, PunishmentCard.Effect.NullifyResource);
             this.AddPunishmentCards(card);
+            card.SetGame(game);
             card.gameObject.SetActive(false);
         }
 
@@ -591,6 +595,7 @@ public class Player : MonoBehaviour {
             PunishmentCard card = MonoBehaviour.Instantiate(game.GetPunishmentCardPrefab()).GetComponent<PunishmentCard>();
             card.Initialize(null, PunishmentCard.Effect.SkipTurn);
             this.AddPunishmentCards(card);
+            card.SetGame(game);
             card.gameObject.SetActive(false);
         }
     }

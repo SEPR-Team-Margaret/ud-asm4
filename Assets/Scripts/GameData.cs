@@ -23,6 +23,12 @@ public class GameData
     // Defence Bonus from PVC minigame
     public int[] playerDefenceBonus = new int[4];
 
+    // Resources Nullified
+    public bool[] playerNullified = new bool[4];
+
+    // Resources Nullified Counter
+    public int[] playerNullifiedCounter = new int[4];
+
     // Color
     public Color[] playerColor = new Color[4];
 
@@ -155,6 +161,16 @@ public class GameData
         // Defence
         for (int i = 0; i < 4; i++) {
             this.playerDefenceBonus[i] = players[i].GetDefenceBonus();
+        }
+
+        // Resources Nullified
+        for (int i = 0; i < 4; i++) {
+            this.playerNullified[i] = players[i].GetResourcesNullified();
+        }
+
+        // Resources Nullified Counter
+        for (int i = 0; i < 4; i++) {
+            this.playerNullifiedCounter[i] = players[i].GetResourcesNullifiedCounter();
         }
 
         // Color
