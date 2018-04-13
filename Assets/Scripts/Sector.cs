@@ -507,8 +507,19 @@ public class Sector : MonoBehaviour {
         // return 'true' if attacking unit wins;
         // return 'false' if defending unit wins
         
-        int attackingUnitRoll = Random.Range(1, (5 + attackingUnit.GetLevel())) + attackingUnit.GetOwner().GetAttack() + attackingUnit.GetOwner().GetAttackBonus();
-        int defendingUnitRoll = Random.Range(1, (5 + defendingUnit.GetLevel())) + defendingUnit.GetOwner().GetDefence() + defendingUnit.GetOwner().GetDefenceBonus();
+        int attackingUnitRoll;
+        if (attackingUnit.GetOwner().GetResourcesNullified()) {
+            attackingUnitRoll = Random.Range(1, (5 + attackingUnit.GetLevel()));
+        } else {
+            attackingUnitRoll = Random.Range(1, (5 + attackingUnit.GetLevel())) + attackingUnit.GetOwner().GetAttack() + attackingUnit.GetOwner().GetAttackBonus();
+        }
+
+        int defendingUnitRoll;
+        if (defendingUnit.GetOwner().GetResourcesNullified()) {
+            defendingUnitRoll = Random.Range(1, (5 + defendingUnit.GetLevel()));
+        } else {
+            defendingUnitRoll = Random.Range(1, (5 + defendingUnit.GetLevel())) + defendingUnit.GetOwner().GetDefence() + defendingUnit.GetOwner().GetDefenceBonus();
+        }
 
         // display conflict resolution dialog (in place of the combat animation)
         string title;
@@ -521,15 +532,34 @@ public class Sector : MonoBehaviour {
             title = "Defeat!";
         }
 
-        string body = (attackingUnit.unitName + " rolled a " + (attackingUnitRoll - (attackingUnit.GetOwner().GetAttack() + attackingUnit.GetOwner().GetAttackBonus())).ToString() + "\n" +
+        string body = "";
+
+        if (attackingUnit.GetOwner().GetResourcesNullified()) {
+            body += (attackingUnit.unitName + " rolled a " + (attackingUnitRoll).ToString() + "\n");
+            body += "- attack bonus nullified -\n\n";
+        } else {
+            body += (attackingUnit.unitName + " rolled a " + (attackingUnitRoll - (attackingUnit.GetOwner().GetAttack() + attackingUnit.GetOwner().GetAttackBonus())).ToString() + "\n");
+            body += (" plus " + (attackingUnit.GetOwner().GetAttack() + attackingUnit.GetOwner().GetAttackBonus()).ToString() + " attack bonus \n\n");
+        }
+
+        if (defendingUnit.GetOwner().GetResourcesNullified()) {
+            body += (defendingUnit.unitName + " rolled a " + (defendingUnitRoll).ToString() + "\n");
+            body += "- defence bonus nullified -\n\n";
+        } else {
+            body += (defendingUnit.unitName + " rolled a " + (defendingUnitRoll - (defendingUnit.GetOwner().GetDefence() + defendingUnit.GetOwner().GetDefenceBonus())).ToString() + "\n");
+            body += (" plus " + (defendingUnit.GetOwner().GetDefence() + defendingUnit.GetOwner().GetDefenceBonus()).ToString() + " defence bonus \n\n");
+        }
+        /*
+        string bodys = (attackingUnit.unitName + " rolled a " + (attackingUnitRoll - (attackingUnit.GetOwner().GetAttack() + attackingUnit.GetOwner().GetAttackBonus())).ToString() + "\n" +
                       " plus " + (attackingUnit.GetOwner().GetAttack() + attackingUnit.GetOwner().GetAttackBonus()).ToString() + " attack bonus \n\n" +
                       defendingUnit.unitName + " rolled a " + (defendingUnitRoll - (defendingUnit.GetOwner().GetDefence() + defendingUnit.GetOwner().GetDefenceBonus())).ToString() + "\n" +
                       " plus " + (defendingUnit.GetOwner().GetDefence() + defendingUnit.GetOwner().GetDefenceBonus()).ToString() + " defence bonus \n\n");
-        
-        if (attackingUnitRoll == defendingUnitRoll)
+        */
+       
+        /*if (attackingUnitRoll == defendingUnitRoll)
         {
-            body = body + "Tie resolved in favor of the defender";
-        }
+            body += "Tie resolved in favor of the defender";
+        }*/
 
 
         map.game.dialog.SetDialogType(Dialog.DialogType.ShowText);

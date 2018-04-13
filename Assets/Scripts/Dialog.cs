@@ -19,7 +19,7 @@ public class Dialog : MonoBehaviour
 
     public enum DialogType
     {
-        EndGame, PlayerElimated, SaveQuit, ShowText, SelectTurnSkip
+        EndGame, PlayerElimated, SaveQuit, ShowText, SelectTurnSkip, SelectNullifyResource
     }
 
 	void Start() {
@@ -48,7 +48,8 @@ public class Dialog : MonoBehaviour
                 texture.transform.GetChild(6).gameObject.SetActive(false);
                 texture.transform.GetChild(7).gameObject.SetActive(true);
                 texture.transform.GetChild(8).gameObject.SetActive(false);
-				texture.transform.GetChild(9).gameObject.SetActive(false);
+                texture.transform.GetChild(9).gameObject.SetActive(false);
+                texture.transform.GetChild(10).gameObject.SetActive(false);
                 break;
             case DialogType.PlayerElimated:
                 texture.transform.GetChild(0).GetComponent<Text>().text = "ELIMINATED!";
@@ -60,7 +61,8 @@ public class Dialog : MonoBehaviour
                 texture.transform.GetChild(6).gameObject.SetActive(false);
                 texture.transform.GetChild(7).gameObject.SetActive(true);
                 texture.transform.GetChild(8).gameObject.SetActive(false);
-				texture.transform.GetChild(9).gameObject.SetActive(false);
+                texture.transform.GetChild(9).gameObject.SetActive(false);
+                texture.transform.GetChild(10).gameObject.SetActive(false);
                 break;
             case DialogType.SaveQuit:
                 texture.transform.GetChild(0).GetComponent<Text>().text = "PAUSED";
@@ -72,7 +74,8 @@ public class Dialog : MonoBehaviour
                 texture.transform.GetChild(6).gameObject.SetActive(true);
                 texture.transform.GetChild(7).gameObject.SetActive(true);
                 texture.transform.GetChild(8).gameObject.SetActive(false);
-				texture.transform.GetChild(9).gameObject.SetActive(false);
+                texture.transform.GetChild(9).gameObject.SetActive(false);
+                texture.transform.GetChild(10).gameObject.SetActive(false);
                 break;
             case DialogType.ShowText:
                 texture.transform.GetChild(0).GetComponent<Text>().text = "";
@@ -84,7 +87,8 @@ public class Dialog : MonoBehaviour
                 texture.transform.GetChild(6).gameObject.SetActive(true);
                 texture.transform.GetChild(7).gameObject.SetActive(true);
                 texture.transform.GetChild(8).gameObject.SetActive(false);
-				texture.transform.GetChild(9).gameObject.SetActive(false);
+                texture.transform.GetChild(9).gameObject.SetActive(false);
+                texture.transform.GetChild(10).gameObject.SetActive(false);
                 break;
 			case DialogType.SelectTurnSkip:
 				CreateSkipPlayerList ();
@@ -97,8 +101,24 @@ public class Dialog : MonoBehaviour
 				texture.transform.GetChild(6).gameObject.SetActive(false);
 				texture.transform.GetChild(7).gameObject.SetActive(true);
                 texture.transform.GetChild(8).gameObject.SetActive(true);
-				texture.transform.GetChild(9).gameObject.SetActive(true);
+                texture.transform.GetChild(9).gameObject.SetActive(true);
+                texture.transform.GetChild(10).gameObject.SetActive(false);
 				break;
+            case DialogType.SelectNullifyResource:
+                CreateSkipPlayerList();
+                texture.transform.GetChild(0).GetComponent<Text>().text = "NULLIFY RESOURCE";
+                texture.transform.GetChild(1).GetComponent<Text>().text = "Select a player to nullify\ntheir resource bonus";
+                texture.transform.GetChild(2).gameObject.SetActive(false);
+                texture.transform.GetChild(3).gameObject.SetActive(false);
+                texture.transform.GetChild(4).gameObject.SetActive(false);
+                texture.transform.GetChild(5).gameObject.SetActive(false);
+                texture.transform.GetChild(6).gameObject.SetActive(false);
+                texture.transform.GetChild(7).gameObject.SetActive(true);
+                texture.transform.GetChild(8).gameObject.SetActive(true);
+                //texture.transform.GetChild(8).GetChild(0).GetComponent<Text>().text = "Select a player";
+                texture.transform.GetChild(9).gameObject.SetActive(false);
+                texture.transform.GetChild(10).gameObject.SetActive(true);
+                break;
         }
     }
 

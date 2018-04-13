@@ -515,17 +515,36 @@ public class Game : MonoBehaviour {
 
         // decrement the frozen counter of any frozen units
 		for (int i = 0; i < players.Length; i++) {
-			for (int j = 0; j < players [i].units.Count (); j++) {
-				if (players [i].units [j].IsFrozen ()) {
-					if (players [i].units [j].GetFrozenCounter () > 0) {
-						players [i].units [j].DecrementFrozenCounter ();
-					} 
-					else {
-						players [i].units [j].UnFreezeUnit ();
-					}
+			for (int j = 0; j < players[i].units.Count(); j++) {
+                if (players[i].units[j].IsFrozen()) {
+                    if (players[i].units[j].GetFrozenCounter() > 0)
+                    {
+                        players[i].units[j].DecrementFrozenCounter();
+                    }
+                    else
+                    {
+                        players[i].units[j].UnFreezeUnit();
+                    }
 				}
 			}
 		}
+
+        // decrement the resources nullified counter of any players with nullified resources
+        for (int i = 0; i < players.Length; i++)
+        {
+            if (players[i].GetResourcesNullified())
+            {
+                if (players[i].GetResourcesNullifiedCounter() > 0)
+                {
+                    players[i].DecrementResourcesNullifiedCounter();
+                }
+                else
+                {
+                    players[i].RestoreResources();
+                }
+            }
+        }
+
 
         // chance to spawn a punishment card
         float chance = UnityEngine.Random.value;
@@ -1066,4 +1085,45 @@ public class Game : MonoBehaviour {
 		dialog.Close();
 		NextTurnState ();
 	}
+
+    /// <summary>
+    /// 
+    /// Triggers the Nullify Resource dialog
+    /// 
+    /// </summary>
+    public void OpenNullifyResourceMenu() {
+        dialog.SetDialogType(Dialog.DialogType.SelectNullifyResource);
+       // dialog.SetDialogData("Nullify Resource", "Select a player to nullify\ntheir resource bonus");
+        dialog.Show();
+    }
+
+    /// <summary>
+    /// 
+    /// Picks the player to apply the Nullify Resource to by taking 
+    /// the value of item selected in drop down (only 3 options),
+    /// Then choses the correct player, based on the options the 
+    /// player would have had in their dropdown box
+    /// 
+    /// </summary>
+    public void NullifyResourceForSelectedPlayer() {
+        int selectedPlayerInt = dialog.GetSelectedPlayer (); // gives the value of the option selected (0-2)
+
+        if (currentPlayer == players [0]) {
+            int[] player1options = { 1, 2, 3 };
+            players [player1options [selectedPlayerInt]].NullifyResources();
+        } else if (currentPlayer == players [1]) {
+            int[] player2options = { 0, 2, 3 };
+            players [player2options [selectedPlayerInt]].NullifyResources();
+        } else if (currentPlayer == players [2]) {
+            int[] player3options = { 0, 1, 3 };
+            players [player3options [selectedPlayerInt]].NullifyResources();
+        } else if (currentPlayer == players [3]) {
+            int[] player4options = { 0, 1, 2 };
+            players [player4options [selectedPlayerInt]].NullifyResources();
+        } else {
+            Debug.Log ("Something went wrong chosing the player to skip in game.cs");
+        }
+        dialog.Close();
+        NextTurnState();
+    }
 }

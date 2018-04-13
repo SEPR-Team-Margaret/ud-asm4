@@ -11,6 +11,7 @@ public class PlayerUI : MonoBehaviour {
 	[SerializeField] private UnityEngine.UI.Text attack;
 	[SerializeField] private UnityEngine.UI.Text defence;
 	[SerializeField] private int numberOfSectors;
+    [SerializeField] private GameObject nullified;
 	private Color defaultHeaderColor = new Color(0.2f, 0.2f, 0.2f, 1.0f);
 
     /// <summary>
@@ -30,6 +31,7 @@ public class PlayerUI : MonoBehaviour {
 		attack = transform.Find("ATK_Value").GetComponent<UnityEngine.UI.Text>();
 		defence = transform.Find("DEF_Value").GetComponent<UnityEngine.UI.Text>();
 		numberOfSectors = player.GetGame().gameMap.GetComponent<Map>().sectors.Length;
+        nullified = transform.Find("Nullified").gameObject;
 
 		header.text = "Player " + player_id.ToString();
 		headerHighlight.text = header.text;
@@ -41,6 +43,8 @@ public class PlayerUI : MonoBehaviour {
             header.text = "Neutral";
             headerHighlight.text = header.text;
         }
+
+        nullified.SetActive(false);
     }
 
     /// <summary>
@@ -53,7 +57,14 @@ public class PlayerUI : MonoBehaviour {
 		percentOwned.text = Mathf.Round(100 * player.ownedSectors.Count / numberOfSectors).ToString() + "%";
         attack.text = (player.GetAttack() + player.GetAttackBonus()).ToString();
         defence.text = (player.GetDefence() + player.GetDefenceBonus()).ToString();
-
+        if (player.GetResourcesNullified())
+        {
+            nullified.SetActive(true);
+        }
+        else
+        {
+            nullified.SetActive(false);
+        }
 	}
 
     /// <summary>

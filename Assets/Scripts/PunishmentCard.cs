@@ -43,7 +43,7 @@ public class PunishmentCard : MonoBehaviour {
         }
 
         Effect[] arrayOfEffects = { Effect.FreezeUnit, Effect.SkipTurn, Effect.NullifyResource };
-        effect = arrayOfEffects [(Mathf.RoundToInt (Random.Range (0, 2)))];
+        effect = arrayOfEffects[(Mathf.RoundToInt(Random.Range(0, arrayOfEffects.Length)))];
 
         if (map.NumPunishmentCardsOnMap >= map.MaxPunishmentCardsOnMap) {
             Destroy(this.gameObject);
@@ -148,6 +148,7 @@ public class PunishmentCard : MonoBehaviour {
 				break;
 			case Effect.NullifyResource:
                 //Nullify resource
+                game.OpenNullifyResourceMenu();
 				break;
 		}
 

@@ -19,6 +19,8 @@ public class Player : MonoBehaviour {
     [SerializeField] private int attackBonus = 0;
     [SerializeField] private int defence = 0;
     [SerializeField] private int defenceBonus = 0;
+    [SerializeField] private bool resourcesNullified = false;
+    [SerializeField] private int resourcesNullifiedCounter = 0;
     [SerializeField] private Color color;
     [SerializeField] private bool human;
     [SerializeField] private bool neutral;
@@ -130,6 +132,35 @@ public class Player : MonoBehaviour {
     /// <param name="defenceBonus">Defence bonus.</param>
     public void SetDefenceBonus(int defenceBonus) {
         this.defenceBonus = defenceBonus;
+    }
+
+    /// <summary>
+    /// 
+    /// returns if the player's resource bonus has been nullified or not
+    /// 
+    /// </summary>
+    /// <returns><c>true</c>, if resource bonus is nullified, <c>false</c> otherwise.</returns>
+    public bool GetResourcesNullified() {
+        return resourcesNullified;
+    }
+
+    /// <summary>
+    /// 
+    /// Gets the resources nullified counter.
+    /// 
+    /// </summary>
+    /// <returns>The resources nullified counter.</returns>
+    public int GetResourcesNullifiedCounter() {
+        return resourcesNullifiedCounter;
+    }
+
+    /// <summary>
+    /// 
+    /// Decrements the resources nullified counter.
+    /// 
+    /// </summary>
+    public void DecrementResourcesNullifiedCounter() {
+        resourcesNullifiedCounter--;
     }
     
     /// <summary>
@@ -465,6 +496,26 @@ public class Player : MonoBehaviour {
 
         // otherwise, return false
         return false;
+    }
+
+    /// <summary>
+    /// 
+    /// Nullifies the player's resource bonuses.
+    /// 
+    /// </summary>
+    public void NullifyResources() {
+        resourcesNullified = true;
+        resourcesNullifiedCounter = 3;
+    }
+
+    /// <summary>
+    /// 
+    /// Restores the player's resource bonuses.
+    /// 
+    /// </summary>
+    public void RestoreResources() {
+        resourcesNullified = false;
+        resourcesNullifiedCounter = 0;
     }
 
 	/// <summary>
