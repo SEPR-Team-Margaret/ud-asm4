@@ -37,7 +37,7 @@ public class CardUI : MonoBehaviour {
         if (player.GetPunishmentCards().Count == 0)
         {
             player.GetGame().dialog.SetDialogType(Dialog.DialogType.ShowText);
-            player.GetGame().dialog.SetDialogData("No Cards", "You have no punishment cards!");
+            player.GetGame().dialog.SetDialogData("No Cards", "You have no\npunishment cards!");
             player.GetGame().dialog.Show();
 			SoundManager.PlaySound ("turnPage");
             return;

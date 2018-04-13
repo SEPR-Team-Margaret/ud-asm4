@@ -931,6 +931,9 @@ public class Game : MonoBehaviour {
             this.sectors[i].OnLoad(savedGame);
         }
 
+        int numPunishmentCards = GameObject.FindObjectsOfType<PunishmentCard>().Length;
+        gameMap.GetComponent<Map>().NumPunishmentCardsOnMap = numPunishmentCards;
+
         UpdateGUI();
 
     }
