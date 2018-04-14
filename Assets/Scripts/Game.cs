@@ -294,6 +294,7 @@ public class Game : MonoBehaviour {
             players[NUMBER_OF_PLAYERS - 1] = GameObject.Find("PlayerNeutral").GetComponent<Player>();
             GameObject.Find("Player4UI").SetActive(false);
             players[NUMBER_OF_PLAYERS - 1].SetNeutral(true);
+            players[NUMBER_OF_PLAYERS - 1].playerID = 3;
         }
 
 
@@ -483,10 +484,10 @@ public class Game : MonoBehaviour {
 
 				// current player is to be skipped, change to not skip for next turn, move to player after skipped player (skipping this turn)
 
-				if (currentPlayer.skipTurn == true) {
+                while (currentPlayer.skipTurn == true) {
 					Debug.Log ("Skip Me! " + currentPlayer.playerID);
 					currentPlayer.SkipTurnOff ();
-					nextPlayerIndex = (i + 2) % NUMBER_OF_PLAYERS;
+                    nextPlayerIndex = (nextPlayerIndex + 1) % NUMBER_OF_PLAYERS;
 					currentPlayer = players [nextPlayerIndex];
 					Debug.Log ("New current player: " + currentPlayer.playerID);
 				}
@@ -506,8 +507,9 @@ public class Game : MonoBehaviour {
 
                 if (currentPlayer.IsNeutral() && !currentPlayer.IsEliminated())
                 {
-                    NeutralPlayerTurn();
-                    NeutralPlayerTurn(); 
+                    players[nextPlayerIndex].SpawnUnits();
+                    NeutralPlayerTurn(nextPlayerIndex);
+                    NeutralPlayerTurn(nextPlayerIndex); 
                 }
                 break;                
             }
@@ -561,17 +563,18 @@ public class Game : MonoBehaviour {
     /// The neutral player units cannot move to a sector with a unit on
     /// 
     /// </summary>
-    public void NeutralPlayerTurn()
+    public void NeutralPlayerTurn(int playerIndex)
     {
         NextTurnState();
-        List<Unit> units = currentPlayer.units;
+        Debug.Log("neutral player: " + players[playerIndex].GetColor().ToString());
+        List<Unit> units = players[playerIndex].units;
         Unit selectedUnit = units[UnityEngine.Random.Range(0, units.Count)];
         Sector[] adjacentSectors = selectedUnit.GetSector().GetAdjacentSectors();
         List<Sector> possibleSectors = new List<Sector>();
         for (int i = 0; i < adjacentSectors.Length; i++)
         {
             bool neutralOrEmpty = adjacentSectors[i].GetOwner() == null || adjacentSectors[i].GetOwner().IsNeutral();
-            if (neutralOrEmpty && !adjacentSectors[i].IsVC())
+            if (neutralOrEmpty && !adjacentSectors[i].IsVC() && adjacentSectors[i].GetPunishmentCard() == null)
                 if (adjacentSectors[i].GetUnit() == null) {
                     possibleSectors.Add(adjacentSectors[i]);
                 }
@@ -751,6 +754,7 @@ public class Game : MonoBehaviour {
                 dialog.Show();
                 eliminatedPlayers[i] = true; // ensure that the dialog is only shown once
                 players[i].Defeat(currentPlayer); // Releases all owned sectors
+                players[i].GetGui().gameObject.SetActive(false);
             }
         }
     }
@@ -1037,8 +1041,19 @@ public class Game : MonoBehaviour {
             bonus = 4;
         }
 
-        currentPlayer.SetAttackBonus(currentPlayer.GetAttackBonus() + bonus);
-        currentPlayer.SetDefenceBonus(currentPlayer.GetDefenceBonus() + bonus);
+        Player rewardedPlayer;
+        // if the turn has already passed to the next player, reward the previous player
+        if (actionsRemaining == 2)
+        {
+            rewardedPlayer = players[currentPlayer.playerID - 1];
+        }
+        // otherwise, reward the current player
+        else
+        {
+            rewardedPlayer = currentPlayer;
+        }
+        rewardedPlayer.SetAttackBonus(rewardedPlayer.GetAttackBonus() + bonus);
+        rewardedPlayer.SetDefenceBonus(rewardedPlayer.GetDefenceBonus() + bonus);
 
         dialog.SetDialogType(Dialog.DialogType.ShowText);
 
@@ -1048,7 +1063,7 @@ public class Game : MonoBehaviour {
 
         UpdateGUI(); // update GUI with new bonuses
 
-        Debug.Log("Player " + (Array.IndexOf(players, currentPlayer) + 1) + " has won " + bonus + " points");
+        Debug.Log("Player " + (Array.IndexOf(players, rewardedPlayer) + 1) + " has won " + bonus + " points");
     }
 
 	/// <summary>
