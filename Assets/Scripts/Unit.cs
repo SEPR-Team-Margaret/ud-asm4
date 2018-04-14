@@ -21,6 +21,8 @@ public class Unit : MonoBehaviour {
     [System.NonSerialized] private bool popupElevated = false;
     [System.NonSerialized] private UnityEngine.UI.Text popupName;
     [System.NonSerialized] private UnityEngine.UI.Text popupLevel;
+    private Color popupDefaultTextColor = new Color(0.196f, 0.196f, 0.196f, 1.0f);
+    private Color popupFrozenTextColor = new Color(0.196f, 0.33f, 1.0f, 1.0f);
 
     /// <summary>
     /// 
@@ -346,11 +348,15 @@ public class Unit : MonoBehaviour {
     public void FreezeUnit() {
         unitFrozen = true;
         frozenCounter = 3;
+        popupName.color = popupFrozenTextColor;
+        popupLevel.color = popupFrozenTextColor;
     }
 
     public void UnFreezeUnit() {
         unitFrozen = false;
         frozenCounter = 0;
+        popupName.color = popupDefaultTextColor;
+        popupLevel.color = popupDefaultTextColor;
     }
 
     public bool IsFrozen() {

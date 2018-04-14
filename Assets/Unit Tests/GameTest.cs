@@ -221,6 +221,87 @@ public class GameTest
         yield return null;
     }
 
+    [UnityTest]
+    public IEnumerator NextPlayer_PlayersWithASkipFlagAreSkipped() {
+
+        Setup();
+
+        game.players[1].SkipTurnOn();
+        game.NextPlayer();
+
+        Assert.AreEqual(2, game.currentPlayer.playerID);
+        Assert.IsFalse(game.players[1].skipTurn);
+
+        Cleanup();
+
+        yield return null;
+    }
+
+    [UnityTest]
+    public IEnumerator NextPlayer_UnitFrozenCountersAreDecremented() {
+
+        Setup();
+
+        Unit unit = MonoBehaviour.Instantiate(game.players[0].GetUnitPrefab()).GetComponent<Unit>();
+        game.players[0].units.Add(unit);
+        unit.SetOwner(game.players[0]);
+        unit.FreezeUnit();
+
+        Assert.AreEqual(3, unit.GetFrozenCounter());
+        Assert.IsTrue(unit.IsFrozen());
+
+        game.NextPlayer();
+        Assert.AreEqual(2, unit.GetFrozenCounter());
+        Assert.IsTrue(unit.IsFrozen());
+
+        game.NextPlayer();
+        Assert.AreEqual(1, unit.GetFrozenCounter());
+        Assert.IsTrue(unit.IsFrozen());
+
+        game.NextPlayer();
+        Assert.AreEqual(0, unit.GetFrozenCounter());
+        Assert.IsTrue(unit.IsFrozen());
+
+        game.NextPlayer();
+        Assert.AreEqual(0, unit.GetFrozenCounter());
+        Assert.IsFalse(unit.IsFrozen());
+
+        Cleanup();
+
+        yield return null;
+    }
+
+    [UnityTest]
+    public IEnumerator NextPlayer_PlayerNullifyResourcesCountersAreDecremented() {
+
+        Setup();
+
+        game.players[0].NullifyResources();
+
+        Assert.AreEqual(3, game.players[0].GetResourcesNullifiedCounter());
+        Assert.IsTrue(game.players[0].GetResourcesNullified());
+
+        game.NextPlayer();
+        Assert.AreEqual(2, game.players[0].GetResourcesNullifiedCounter());
+        Assert.IsTrue(game.players[0].GetResourcesNullified());
+
+        game.NextPlayer();
+        Assert.AreEqual(1, game.players[0].GetResourcesNullifiedCounter());
+        Assert.IsTrue(game.players[0].GetResourcesNullified());
+
+        game.NextPlayer();
+        Assert.AreEqual(0, game.players[0].GetResourcesNullifiedCounter());
+        Assert.IsTrue(game.players[0].GetResourcesNullified());
+
+        game.NextPlayer();
+        Assert.AreEqual(0, game.players[0].GetResourcesNullifiedCounter());
+        Assert.IsFalse(game.players[0].GetResourcesNullified());
+
+        Cleanup();
+
+        yield return null;
+    }
+
     // Test added by Owain
     [UnityTest]
     public IEnumerator NeutralPlayerTurn_EnsureNeutralPlayerMovesCorrectly()

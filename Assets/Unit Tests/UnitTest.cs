@@ -254,4 +254,40 @@ public class UnitTest
 
         yield return null;
     }
+
+    [UnityTest]
+    public IEnumerator FreezeUnit_FrozenAndFrozenCounterSet() {
+
+        Setup();
+
+        Unit unit = MonoBehaviour.Instantiate(unitPrefab).GetComponent<Unit>();
+
+        unit.FreezeUnit();
+
+        Assert.IsTrue(unit.IsFrozen());
+        Assert.AreEqual(3, unit.GetFrozenCounter());
+
+        Cleanup();
+
+        yield return null;
+    }
+
+    [UnityTest]
+    public IEnumerator MoveTo_UnitDoesNotMoveIfFrozen() {
+
+        Setup();
+
+        Unit unit = MonoBehaviour.Instantiate(unitPrefab).GetComponent<Unit>();
+        Sector sector = map.sectors[0];
+
+        sector.ClearUnit();
+        unit.FreezeUnit();
+        unit.MoveTo(sector);
+
+        Assert.IsNull(sector.GetUnit());
+
+        Cleanup();
+
+        yield return null;
+    }
 }

@@ -710,8 +710,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Al Cox rolled a 1\n plus 0 attack bonus \n\nDebby Hall rolled a 1\n plus
-    0 defence bonus \n\n"
+  m_Text: "Ruth Wells rolled a 1\n plus 0 attack bonus \n\nJohn Smith rolled a 1\n
+    plus 0 defence bonus \n\n"
 --- !u!114 &114074925687970126
 MonoBehaviour:
   m_ObjectHideFlags: 1
