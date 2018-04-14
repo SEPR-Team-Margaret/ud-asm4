@@ -17,6 +17,10 @@ public class Dialog : MonoBehaviour
 	public Dropdown skipPlayer;
 	List<string> listElements = new List<string>();
 
+
+    private UnityEngine.UI.Button menuButton;
+    private UnityEngine.UI.Button endTurnButton;
+
     public enum DialogType
     {
         EndGame, PlayerElimated, SaveQuit, ShowText, SelectTurnSkip, SelectNullifyResource
@@ -24,6 +28,9 @@ public class Dialog : MonoBehaviour
 
 	void Start() {
 		this.game = GameObject.Find("GameManager").GetComponent<Game>();
+        menuButton = GameObject.Find("Menu_Button").GetComponent<UnityEngine.UI.Button>();
+        endTurnButton = GameObject.Find("End_Turn_Button").GetComponent<UnityEngine.UI.Button>();
+
 	}
 
     /// <summary>
@@ -115,7 +122,6 @@ public class Dialog : MonoBehaviour
                 texture.transform.GetChild(6).gameObject.SetActive(false);
                 texture.transform.GetChild(7).gameObject.SetActive(true);
                 texture.transform.GetChild(8).gameObject.SetActive(true);
-                //texture.transform.GetChild(8).GetChild(0).GetComponent<Text>().text = "Select a player";
                 texture.transform.GetChild(9).gameObject.SetActive(false);
                 texture.transform.GetChild(10).gameObject.SetActive(true);
                 break;
@@ -167,6 +173,10 @@ public class Dialog : MonoBehaviour
     public void Show()
     {
         texture.SetActive(true);
+
+        // set UI buttons to be uninteractable
+        menuButton.interactable = false;
+        endTurnButton.interactable = false;
     }
 
     /// <summary>
@@ -180,6 +190,11 @@ public class Dialog : MonoBehaviour
         GameObject info = GameObject.Find("Info");
         UnityEngine.UI.Text text = info.GetComponent<UnityEngine.UI.Text>();
         text.lineSpacing = 1.0f;
+
+        // set UI buttons to be interactable
+        menuButton.interactable = true;
+        endTurnButton.interactable = true;
+
         texture.SetActive(false);
     }
 

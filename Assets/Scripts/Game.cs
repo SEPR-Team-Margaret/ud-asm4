@@ -22,7 +22,7 @@ public class Game : MonoBehaviour {
     [SerializeField] private bool gameFinished = false;
     [SerializeField] private bool testMode = false;
     public string saveFilePath;
-    private bool isSaveQuitMenuOpen = false;
+   // private bool isSaveQuitMenuOpen = false;
 
     [SerializeField] private UnityEngine.UI.Text actionsRemainingLabel;
     [SerializeField] private int actionsRemaining = 2;
@@ -208,13 +208,13 @@ public class Game : MonoBehaviour {
     /// </summary>
     public void OpenSaveQuitMenu()
     {
-		if (isSaveQuitMenuOpen)
+		/*if (isSaveQuitMenuOpen)
         {
             dialog.Close();
             isSaveQuitMenuOpen = false;
             return;
         }
-        isSaveQuitMenuOpen = true;
+        isSaveQuitMenuOpen = true;*/
         dialog.SetDialogType(Dialog.DialogType.SaveQuit);
         dialog.Show();
     }

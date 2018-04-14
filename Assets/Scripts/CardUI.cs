@@ -47,7 +47,7 @@ public class CardUI : MonoBehaviour {
         this.gameObject.SetActive(true);
 		SoundManager.PlaySound ("card");
 
-        // set UI buttons to IgnoreRaycast layer
+        // set UI buttons to be uninteractable
         menuButton.interactable = false;
         endTurnButton.interactable = false;
 
@@ -58,7 +58,7 @@ public class CardUI : MonoBehaviour {
         this.gameObject.SetActive(false);
 		SoundManager.PlaySound ("cardReverse");
 
-        // set UI buttons to UI layer
+        // set UI buttons to be interactable
         menuButton.interactable = true;
         endTurnButton.interactable = true;
 
@@ -71,17 +71,17 @@ public class CardUI : MonoBehaviour {
         {
             case PunishmentCard.Effect.FreezeUnit:
                 title.text = "Freeze Unit";
-                description.text = "Render one unit unable to move for 1 round.";
+                description.text = "Make a unit\nunable to move\nfor one round.";
                 break;
 
             case PunishmentCard.Effect.NullifyResource:
                 title.text = "Nullify Resource";
-                description.text = "Prevent one player from benefitting from resources for 1 round";
+                description.text = "Nullifies one\nplayer's bonus\nfrom resources\nfor one round.";
                 break;
 
             case PunishmentCard.Effect.SkipTurn:
                 title.text = "Skip A Turn";
-                description.text = "Skip one player's next turn";
+                description.text = "Skip one player's\nnext turn.";
                 break;
         }
 
@@ -114,8 +114,8 @@ public class CardUI : MonoBehaviour {
 
     public void UseCard() {
 
-        player.UseCard(index);
         HideUI();
+        player.UseCard(index);
 
     }
 }
