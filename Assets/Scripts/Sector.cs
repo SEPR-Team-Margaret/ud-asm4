@@ -2,8 +2,12 @@
 
 public class Sector : MonoBehaviour {
 
+    /* Added Field:
+     * 
+     *    - punishmentCard
+     */
+
     [SerializeField] public int sectorID;
-    //SEE HERE
     [System.NonSerialized] private Color DEFAULT_COLOR = Color.cyan;
 
     [System.NonSerialized] private Map map;
@@ -470,12 +474,14 @@ public class Sector : MonoBehaviour {
         
         // removed automatically end turn after attacking (Modified by Dom 13/02/18)
     }
-       
+
+    /// <summary>
+    /// 
+    /// Returns the selected unit if it is adjacent to this sector
+    /// otherwise, returns null
+    /// 
+    /// </summary>
     public Unit AdjacentSelectedUnit() {
-
-        // return the selected unit if it is adjacent to this sector
-        // return null otherwise
-
 
         // scan through each adjacent sector
         foreach (Sector adjacentSector in adjacentSectors)
@@ -521,7 +527,10 @@ public class Sector : MonoBehaviour {
             defendingUnitRoll = Random.Range(1, (5 + defendingUnit.GetLevel())) + defendingUnit.GetOwner().GetDefence() + defendingUnit.GetOwner().GetDefenceBonus();
         }
 
-        // display conflict resolution dialog (in place of the combat animation)
+
+        // display conflict resolution dialog (in place of the planned combat animation)
+
+        // generate the title for the dialog
         string title;
         if (attackingUnitRoll > defendingUnitRoll)
         {
@@ -532,8 +541,10 @@ public class Sector : MonoBehaviour {
             title = "Defeat!";
         }
 
+        // generate the body for the dialog
         string body = "";
 
+        // generate the attacker portion of the dialog body
         if (attackingUnit.GetOwner().GetResourcesNullified()) {
             body += (attackingUnit.unitName + " rolled a " + (attackingUnitRoll).ToString() + "\n");
             body += "- attack bonus nullified -\n\n";
@@ -542,6 +553,7 @@ public class Sector : MonoBehaviour {
             body += (" plus " + (attackingUnit.GetOwner().GetAttack() + attackingUnit.GetOwner().GetAttackBonus()).ToString() + " attack bonus \n\n");
         }
 
+        // generate the defender portion of the dialog body
         if (defendingUnit.GetOwner().GetResourcesNullified()) {
             body += (defendingUnit.unitName + " rolled a " + (defendingUnitRoll).ToString() + "\n");
             body += "- defence bonus nullified -\n\n";
@@ -549,19 +561,8 @@ public class Sector : MonoBehaviour {
             body += (defendingUnit.unitName + " rolled a " + (defendingUnitRoll - (defendingUnit.GetOwner().GetDefence() + defendingUnit.GetOwner().GetDefenceBonus())).ToString() + "\n");
             body += (" plus " + (defendingUnit.GetOwner().GetDefence() + defendingUnit.GetOwner().GetDefenceBonus()).ToString() + " defence bonus \n\n");
         }
-        /*
-        string bodys = (attackingUnit.unitName + " rolled a " + (attackingUnitRoll - (attackingUnit.GetOwner().GetAttack() + attackingUnit.GetOwner().GetAttackBonus())).ToString() + "\n" +
-                      " plus " + (attackingUnit.GetOwner().GetAttack() + attackingUnit.GetOwner().GetAttackBonus()).ToString() + " attack bonus \n\n" +
-                      defendingUnit.unitName + " rolled a " + (defendingUnitRoll - (defendingUnit.GetOwner().GetDefence() + defendingUnit.GetOwner().GetDefenceBonus())).ToString() + "\n" +
-                      " plus " + (defendingUnit.GetOwner().GetDefence() + defendingUnit.GetOwner().GetDefenceBonus()).ToString() + " defence bonus \n\n");
-        */
-       
-        /*if (attackingUnitRoll == defendingUnitRoll)
-        {
-            body += "Tie resolved in favor of the defender";
-        }*/
 
-
+        // Show the dialog
         map.game.dialog.SetDialogType(Dialog.DialogType.ShowText);
         map.game.dialog.SetDialogData(title, body);
         map.game.dialog.Show();
@@ -618,13 +619,26 @@ public class Sector : MonoBehaviour {
         #endregion
     }
 
+    /// <summary>
+    /// 
+    /// Raises the mouse enter event.
+    /// 
+    /// </summary>
     void OnMouseEnter() {
         OnMouseEnterAccessible();
     }
 
+    /// <summary>
+    /// 
+    /// When the mouse first hovers over the sector,
+    /// if the game is in the 'Move' state and this sector 
+    /// contains a unit owned by the current player, 
+    /// highlight the sector
+    /// 
+    /// </summary>
     public void OnMouseEnterAccessible() {
 
-        if(map.game.GetTurnState() == Game.TurnState.Move/*1 || map.game.GetTurnState() == Game.TurnState.Move2*/) {
+        if(map.game.GetTurnState() == Game.TurnState.Move) {
             if(this.unit != null) {
                 if(this.unit.GetOwner() == map.game.currentPlayer) {
                     ApplyHighlight(0.4f);
@@ -635,14 +649,27 @@ public class Sector : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// 
+    /// Raises the mouse exit event.
+    /// 
+    /// </summary>
     void OnMouseExit() {
         OnMouseExitAccessible();
     }
 
+    /// <summary>
+    /// 
+    /// When the mouse first leaves the sector,
+    /// if the game is in the 'Move' state and this sector 
+    /// contains a unit owned by the current player, 
+    /// unhighlight the sector
+    /// 
+    /// </summary>
     public void OnMouseExitAccessible() {
 
         //The mouse is no longer hovering over the GameObject so output this message each frame
-        if (map.game.GetTurnState() == Game.TurnState.Move/*1 || map.game.GetTurnState() == Game.TurnState.Move2*/) {
+        if (map.game.GetTurnState() == Game.TurnState.Move) {
             if (this.unit != null) {
                 if (this.unit.GetOwner() == map.game.currentPlayer) {
                     RevertHighlight();
@@ -653,17 +680,23 @@ public class Sector : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// 
+    /// Assigns the sector's parameters based on the provided saved data.
+    /// 
+    /// </summary>
+    /// <param name="savedData">Saved data.</param>
     public void OnLoad(GameData savedData) {
 
+        // assign the sector's owner, if any
         if (savedData.sectorOwner[sectorID] == -1) {
             this.owner = null;
             this.ownerID = -1;
         } else {
             map.game.players[savedData.sectorOwner[sectorID]].Capture(this);
-//            this.owner = map.game.players[savedData.sectorOwner[sectorID]];
-//            this.ownerID = map.game.players[savedData.sectorOwner[sectorID]].playerID;
         }
 
+        // instantiate and load the sector's unit, if any
         if (savedData.sectorLevel[sectorID] != -1)
         {
             this.unit = MonoBehaviour.Instantiate(map.game.players[0].GetUnitPrefab()).GetComponent<Unit>();
@@ -671,11 +704,7 @@ public class Sector : MonoBehaviour {
             this.unit.OnLoad(savedData,sectorID);
         }
 
-        /*
-        this.landmark = savedData.landmark;
-        this.landmark.OnLoad(savedData.landmark);
-        */
-
+        // instantiate the sector's punishment card, if any
         if (savedData.sectorPunishmentCard[sectorID] == true)
         {
             PunishmentCard card = MonoBehaviour.Instantiate(map.game.GetPunishmentCardPrefab()).GetComponent<PunishmentCard>();
@@ -683,13 +712,8 @@ public class Sector : MonoBehaviour {
             this.punishmentCard = card;
         }
 
+        // set this sector to contain the VC, if it should
         this.VC = savedData.VCSector == sectorID;
-
-        /*
-        this.punishmentCard = savedData.punishmentCard;
-        this.punishmentCard.OnLoad(savedData.punishmentCard);
-        this.isHighlighted = savedData.isHighlighted;
-        */
     }
     
 }

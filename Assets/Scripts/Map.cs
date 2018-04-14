@@ -9,9 +9,16 @@ using UnityEngine;
 /// </summary>
 public class Map : MonoBehaviour {
 
+    /* Added Fields:
+     * 
+     *    - maxPunishmentCardsOnMap
+     *    - numPunishmentCardsOnMap
+     *    - adjacency
+     */
+
     public Game game;
     public Sector[] sectors;
-    private bool started = false; // rip
+    private bool started = false;
 
     public int[][] adjacency = new int[32][];
 
@@ -23,7 +30,7 @@ public class Map : MonoBehaviour {
         SetAdjacency();
         this.started = true;
     }
-
+        
     public int NumPunishmentCardsOnMap
     {
         get { return numPunishmentCardsOnMap; }
@@ -34,13 +41,13 @@ public class Map : MonoBehaviour {
     {
         get { return maxPunishmentCardsOnMap; }
     }
+
     /// <summary>
     /// 
     /// Returns the array of sectors belonging to this map
     /// 
     /// </summary>
     /// <returns>Array of sectors used in this game</returns>
-
     public Sector[] GetSectors() {
         return sectors;
     }
@@ -80,6 +87,14 @@ public class Map : MonoBehaviour {
         this.adjacency[31] = new int[] { 21, 27, 31 };
     }
 
+    /// <summary>
+    /// 
+    /// Gets the array of sectors that are adjacent to
+    /// the sector with the provided ID
+    /// 
+    /// </summary>
+    /// <returns>The array of adjacent sectors.</returns>
+    /// <param name="sectorID">Sector ID.</param>
     public Sector[] GetAdj(int sectorID) {
         if (!started) {
             SetAdjacency();
@@ -92,6 +107,12 @@ public class Map : MonoBehaviour {
         return sectors;
     }
 
+    /// <summary>
+    /// 
+    /// Takes a sector ID and returns the corresponding sector.
+    /// </summary>
+    /// <returns>The sector.</returns>
+    /// <param name="sectorID">Sector ID.</param>
     public Sector ToSector(int sectorID) {
         return game.sectors[sectorID];
     }

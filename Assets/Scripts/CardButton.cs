@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CardButton : MonoBehaviour {
 
+    /* This class simply contains the behavior of the
+     * button to show the Punishment Card selection UI
+     */
+
     private Game game;
 
     void Start() {

@@ -6,6 +6,20 @@ using UnityEngine;
 [System.Serializable]
 public class Unit : MonoBehaviour {
 
+    /* Added Fields:
+     * 
+     *     - unitName
+     *     - unitFrozen
+     *     - frozenCounter
+     *     - sprite
+     *     - popup
+     *     - popupElevated
+     *     - popupName
+     *     - popupLevel
+     *     - popupDefaultTextColor
+     *     - popupFrozenTextColor
+     */
+
     [System.NonSerialized] private Player owner;
     [SerializeField] private int ownerID;
     [System.NonSerialized] private Sector sector;
@@ -13,7 +27,7 @@ public class Unit : MonoBehaviour {
     [SerializeField] private int level;
     [SerializeField] private bool selected = false;
     [SerializeField] public string unitName;
-    [SerializeField] private bool unitFrozen = false; // NEW ADDITION FOR FREEZING UNITS PUNISHMENT CARD
+    [SerializeField] private bool unitFrozen = false; 
     [SerializeField] private int frozenCounter = 0;
 
     [SerializeField] private UnitSprite sprite;
@@ -39,14 +53,18 @@ public class Unit : MonoBehaviour {
         owner = player;
         level = 1;
 
+        // generate a name for the unit
         unitName = GenerateName();
 
+        // get a sprite for the unit
         sprite = new UnitSprite(gameObject);
 
+        // get references to the UI elements of the unit popup
         popup = gameObject.transform.Find("Popup").gameObject;
         popupName = popup.transform.Find("Name").GetComponent<UnityEngine.UI.Text>();
         popupLevel = popup.transform.Find("Level").GetComponent<UnityEngine.UI.Text>();
 
+        // initialize the unit popup
         popupName.text = unitName;
         popupLevel.text = "1st Year";
 
@@ -55,6 +73,12 @@ public class Unit : MonoBehaviour {
 
     }
 
+    /// <summary>
+    /// 
+    /// Generates a random name.
+    /// 
+    /// </summary>
+    /// <returns>A random name.</returns>
     private string GenerateName() {
 
         string[] firstNames = new string[] 
@@ -286,7 +310,6 @@ public class Unit : MonoBehaviour {
 
         switch (level)
         {
-            
             case 1:
                 popupLevel.text = "1st Year";
                 break;
@@ -345,6 +368,11 @@ public class Unit : MonoBehaviour {
         Destroy(this.gameObject);
     }
 
+    /// <summary>
+    /// 
+    /// Freezes the unit.
+    /// 
+    /// </summary>
     public void FreezeUnit() {
         unitFrozen = true;
         frozenCounter = 3;
@@ -352,6 +380,11 @@ public class Unit : MonoBehaviour {
         popupLevel.color = popupFrozenTextColor;
     }
 
+    /// <summary>
+    /// 
+    /// Unfreezes unit.
+    /// 
+    /// </summary>
     public void UnFreezeUnit() {
         unitFrozen = false;
         frozenCounter = 0;
@@ -359,22 +392,43 @@ public class Unit : MonoBehaviour {
         popupLevel.color = popupDefaultTextColor;
     }
 
+    /// <summary>
+    /// 
+    /// Returns whether this unit is frozen.
+    /// 
+    /// </summary>
+    /// <returns><c>true</c> if this unit is frozen; otherwise, <c>false</c>.</returns>
     public bool IsFrozen() {
         return unitFrozen;
     }
 
+    /// <summary>
+    /// 
+    /// Gets the value of the unit's frozen counter.
+    /// 
+    /// </summary>
+    /// <returns>The value of the unit's frozen counter.</returns>
     public int GetFrozenCounter() {
         return frozenCounter;
     }
 
+    /// <summary>
+    /// 
+    /// Decrements the unit's frozen counter.
+    /// 
+    /// </summary>
     public void DecrementFrozenCounter() {
         frozenCounter--;
     }
 
-    /*void OnMouseOver() {
-        Debug.Log("Mouse is over GameObject.");
-    }*/
-
+    /// <summary>
+    /// 
+    /// Sets unit's parameters based on the information stored in the saved data
+    /// and places the unit in the sector specified by the provided ID
+    /// 
+    /// </summary>
+    /// <param name="savedData">Saved data.</param>
+    /// <param name="sectorID">Sector ID.</param>
     public void OnLoad(GameData savedData, int sectorID) {
         
         Game game = GameObject.Find("GameManager").GetComponent<Game>();
@@ -383,7 +437,6 @@ public class Unit : MonoBehaviour {
         this.sector = game.sectors[sectorID];
         this.sectorID = sectorID;
         this.level = savedData.sectorLevel[sectorID];
- //       this.selected = savedData.sectorActive == sectorID;
         this.unitName = savedData.sectorName[sectorID];
         this.unitFrozen = savedData.sectorFrozen[sectorID];
         this.frozenCounter = savedData.sectorFrozenCounter[sectorID];
@@ -399,23 +452,50 @@ public class Unit : MonoBehaviour {
         this.gameObject.SetActive(true);
     }
 
+    /// <summary>
+    /// 
+    /// When the mouse first hovers over the unit, display its popup
+    /// 
+    /// </summary>
     void OnMouseOver() {
+
+        // display the unit's popup
         popup.SetActive(true);
+
+        // elevate the unit so that the popup appears on top of any nearby units
         if (!popupElevated)
         {
             transform.Translate(new Vector3(0.0f, 0.0f, 0.5f));
             popupElevated = true;
         }
+
+        // carry the OnMouseOver event into the unit's sector
         sector.OnMouseEnterAccessible();
     }
 
+    /// <summary>
+    /// 
+    /// When the mouse is no longer hovering over the unit, hide its popup
+    /// 
+    /// </summary>
     void OnMouseExit() {
+
+        // hide the unit's popup
         popup.SetActive(false);
+
+        // return the unit to its original position
         transform.Translate(new Vector3(0.0f, 0.0f, -0.5f));
         popupElevated = false;
+
+        // carry the OnMouseExit event into the unit's sector
         sector.OnMouseExitAccessible();
     }
 
+    /// <summary>
+    /// 
+    /// When the unit is clicked as a button, carry the event into the unit's sector
+    /// 
+    /// </summary>
     void OnMouseUpAsButton() {
         sector.OnMouseUpAsButtonAccessible();
     }

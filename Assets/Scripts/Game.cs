@@ -15,6 +15,12 @@ public class Game : MonoBehaviour {
 
     public const int NUMBER_OF_PLAYERS = 4;
 
+    /* Turn State Overhaul:
+     * 
+     *    - Merged the 'Move1' and 'Move2' states into a single 'Move' state
+     *    - Created the 'actionsRemaining' integer to store the number of remaining moves
+     *    - Added the 'prevState' field to track previous turn states
+     */
     public enum TurnState { Move, EndOfTurn, SelectUnit, UseCard, NULL };
     [SerializeField] private TurnState turnState;
     [SerializeField] public TurnState prevState;
@@ -22,7 +28,6 @@ public class Game : MonoBehaviour {
     [SerializeField] private bool gameFinished = false;
     [SerializeField] private bool testMode = false;
     public string saveFilePath;
-   // private bool isSaveQuitMenuOpen = false;
 
     [SerializeField] private UnityEngine.UI.Text actionsRemainingLabel;
     [SerializeField] private int actionsRemaining = 2;
@@ -208,13 +213,6 @@ public class Game : MonoBehaviour {
     /// </summary>
     public void OpenSaveQuitMenu()
     {
-		/*if (isSaveQuitMenuOpen)
-        {
-            dialog.Close();
-            isSaveQuitMenuOpen = false;
-            return;
-        }
-        isSaveQuitMenuOpen = true;*/
         dialog.SetDialogType(Dialog.DialogType.SaveQuit);
         dialog.Show();
     }
@@ -297,7 +295,7 @@ public class Game : MonoBehaviour {
             players[NUMBER_OF_PLAYERS - 1].playerID = 3;
         }
 
-
+        // give each player a reference to a PlayerUI
         players[0].SetGui(GameObject.Find("Player1UI").GetComponent<PlayerUI>());
         players[1].SetGui(GameObject.Find("Player2UI").GetComponent<PlayerUI>());
         players[2].SetGui(GameObject.Find("Player3UI").GetComponent<PlayerUI>());
@@ -310,6 +308,7 @@ public class Game : MonoBehaviour {
             players[3].SetGui(GameObject.Find("PlayerNeutralUI").GetComponent<PlayerUI>());
         }
 
+        // give each player a reference to a CardUI
         players[0].SetCardUI(GameObject.Find("Player1CardUI").GetComponent<CardUI>());
         players[1].SetCardUI(GameObject.Find("Player2CardUI").GetComponent<CardUI>());
         players[2].SetCardUI(GameObject.Find("Player3CardUI").GetComponent<CardUI>());
@@ -326,6 +325,7 @@ public class Game : MonoBehaviour {
             players[i].GetCardUI().Initialize(players[i]);
         }
 
+        // initialize the array of eliminated players
         eliminatedPlayers = new bool[NUMBER_OF_PLAYERS]; // always 4 players in game
         for (int i = 0; i < eliminatedPlayers.Length; i++)
         {
@@ -516,6 +516,12 @@ public class Game : MonoBehaviour {
             }
         }
 
+        /* 
+         * Decrement counters associated with the
+         * temporary effects from Punishment Cards
+         * 
+         */
+
         // decrement the frozen counter of any frozen units
 		for (int i = 0; i < players.Length; i++) {
 			for (int j = 0; j < players[i].units.Count(); j++) {
@@ -549,12 +555,11 @@ public class Game : MonoBehaviour {
             }
         }
 
-
-        // chance to spawn a punishment card
+        // 35% chance to spawn a punishment card
         float chance = UnityEngine.Random.value;
         if (chance < 0.35f)
         {
-            MonoBehaviour.Instantiate(punishmentCardPrefab).GetComponent<PunishmentCard>().Initialize(/*null,null*/);
+            MonoBehaviour.Instantiate(punishmentCardPrefab).GetComponent<PunishmentCard>().Initialize();
         }
     }
 
@@ -619,14 +624,7 @@ public class Game : MonoBehaviour {
                     EndTurn();
                 }
                 break;
-                /*
-            case TurnState.Move:
-                Debug.Log("Move Initiated");
-                this.prevState = turnState;
-                turnState = TurnState.EndOfTurn;
-                actionsRemaining -= 1;
-                break;
-*/
+
 			case TurnState.EndOfTurn:
 				Debug.Log ("EndOfTurn Initiated");
 				this.prevState = turnState;
@@ -658,9 +656,6 @@ public class Game : MonoBehaviour {
 
             case TurnState.UseCard:
                 Debug.Log("UseCardd Initiated");
-          /*      turnState = this.prevState;
-                this.prevState = TurnState.UseCard;
-                */
                 this.prevState = turnState;
                 this.turnState = TurnState.Move;
                 break;
@@ -696,26 +691,13 @@ public class Game : MonoBehaviour {
             case TurnState.Move:
                 actionsRemainingLabel.text = actionsRemaining.ToString();
                 break;
-                /*
-            case TurnState.Move2:
-                actionsRemainingLabel.text = "1";
-                break;
-*/
+
             case TurnState.EndOfTurn:
                 actionsRemainingLabel.text = "0";
                 break;
 
             case TurnState.SelectUnit:
             case TurnState.UseCard:
-                /*
-                if (this.prevState == TurnState.Move1) {
-                    actionsRemainingLabel.text = "2";
-                } else if (this.prevState == TurnState.Move2) {
-                    actionsRemainingLabel.text = "1";
-                } else {
-                    actionsRemainingLabel.text = "0";
-                }
-                */
                 actionsRemainingLabel.text = actionsRemaining.ToString();
                 break;
 
@@ -895,21 +877,6 @@ public class Game : MonoBehaviour {
             CreatePlayers(true);
         }
 
-        /*
-        // set global game settings
-        if (actionsRemaining == 2)
-        {
-            this.turnState = TurnState.Move1;
-        }
-        else if (actionsRemaining == 1)
-        {
-            this.turnState = TurnState.Move2;
-        }
-        else
-        {
-            Debug.LogWarning("loaded invalid number of actions remaining; defaulting to 2");
-        }
-        */
         this.turnState = TurnState.Move;
         //this.turnState = savedGame.turnState;
 

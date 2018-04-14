@@ -17,7 +17,6 @@ public class Dialog : MonoBehaviour
 	public Dropdown skipPlayer;
 	List<string> listElements = new List<string>();
 
-
     private UnityEngine.UI.Button menuButton;
     private UnityEngine.UI.Button endTurnButton;
 
@@ -26,6 +25,11 @@ public class Dialog : MonoBehaviour
         EndGame, PlayerElimated, SaveQuit, ShowText, SelectTurnSkip, SelectNullifyResource
     }
 
+    /// <summary>
+    /// 
+    /// Get the necessary references to the Game and its UI elements
+    /// 
+    /// </summary>
 	void Start() {
 		this.game = GameObject.Find("GameManager").GetComponent<Game>();
         menuButton = GameObject.Find("Menu_Button").GetComponent<UnityEngine.UI.Button>();
@@ -41,7 +45,7 @@ public class Dialog : MonoBehaviour
     /// <param name="type">The type that this dialog should be set up in the form of</param>
     public void SetDialogType(DialogType type)
     {
-		// Updates the dialog with the different buttons needed for each mode
+		// Update the dialog with the different buttons needed for each mode
         this.type = type;
         switch (type)
         {
@@ -130,7 +134,7 @@ public class Dialog : MonoBehaviour
 
     /// <summary>
     /// 
-    /// Sets the players name in this dialog
+    /// Sets the player's name in this dialog
     /// 
     /// </summary>
     /// <param name="name">The player's name who this dialog refers to</param>
@@ -149,7 +153,7 @@ public class Dialog : MonoBehaviour
 
     /// <summary>
     /// 
-    /// Creates a dialog with specific header and bidy text
+    /// Creates a dialog with specific header and body text
     /// 
     /// </summary>
     /// <param name="header">Header text</param>
@@ -239,7 +243,14 @@ public class Dialog : MonoBehaviour
 		listElements.Clear ();
 		foreach (Player player in game.players){
 			if (game.currentPlayer != player) {
-				listElements.Add("Player " + (player.playerID+1));
+                if (player.playerID == 3 && !player.IsHuman())
+                {
+                    listElements.Add("Neutral");
+                }
+                else
+                {
+                    listElements.Add("Player " + (player.playerID + 1));
+                }
 			}
 		}
 		Debug.Log (listElements);

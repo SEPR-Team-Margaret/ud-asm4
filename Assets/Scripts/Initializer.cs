@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-/* GAME EXECUTABLE http://riskydevelopments.co.uk/ud/UniversityDominationAss3.zip */
-
 public class Initializer : MonoBehaviour {
 
     public Game game;
@@ -19,17 +17,24 @@ public class Initializer : MonoBehaviour {
     {
         switch (PlayerPrefs.GetInt("_gamemode", 0))
         {
+            // start new game with no neutral player
             case 0:
-                game.Initialize(false); // start new game with no neutral player
+                game.Initialize(false); 
                 break;
+
+            // start new game with neutal player
             case 1:
-                game.Initialize(true); // start new game with neutal player
+                game.Initialize(true); 
                 break;
+
+            // load saved game
             case 2:
-                game.Initialize(SavedGame.Load("test1")); // load saved game
+                game.Initialize(SavedGame.Load("test1")); 
                 break;
+
+            // load back from the mini-game
             case 3:
-                game.Initialize(SavedGame.Load("_tmp")); // load back from the mini-game
+                game.Initialize(SavedGame.Load("_tmp")); 
                 game.GiveReward();
                 break;
         }

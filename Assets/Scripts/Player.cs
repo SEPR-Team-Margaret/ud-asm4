@@ -6,6 +6,18 @@ using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class Player : MonoBehaviour {
+
+    /* Added Fields:
+     * 
+     *    - cardGUI
+     *    - attackBonus
+     *    - defenceBonus
+     *    - resourcesNullified 
+     *    - resourcesNullifiedCounter
+     *    - skipTurn
+     *    - punishmentCards
+     */
+
     [SerializeField] public int playerID;
 
     [System.NonSerialized] public List <Sector> ownedSectors = new List<Sector>();
@@ -30,41 +42,87 @@ public class Player : MonoBehaviour {
 
     #region Getters and Setters
 
+    /// <summary>
+    /// 
+    /// Gets the game.
+    /// 
+    /// </summary>
+    /// <returns>The game.</returns>
     public Game GetGame() {
         return game;
     }
 
+    /// <summary>
+    /// 
+    /// Sets the game.
+    /// 
+    /// </summary>
+    /// <param name="game">Game.</param>
     public void SetGame(Game game) {
         this.game = game;
     }
 
+    /// <summary>
+    /// 
+    /// Gets the unit prefab.
+    /// 
+    /// </summary>
+    /// <returns>The unit prefab.</returns>
     public GameObject GetUnitPrefab() {
         return unitPrefab;
     }
 
+    /// <summary>
+    /// 
+    /// Sets the unit prefab.
+    /// 
+    /// </summary>
+    /// <param name="prefab">Prefab.</param>
     public void SetUnitPrefab(GameObject prefab) {
         unitPrefab = prefab;
     }
 
+    /// <summary>
+    /// 
+    /// Gets the player's associated GUI.
+    /// 
+    /// </summary>
+    /// <returns>The player GUI.</returns>
 	public PlayerUI GetGui() {
 		return gui;
 	}
 
+    /// <summary>
+    /// Sets the player's associated GUI.
+    /// </summary>
+    /// <param name="gui">player GUI.</param>
 	public void SetGui(PlayerUI gui) {
 		this.gui = gui;
 	}
 
+    /// <summary>
+    /// 
+    /// Gets the player's associated card GUI.
+    /// 
+    /// </summary>
+    /// <returns>The card UI.</returns>
     public CardUI GetCardUI() {
         return cardGUI;
     }
 
+    /// <summary>
+    /// 
+    /// Sets the player's associated card GUI.
+    /// 
+    /// </summary>
+    /// <param name="cardGUI">Card GUI.</param>
     public void SetCardUI(CardUI cardGUI) {
         this.cardGUI = cardGUI;
     }
 
     /// <summary>
     /// 
-    /// gets this player's attack bonus
+    /// gets this player's attack bonus from landmarks
     /// 
     /// </summary>
     /// <returns>This player's attack bonus</returns>
@@ -74,7 +132,7 @@ public class Player : MonoBehaviour {
 
     /// <summary>
     /// 
-    /// sets this players attack bonus
+    /// sets this players attack bonus from landamarks
     /// 
     /// </summary>
     /// <param name="attack">The player's attack bonus</param>
@@ -100,7 +158,7 @@ public class Player : MonoBehaviour {
 
     /// <summary>
     /// 
-    /// gets this player's defence
+    /// gets this player's defence from landmarks
     /// 
     /// </summary>
     /// <returns>The player's defence bonus</returns>
@@ -110,7 +168,7 @@ public class Player : MonoBehaviour {
 
     /// <summary>
     /// 
-    /// sets this players defence bonus
+    /// sets this players defence bonus from landmarks
     /// 
     /// </summary>
     /// <param name="defence">The player's defence bonus</param>
@@ -409,6 +467,7 @@ public class Player : MonoBehaviour {
 
         }
 
+        // if the sector contains the VC, trigger the minigame
         if (sector.IsVC())
         {
             game.NextTurnState(); // update turn mode before game is saved
@@ -418,6 +477,9 @@ public class Player : MonoBehaviour {
 
         }
 
+        // if the sector contains a punishment card, 
+        // add it to the player's list of cards and
+        // remove the card from the map
 		if (sector.GetPunishmentCard() != null) {
 			AddPunishmentCards (sector.GetPunishmentCard ());
             sector.GetPunishmentCard().gameObject.SetActive(false);
@@ -454,6 +516,7 @@ public class Player : MonoBehaviour {
                 units.Add(newUnit);
                 sector.SetUnit(newUnit);
 
+                // ensure that the unit's GameObject is active
                 newUnit.gameObject.SetActive(true);
             }
 		}
@@ -472,7 +535,13 @@ public class Player : MonoBehaviour {
         else
             return false;
     }
-    
+
+    /// <summary>
+    /// 
+    /// Returns whether this player has units or not.
+    /// 
+    /// </summary>
+    /// <returns><c>true</c>, if the player has at least one unit, <c>false</c> otherwise.</returns>
     public bool hasUnits()
     {
         return units.Count > 0;
@@ -537,18 +606,28 @@ public class Player : MonoBehaviour {
 		skipTurn = false;
 	}
 
+    /// <summary>
+    /// 
+    /// Assigns the player's parameters based on the provided saved data and player ID.
+    /// 
+    /// </summary>
+    /// <param name="savedData">Saved data.</param>
+    /// <param name="playerID">Player ID.</param>
     public void OnLoad(GameData savedData, int playerID) {
 
+        // load the player's unit prefab
         GameObject unitPrefab = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Unit"));
         this.SetUnitPrefab(unitPrefab);
         unitPrefab.gameObject.SetActive(false);
 
+        // set the player's resource amounts
         this.attackBonus = savedData.playerAttackBonus[playerID];
         this.defenceBonus = savedData.playerDefenceBonus[playerID];
         this.resourcesNullified = savedData.playerNullified[playerID];
         this.resourcesNullifiedCounter = savedData.playerNullifiedCounter[playerID];
-        this.color = savedData.playerColor[playerID];
 
+        // set the player's color and controller
+        this.color = savedData.playerColor[playerID];
         if (savedData.playerController[playerID] == "human")
         {
             this.human = true;
@@ -560,18 +639,24 @@ public class Player : MonoBehaviour {
             this.neutral = true;
         }
             
+        // set the player's turn status
         this.active = savedData.currentPlayerID == playerID;
         this.skipTurn = savedData.playerSkip[playerID];
 
- //       this.punishmentCards = savedData.punishmentCards;
+
+        // set the player's list of punishment cards
+
+        // extract the card counts from the encoded string
         string punishmentCardString = savedData.playerPunishmentCards[playerID];
         char[] separator = new char[] { '_' };
         string[] punishmentCardStringArray = punishmentCardString.Split(separator, 3);
 
+        // convert the card counts into integers
         int freezeUnitCards = Convert.ToInt32(punishmentCardStringArray[0]);
         int nullifyResourceCards = Convert.ToInt32(punishmentCardStringArray[1]);
         int skipTurnCards = Convert.ToInt32(punishmentCardStringArray[2]);
 
+        // instantiate the appropriate number of FreezeUnit cards
         for (int i = 0; i < freezeUnitCards; i++)
         {
             PunishmentCard card = MonoBehaviour.Instantiate(game.GetPunishmentCardPrefab()).GetComponent<PunishmentCard>();
@@ -581,6 +666,7 @@ public class Player : MonoBehaviour {
             card.gameObject.SetActive(false);
         }
 
+        // instantiate the appropriate number of NullifyResource cards
         for (int i = 0; i < nullifyResourceCards; i++)
         {
             PunishmentCard card = MonoBehaviour.Instantiate(game.GetPunishmentCardPrefab()).GetComponent<PunishmentCard>();
@@ -590,6 +676,7 @@ public class Player : MonoBehaviour {
             card.gameObject.SetActive(false);
         }
 
+        // instantiate the appropriate number of SkipTurn cards
         for (int i = 0; i < skipTurnCards; i++)
         {
             PunishmentCard card = MonoBehaviour.Instantiate(game.GetPunishmentCardPrefab()).GetComponent<PunishmentCard>();
@@ -600,8 +687,19 @@ public class Player : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// 
+    /// Uses the card at the given index in the 
+    /// player's list of punishment cards.
+    /// 
+    /// </summary>
+    /// <param name="index">Index.</param>
     public void UseCard(int index) {
+
+        // set the turn state
         game.SetTurnState(Game.TurnState.UseCard);
+
+        // use the selected card
         PunishmentCard selectedCard = punishmentCards[index];
         if (selectedCard != null) {
             selectedCard.Use();
