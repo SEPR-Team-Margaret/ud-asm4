@@ -12,6 +12,7 @@ public class PlayerUI : MonoBehaviour {
 	[SerializeField] private UnityEngine.UI.Text defence;
 	[SerializeField] private int numberOfSectors;
     [SerializeField] private GameObject nullified;
+    [SerializeField] private GameObject skip;
 	private Color defaultHeaderColor = new Color(0.2f, 0.2f, 0.2f, 1.0f);
 
     /// <summary>
@@ -32,6 +33,7 @@ public class PlayerUI : MonoBehaviour {
 		defence = transform.Find("DEF_Value").GetComponent<UnityEngine.UI.Text>();
 		numberOfSectors = player.GetGame().gameMap.GetComponent<Map>().sectors.Length;
         nullified = transform.Find("Nullified").gameObject;
+        skip = transform.Find("Skip").gameObject;
 
 		header.text = "Player " + player_id.ToString();
 		headerHighlight.text = header.text;
@@ -45,6 +47,7 @@ public class PlayerUI : MonoBehaviour {
         }
 
         nullified.SetActive(false);
+        skip.SetActive(false);
     }
 
     /// <summary>
@@ -64,6 +67,14 @@ public class PlayerUI : MonoBehaviour {
         else
         {
             nullified.SetActive(false);
+        }
+        if (player.skipTurn)
+        {
+            skip.SetActive(true);
+        }
+        else
+        {
+            skip.SetActive(false);
         }
 	}
 

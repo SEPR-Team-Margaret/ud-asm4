@@ -487,6 +487,7 @@ public class Game : MonoBehaviour {
                 while (currentPlayer.skipTurn == true) {
 					Debug.Log ("Skip Me! " + currentPlayer.playerID);
 					currentPlayer.SkipTurnOff ();
+                    currentPlayer.GetGui().UpdateDisplay();
                     nextPlayerIndex = (nextPlayerIndex + 1) % NUMBER_OF_PLAYERS;
 					currentPlayer = players [nextPlayerIndex];
 					Debug.Log ("New current player: " + currentPlayer.playerID);
