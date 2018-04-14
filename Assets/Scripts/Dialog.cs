@@ -174,9 +174,15 @@ public class Dialog : MonoBehaviour
     {
         texture.SetActive(true);
 
-        // set UI buttons to be uninteractable
-        menuButton.interactable = false;
-        endTurnButton.interactable = false;
+        try {
+        
+            // set UI buttons to be uninteractable
+            menuButton.interactable = false;
+            endTurnButton.interactable = false;
+
+        } catch (System.NullReferenceException e) {
+            Debug.Log("could not disable gui buttons");
+        }
     }
 
     /// <summary>
@@ -191,9 +197,15 @@ public class Dialog : MonoBehaviour
         UnityEngine.UI.Text text = info.GetComponent<UnityEngine.UI.Text>();
         text.lineSpacing = 1.0f;
 
-        // set UI buttons to be interactable
-        menuButton.interactable = true;
-        endTurnButton.interactable = true;
+        try {
+            
+            // set UI buttons to be interactable
+            menuButton.interactable = true;
+            endTurnButton.interactable = true;
+
+        } catch (System.NullReferenceException e) {
+            Debug.Log("could not re-enable gui buttons");
+        }
 
         texture.SetActive(false);
     }

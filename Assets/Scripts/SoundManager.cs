@@ -29,23 +29,29 @@ public class SoundManager : MonoBehaviour {
 	/// /// <param name="sound">Audio clip name.</param>
 	public static void PlaySound(string sound){
 
-		switch (sound) 
-		{
-			case "drawing":
-				audioSrc.PlayOneShot(drawingSound);
-				break;
-			case "turnPage":
-				audioSrc.PlayOneShot(turnPageSound);
-				break;
-			case "turnPageReverse":
-				audioSrc.PlayOneShot(turnPageReverseSound);
-				break;
-			case "card":
-				audioSrc.PlayOneShot(cardSound);
-				break;
-			case "cardReverse":
-				audioSrc.PlayOneShot(cardReverseSound);
-				break;
-		}
+        try {
+            
+		    switch (sound) 
+		    {
+			    case "drawing":
+				    audioSrc.PlayOneShot(drawingSound);
+			    	break;
+		    	case "turnPage":
+				    audioSrc.PlayOneShot(turnPageSound);
+			    	break;
+		    	case "turnPageReverse":
+				    audioSrc.PlayOneShot(turnPageReverseSound);
+			    	break;
+		    	case "card":
+				    audioSrc.PlayOneShot(cardSound);
+			    	break;
+                case "cardReverse":
+				    audioSrc.PlayOneShot(cardReverseSound);
+			    	break;
+		    }
+
+        } catch (System.NullReferenceException e) {
+            Debug.Log("Unable to play sound: " + sound);
+        }
 	}
 }

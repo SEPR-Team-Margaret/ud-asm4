@@ -565,9 +565,13 @@ public class Sector : MonoBehaviour {
         map.game.dialog.SetDialogType(Dialog.DialogType.ShowText);
         map.game.dialog.SetDialogData(title, body);
         map.game.dialog.Show();
-        GameObject info = GameObject.Find("Info");
-        UnityEngine.UI.Text text = info.GetComponent<UnityEngine.UI.Text>();
-        text.lineSpacing = 0.5f;
+        try {
+            GameObject info = GameObject.Find("Info");
+            UnityEngine.UI.Text text = info.GetComponent<UnityEngine.UI.Text>();
+            text.lineSpacing = 0.5f;
+        } catch (System.NullReferenceException e) {
+            Debug.Log("could not change line spacing in Conflict dialog");
+        }
 
         return attackingUnitRoll > defendingUnitRoll;
 

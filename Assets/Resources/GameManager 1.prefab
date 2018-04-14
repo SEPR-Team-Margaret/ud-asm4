@@ -205,7 +205,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerID: 0
   attack: 0
+  attackBonus: 0
   defence: 0
+  defenceBonus: 0
+  resourcesNullified: 0
+  resourcesNullifiedCounter: 0
   color: {r: 0, g: 0.8039216, b: 0, a: 1}
   human: 0
   neutral: 0
@@ -224,6 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texture: {fileID: 0}
+  skipPlayer: {fileID: 0}
 --- !u!114 &114329041248354012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -237,7 +242,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerID: 0
   attack: 0
+  attackBonus: 0
   defence: 0
+  defenceBonus: 0
+  resourcesNullified: 0
+  resourcesNullifiedCounter: 0
   color: {r: 0.6945231, g: 0, b: 0.9411765, a: 1}
   human: 0
   neutral: 0
@@ -257,7 +266,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerID: 0
   attack: 0
+  attackBonus: 0
   defence: 0
+  defenceBonus: 0
+  resourcesNullified: 0
+  resourcesNullifiedCounter: 0
   color: {r: 0.8039216, g: 0, b: 0, a: 1}
   human: 0
   neutral: 0
@@ -288,7 +301,8 @@ MonoBehaviour:
   gameFinished: 0
   testMode: 0
   saveFilePath: 
-  actionsRemaining: {fileID: 0}
+  actionsRemainingLabel: {fileID: 0}
+  actionsRemaining: 2
   dialog: {fileID: 114097629133152642}
   triggerDialog: 0
   eliminatedPlayers: 
@@ -308,7 +322,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerID: 0
   attack: 0
+  attackBonus: 0
   defence: 0
+  defenceBonus: 0
+  resourcesNullified: 0
+  resourcesNullifiedCounter: 0
   color: {r: 1, g: 1, b: 1, a: 1}
   human: 0
   neutral: 0
@@ -328,7 +346,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerID: 0
   attack: 0
+  attackBonus: 0
   defence: 0
+  defenceBonus: 0
+  resourcesNullified: 0
+  resourcesNullifiedCounter: 0
   color: {r: 0.8039216, g: 0.8039216, b: 0, a: 1}
   human: 0
   neutral: 0

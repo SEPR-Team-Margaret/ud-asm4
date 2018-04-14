@@ -11,6 +11,7 @@ public class TestSetup
     private GameObject unitPrefab;
     private GameObject book;
     private Dialog dialog;
+    private GameObject soundManager;
 
 
     public TestSetup()
@@ -39,6 +40,8 @@ public class TestSetup
 
         dialog = game.gameObject.GetComponentInChildren<Dialog>();
 
+        soundManager = GameObject.Instantiate(Resources.Load<GameObject>("SoundManager"));
+
 
         // the "Scenery" asset contains the camera and light source of the 4x4 Test
         // can uncomment to view scene as tests run, but significantly reduces speed
@@ -61,6 +64,7 @@ public class TestSetup
         game.players[3].SetColor(Color.green);
 
         for (int i = 0; i < game.players.Length; i++) {
+            game.players[i].playerID = i;
             game.players[i].SetGui(gui[i]);
             game.players[i].SetGame(game);
             game.players[i].GetGui().Initialize(game.players[i], i + 1);
@@ -110,6 +114,10 @@ public class TestSetup
     public GameObject GetBook() 
     {
         return book;
+    }
+
+    public GameObject GetSoundManager() {
+        return soundManager;
     }
     
 }

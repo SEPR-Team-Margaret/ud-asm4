@@ -26,7 +26,7 @@ public class CardUI : MonoBehaviour {
 
         index = 0;
 
-        HideUI();
+        gameObject.SetActive(false);
 
     }
 

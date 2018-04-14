@@ -11,6 +11,7 @@ public class UnitTest
 	private PlayerUI[] gui;
     private GameObject unitPrefab;
     private GameObject book;
+    private GameObject soundManager;
 
     private void Setup()
     {
@@ -21,6 +22,7 @@ public class UnitTest
         this.gui = t.GetPlayerUIs();
         this.unitPrefab = t.GetUnitPrefab();
         this.book = t.GetBook();
+        this.soundManager = t.GetSoundManager();
 
         game.InitializeMap();
     }
@@ -31,6 +33,7 @@ public class UnitTest
         GameObject.Destroy(map.gameObject);
         GameObject.Destroy(gui[0].GetComponentInParent<Canvas>().gameObject);
         GameObject.Destroy(book);
+        GameObject.Destroy(soundManager);
 
     }
 

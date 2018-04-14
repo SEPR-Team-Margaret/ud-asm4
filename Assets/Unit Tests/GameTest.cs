@@ -12,6 +12,7 @@ public class GameTest
     private Player[] players;
     private PlayerUI[] gui;
     private GameObject book;
+    private GameObject soundManager;
     
     private void Setup()
     {
@@ -21,14 +22,23 @@ public class GameTest
         this.players = t.GetPlayers();
         this.gui = t.GetPlayerUIs();
         this.book = t.GetBook();
+        this.soundManager = t.GetSoundManager();
     }
 
     private void Cleanup() {
-        
+
+        foreach (Player player in players)
+        {
+            foreach (Unit unit in player.units)
+            {
+                GameObject.Destroy(unit.gameObject);
+            }
+        }
         GameObject.Destroy(game.gameObject);
         GameObject.Destroy(map.gameObject);
         GameObject.Destroy(gui[0].GetComponentInParent<Canvas>().gameObject);
         GameObject.Destroy(book);
+        GameObject.Destroy(soundManager);
 
     }
 
