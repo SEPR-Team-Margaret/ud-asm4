@@ -3549,7 +3549,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4956928184798894, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.22
+      value: 0.39
       objectReference: {fileID: 0}
     - target: {fileID: 4956928184798894, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3591,7 +3591,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4956928184798894, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.6
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 4956928184798894, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
       propertyPath: m_LocalScale.z
@@ -3600,13 +3600,18 @@ Prefab:
     - target: {fileID: 23195195787872328, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114786906048818158, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0,
         type: 2}
       propertyPath: landmarkBuilding
       value: 
       objectReference: {fileID: 1376084320}
+    - target: {fileID: 23195195787872328, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
   m_IsPrefabParent: 0
@@ -12082,7 +12087,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4956928184798894, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.6
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 4956928184798894, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
       propertyPath: m_LocalScale.z
@@ -12091,13 +12096,18 @@ Prefab:
     - target: {fileID: 23195195787872328, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114786906048818158, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0,
         type: 2}
       propertyPath: landmarkBuilding
       value: 
       objectReference: {fileID: 2051803868}
+    - target: {fileID: 23195195787872328, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
   m_IsPrefabParent: 0
@@ -16606,7 +16616,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4956928184798894, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.6
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 4956928184798894, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
       propertyPath: m_LocalScale.z
@@ -16620,6 +16630,11 @@ Prefab:
     - target: {fileID: 23195195787872328, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0,
         type: 2}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23195195787872328, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0,
+        type: 2}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -17314,7 +17329,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4956928184798894, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.6
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 4956928184798894, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
       propertyPath: m_LocalScale.z
@@ -17323,13 +17338,18 @@ Prefab:
     - target: {fileID: 23195195787872328, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114786906048818158, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0,
         type: 2}
       propertyPath: landmarkBuilding
       value: 
       objectReference: {fileID: 429506216}
+    - target: {fileID: 23195195787872328, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b4d2aaba7b1ee44e9d2ad5f88b564f0, type: 2}
   m_IsPrefabParent: 0
