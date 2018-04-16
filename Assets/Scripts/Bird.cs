@@ -55,10 +55,10 @@ public class Bird : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
-            yVel = -jumpForce;
+			SoundManager.PlaySound ("flap");
+			yVel = -jumpForce;
             renderer.material = states[1];
             StartCoroutine(SwapStates());
-            
         }
         rb.velocity = new Vector3(-dx, -yVel, 0);
         Debug.Log(rb.velocity);
@@ -116,12 +116,14 @@ public class Bird : MonoBehaviour
         {
             Destroy(collision.gameObject);
             score++;
+			SoundManager.PlaySound ("coin");
         } else if (collision.transform.tag == "Ground")
         {
             MovingPillars.Stop();
             paused = true;
             dead = true;
             rb.constraints = RigidbodyConstraints.FreezePositionZ;
+			SoundManager.PlaySound ("goose");
         }
     }
 

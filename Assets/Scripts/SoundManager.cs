@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour {
 
-	public static AudioClip drawingSound, turnPageSound, turnPageReverseSound, cardSound, cardReverseSound;
+	public static AudioClip drawingSound, turnPageSound, turnPageReverseSound, cardSound, cardReverseSound, flapSound, gooseSound, coinSound, stampSound;
 	static AudioSource audioSrc;
 
 	// Use this for initialization
@@ -15,6 +15,10 @@ public class SoundManager : MonoBehaviour {
 		turnPageReverseSound = Resources.Load<AudioClip> ("Sounds/turnPageReverse");
 		cardSound = Resources.Load<AudioClip> ("Sounds/card");
 		cardReverseSound = Resources.Load<AudioClip> ("Sounds/cardReverse");
+		flapSound = Resources.Load<AudioClip> ("Sounds/flap");
+		gooseSound = Resources.Load<AudioClip> ("Sounds/goose");
+		coinSound =  Resources.Load<AudioClip> ("Sounds/coin");
+		stampSound = Resources.Load<AudioClip> ("Sounds/stamp");
 
 		audioSrc = GetComponent<AudioSource> ();
 
@@ -48,6 +52,18 @@ public class SoundManager : MonoBehaviour {
                 case "cardReverse":
 				    audioSrc.PlayOneShot(cardReverseSound);
 			    	break;
+				case "flap":
+					audioSrc.PlayOneShot(flapSound);
+					break;
+				case "goose":
+					audioSrc.PlayOneShot(gooseSound);
+					break;
+				case "coin":
+					audioSrc.PlayOneShot(coinSound);
+					break;
+				case "stamp":
+					audioSrc.PlayOneShot(stampSound);
+					break;
 		    }
 
         } catch (System.NullReferenceException e) {

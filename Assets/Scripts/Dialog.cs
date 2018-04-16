@@ -104,7 +104,7 @@ public class Dialog : MonoBehaviour
 			case DialogType.SelectTurnSkip:
 				CreateSkipPlayerList ();
 				texture.transform.GetChild(0).GetComponent<Text>().text = "SKIP TURN";
-				texture.transform.GetChild(1).GetComponent<Text>().text = "Select a player to miss a turn";
+				texture.transform.GetChild(1).GetComponent<Text>().text = "Select a player to\nmiss a turn";
 				texture.transform.GetChild(2).gameObject.SetActive(false);
 				texture.transform.GetChild(3).gameObject.SetActive(false);
 				texture.transform.GetChild(4).gameObject.SetActive(false);
@@ -177,6 +177,7 @@ public class Dialog : MonoBehaviour
     public void Show()
     {
         texture.SetActive(true);
+		SoundManager.PlaySound ("turnPage");
 
         try {
         
