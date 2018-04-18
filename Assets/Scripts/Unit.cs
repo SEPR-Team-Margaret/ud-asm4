@@ -52,6 +52,7 @@ public class Unit : MonoBehaviour {
         // set the owner, level, and color of the unit
         owner = player;
         level = 1;
+        
 
         // generate a name for the unit
         unitName = GenerateName();
@@ -70,6 +71,12 @@ public class Unit : MonoBehaviour {
 
         // place the unit in the sector
         MoveTo(sector);
+
+        Material backgroundMat = new Material(Shader.Find("Specular"));
+        Color ownerCol = owner.GetColor();
+        Color offset = new Color(0.4f, 0.4f, 0.4f);
+        backgroundMat.color = ownerCol - offset;
+        gameObject.transform.Find("Background").GetComponent<MeshRenderer>().material = backgroundMat;
 
     }
 
