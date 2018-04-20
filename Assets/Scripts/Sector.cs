@@ -325,7 +325,7 @@ public class Sector : MonoBehaviour {
                 {
                     // show info dialog
                     map.game.dialog.SetDialogType(Dialog.DialogType.ShowText);
-                    map.game.dialog.SetDialogData("Frozen!", (unit.unitName + " can't move"));
+                    map.game.dialog.SetDialogData("Goosed!", (unit.unitName + " can't move"));
                     map.game.dialog.Show();
                     return;
                 }
@@ -389,7 +389,7 @@ public class Sector : MonoBehaviour {
             {
                 // show info dialog
                 map.game.dialog.SetDialogType(Dialog.DialogType.ShowText);
-                map.game.dialog.SetDialogData("Frozen!", (unit.unitName + " can't move"));
+                map.game.dialog.SetDialogData("Goosed!", (unit.unitName + " can't move"));
                 map.game.dialog.Show();
 
                 unit.FreezeUnit();
@@ -424,7 +424,7 @@ public class Sector : MonoBehaviour {
         {
             // show info dialog
             map.game.dialog.SetDialogType(Dialog.DialogType.ShowText);
-            map.game.dialog.SetDialogData("Frozen!", (unit.unitName + " can't move"));
+            map.game.dialog.SetDialogData("Goosed!", (unit.unitName + " can't move"));
             map.game.dialog.Show();
 
             // restore wasted action

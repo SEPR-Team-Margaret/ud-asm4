@@ -231,7 +231,7 @@ public class PunishmentCard : MonoBehaviour {
 
                 // show instruction window
                 map.game.dialog.SetDialogType(Dialog.DialogType.ShowText);
-                map.game.dialog.SetDialogData("Freeze a Unit", "Select a unit to freeze");
+                map.game.dialog.SetDialogData("Goose a Unit", "Select a unit to make\nthem unable to move\nfor one round.");
                 map.game.dialog.Show();
 
                 // set game turn state to SelectUnit with UseCard as the previous state

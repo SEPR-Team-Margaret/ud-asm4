@@ -385,6 +385,7 @@ public class Unit : MonoBehaviour {
         frozenCounter = 3;
         popupName.color = popupFrozenTextColor;
         popupLevel.color = popupFrozenTextColor;
+        SoundManager.PlaySound("goose");
     }
 
     /// <summary>
@@ -397,6 +398,7 @@ public class Unit : MonoBehaviour {
         frozenCounter = 0;
         popupName.color = popupDefaultTextColor;
         popupLevel.color = popupDefaultTextColor;
+        SoundManager.PlaySound("goose");
     }
 
     /// <summary>

@@ -305,7 +305,6 @@ public class Player : MonoBehaviour {
     /// <param name="val">An instance of a punishment card to be added to the list</param>
 	public void AddPunishmentCards(PunishmentCard card) {
 		punishmentCards.Add (card);
-
     }
 
 	/// <summary>
@@ -481,7 +480,8 @@ public class Player : MonoBehaviour {
         // add it to the player's list of cards and
         // remove the card from the map
 		if (sector.GetPunishmentCard() != null) {
-			AddPunishmentCards (sector.GetPunishmentCard ());
+            AddPunishmentCards (sector.GetPunishmentCard ());
+            SoundManager.PlaySound("card");
             sector.GetPunishmentCard().gameObject.SetActive(false);
             sector.SetPunishmentCard(null);
             game.gameMap.GetComponent<Map>().NumPunishmentCardsOnMap -= 1;
