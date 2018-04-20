@@ -245,6 +245,7 @@ public class GameTest
         Unit unit = MonoBehaviour.Instantiate(game.players[0].GetUnitPrefab()).GetComponent<Unit>();
         game.players[0].units.Add(unit);
         unit.SetOwner(game.players[0]);
+        unit.Initialize(game.players[0], map.sectors[0]);
         unit.FreezeUnit();
 
         Assert.AreEqual(3, unit.GetFrozenCounter());

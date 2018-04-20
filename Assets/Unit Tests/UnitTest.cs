@@ -261,7 +261,7 @@ public class UnitTest
         Setup();
 
         Unit unit = MonoBehaviour.Instantiate(unitPrefab).GetComponent<Unit>();
-
+        unit.Initialize(game.players[0], map.sectors[0]);
         unit.FreezeUnit();
 
         Assert.IsTrue(unit.IsFrozen());
@@ -279,6 +279,8 @@ public class UnitTest
 
         Unit unit = MonoBehaviour.Instantiate(unitPrefab).GetComponent<Unit>();
         Sector sector = map.sectors[0];
+
+        unit.Initialize(game.players[0], map.sectors[1]);
 
         sector.ClearUnit();
         unit.FreezeUnit();
