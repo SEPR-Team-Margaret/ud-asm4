@@ -8,7 +8,7 @@ public class Sector : MonoBehaviour {
      */
 
     [SerializeField] public int sectorID;
-    [System.NonSerialized] private Color DEFAULT_COLOR = new Color(0.8f,0.8f,0.8f/*0.83f,0.87f,0.87f*/);
+    [System.NonSerialized] private Color DEFAULT_COLOR = new Color(0.8f,0.8f,0.8f);
 
     [System.NonSerialized] private Map map;
     [SerializeField] private Unit unit;

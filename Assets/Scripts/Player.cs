@@ -575,6 +575,7 @@ public class Player : MonoBehaviour {
     public void NullifyResources() {
         resourcesNullified = true;
         resourcesNullifiedCounter = 3;
+        SoundManager.PlaySound("stamp");
     }
 
     /// <summary>
@@ -585,6 +586,7 @@ public class Player : MonoBehaviour {
     public void RestoreResources() {
         resourcesNullified = false;
         resourcesNullifiedCounter = 0;
+        SoundManager.PlaySound("stamp");
     }
 
 	/// <summary>
@@ -595,6 +597,7 @@ public class Player : MonoBehaviour {
 	public void SkipTurnOn() {
 		skipTurn = true;
 		Debug.Log ("Skipturn: " + skipTurn + " for " + playerID);
+        SoundManager.PlaySound("stamp");
 	}
 
 	/// <summary>
@@ -603,7 +606,8 @@ public class Player : MonoBehaviour {
 	/// 
 	/// </summary>
 	public void SkipTurnOff() {
-		skipTurn = false;
+        skipTurn = false;
+        SoundManager.PlaySound("stamp");
 	}
 
     /// <summary>

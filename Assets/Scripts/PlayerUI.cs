@@ -63,7 +63,7 @@ public class PlayerUI : MonoBehaviour {
         if (player.GetResourcesNullified())
         {
             nullified.SetActive(true);
-			SoundManager.PlaySound ("stamp");
+			//SoundManager.PlaySound ("stamp");
         }
         else
         {
@@ -72,7 +72,7 @@ public class PlayerUI : MonoBehaviour {
         if (player.skipTurn)
         {
             skip.SetActive(true);
-			SoundManager.PlaySound ("stamp");
+			//SoundManager.PlaySound ("stamp");
         }
         else
         {
