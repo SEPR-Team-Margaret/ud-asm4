@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.Video;
+using System.Collections;
 
 public class Sector : MonoBehaviour {
 
@@ -496,6 +498,33 @@ public class Sector : MonoBehaviour {
         return null;
     }
 
+    //coroutine to allow for the fight animation to run for 5 seconds and then stop, showing the dialog box afterwards
+    //used in the Conflict method below
+
+    IEnumerator AnimationPlaying(VideoPlayer passedVideo, GameObject passedAnimationPlane, string passedBody, string passedTitle)
+    {
+        yield return new WaitForSecondsRealtime(5);
+        passedVideo.enabled = false;
+        passedAnimationPlane.transform.Translate(0, -40, 0);
+
+        map.game.dialog.SetDialogType(Dialog.DialogType.ShowText);
+        map.game.dialog.SetDialogData(passedTitle, passedBody);
+        map.game.dialog.Show();
+        try
+        {
+            GameObject info = GameObject.Find("Info");
+            UnityEngine.UI.Text text = info.GetComponent<UnityEngine.UI.Text>();
+            text.lineSpacing = 0.5f;
+        }
+        catch (System.NullReferenceException e)
+        {
+            Debug.Log("could not change line spacing in Conflict dialog");
+        }
+    }
+
+
+
+
     /// <summary>
     /// 
     /// returns the outcome of a combat encounter between two units
@@ -521,25 +550,15 @@ public class Sector : MonoBehaviour {
         }
 
         int defendingUnitRoll;
-        if (defendingUnit.GetOwner().GetResourcesNullified()) {
-            defendingUnitRoll = Random.Range(1, (5 + defendingUnit.GetLevel()));
-        } else {
-            defendingUnitRoll = Random.Range(1, (5 + defendingUnit.GetLevel())) + defendingUnit.GetOwner().GetDefence() + defendingUnit.GetOwner().GetDefenceBonus();
-        }
-
-
-        // display conflict resolution dialog (in place of the planned combat animation)
-
-        // generate the title for the dialog
-        string title;
-        if (attackingUnitRoll > defendingUnitRoll)
+        if (defendingUnit.GetOwner().GetResourcesNullified())
         {
-            title = "Victory!";
+            defendingUnitRoll = Random.Range(1, (5 + defendingUnit.GetLevel()));
         }
         else
         {
-            title = "Defeat!";
+            defendingUnitRoll = Random.Range(1, (5 + defendingUnit.GetLevel())) + defendingUnit.GetOwner().GetDefence() + defendingUnit.GetOwner().GetDefenceBonus();
         }
+
 
         // generate the body for the dialog
         string body = "";
@@ -562,18 +581,56 @@ public class Sector : MonoBehaviour {
             body += (" plus " + (defendingUnit.GetOwner().GetDefence() + defendingUnit.GetOwner().GetDefenceBonus()).ToString() + " defence bonus \n\n");
         }
 
-        // Show the dialog
-        map.game.dialog.SetDialogType(Dialog.DialogType.ShowText);
-        map.game.dialog.SetDialogData(title, body);
-        map.game.dialog.Show();
-        try {
-            GameObject info = GameObject.Find("Info");
-            UnityEngine.UI.Text text = info.GetComponent<UnityEngine.UI.Text>();
-            text.lineSpacing = 0.5f;
-        } catch (System.NullReferenceException e) {
-            Debug.Log("could not change line spacing in Conflict dialog");
-        }
+        // this is to generate the title for the dialog as well as play the correct animation
 
+        string title;
+
+        GameObject animation = GameObject.Find("AnimationPlane");
+        VideoPlayer theVideo;
+        //finds number associated with each player or neutral (only applies to defense as neutrals cannot attack)
+        int attackingID = attackingUnit.GetOwner().playerID;
+        int defendingID;
+        if (defendingUnit.GetOwner().IsNeutral() == true)
+        {
+            defendingID = 4;
+        }
+        else
+        {
+            defendingID = defendingUnit.GetOwner().playerID;
+        }
+        
+        //randomly chooses which animation out of 2 to use
+        int randomAnimation = Random.Range(1, 3);
+
+        if (attackingUnitRoll > defendingUnitRoll)
+        {
+            title = "Victory!";
+            animation.transform.Translate(0, 40, 0);
+            foreach (VideoPlayer aVideo in animation.GetComponents<VideoPlayer>())
+            {
+                if (aVideo.clip.name.Equals("" + attackingID + defendingID + randomAnimation))
+                {
+                    theVideo = aVideo;
+                    theVideo.enabled = true;
+                    StartCoroutine(AnimationPlaying(theVideo, animation, body, title));
+                }
+            }
+        }
+        else
+        {
+            title = "Defeat!";
+            animation.transform.Translate(0, 40, 0);
+            foreach (VideoPlayer aVideo in animation.GetComponents<VideoPlayer>())
+            {
+                if (aVideo.clip.name.Equals("" + defendingID + attackingID + randomAnimation))
+                {
+                    theVideo = aVideo;
+                    theVideo.enabled = true;
+                    StartCoroutine(AnimationPlaying(theVideo, animation, body, title));
+                }
+            }
+        }
+        
         return attackingUnitRoll > defendingUnitRoll;
 
 
