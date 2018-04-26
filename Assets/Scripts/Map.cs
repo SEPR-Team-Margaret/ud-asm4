@@ -57,7 +57,7 @@ public class Map : MonoBehaviour {
         this.adjacency[1] = new int[] { 1, 3, 4, 5, 7 };
         this.adjacency[2] = new int[] { 2, 9, 4, 6 };
         this.adjacency[3] = new int[] { 2, 3, 5, 6 };
-        this.adjacency[4] = new int[] { 2, 3, 5, 6 };
+        this.adjacency[4] = new int[] { 1, 3, 5, 6, 7 };
         this.adjacency[5] = new int[] { 3, 4, 5, 8 };
         this.adjacency[6] = new int[] { 2, 5, 8, 14, 15, 16 };
         this.adjacency[7] = new int[] { 5, 6, 7, 9, 10, 13, 15, 25 };
