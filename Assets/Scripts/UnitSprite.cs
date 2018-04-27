@@ -30,12 +30,18 @@ public class UnitSprite {
 
     public void GenerateRandomSprite()
     {
-        SetHead(Random.Range(1, 11));
-        SetBody(Random.Range(1, 11));
-        SetHat(Random.Range(1, 11));
+        currentHead = Random.Range(1, 11);
+        currentBody = Random.Range(1, 11);
+        currentHat = Random.Range(1, 11);
+
+        SetHead(currentHead);
+        SetBody(currentBody);
+        SetHat(currentHat);
     }
 
     public void SetHead(int headID) {
+        currentHead = headID;
+
         MeshRenderer renderer = this.headGO.GetComponent<MeshRenderer>();
         string resourceLC = "UnitSprites/Head/head" + headID.ToString();
         renderer.material = (Material)Resources.Load(resourceLC);
@@ -44,12 +50,16 @@ public class UnitSprite {
     }
 
     public void SetBody(int bodyID) {
+        currentBody = bodyID;
+
         MeshRenderer renderer = this.bodyGO.GetComponent<MeshRenderer>();
         string resourceLC = "UnitSprites/Body/body" + bodyID.ToString();
         renderer.material = (Material)Resources.Load(resourceLC);
     }
 
     public void SetHat(int hatID) {
+        currentHat = hatID;
+
         MeshRenderer renderer = this.hatGO.GetComponent<MeshRenderer>();
         string resourceLC = "UnitSprites/Hat/hat" + hatID.ToString();
         renderer.material = (Material)Resources.Load(resourceLC);

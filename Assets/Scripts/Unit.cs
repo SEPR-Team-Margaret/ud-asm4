@@ -200,6 +200,26 @@ public class Unit : MonoBehaviour {
         return owner.GetColor();
     }
 
+    /// <summary>
+    /// 
+    /// Gets the sprite.
+    /// 
+    /// </summary>
+    /// <returns>The sprite.</returns>
+    public UnitSprite GetSprite() {
+        return sprite;
+    }
+
+    /// <summary>
+    /// 
+    /// Sets the sprite.
+    /// 
+    /// </summary>
+    /// <param name="sprite">Sprite.</param>
+    public void SetSprite(UnitSprite sprite) {
+        this.sprite = sprite;
+    }
+
 
     /// <summary>
     /// 
@@ -450,12 +470,9 @@ public class Unit : MonoBehaviour {
         this.unitName = savedData.sectorName[sectorID];
         this.unitFrozen = savedData.sectorFrozen[sectorID];
         this.frozenCounter = savedData.sectorFrozenCounter[sectorID];
-        /*
-        this.sprite = new UnitSprite(this.gameObject,
-            savedData.sprite.currentHead,
-            savedData.sprite.currentBody,
-            savedData.sprite.currentHat);
-            */
+        this.sprite.SetHat(savedData.sectorSpriteHat[sectorID]);
+        this.sprite.SetHead(savedData.sectorSpriteHead[sectorID]);
+        this.sprite.SetBody(savedData.sectorSpriteBody[sectorID]);
         this.popupName.text = this.unitName;
         this.level -= 1;
         this.LevelUp();

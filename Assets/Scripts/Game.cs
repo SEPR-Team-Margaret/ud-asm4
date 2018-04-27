@@ -734,7 +734,7 @@ public class Game : MonoBehaviour {
                 // Set up the dialog box and show it
                 dialog.SetDialogType(Dialog.DialogType.PlayerElimated);
                 dialog.SetDialogData(players[i].name);
-                dialog.Show();
+            //    dialog.Show();
                 eliminatedPlayers[i] = true; // ensure that the dialog is only shown once
                 players[i].Defeat(currentPlayer); // Releases all owned sectors
                 players[i].GetGui().gameObject.SetActive(false);
@@ -907,6 +907,8 @@ public class Game : MonoBehaviour {
         gameMap.GetComponent<Map>().NumPunishmentCardsOnMap = numPunishmentCards;
 
         UpdateGUI();
+
+        CheckForDefeatedPlayers();
 
     }
 

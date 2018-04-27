@@ -587,6 +587,7 @@ public class Sector : MonoBehaviour {
 
         GameObject animation = GameObject.Find("AnimationPlane");
         VideoPlayer theVideo;
+
         //finds number associated with each player or neutral (only applies to defense as neutrals cannot attack)
         int attackingID = attackingUnit.GetOwner().playerID;
         int defendingID;

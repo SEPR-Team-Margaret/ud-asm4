@@ -68,6 +68,11 @@ public class GameData
     // Level (-1 for none)
     public int[] sectorLevel = new int[32];
 
+    // UnitSprite
+    public int[] sectorSpriteHat = new int[32];
+    public int[] sectorSpriteHead = new int[32];
+    public int[] sectorSpriteBody = new int[32];
+
     // Active  (-1 for none)
     public int sectorActive = -1;
 
@@ -185,6 +190,45 @@ public class GameData
         for (int i = 0; i < 32; i++)
         {
             this.sectorLevel[i] = sectors[i].GetLevel();
+        }
+
+        // Sprite Hat
+        for (int i = 0; i < 32; i++)
+        {
+            if (sectors[i].GetUnit() != null)
+            {
+                this.sectorSpriteHat[i] = sectors[i].GetUnit().GetSprite().currentHat;
+            }
+            else
+            {
+                this.sectorSpriteHat[i] = -1;
+            }
+        }
+
+        // Sprite Head
+        for (int i = 0; i < 32; i++)
+        {
+            if (sectors[i].GetUnit() != null)
+            {
+                this.sectorSpriteHead[i] = sectors[i].GetUnit().GetSprite().currentHead;
+            }
+            else
+            {
+                this.sectorSpriteHead[i] = -1;
+            }
+        }
+
+        // Sprite Body
+        for (int i = 0; i < 32; i++)
+        {
+            if (sectors[i].GetUnit() != null)
+            {
+                this.sectorSpriteBody[i] = sectors[i].GetUnit().GetSprite().currentBody;
+            }
+            else
+            {
+                this.sectorSpriteBody[i] = -1;
+            }
         }
 
         // Active
