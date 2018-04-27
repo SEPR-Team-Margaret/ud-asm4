@@ -59,6 +59,7 @@ public class Unit : MonoBehaviour {
 
         // get a sprite for the unit
         sprite = new UnitSprite(gameObject);
+        sprite.GenerateRandomSprite();
 
         // get references to the UI elements of the unit popup
         popup = gameObject.transform.Find("Popup").gameObject;

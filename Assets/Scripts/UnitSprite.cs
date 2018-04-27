@@ -28,6 +28,13 @@ public class UnitSprite {
         SetHat(hat);
     }
 
+    public void GenerateRandomSprite()
+    {
+        SetHead(Random.Range(1, 11));
+        SetBody(Random.Range(1, 11));
+        SetHat(Random.Range(1, 11));
+    }
+
     public void SetHead(int headID) {
         MeshRenderer renderer = this.headGO.GetComponent<MeshRenderer>();
         string resourceLC = "UnitSprites/Head/head" + headID.ToString();
