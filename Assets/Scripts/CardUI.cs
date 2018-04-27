@@ -9,8 +9,6 @@ public class CardUI : MonoBehaviour {
     [SerializeField] private UnityEngine.UI.Text title;
     [SerializeField] private UnityEngine.UI.Text description;
     [SerializeField] private UnityEngine.UI.Text number;
-    [SerializeField] private UnityEngine.UI.Button menuButton;
-    [SerializeField] private UnityEngine.UI.Button endTurnButton;
     [SerializeField] private int index = 0;
 
     /// <summary>
@@ -29,8 +27,6 @@ public class CardUI : MonoBehaviour {
         title = transform.Find("Card_Title").GetComponent<UnityEngine.UI.Text>();
         description = transform.Find("Card_Description").GetComponent<UnityEngine.UI.Text>();
         number = transform.Find("Card_Number").GetComponentInChildren<UnityEngine.UI.Text>();
-        menuButton = GameObject.Find("Menu_Button").GetComponent<UnityEngine.UI.Button>();
-        endTurnButton = GameObject.Find("End_Turn_Button").GetComponent<UnityEngine.UI.Button>();
 
         // set default card index
         index = 0;
@@ -67,8 +63,7 @@ public class CardUI : MonoBehaviour {
 
         // set game UI buttons to be uninteractable to avoid opening
         // the menu or ending the turn while selecting a card
-        menuButton.interactable = false;
-        endTurnButton.interactable = false;
+        player.GetGame().DisableUIButtons();
 
     }
 
@@ -84,8 +79,7 @@ public class CardUI : MonoBehaviour {
 		SoundManager.PlaySound ("cardReverse");
 
         // set game UI buttons to be interactable again
-        menuButton.interactable = true;
-        endTurnButton.interactable = true;
+        player.GetGame().EnableUIButtons();
 
     }
 

@@ -503,13 +503,30 @@ public class Sector : MonoBehaviour {
 
     IEnumerator AnimationPlaying(VideoPlayer passedVideo, GameObject passedAnimationPlane, string passedBody, string passedTitle)
     {
-        yield return new WaitForSecondsRealtime(5);
+        // block interactions with the game during animation
+        // closing dialog after animation restores functionality
+        map.game.DisableUIButtons();
+        map.game.dialog.texture.transform.GetChild(7).gameObject.SetActive(true);
+
+        // play animation
+        passedVideo.enabled = true;
+        yield return new WaitForSecondsRealtime(0.2f);
+        passedAnimationPlane.transform.Translate(0, 40, 0);
+
+        // wait for animation to complete
+        yield return new WaitForSecondsRealtime(6.0f);
+
+        // hide animation
         passedVideo.enabled = false;
         passedAnimationPlane.transform.Translate(0, -40, 0);
 
+        // show combat dialog
         map.game.dialog.SetDialogType(Dialog.DialogType.ShowText);
         map.game.dialog.SetDialogData(passedTitle, passedBody);
         map.game.dialog.Show();
+
+        // alter line spacing in the dialog window to fit text
+        // but catch any NullReferenceExceptions thrown
         try
         {
             GameObject info = GameObject.Find("Info");
@@ -521,8 +538,6 @@ public class Sector : MonoBehaviour {
             Debug.Log("could not change line spacing in Conflict dialog");
         }
     }
-
-
 
 
     /// <summary>
@@ -606,13 +621,11 @@ public class Sector : MonoBehaviour {
         if (attackingUnitRoll > defendingUnitRoll)
         {
             title = "Victory!";
-            animation.transform.Translate(0, 40, 0);
             foreach (VideoPlayer aVideo in animation.GetComponents<VideoPlayer>())
             {
                 if (aVideo.clip.name.Equals("" + attackingID + defendingID + randomAnimation))
                 {
                     theVideo = aVideo;
-                    theVideo.enabled = true;
                     StartCoroutine(AnimationPlaying(theVideo, animation, body, title));
                 }
             }
@@ -620,13 +633,11 @@ public class Sector : MonoBehaviour {
         else
         {
             title = "Defeat!";
-            animation.transform.Translate(0, 40, 0);
             foreach (VideoPlayer aVideo in animation.GetComponents<VideoPlayer>())
             {
                 if (aVideo.clip.name.Equals("" + defendingID + attackingID + randomAnimation))
                 {
                     theVideo = aVideo;
-                    theVideo.enabled = true;
                     StartCoroutine(AnimationPlaying(theVideo, animation, body, title));
                 }
             }

@@ -17,9 +17,6 @@ public class Dialog : MonoBehaviour
 	public Dropdown skipPlayer;
 	List<string> listElements = new List<string>();
 
-    private UnityEngine.UI.Button menuButton;
-    private UnityEngine.UI.Button endTurnButton;
-
     public enum DialogType
     {
         EndGame, PlayerElimated, SaveQuit, ShowText, SelectTurnSkip, SelectNullifyResource
@@ -27,15 +24,13 @@ public class Dialog : MonoBehaviour
 
     /// <summary>
     /// 
-    /// Get the necessary references to the Game and its UI elements
+    /// Sets the game.
     /// 
     /// </summary>
-	void Start() {
-		this.game = GameObject.Find("GameManager").GetComponent<Game>();
-        menuButton = GameObject.Find("Menu_Button").GetComponent<UnityEngine.UI.Button>();
-        endTurnButton = GameObject.Find("End_Turn_Button").GetComponent<UnityEngine.UI.Button>();
-
-	}
+    /// <param name="game">Game.</param>
+    public void SetGame(Game game) {
+        this.game = game;
+    }
 
     /// <summary>
     /// 
@@ -182,8 +177,7 @@ public class Dialog : MonoBehaviour
         try {
         
             // set UI buttons to be uninteractable
-            menuButton.interactable = false;
-            endTurnButton.interactable = false;
+            game.DisableUIButtons();
 
         } catch (System.NullReferenceException e) {
             Debug.Log("could not disable gui buttons");
@@ -205,8 +199,7 @@ public class Dialog : MonoBehaviour
         try {
             
             // set UI buttons to be interactable
-            menuButton.interactable = true;
-            endTurnButton.interactable = true;
+            game.EnableUIButtons();
 
         } catch (System.NullReferenceException e) {
             Debug.Log("could not re-enable gui buttons");

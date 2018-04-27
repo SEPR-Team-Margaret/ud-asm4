@@ -42,6 +42,10 @@ public class Game : MonoBehaviour {
 
     [SerializeField] private GameObject punishmentCardPrefab;
 
+    [SerializeField] private UnityEngine.UI.Button menuButton;
+    [SerializeField] private UnityEngine.UI.Button endTurnButton;
+    [SerializeField] private UnityEngine.UI.Button cardButton;
+
 
     public void Start() {
         Names.Init();
@@ -60,9 +64,13 @@ public class Game : MonoBehaviour {
         // initialize the game
         actionsRemainingLabel = GameObject.Find("Remaining_Actions_Value").GetComponent<UnityEngine.UI.Text>();
 
-        UnityEngine.UI.Button endTurnButton = GameObject.Find("End_Turn_Button").GetComponent<UnityEngine.UI.Button>();
+        endTurnButton = GameObject.Find("End_Turn_Button").GetComponent<UnityEngine.UI.Button>();
         endTurnButton.onClick.AddListener(EndTurn);
 
+        menuButton = GameObject.Find("Menu_Button").GetComponent<UnityEngine.UI.Button>();
+        cardButton = GameObject.Find("Card_Button").GetComponent<UnityEngine.UI.Button>();
+
+        dialog.SetGame(this);
         #endregion
 
         // create a specified number of human players
@@ -143,6 +151,30 @@ public class Game : MonoBehaviour {
     /// </summary>
     public void DisableTestMode() {
         testMode = false;
+    }
+
+    /// <summary>
+    /// 
+    /// Enables the user interface buttons.
+    /// 
+    /// </summary>
+    public void EnableUIButtons() {
+
+        menuButton.interactable = true;
+        endTurnButton.interactable = true;
+        cardButton.interactable = true;
+    }
+
+    /// <summary>
+    /// 
+    /// Disables the user interface buttons.
+    /// 
+    /// </summary>
+    public void DisableUIButtons() {
+
+        menuButton.interactable = false;
+        endTurnButton.interactable = false;
+        cardButton.interactable = false;
     }
 
     /// <summary>
@@ -866,8 +898,13 @@ public class Game : MonoBehaviour {
         actionsRemainingLabel = GameObject.Find("Remaining_Actions_Value").GetComponent<UnityEngine.UI.Text>();
         actionsRemaining = savedGame.actionsRemaining;
 
-        UnityEngine.UI.Button endTurnButton = GameObject.Find("End_Turn_Button").GetComponent<UnityEngine.UI.Button>();
+        endTurnButton = GameObject.Find("End_Turn_Button").GetComponent<UnityEngine.UI.Button>();
         endTurnButton.onClick.AddListener(EndTurn);
+
+        menuButton = GameObject.Find("Menu_Button").GetComponent<UnityEngine.UI.Button>();
+        cardButton = GameObject.Find("Card_Button").GetComponent<UnityEngine.UI.Button>();
+
+        dialog.SetGame(this);
 
         if (savedGame.playerController[3] == "human")
         {
