@@ -33,6 +33,7 @@ public class Game : MonoBehaviour {
     [SerializeField] private int actionsRemaining = 2;
 
     [SerializeField] public Dialog dialog;
+    [SerializeField] public GameObject animationBlocker;
 
     public bool triggerDialog = false;
 

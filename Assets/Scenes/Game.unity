@@ -5166,11 +5166,15 @@ MonoBehaviour:
   actionsRemainingLabel: {fileID: 0}
   actionsRemaining: 2
   dialog: {fileID: 369558833}
+  animationBlocker: {fileID: 1309098084}
   triggerDialog: 0
   eliminatedPlayers: 
   eliminatedUnits: []
   punishmentCardPrefab: {fileID: 1810561049532340, guid: e4ff7b2d264670d4bbb4abdf4aed1531,
     type: 2}
+  menuButton: {fileID: 0}
+  endTurnButton: {fileID: 0}
+  cardButton: {fileID: 0}
 --- !u!4 &369558831
 Transform:
   m_ObjectHideFlags: 0
@@ -6934,6 +6938,7 @@ Transform:
   m_LocalPosition: {x: -42.6, y: -20, z: 20.07}
   m_LocalScale: {x: 6, y: 1, z: 3}
   m_Children:
+  - {fileID: 1309098085}
   - {fileID: 1417212975}
   m_Father: {fileID: 0}
   m_RootOrder: 13
@@ -6965,7 +6970,7 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 0
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
-  m_Looping: 1
+  m_Looping: 0
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
 --- !u!328 &486236499
@@ -8316,6 +8321,20 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -9665,8 +9684,6 @@ MonoBehaviour:
   title: {fileID: 0}
   description: {fileID: 0}
   number: {fileID: 0}
-  menuButton: {fileID: 0}
-  endTurnButton: {fileID: 0}
   index: 0
 --- !u!1 &661196215
 GameObject:
@@ -14104,8 +14121,6 @@ MonoBehaviour:
   title: {fileID: 0}
   description: {fileID: 0}
   number: {fileID: 0}
-  menuButton: {fileID: 0}
-  endTurnButton: {fileID: 0}
   index: 0
 --- !u!1 &1000579394
 GameObject:
@@ -17697,6 +17712,55 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: f559242f99080cf4ba80e2d79b223987, type: 3}
   m_PrefabInternal: {fileID: 1292011648}
+--- !u!1 &1309098084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1309098085}
+  - component: {fileID: 1309098087}
+  - component: {fileID: 1309098086}
+  m_Layer: 5
+  m_Name: Blocker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1309098085
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1309098084}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.00042597455, y: 24.749756, z: 2.4190872}
+  m_LocalScale: {x: 16.272896, y: 0.59264004, z: 22.917217}
+  m_Children: []
+  m_Father: {fileID: 486236497}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1309098086
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1309098084}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1309098087
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1309098084}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1314466493
 Prefab:
   m_ObjectHideFlags: 0
@@ -18842,7 +18906,7 @@ Transform:
   m_LocalScale: {x: 1.02, y: 1, z: 0.28}
   m_Children: []
   m_Father: {fileID: 486236497}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1417212976
 MeshRenderer:
@@ -23803,8 +23867,6 @@ MonoBehaviour:
   title: {fileID: 0}
   description: {fileID: 0}
   number: {fileID: 0}
-  menuButton: {fileID: 0}
-  endTurnButton: {fileID: 0}
   index: 0
 --- !u!1 &1903372875
 GameObject:
@@ -23988,8 +24050,6 @@ MonoBehaviour:
   title: {fileID: 0}
   description: {fileID: 0}
   number: {fileID: 0}
-  menuButton: {fileID: 0}
-  endTurnButton: {fileID: 0}
   index: 0
 --- !u!1 &1922698028
 GameObject:
@@ -24672,6 +24732,20 @@ Light:
   m_Lightmapping: 2
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0

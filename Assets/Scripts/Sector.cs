@@ -506,7 +506,7 @@ public class Sector : MonoBehaviour {
         // block interactions with the game during animation
         // closing dialog after animation restores functionality
         map.game.DisableUIButtons();
-        map.game.dialog.texture.transform.GetChild(7).gameObject.SetActive(true);
+        map.game.animationBlocker.SetActive(true);
 
         // play animation
         passedVideo.enabled = true;
@@ -519,6 +519,7 @@ public class Sector : MonoBehaviour {
         // hide animation
         passedVideo.enabled = false;
         passedAnimationPlane.transform.Translate(0, -40, 0);
+        map.game.animationBlocker.SetActive(false);
 
         // show combat dialog
         map.game.dialog.SetDialogType(Dialog.DialogType.ShowText);
