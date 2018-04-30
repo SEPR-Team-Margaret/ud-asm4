@@ -21,7 +21,7 @@ public class Player : MonoBehaviour {
     [SerializeField] public int playerID;
 
     [System.NonSerialized] public List <Sector> ownedSectors = new List<Sector>();
-    [System.NonSerialized] public List <Unit> units = new List<Unit>();
+	[System.NonSerialized] public List <Unit> units = new List<Unit>();
 
     [System.NonSerialized] private Game game;
     [System.NonSerialized] private GameObject unitPrefab;

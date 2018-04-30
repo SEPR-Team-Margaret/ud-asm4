@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 
@@ -554,8 +555,9 @@ public class Game : MonoBehaviour {
                 if (currentPlayer.IsNeutral() && !currentPlayer.IsEliminated())
                 {
                     players[nextPlayerIndex].SpawnUnits();
-                    NeutralPlayerTurn(nextPlayerIndex);
-                    NeutralPlayerTurn(nextPlayerIndex); 
+                    //NeutralPlayerTurn(nextPlayerIndex);
+                   	//NeutralPlayerTurn(nextPlayerIndex); 
+					StartCoroutine(DelayedNeutralPlayerTurn(nextPlayerIndex));
                 }
                 break;                
             }
@@ -608,6 +610,15 @@ public class Game : MonoBehaviour {
         }
     }
 
+	IEnumerator DelayedNeutralPlayerTurn(int playerIndex){
+		DisableUIButtons ();
+		yield return new WaitForSecondsRealtime(1.0f);
+		NeutralPlayerTurn (playerIndex);
+		yield return new WaitForSecondsRealtime(1.0f);
+		NeutralPlayerTurn (playerIndex);
+		EnableUIButtons ();
+	}
+
     /// <summary>
     /// 
     /// Carries out the neutral player turn
@@ -619,7 +630,16 @@ public class Game : MonoBehaviour {
         NextTurnState();
         Debug.Log("neutral player: " + players[playerIndex].GetColor().ToString());
         List<Unit> units = players[playerIndex].units;
-        Unit selectedUnit = units[UnityEngine.Random.Range(0, units.Count)];
+		List<Unit> unfrozenUnits = new List<Unit>();
+		foreach (Unit unit in units) {
+			if (unit.IsFrozen() == false) {
+				unfrozenUnits.Add (unit);
+			}
+		}
+		if (unfrozenUnits.Count == 0) {
+			return;
+		}
+		Unit selectedUnit = unfrozenUnits[UnityEngine.Random.Range(0, unfrozenUnits.Count)];
         Sector[] adjacentSectors = selectedUnit.GetSector().GetAdjacentSectors();
         List<Sector> possibleSectors = new List<Sector>();
         for (int i = 0; i < adjacentSectors.Length; i++)

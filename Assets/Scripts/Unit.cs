@@ -280,7 +280,7 @@ public class Unit : MonoBehaviour {
 
         }
         else {
-            Debug.Log("This unit is frozen! -- need to implement UI for this");
+            Debug.Log("This unit is frozen!");
         }
 
     }
@@ -477,6 +477,8 @@ public class Unit : MonoBehaviour {
         this.level -= 1;
         this.LevelUp();
         this.gameObject.SetActive(true);
+
+		this.owner.units.Add (this);
     }
 
     /// <summary>
