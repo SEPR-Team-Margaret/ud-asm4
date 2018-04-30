@@ -111,7 +111,7 @@ public class Sector : MonoBehaviour {
         // or gray if null
         Renderer renderer = GetComponent<Renderer>();
         if (owner == null) {
-            Debug.Log(DEFAULT_COLOR);
+            //Debug.Log(DEFAULT_COLOR);
             //SEE HERE
             renderer.material.color = DEFAULT_COLOR;
         } else {

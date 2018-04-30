@@ -154,6 +154,18 @@ public class Game : MonoBehaviour {
         testMode = false;
     }
 
+    public void SetMenuButton(UnityEngine.UI.Button menuButton) {
+        this.menuButton = menuButton;
+    }
+
+    public void SetEndTurnButton(UnityEngine.UI.Button endTurnButton) {
+        this.endTurnButton = endTurnButton;
+    }
+
+    public void SetCardButton(UnityEngine.UI.Button cardButton) {
+        this.cardButton = cardButton;
+    }
+
     /// <summary>
     /// 
     /// Enables the user interface buttons.

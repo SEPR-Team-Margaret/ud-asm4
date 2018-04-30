@@ -12,6 +12,7 @@ public class TestSetup
     private GameObject book;
     private Dialog dialog;
     private GameObject soundManager;
+    private GameObject animationPlane;
 
 
     public TestSetup()
@@ -42,6 +43,8 @@ public class TestSetup
 
         soundManager = GameObject.Instantiate(Resources.Load<GameObject>("SoundManager"));
 
+        animationPlane = GameObject.Instantiate(Resources.Load<GameObject>("AnimationPlane"));
+        animationPlane.name = "AnimationPlane";
 
         // the "Scenery" asset contains the camera and light source of the 4x4 Test
         // can uncomment to view scene as tests run, but significantly reduces speed
@@ -75,6 +78,16 @@ public class TestSetup
         players = game.GetPlayers();
 
         dialog.texture = Resources.Load<GameObject>("DialogTexture");
+
+        // get game's references to GUI buttons
+        game.SetEndTurnButton(GameObject.Find("End_Turn_Button").GetComponent<UnityEngine.UI.Button>());
+        game.SetMenuButton(GameObject.Find("Menu_Button").GetComponent<UnityEngine.UI.Button>());
+        game.SetCardButton(GameObject.Find("Card_Button").GetComponent<UnityEngine.UI.Button>());
+
+        game.animationBlocker = animationPlane.transform.Find("Blocker").gameObject;
+        game.animationBlocker.SetActive(false);
+
+        dialog.SetGame(game);
 
         // enable test mode
         game.EnableTestMode();
@@ -118,6 +131,10 @@ public class TestSetup
 
     public GameObject GetSoundManager() {
         return soundManager;
+    }
+
+    public GameObject GetAnimationPlane() {
+        return this.animationPlane;
     }
     
 }

@@ -78,6 +78,7 @@ public class SaveGameTest
 
             Game game2 = MonoBehaviour.Instantiate(Resources.Load<GameObject>("GameManager 1")).GetComponent<Game>();
             GameData gameData = SavedGame.Load("savetest");
+            game2.dialog.texture = game.dialog.texture;
             game2.Initialize(gameData);
 
             Assert.AreEqual(game.currentPlayer.playerID,game2.currentPlayer.playerID);
@@ -108,6 +109,7 @@ public class SaveGameTest
 
             Game game2 = MonoBehaviour.Instantiate(Resources.Load<GameObject>("GameManager 1")).GetComponent<Game>();
             GameData gameData = SavedGame.Load("savetest");
+            game2.dialog.texture = game.dialog.texture;
             game2.Initialize(gameData);
 
             Assert.IsFalse(game2.players[3].IsHuman());
@@ -139,6 +141,7 @@ public class SaveGameTest
 
             Game game2 = MonoBehaviour.Instantiate(Resources.Load<GameObject>("GameManager 1")).GetComponent<Game>();
             GameData gameData = SavedGame.Load("savetest");
+            game2.dialog.texture = game.dialog.texture;
             game2.Initialize(gameData);
 
             Assert.IsTrue(game2.players[1].skipTurn);
@@ -170,6 +173,7 @@ public class SaveGameTest
 
             Game game2 = MonoBehaviour.Instantiate(Resources.Load<GameObject>("GameManager 1")).GetComponent<Game>();
             GameData gameData = SavedGame.Load("savetest");
+            game2.dialog.texture = game.dialog.texture;
             game2.Initialize(gameData);
 
             Assert.AreEqual(game.players[1].GetAttackBonus(),game2.players[1].GetAttackBonus());
@@ -202,6 +206,7 @@ public class SaveGameTest
 
             Game game2 = MonoBehaviour.Instantiate(Resources.Load<GameObject>("GameManager 1")).GetComponent<Game>();
             GameData gameData = SavedGame.Load("savetest");
+            game2.dialog.texture = game.dialog.texture;
             game2.Initialize(gameData);
 
             Assert.IsTrue(game2.players[1].GetResourcesNullified());
@@ -236,6 +241,7 @@ public class SaveGameTest
 
             Game game2 = MonoBehaviour.Instantiate(Resources.Load<GameObject>("GameManager 1")).GetComponent<Game>();
             GameData gameData = SavedGame.Load("savetest");
+            game2.dialog.texture = game.dialog.texture;
             game2.Initialize(gameData);
 
             // count the number of each type of card in the original game
@@ -299,6 +305,7 @@ public class SaveGameTest
 
             Game game2 = MonoBehaviour.Instantiate(Resources.Load<GameObject>("GameManager 1")).GetComponent<Game>();
             GameData gameData = SavedGame.Load("savetest");
+            game2.dialog.texture = game.dialog.texture;
             game2.Initialize(gameData);
 
             // get a list of the landmarked sectors in the original game
@@ -353,6 +360,7 @@ public class SaveGameTest
 
             Game game2 = MonoBehaviour.Instantiate(Resources.Load<GameObject>("GameManager 1")).GetComponent<Game>();
             GameData gameData = SavedGame.Load("savetest");
+            game2.dialog.texture = game.dialog.texture;
             game2.Initialize(gameData);
 
             Assert.AreEqual(game.GetVCSectorID(), game2.GetVCSectorID());
@@ -384,6 +392,7 @@ public class SaveGameTest
 
             Game game2 = MonoBehaviour.Instantiate(Resources.Load<GameObject>("GameManager 1")).GetComponent<Game>();
             GameData gameData = SavedGame.Load("savetest");
+            game2.dialog.texture = game.dialog.texture;
             game2.Initialize(gameData);
 
             Assert.AreEqual(game.sectors[1].GetPunishmentCard().GetEffect(), game2.sectors[1].GetPunishmentCard().GetEffect());
@@ -418,6 +427,7 @@ public class SaveGameTest
 
             Game game2 = MonoBehaviour.Instantiate(Resources.Load<GameObject>("GameManager 1")).GetComponent<Game>();
             GameData gameData = SavedGame.Load("savetest");
+            game2.dialog.texture = game.dialog.texture;
             game2.Initialize(gameData);
 
             if (game.sectors[6].IsVC()) {
@@ -451,6 +461,7 @@ public class SaveGameTest
 
             Game game2 = MonoBehaviour.Instantiate(Resources.Load<GameObject>("GameManager 1")).GetComponent<Game>();
             GameData gameData = SavedGame.Load("savetest");
+            game2.dialog.texture = game.dialog.texture;
             game2.Initialize(gameData);
 
             Assert.AreEqual(game.sectors[0].GetUnit().GetLevel(), game2.sectors[0].GetUnit().GetLevel());
@@ -479,6 +490,7 @@ public class SaveGameTest
 
             Game game2 = MonoBehaviour.Instantiate(Resources.Load<GameObject>("GameManager 1")).GetComponent<Game>();
             GameData gameData = SavedGame.Load("savetest");
+            game2.dialog.texture = game.dialog.texture;
             game2.Initialize(gameData);
 
             Assert.AreSame(game.sectors[0].GetUnit().unitName, game2.sectors[0].GetUnit().unitName);
@@ -510,6 +522,7 @@ public class SaveGameTest
 
             Game game2 = MonoBehaviour.Instantiate(Resources.Load<GameObject>("GameManager 1")).GetComponent<Game>();
             GameData gameData = SavedGame.Load("savetest");
+            game2.dialog.texture = game.dialog.texture;
             game2.Initialize(gameData);
 
             Assert.IsTrue(game2.sectors[0].GetUnit().IsFrozen());
