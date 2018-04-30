@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-// Added by Jack
 public class MinigameManager : MonoBehaviour {
 
     public static MinigameManager instance;

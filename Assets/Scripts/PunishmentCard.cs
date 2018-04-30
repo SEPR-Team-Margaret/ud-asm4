@@ -5,7 +5,6 @@ using UnityEngine;
 [System.Serializable]
 public class PunishmentCard : MonoBehaviour {
 
-//    [System.NonSerialized] private Player owner;
     [SerializeField] private int playerID;
     [System.NonSerialized] private Sector sector;
     [SerializeField] private int sectorID;
@@ -92,7 +91,6 @@ public class PunishmentCard : MonoBehaviour {
         }
 
         // set the card's owner to null and place it in a random sector
- //       owner = null;
         sector = RandomizeSector();
         if (sector != null)
         {
@@ -139,7 +137,6 @@ public class PunishmentCard : MonoBehaviour {
         }
 
         // set the card's owner and sector
- //       owner = null;
         this.sector = sector;
         if (sector != null)
         {
@@ -262,7 +259,6 @@ public class PunishmentCard : MonoBehaviour {
     public void OnLoad(PunishmentCard savedData) {
         Game game = GameObject.Find("GameManager").GetComponent<Game>();
         this.playerID = savedData.playerID;
-//        this.owner = game.players[savedData.playerID];
         this.sectorID = savedData.sectorID;
         this.sector = game.sectors[savedData.sectorID];
         this.effect = savedData.effect;

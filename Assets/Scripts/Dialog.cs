@@ -9,9 +9,7 @@ public class Dialog : MonoBehaviour
 {
 
 	private Game game;
-
     public GameObject texture;
-
     private DialogType type;
 
 	public Dropdown skipPlayer;

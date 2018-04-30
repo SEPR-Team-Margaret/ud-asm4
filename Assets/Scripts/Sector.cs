@@ -13,10 +13,10 @@ public class Sector : MonoBehaviour {
     [System.NonSerialized] private Color DEFAULT_COLOR = new Color(0.8f,0.8f,0.8f);
 
     [System.NonSerialized] private Map map;
-    [SerializeField] private Unit unit;
-    [System.NonSerialized] private Player owner;
-//    [SerializeField] private int ownerID;
     [System.NonSerialized] private Sector[] adjacentSectors;
+    [System.NonSerialized] private Player owner;
+
+    [SerializeField] private Unit unit;
     [SerializeField] private Landmark landmark;
     [SerializeField] private bool VC = false;
     [SerializeField] private PunishmentCard punishmentCard;
@@ -96,23 +96,16 @@ public class Sector : MonoBehaviour {
     /// if passed player is null resets the sector colour back to grey
     /// 
     /// </summary>
-    /// <param name="owner">Player object of the new owner of this sector or null if there is no owner</param
+    /// <param name="owner">Player object of the new owner of this sector or null if there is no owner</param>
     public void SetOwner (Player owner) {
 
         // set sector owner to the given player
         this.owner = owner;
-  /*      if (owner == null) {
-            this.ownerID = -1;
-        } else { 
-            this.ownerID = owner.playerID;
-        }
-*/
+
         // set sector color to the color of the given player
         // or gray if null
         Renderer renderer = GetComponent<Renderer>();
         if (owner == null) {
-            //Debug.Log(DEFAULT_COLOR);
-            //SEE HERE
             renderer.material.color = DEFAULT_COLOR;
         } else {
             renderer.material.color = owner.GetColor();
@@ -125,7 +118,7 @@ public class Sector : MonoBehaviour {
     /// for testing only
     /// 
     /// </summary>
-    /// <param name="owner">Player object of the new owner of this sector or null if there is no owner</param
+    /// <param name="owner">Player object of the new owner of this sector or null if there is no owner</param>
     public void SetOwnerNoColour(Player owner)
     {
         this.owner = owner;
@@ -177,16 +170,43 @@ public class Sector : MonoBehaviour {
         this.landmark = landmark;
     }
 
+    /// <summary>
+    /// 
+    /// Gets the punishment card at the Sector.
+    /// Returns null if no punishment card.
+    /// 
+    /// </summary>
+    /// <returns>The punishment card.</returns>
     public PunishmentCard GetPunishmentCard() {
         return punishmentCard;
     }
-    public void SetPunishmentCard(PunishmentCard pc) {
-        this.punishmentCard = pc;
+
+    /// <summary>
+    /// 
+    /// Sets the punishment card at the Sector.
+    /// 
+    /// </summary>
+    /// <param name="pc">Punishemnt card.</param>
+    public void SetPunishmentCard(PunishmentCard punishmentCard) {
+        this.punishmentCard = punishmentCard;
     }
 
+    /// <summary>
+    /// 
+    /// Determines whether this instance is highlighted.
+    /// 
+    /// </summary>
+    /// <returns><c>true</c> if this instance is highlighted; otherwise, <c>false</c>.</returns>
     public bool IsHighlighted() {
         return isHighlighted;
     }
+
+    /// <summary>
+    /// 
+    /// Sets the Sector's highlighted flag.
+    /// 
+    /// </summary>
+    /// <param name="flag">If set to <c>true</c> flag.</param>
     public void SetIsHighlighted(bool flag) {
         this.isHighlighted = flag;
     }
@@ -226,6 +246,7 @@ public class Sector : MonoBehaviour {
     /// </summary>
     /// <param name="amount"></param>
     public void ApplyHighlight(float amount) {
+        
         if (!this.IsHighlighted()) {
             Renderer renderer = GetComponent<Renderer>();
             Color currentColor = renderer.material.color;
@@ -245,6 +266,7 @@ public class Sector : MonoBehaviour {
     /// </summary>
     /// <param name="amount"></param>
     public void RevertHighlight() {
+        
         if (this.IsHighlighted()) {
             Renderer renderer = GetComponent<Renderer>();
             Color currentColor = renderer.material.color;
@@ -266,6 +288,7 @@ public class Sector : MonoBehaviour {
     /// 
     /// </summary>
     public void ApplyHighlightAdjacent() {
+        
         foreach (Sector adjacentSector in adjacentSectors)
         {
             if (!adjacentSector.IsHighlighted()) {
@@ -281,6 +304,7 @@ public class Sector : MonoBehaviour {
     /// 
     /// </summary>
     public void RevertHighlightAdjacent() {
+        
         foreach (Sector adjacentSector in adjacentSectors)
         {
             if (adjacentSector.IsHighlighted()) {
@@ -296,11 +320,14 @@ public class Sector : MonoBehaviour {
     /// 
     /// </summary>
     public void ClearUnit() {
-
-
         unit = null;
     }
 
+    /// <summary>
+    /// 
+    /// Raises the mouse up as button event.
+    /// 
+    /// </summary>
     void OnMouseUpAsButton () {
 
         // when this sector is clicked, determine the context
@@ -309,17 +336,20 @@ public class Sector : MonoBehaviour {
 		OnMouseUpAsButtonAccessible();
 
     }
-    
+
+    /// <summary>
+    /// 
+    /// Raises the mouse up as button event.
+    /// Accessible to other objects for testing.
+    /// 
+    /// </summary>
     public void OnMouseUpAsButtonAccessible() {
 
-        Debug.Log("CurrentState: "+map.game.GetTurnState() + " | PrevState: "+ map.game.prevState.ToString());
-        // a method of OnMouseUpAsButton that is 
-        // accessible to other objects for testing
-
+        // Debug.Log("CurrentState: "+map.game.GetTurnState() + " | PrevState: "+ map.game.prevState.ToString());
 
         // if this sector contains a unit and belongs to the
         // current active player, and if no unit is selected
-        if (map.game.GetTurnState() == Game.TurnState.Move/*1 || map.game.GetTurnState() == Game.TurnState.Move2*/)
+        if (map.game.GetTurnState() == Game.TurnState.Move)
         {
             if (unit != null && owner.IsActive() && map.game.NoUnitSelected())
             {
@@ -372,14 +402,9 @@ public class Sector : MonoBehaviour {
 
                 OriginSector.RevertHighlight();
                 OriginSector.RevertHighlightAdjacent();
-                /*
-                if (map.game.prevState == Game.TurnState.Move)
-                {
-                    Debug.Log("Apply Highlighting");
-                    this.ApplyHighlight(0.4f);
-                }
-                */
-                map.game.NextTurnState(); // advance to next turn phase when action take (Modified by Dom 13/02/2018)
+
+                // advance to next turn phase
+                map.game.NextTurnState(); 
                 
             }
 
@@ -394,6 +419,7 @@ public class Sector : MonoBehaviour {
                 map.game.dialog.SetDialogData("Goosed!", (unit.unitName + " can't move"));
                 map.game.dialog.Show();
 
+                // freeze the unit and return to the Move phase
                 unit.FreezeUnit();
                 map.game.prevState = map.game.GetTurnState();
                 map.game.SetTurnState(Game.TurnState.Move);
@@ -474,7 +500,7 @@ public class Sector : MonoBehaviour {
             game.eliminatedUnits.Add(attackingUnit.unitName);
         }      
         
-        // removed automatically end turn after attacking (Modified by Dom 13/02/18)
+        // removed automatically end turn after attacking
     }
 
     /// <summary>
@@ -498,10 +524,17 @@ public class Sector : MonoBehaviour {
         return null;
     }
 
-    //coroutine to allow for the fight animation to run for 5 seconds and then stop, showing the dialog box afterwards
-    //used in the Conflict method below
-
-    IEnumerator AnimationPlaying(VideoPlayer passedVideo, GameObject passedAnimationPlane, string passedBody, string passedTitle)
+    //
+    /// <summary>
+    /// 
+    /// Coroutine to allow for the fight animation to run for 6 seconds and then stop, showing the dialog box afterwards.
+    /// 
+    /// </summary>
+    /// <param name="video">Video.</param>
+    /// <param name="animationPlane">Animation plane.</param>
+    /// <param name="title">Dialog title.</param>
+    /// <param name="body">Dialog body.</param>
+    IEnumerator AnimationPlaying(VideoPlayer video, GameObject animationPlane, string title, string body)
     {
         // block interactions with the game during animation
         // closing dialog after animation restores functionality
@@ -509,21 +542,21 @@ public class Sector : MonoBehaviour {
         map.game.animationBlocker.SetActive(true);
 
         // play animation
-        passedVideo.enabled = true;
+        video.enabled = true;
         yield return new WaitForSecondsRealtime(0.2f);
-        passedAnimationPlane.transform.Translate(0, 40, 0);
+        animationPlane.transform.Translate(0, 40, 0);
 
         // wait for animation to complete
         yield return new WaitForSecondsRealtime(6.0f);
 
         // hide animation
-        passedVideo.enabled = false;
-        passedAnimationPlane.transform.Translate(0, -40, 0);
+        video.enabled = false;
+        animationPlane.transform.Translate(0, -40, 0);
         map.game.animationBlocker.SetActive(false);
 
         // show combat dialog
         map.game.dialog.SetDialogType(Dialog.DialogType.ShowText);
-        map.game.dialog.SetDialogData(passedTitle, passedBody);
+        map.game.dialog.SetDialogData(title, body);
         map.game.dialog.Show();
 
         // alter line spacing in the dialog window to fit text
@@ -627,7 +660,7 @@ public class Sector : MonoBehaviour {
                 if (aVideo.clip.name.Equals("" + attackingID + defendingID + randomAnimation))
                 {
                     theVideo = aVideo;
-                    StartCoroutine(AnimationPlaying(theVideo, animation, body, title));
+                    StartCoroutine(AnimationPlaying(theVideo, animation, title, body));
                 }
             }
         }
@@ -639,54 +672,13 @@ public class Sector : MonoBehaviour {
                 if (aVideo.clip.name.Equals("" + defendingID + attackingID + randomAnimation))
                 {
                     theVideo = aVideo;
-                    StartCoroutine(AnimationPlaying(theVideo, animation, body, title));
+                    StartCoroutine(AnimationPlaying(theVideo, animation, title, body));
                 }
             }
         }
         
         return attackingUnitRoll > defendingUnitRoll;
 
-
-        #region conflict resolution algorithm updated to make more fair (Modified by Dom 13/02/2018)
-
-        /*
-
-        // diff = +ve attacker advantage 
-        // diff = -ve defender advantage
-        int diff = (attackingUnit.GetLevel() + attackingUnit.GetOwner().GetAttack() + 1) - (defendingUnit.GetLevel() + defendingUnit.GetOwner().GetDefence());
-
-        // determine uncertaincy in combat
-        // small diff in troops small uncertaincy level
-        float uncertaincy = -0.4f * (Mathf.Abs(diff)) + 0.5f;
-        if (uncertaincy < 0.1f)
-        {
-            uncertaincy = 0.1f; // always at least 10% uncertaincy
-        }
-
-        if (Random.Range(0, 1) < uncertaincy)
-        {
-            if (diff < 0)
-            {
-                return false;
-            } else
-            {
-                return true;
-            }
-        } else
-        {
-            if (diff < 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-        */
-
-        #endregion
     }
 
     /// <summary>

@@ -5,7 +5,6 @@ using UnityEngine;
 public class CardUI : MonoBehaviour {
 
     [SerializeField] private Player player;
- //   [SerializeField] private UnityEngine.UI.Image background; 
     [SerializeField] private UnityEngine.UI.Text title;
     [SerializeField] private UnityEngine.UI.Text description;
     [SerializeField] private UnityEngine.UI.Text number;
@@ -23,7 +22,6 @@ public class CardUI : MonoBehaviour {
         this.player = player;
 
         // get necessary references to UI elements
- //       background = transform.Find("Background").GetComponent<UnityEngine.UI.Image>();
         title = transform.Find("Card_Title").GetComponent<UnityEngine.UI.Text>();
         description = transform.Find("Card_Description").GetComponent<UnityEngine.UI.Text>();
         number = transform.Find("Card_Number").GetComponentInChildren<UnityEngine.UI.Text>();
@@ -52,7 +50,6 @@ public class CardUI : MonoBehaviour {
             player.GetGame().dialog.SetDialogType(Dialog.DialogType.ShowText);
             player.GetGame().dialog.SetDialogData("No Cards", "You have no\npunishment cards!");
             player.GetGame().dialog.Show();
-			//SoundManager.PlaySound ("turnPage");
             return;
         }
 
@@ -98,19 +95,19 @@ public class CardUI : MonoBehaviour {
         switch (card.GetEffect())
         {
             case PunishmentCard.Effect.FreezeUnit:
-                title.text = "Goose Attack!"/*"Freeze Unit"*/;
+                title.text = "Goose Attack!";
                 title.fontSize = 18;
                 description.text = "Make a unit\nunable to move\nfor one round.";
                 break;
 
             case PunishmentCard.Effect.NullifyResource:
-                title.text = "Industrial Action!"/*"Nullify Resource"*/;
+                title.text = "Industrial Action!";
                 title.fontSize = 16;
                 description.text = "Nullifies one\nplayer's bonus\nfrom resources\nfor one round.";
                 break;
 
             case PunishmentCard.Effect.SkipTurn:
-                title.text = "Hangover!"/*"Skip A Turn"*/;
+                title.text = "Hangover!";
                 title.fontSize = 18;
                 description.text = "Skip one player's\nnext turn.";
                 break;

@@ -39,7 +39,6 @@ public class PlayerUI : MonoBehaviour {
 		headerHighlight.text = header.text;
 		headerHighlight.color = player.GetColor();
 
-        //added by Peter
         if (player.IsNeutral())
         {
             header.text = "Neutral";
@@ -63,7 +62,6 @@ public class PlayerUI : MonoBehaviour {
         if (player.GetResourcesNullified())
         {
             nullified.SetActive(true);
-			//SoundManager.PlaySound ("stamp");
         }
         else
         {
@@ -72,7 +70,6 @@ public class PlayerUI : MonoBehaviour {
         if (player.skipTurn)
         {
             skip.SetActive(true);
-			//SoundManager.PlaySound ("stamp");
         }
         else
         {

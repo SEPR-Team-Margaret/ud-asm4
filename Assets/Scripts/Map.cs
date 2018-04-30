@@ -52,6 +52,11 @@ public class Map : MonoBehaviour {
         return sectors;
     }
 
+    /// <summary>
+    /// 
+    /// Initializes the adjacency arrays stored for each sector.
+    /// 
+    /// </summary>
     public void SetAdjacency() {
         this.adjacency[0] = new int[] { 2 };
         this.adjacency[1] = new int[] { 1, 3, 4, 5, 7 };
@@ -96,14 +101,19 @@ public class Map : MonoBehaviour {
     /// <returns>The array of adjacent sectors.</returns>
     /// <param name="sectorID">Sector ID.</param>
     public Sector[] GetAdj(int sectorID) {
+
+        // if not done, initialize the adjacency arrays
         if (!started) {
             SetAdjacency();
             started = true;
         }
+
+        // get the adjacency array associated with the given sector
         Sector[] sectors = new Sector[this.adjacency[sectorID].Length];
         for (int i = 0; i < sectors.Length; i++) {
             sectors[i] = ToSector(this.adjacency[sectorID][i]-1);
         }
+
         return sectors;
     }
 

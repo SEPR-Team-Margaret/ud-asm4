@@ -21,9 +21,7 @@ public class Unit : MonoBehaviour {
      */
 
     [System.NonSerialized] private Player owner;
- //   [SerializeField] private int ownerID;
     [System.NonSerialized] private Sector sector;
-//    [SerializeField] private int sectorID;
     [SerializeField] private int level;
     [SerializeField] private bool selected = false;
     [SerializeField] public string unitName;
@@ -139,7 +137,6 @@ public class Unit : MonoBehaviour {
     /// <param name="owner">The player that owns this unit</param>
     public void SetOwner(Player owner) {
         this.owner = owner;
- //       this.ownerID = this.owner.playerID;
     }
 
     /// <summary>
@@ -160,15 +157,7 @@ public class Unit : MonoBehaviour {
     /// <param name="sector">The sector that this unit is on</param>
     public void SetSector(Sector sector) {
         this.sector = sector;
-  /*      if (sector != null)
-        {
-            this.sectorID = sector.sectorID;
-        }
-        else
-        {
-            this.sectorID = -1;
-        }
-  */  }
+    }
 
     /// <summary>
     /// 
@@ -365,24 +354,22 @@ public class Unit : MonoBehaviour {
 
     /// <summary>
     /// 
-    /// select the unit and highlight the sectors adjacent to it
+    /// select the unit
     /// 
     /// </summary>
     public void Select() {
 
         selected = true;
-        //sector.ApplyHighlightAdjacent();
     }
 
     /// <summary>
     /// 
-    /// deselect the unit and unhighlight the sectors adjacent to it
+    /// deselect the unit
     /// 
     /// </summary>
     public void Deselect() {
 
         selected = false;
-        //sector.RevertHighlightAdjacent();
     }
 
     /// <summary>
@@ -462,10 +449,8 @@ public class Unit : MonoBehaviour {
     public void OnLoad(GameData savedData, int sectorID) {
         
         Game game = GameObject.Find("GameManager").GetComponent<Game>();
- //       this.ownerID = savedData.sectorOwner[sectorID];
         this.owner = game.players[savedData.sectorOwner[sectorID]];
         this.sector = game.sectors[sectorID];
- //       this.sectorID = sectorID;
         this.level = savedData.sectorLevel[sectorID];
         this.unitName = savedData.sectorName[sectorID];
         this.unitFrozen = savedData.sectorFrozen[sectorID];

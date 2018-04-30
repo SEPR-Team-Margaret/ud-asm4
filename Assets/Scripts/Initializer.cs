@@ -7,7 +7,6 @@ public class Initializer : MonoBehaviour {
 
     public Game game;
  
-    //Modified by Ryan
     /// <summary>
     /// 
     /// start the game

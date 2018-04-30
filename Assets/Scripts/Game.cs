@@ -4,17 +4,9 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 
-/* GAME EXECUTABLE http://riskydevelopments.co.uk/ud/UniversityDominationAss3.zip */
 
 [System.Serializable]
 public class Game : MonoBehaviour {
-
-    [SerializeField] public Player[] players; 
-	public GameObject gameMap;
-    [SerializeField] public Player currentPlayer;
-    [SerializeField] public Sector[] sectors;
-
-    public const int NUMBER_OF_PLAYERS = 4;
 
     /* Turn State Overhaul:
      * 
@@ -22,6 +14,14 @@ public class Game : MonoBehaviour {
      *    - Created the 'actionsRemaining' integer to store the number of remaining moves
      *    - Added the 'prevState' field to track previous turn states
      */
+
+    [SerializeField] public Player[] players; 
+	[SerializeField] public GameObject gameMap;
+    [SerializeField] public Player currentPlayer;
+    [SerializeField] public Sector[] sectors;
+
+    public const int NUMBER_OF_PLAYERS = 4;
+
     public enum TurnState { Move, EndOfTurn, SelectUnit, UseCard, NULL };
     [SerializeField] private TurnState turnState;
     [SerializeField] public TurnState prevState;
@@ -30,20 +30,16 @@ public class Game : MonoBehaviour {
     [SerializeField] private bool testMode = false;
     public string saveFilePath;
 
-    [SerializeField] private UnityEngine.UI.Text actionsRemainingLabel;
-    [SerializeField] private int actionsRemaining = 2;
+    [SerializeField] public bool[] eliminatedPlayers;
+    [SerializeField] public List<string> eliminatedUnits;
 
+    [SerializeField] public bool triggerDialog = false;
     [SerializeField] public Dialog dialog;
     [SerializeField] public GameObject animationBlocker;
-
-    public bool triggerDialog = false;
-
-    [SerializeField] public bool[] eliminatedPlayers;
-
-    public List<string> eliminatedUnits;
-
     [SerializeField] private GameObject punishmentCardPrefab;
 
+    [SerializeField] private int actionsRemaining = 2;
+    [SerializeField] private UnityEngine.UI.Text actionsRemainingLabel;
     [SerializeField] private UnityEngine.UI.Button menuButton;
     [SerializeField] private UnityEngine.UI.Button endTurnButton;
     [SerializeField] private UnityEngine.UI.Button cardButton;
@@ -58,7 +54,8 @@ public class Game : MonoBehaviour {
     public void Initialize(bool neutralPlayer)
     {
         if (testMode) return;
-        #region Setup GUI components (Added by Dom 06/02/2018)
+
+        #region Setup GUI components
         // initialize the game
         actionsRemainingLabel = GameObject.Find("Remaining_Actions_Value").GetComponent<UnityEngine.UI.Text>();
 
@@ -71,8 +68,7 @@ public class Game : MonoBehaviour {
         dialog.SetGame(this);
         #endregion
 
-        // create a specified number of human players
-        // *** currently hard-wired to 2 for testing ***
+        // create the players
         CreatePlayers(neutralPlayer);
 
         // initialize the map and allocate players to landmarks
@@ -88,6 +84,70 @@ public class Game : MonoBehaviour {
 
         // update GUIs
         UpdateGUI();
+
+    }
+
+    /// <summary>
+    /// 
+    /// sets up a game with the state stored by the passed GameData
+    /// 
+    /// </summary>
+    /// <param name="savedGame">The saved game state</param>
+    public void Initialize(GameData savedGame)
+    {
+        gameMap = GameObject.Find("Map");
+
+        // initialize the game
+        actionsRemainingLabel = GameObject.Find("Remaining_Actions_Value").GetComponent<UnityEngine.UI.Text>();
+        actionsRemaining = savedGame.actionsRemaining;
+
+        endTurnButton = GameObject.Find("End_Turn_Button").GetComponent<UnityEngine.UI.Button>();
+        endTurnButton.onClick.AddListener(EndTurn);
+
+        menuButton = GameObject.Find("Menu_Button").GetComponent<UnityEngine.UI.Button>();
+        cardButton = GameObject.Find("Card_Button").GetComponent<UnityEngine.UI.Button>();
+
+        dialog.SetGame(this);
+
+        if (savedGame.playerController[3] == "human")
+        {
+            CreatePlayers(false);
+        } else
+        {
+            CreatePlayers(true);
+        }
+
+        this.turnState = TurnState.Move;
+
+        this.gameFinished = savedGame.gameFinished;
+        this.testMode = savedGame.testMode;
+        this.currentPlayer = this.players[savedGame.currentPlayerID];
+        currentPlayer.GetGui().Activate();
+        this.currentPlayer.SetActive(true);
+
+        for (int i = 0; i < 4; i++) {
+            this.players[i].OnLoad(savedGame, i);
+        }
+
+
+        // get an array of all sectors
+        sectors = gameMap.GetComponentsInChildren<Sector>();
+
+        // initialize each sector
+        for (int i = 0; i < sectors.Length; i++) {
+            sectors[i].Initialize(i);
+        }
+
+        for (int i = 0; i < sectors.Length; i++) {
+            this.sectors[i].OnLoad(savedGame);
+        }
+
+        int numPunishmentCards = GameObject.FindObjectsOfType<PunishmentCard>().Length;
+        gameMap.GetComponent<Map>().NumPunishmentCardsOnMap = numPunishmentCards;
+
+        UpdateGUI();
+
+        CheckForDefeatedPlayers();
 
     }
 
@@ -151,14 +211,32 @@ public class Game : MonoBehaviour {
         testMode = false;
     }
 
+    /// <summary>
+    /// 
+    /// Sets the reference to the menu button.
+    /// 
+    /// </summary>
+    /// <param name="menuButton">Menu button.</param>
     public void SetMenuButton(UnityEngine.UI.Button menuButton) {
         this.menuButton = menuButton;
     }
 
+    /// <summary>
+    /// 
+    /// Sets the reference to the end turn button.
+    /// 
+    /// </summary>
+    /// <param name="endTurnButton">End turn button.</param>
     public void SetEndTurnButton(UnityEngine.UI.Button endTurnButton) {
         this.endTurnButton = endTurnButton;
     }
 
+    /// <summary>
+    /// 
+    /// Sets the reference to the card button.
+    /// 
+    /// </summary>
+    /// <param name="cardButton">Card button.</param>
     public void SetCardButton(UnityEngine.UI.Button cardButton) {
         this.cardButton = cardButton;
     }
@@ -260,6 +338,28 @@ public class Game : MonoBehaviour {
     }
 
     /// <summary>
+    /// 
+    /// If there is no VC on the map, sets it in a random sector.
+    /// 
+    /// </summary>
+    public void SpawnVC() {
+
+        if (GetVCSectorID() == -1)
+        {
+            // choose a sector for the Vice Chancellor to be in
+            int rand = UnityEngine.Random.Range(0, sectors.Length);
+
+            // ensure that the chosen sector does not contain a landmark
+            while (sectors[rand].GetLandmark() != null)
+                rand = UnityEngine.Random.Range(0, sectors.Length);
+
+            // set the Vice Chancellor in the chosen sector
+            sectors[rand].SetVC(true);
+            Debug.Log("PVC is at " + sectors[rand].name);
+        }
+    }
+
+    /// <summary>
     /// Finds the sector the VC is assigned to
     /// </summary>
     /// <returns>The id of the sector, or -1 if not set</returns>
@@ -318,6 +418,7 @@ public class Game : MonoBehaviour {
         // mark the specified number of players as human
         if (!neutralPlayer)
         {
+            // set all 4 players as human
             for (int i = 0; i < NUMBER_OF_PLAYERS; i++)
             {
                 players[i].SetHuman(true);
@@ -327,10 +428,13 @@ public class Game : MonoBehaviour {
         }
         else
         {
+            // set players 1-3 as human
             for (int i = 0; i < (NUMBER_OF_PLAYERS - 1); i++)
             {
                 players[i].SetHuman(true);
             }
+
+            // set player 4 to neutral
             players[NUMBER_OF_PLAYERS - 1] = GameObject.Find("PlayerNeutral").GetComponent<Player>();
             GameObject.Find("Player4UI").SetActive(false);
             players[NUMBER_OF_PLAYERS - 1].SetNeutral(true);
@@ -427,12 +531,8 @@ public class Game : MonoBehaviour {
             player.SpawnUnits();
         }
 
-        //set Vice Chancellor
-        int rand = UnityEngine.Random.Range(0, sectors.Length);
-        while (sectors[rand].GetLandmark() != null)
-            rand = UnityEngine.Random.Range(0, sectors.Length);
-        sectors[rand].SetVC(true);
-        Debug.Log(sectors[rand].name);
+        // spawn the VC
+        SpawnVC();
     }
 
     /// <summary>
@@ -504,7 +604,6 @@ public class Game : MonoBehaviour {
     /// 
     /// </summary>
     public void NextPlayer() {
-        //SavedGame.Load("test7");
 
         // set the current player to the next player in the order
 
@@ -551,8 +650,6 @@ public class Game : MonoBehaviour {
                 if (currentPlayer.IsNeutral() && !currentPlayer.IsEliminated())
                 {
                     players[nextPlayerIndex].SpawnUnits();
-                    //NeutralPlayerTurn(nextPlayerIndex);
-                   	//NeutralPlayerTurn(nextPlayerIndex); 
 					StartCoroutine(DelayedNeutralPlayerTurn(nextPlayerIndex));
                 }
                 break;                
@@ -606,8 +703,16 @@ public class Game : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// 
+    /// Coroutine to handle the neutral player's moves,
+    /// adding delays in between the moves.
+    /// 
+    /// </summary>
+    /// <param name="playerIndex">Player index.</param>
 	IEnumerator DelayedNeutralPlayerTurn(int playerIndex){
-		DisableUIButtons ();
+		
+        DisableUIButtons ();
 		yield return new WaitForSecondsRealtime(1.0f);
 		NeutralPlayerTurn (playerIndex);
 		yield return new WaitForSecondsRealtime(1.0f);
@@ -624,7 +729,8 @@ public class Game : MonoBehaviour {
     public void NeutralPlayerTurn(int playerIndex)
     {
         NextTurnState();
-        Debug.Log("neutral player: " + players[playerIndex].GetColor().ToString());
+
+        // select one of the AI's movable units at random
         List<Unit> units = players[playerIndex].units;
 		List<Unit> unfrozenUnits = new List<Unit>();
 		foreach (Unit unit in units) {
@@ -632,20 +738,32 @@ public class Game : MonoBehaviour {
 				unfrozenUnits.Add (unit);
 			}
 		}
+
+        // if no units are able to be moved, do nothing
 		if (unfrozenUnits.Count == 0) {
 			return;
 		}
-		Unit selectedUnit = unfrozenUnits[UnityEngine.Random.Range(0, unfrozenUnits.Count)];
+
+        Unit selectedUnit = unfrozenUnits[UnityEngine.Random.Range(0, unfrozenUnits.Count)];
+
+        // select one of the sectors adjacent to the selected unit at random
         Sector[] adjacentSectors = selectedUnit.GetSector().GetAdjacentSectors();
         List<Sector> possibleSectors = new List<Sector>();
         for (int i = 0; i < adjacentSectors.Length; i++)
         {
+            // do not move into any sector that is owned by another player
+            // or that contains a unit, punishment card, or the PVC
             bool neutralOrEmpty = adjacentSectors[i].GetOwner() == null || adjacentSectors[i].GetOwner().IsNeutral();
             if (neutralOrEmpty && !adjacentSectors[i].IsVC() && adjacentSectors[i].GetPunishmentCard() == null)
-                if (adjacentSectors[i].GetUnit() == null) {
+            {
+                if (adjacentSectors[i].GetUnit() == null)
+                {
                     possibleSectors.Add(adjacentSectors[i]);
                 }
+            }
         }
+
+        // if there is at least one eligible sector, select one and move into it
         if (possibleSectors.Count > 0)
         {
             selectedUnit.MoveTo(possibleSectors[UnityEngine.Random.Range(0, possibleSectors.Count -1)]);
@@ -739,7 +857,7 @@ public class Game : MonoBehaviour {
 
         UpdateGUI();
     }
-    //Added by Dom (15/02/2018)
+
     /// <summary>
     /// 
     /// Updates the text of the Actions Remaining label
@@ -792,11 +910,7 @@ public class Game : MonoBehaviour {
         {
             if (players[i].IsEliminated() && eliminatedPlayers[i] == false)
             {
-                // Set up the dialog box and show it
-                dialog.SetDialogType(Dialog.DialogType.PlayerElimated);
-                dialog.SetDialogData(players[i].name);
-            //    dialog.Show();
-                eliminatedPlayers[i] = true; // ensure that the dialog is only shown once
+                eliminatedPlayers[i] = true; // only disable players once
                 players[i].Defeat(currentPlayer); // Releases all owned sectors
                 players[i].GetGui().gameObject.SetActive(false);
             }
@@ -820,8 +934,8 @@ public class Game : MonoBehaviour {
 
             // if there is no winner yet
             if (GetWinner() == null) {
+                
                 // start the next player's turn
-                // Swapped by Jack
                 NextTurnState();
                 NextPlayer();
 
@@ -911,74 +1025,7 @@ public class Game : MonoBehaviour {
 		}
         UpdateActionsRemainingLabel();
 	}
-        
-    //Added by Dom
-    /// <summary>
-    /// 
-    /// sets up a game with the state stored by the passed GameData
-    /// 
-    /// </summary>
-    /// <param name="savedGame">The saved game state</param>
-    public void Initialize(GameData savedGame)
-    {
-        gameMap = GameObject.Find("Map");
 
-        // initialize the game
-        actionsRemainingLabel = GameObject.Find("Remaining_Actions_Value").GetComponent<UnityEngine.UI.Text>();
-        actionsRemaining = savedGame.actionsRemaining;
-
-        endTurnButton = GameObject.Find("End_Turn_Button").GetComponent<UnityEngine.UI.Button>();
-        endTurnButton.onClick.AddListener(EndTurn);
-
-        menuButton = GameObject.Find("Menu_Button").GetComponent<UnityEngine.UI.Button>();
-        cardButton = GameObject.Find("Card_Button").GetComponent<UnityEngine.UI.Button>();
-
-        dialog.SetGame(this);
-
-        if (savedGame.playerController[3] == "human")
-        {
-            CreatePlayers(false);
-        } else
-        {
-            CreatePlayers(true);
-        }
-
-        this.turnState = TurnState.Move;
-        //this.turnState = savedGame.turnState;
-
-        this.gameFinished = savedGame.gameFinished;
-        this.testMode = savedGame.testMode;
-        this.currentPlayer = this.players[savedGame.currentPlayerID];
-        currentPlayer.GetGui().Activate();
-        this.currentPlayer.SetActive(true);
-
-        for (int i = 0; i < 4; i++) {
-            this.players[i].OnLoad(savedGame, i);
-        }
-        
-
-        // get an array of all sectors
-        sectors = gameMap.GetComponentsInChildren<Sector>();
-
-        // initialize each sector
-        for (int i = 0; i < sectors.Length; i++) {
-            sectors[i].Initialize(i);
-        }
-
-        for (int i = 0; i < sectors.Length; i++) {
-            this.sectors[i].OnLoad(savedGame);
-        }
-
-        int numPunishmentCards = GameObject.FindObjectsOfType<PunishmentCard>().Length;
-        gameMap.GetComponent<Map>().NumPunishmentCardsOnMap = numPunishmentCards;
-
-        UpdateGUI();
-
-        CheckForDefeatedPlayers();
-
-    }
-
-    //Added by Dom
     /// <summary>
     /// 
     /// sets the sector owner, if it has one
@@ -1052,7 +1099,6 @@ public class Game : MonoBehaviour {
     /// <summary>
     /// 
     /// Allocates a reward to the player when they complete the mini game
-    /// Reward = (Number of coins collected + 1) / 2 added to attack and defence bonus
     /// 
     /// </summary>
     internal void GiveReward()
@@ -1078,6 +1124,7 @@ public class Game : MonoBehaviour {
         }
 
         Player rewardedPlayer;
+
         // if the turn has already passed to the next player, reward the previous player
         if (actionsRemaining == 2)
         {
@@ -1088,6 +1135,7 @@ public class Game : MonoBehaviour {
         {
             rewardedPlayer = currentPlayer;
         }
+
         rewardedPlayer.SetAttackBonus(rewardedPlayer.GetAttackBonus() + bonus);
         rewardedPlayer.SetDefenceBonus(rewardedPlayer.GetDefenceBonus() + bonus);
 
@@ -1099,7 +1147,6 @@ public class Game : MonoBehaviour {
 
         UpdateGUI(); // update GUI with new bonuses
 
-        Debug.Log("Player " + (Array.IndexOf(players, rewardedPlayer) + 1) + " has won " + bonus + " points");
     }
 
 	/// <summary>
@@ -1148,7 +1195,6 @@ public class Game : MonoBehaviour {
     /// </summary>
     public void OpenNullifyResourceMenu() {
         dialog.SetDialogType(Dialog.DialogType.SelectNullifyResource);
-       // dialog.SetDialogData("Nullify Resource", "Select a player to nullify\ntheir resource bonus");
         dialog.Show();
     }
 

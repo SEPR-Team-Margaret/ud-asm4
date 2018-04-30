@@ -469,8 +469,16 @@ public class Player : MonoBehaviour {
         // if the sector contains the VC, trigger the minigame
         if (sector.IsVC())
         {
-            game.NextTurnState(); // update turn mode before game is saved
-            sector.SetVC(false); // set VC to false so game can only be triggered once
+            // update turn mode before game is saved
+            game.NextTurnState(); 
+
+            // clear the VC from the sector
+            sector.SetVC(false); 
+
+            // spawn the VC in a different sector
+            game.SpawnVC();
+
+            // save the game and trigger the minigame
             SavedGame.Save("_tmp", game);
             SceneManager.LoadScene(2); 
 

@@ -7,7 +7,6 @@ public class Landmark : MonoBehaviour {
     public enum ResourceType {Attack, Defence};
 	[SerializeField] private ResourceType resourceType;
     [SerializeField] private int amount = 2;
-    public GameObject landmarkBuilding;
 
     /// <summary>
     /// 
