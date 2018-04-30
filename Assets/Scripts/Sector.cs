@@ -15,7 +15,7 @@ public class Sector : MonoBehaviour {
     [System.NonSerialized] private Map map;
     [SerializeField] private Unit unit;
     [System.NonSerialized] private Player owner;
-    [SerializeField] private int ownerID;
+//    [SerializeField] private int ownerID;
     [System.NonSerialized] private Sector[] adjacentSectors;
     [SerializeField] private Landmark landmark;
     [SerializeField] private bool VC = false;
@@ -101,12 +101,12 @@ public class Sector : MonoBehaviour {
 
         // set sector owner to the given player
         this.owner = owner;
-        if (owner == null) {
+  /*      if (owner == null) {
             this.ownerID = -1;
         } else { 
             this.ownerID = owner.playerID;
         }
-
+*/
         // set sector color to the color of the given player
         // or gray if null
         Renderer renderer = GetComponent<Renderer>();
@@ -534,7 +534,7 @@ public class Sector : MonoBehaviour {
             UnityEngine.UI.Text text = info.GetComponent<UnityEngine.UI.Text>();
             text.lineSpacing = 0.5f;
         }
-        catch (System.NullReferenceException e)
+        catch (System.NullReferenceException)
         {
             Debug.Log("could not change line spacing in Conflict dialog");
         }
@@ -761,7 +761,7 @@ public class Sector : MonoBehaviour {
         // assign the sector's owner, if any
         if (savedData.sectorOwner[sectorID] == -1) {
             this.owner = null;
-            this.ownerID = -1;
+//            this.ownerID = -1;
         } else {
             map.game.players[savedData.sectorOwner[sectorID]].Capture(this);
         }

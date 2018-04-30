@@ -46,10 +46,6 @@ public class TestSetup
         animationPlane = GameObject.Instantiate(Resources.Load<GameObject>("AnimationPlane"));
         animationPlane.name = "AnimationPlane";
 
-        // the "Scenery" asset contains the camera and light source of the 4x4 Test
-        // can uncomment to view scene as tests run, but significantly reduces speed
-        //MonoBehaviour.Instantiate(Resources.Load<GameObject>("Scenery"));
-
 
         // set up references between objects
         game.gameMap = map.gameObject;

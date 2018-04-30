@@ -179,7 +179,7 @@ public class Dialog : MonoBehaviour
             // set UI buttons to be uninteractable
             game.DisableUIButtons();
 
-        } catch (System.NullReferenceException e) {
+        } catch (System.NullReferenceException) {
             Debug.Log("could not disable gui buttons");
         }
     }
@@ -201,7 +201,7 @@ public class Dialog : MonoBehaviour
             // set UI buttons to be interactable
             game.EnableUIButtons();
 
-        } catch (System.NullReferenceException e) {
+        } catch (System.NullReferenceException) {
             Debug.Log("could not re-enable gui buttons");
         }
 

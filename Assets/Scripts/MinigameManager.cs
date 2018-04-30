@@ -9,12 +9,14 @@ public class MinigameManager : MonoBehaviour {
 
     public static MinigameManager instance;
 
-    [SerializeField] GameObject birdPrefab, pillarPrefab, cloudPrefab;
-    [SerializeField] GameObject startPos;
-    [SerializeField] GameObject uiOverlay, loseOverlay, minCoinSpawn, maxCoinSpawn;
-    [SerializeField][Multiline] string initialText, winText, loseText;
-    [SerializeField] Vector3 minPos, maxPos;
-    [SerializeField] float maxScore = 10;
+    #pragma warning disable 0649
+    [SerializeField] private GameObject birdPrefab, pillarPrefab, cloudPrefab;
+    [SerializeField] private GameObject startPos;
+    [SerializeField] private GameObject uiOverlay, loseOverlay, minCoinSpawn, maxCoinSpawn;
+    [SerializeField][Multiline] private string initialText, winText, loseText;
+    [SerializeField] private Vector3 minPos, maxPos;
+    [SerializeField] private float maxScore = 10;
+    #pragma warning restore 0649
 
     List<GameObject> pillars = new List<GameObject>();
     List<GameObject> clouds = new List<GameObject>();
@@ -22,6 +24,7 @@ public class MinigameManager : MonoBehaviour {
     bool gameOver = false;
 
     Bird birdComponent;
+
 
     private void Awake()
     {

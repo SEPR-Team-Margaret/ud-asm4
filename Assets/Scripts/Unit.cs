@@ -21,9 +21,9 @@ public class Unit : MonoBehaviour {
      */
 
     [System.NonSerialized] private Player owner;
-    [SerializeField] private int ownerID;
+ //   [SerializeField] private int ownerID;
     [System.NonSerialized] private Sector sector;
-    [SerializeField] private int sectorID;
+//    [SerializeField] private int sectorID;
     [SerializeField] private int level;
     [SerializeField] private bool selected = false;
     [SerializeField] public string unitName;
@@ -74,9 +74,9 @@ public class Unit : MonoBehaviour {
         MoveTo(sector);
 
         Material backgroundMat = new Material(Shader.Find("Specular"));
-        Color ownerCol = owner.GetColor();
+        Color ownerColor = owner.GetColor();
         Color offset = new Color(0.4f, 0.4f, 0.4f);
-        backgroundMat.color = ownerCol - offset;
+        backgroundMat.color = ownerColor - offset;
         gameObject.transform.Find("Background").GetComponent<MeshRenderer>().material = backgroundMat;
 
     }
@@ -139,7 +139,7 @@ public class Unit : MonoBehaviour {
     /// <param name="owner">The player that owns this unit</param>
     public void SetOwner(Player owner) {
         this.owner = owner;
-        this.ownerID = this.owner.playerID;
+ //       this.ownerID = this.owner.playerID;
     }
 
     /// <summary>
@@ -160,7 +160,7 @@ public class Unit : MonoBehaviour {
     /// <param name="sector">The sector that this unit is on</param>
     public void SetSector(Sector sector) {
         this.sector = sector;
-        if (sector != null)
+  /*      if (sector != null)
         {
             this.sectorID = sector.sectorID;
         }
@@ -168,7 +168,7 @@ public class Unit : MonoBehaviour {
         {
             this.sectorID = -1;
         }
-    }
+  */  }
 
     /// <summary>
     /// 
@@ -462,10 +462,10 @@ public class Unit : MonoBehaviour {
     public void OnLoad(GameData savedData, int sectorID) {
         
         Game game = GameObject.Find("GameManager").GetComponent<Game>();
-        this.ownerID = savedData.sectorOwner[sectorID];
+ //       this.ownerID = savedData.sectorOwner[sectorID];
         this.owner = game.players[savedData.sectorOwner[sectorID]];
         this.sector = game.sectors[sectorID];
-        this.sectorID = sectorID;
+ //       this.sectorID = sectorID;
         this.level = savedData.sectorLevel[sectorID];
         this.unitName = savedData.sectorName[sectorID];
         this.unitFrozen = savedData.sectorFrozen[sectorID];

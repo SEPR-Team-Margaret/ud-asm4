@@ -49,10 +49,6 @@ public class Game : MonoBehaviour {
     [SerializeField] private UnityEngine.UI.Button cardButton;
 
 
-    public void Start() {
-        Names.Init();
-    }
-
     //modified by Peter
     /// <summary>
     /// 

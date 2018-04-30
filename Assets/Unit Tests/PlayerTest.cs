@@ -7,7 +7,6 @@ public class PlayerTest
 {
     private Game game;
     private Map map;
-	private Player[] players;
 	private PlayerUI[] gui;
     private GameObject book;
     private GameObject soundManager;
@@ -18,7 +17,6 @@ public class PlayerTest
         TestSetup t = new TestSetup();
         this.game = t.GetGame();
         this.map = t.GetMap();
-        this.players = t.GetPlayers();
         this.gui = t.GetPlayerUIs();
         this.book = t.GetBook();
         this.soundManager = t.GetSoundManager();

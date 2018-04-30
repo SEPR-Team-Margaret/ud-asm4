@@ -126,7 +126,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4352110984978704}
-  - component: {fileID: 114563795892725816}
   - component: {fileID: 114515468223200132}
   - component: {fileID: 65611591636270692}
   m_Layer: 8
@@ -285,7 +284,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4ba3bfd80c9433e41aaa60502e122f65, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -381,7 +380,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 58c87a1e3efc0644dad15d538226d381, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -674,8 +673,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd006aa75699db04297fa7416708d6b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ownerID: 0
-  sectorID: 0
   level: 0
   selected: 0
   unitName: 
@@ -685,17 +682,6 @@ MonoBehaviour:
     currentHead: 0
     currentBody: 0
     currentHat: 0
---- !u!114 &114563795892725816
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1641350528835924}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d840433de5d4bcd4c843efe2fc177fb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114683856838176282
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -66,7 +66,7 @@ public class SoundManager : MonoBehaviour {
 					break;
 		    }
 
-        } catch (System.NullReferenceException e) {
+        } catch (System.NullReferenceException) {
             Debug.Log("Unable to play sound: " + sound);
         }
 	}

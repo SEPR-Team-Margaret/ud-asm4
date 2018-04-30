@@ -11,7 +11,6 @@ public class SaveGameTest
     private Map map;
     private Player[] players;
     private PlayerUI[] gui;
-    private GameObject unitPrefab;
     private GameObject book;
     private GameObject soundManager;
     private GameObject animationPlane;
@@ -23,7 +22,6 @@ public class SaveGameTest
         this.map = t.GetMap();
         this.players = t.GetPlayers();
         this.gui = t.GetPlayerUIs();
-        this.unitPrefab = t.GetUnitPrefab();
         this.book = t.GetBook();
         this.soundManager = t.GetSoundManager();
         this.animationPlane = t.GetAnimationPlane();
@@ -334,7 +332,7 @@ public class SaveGameTest
                 for (i = 0; i < landmarks1.Count; i++) {
                     Assert.AreEqual(landmarks1[i].GetOwner().playerID, landmarks2[i].GetOwner().playerID);
                 }
-            } catch (AssertionException e) {
+            } catch (AssertionException) {
                 throw new AssertionException("Landmark " + i.ToString() + " failed assertion");
             }
 
