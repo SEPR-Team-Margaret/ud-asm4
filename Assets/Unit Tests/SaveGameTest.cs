@@ -14,6 +14,7 @@ public class SaveGameTest
     private GameObject unitPrefab;
     private GameObject book;
     private GameObject soundManager;
+    private GameObject animationPlane;
 
     private void Setup()
     {
@@ -25,6 +26,7 @@ public class SaveGameTest
         this.unitPrefab = t.GetUnitPrefab();
         this.book = t.GetBook();
         this.soundManager = t.GetSoundManager();
+        this.animationPlane = t.GetAnimationPlane();
     }
 
     private void Cleanup() {
@@ -34,6 +36,7 @@ public class SaveGameTest
         GameObject.Destroy(gui[0].GetComponentInParent<Canvas>().gameObject);
         GameObject.Destroy(book);
         GameObject.Destroy(soundManager);
+        GameObject.Destroy(animationPlane);
 
     }
 

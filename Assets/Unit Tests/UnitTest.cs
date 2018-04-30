@@ -12,6 +12,7 @@ public class UnitTest
     private GameObject unitPrefab;
     private GameObject book;
     private GameObject soundManager;
+    private GameObject animationPlane;
 
     private void Setup()
     {
@@ -23,6 +24,7 @@ public class UnitTest
         this.unitPrefab = t.GetUnitPrefab();
         this.book = t.GetBook();
         this.soundManager = t.GetSoundManager();
+        this.animationPlane = t.GetAnimationPlane();
 
         game.InitializeMap();
     }
@@ -34,6 +36,7 @@ public class UnitTest
         GameObject.Destroy(gui[0].GetComponentInParent<Canvas>().gameObject);
         GameObject.Destroy(book);
         GameObject.Destroy(soundManager);
+        GameObject.Destroy(animationPlane);
 
     }
 
