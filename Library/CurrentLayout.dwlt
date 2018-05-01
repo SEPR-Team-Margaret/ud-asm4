@@ -13,14 +13,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 8
-    y: 51
-    width: 1264
-    height: 661
+    x: 0
+    y: 43
+    width: 1920
+    height: 997
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 371}
+  m_MinSize: {x: 950, y: 392}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -41,8 +41,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1264
-    height: 661
+    width: 1920
+    height: 997
   m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
@@ -61,7 +61,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1264
+    width: 1920
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -81,8 +81,8 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 641
-    width: 1264
+    y: 977
+    width: 1920
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -103,12 +103,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
-    width: 1264
-    height: 611
-  m_MinSize: {x: 681, y: 321}
-  m_MaxSize: {x: 12006, y: 8021}
+    width: 1920
+    height: 947
+  m_MinSize: {x: 683, y: 342}
+  m_MaxSize: {x: 12008, y: 8042}
   vertical: 1
-  controlID: 576
+  controlID: 109
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -127,12 +127,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1264
-    height: 611
-  m_MinSize: {x: 681, y: 321}
-  m_MaxSize: {x: 12006, y: 8021}
+    width: 1920
+    height: 947
+  m_MinSize: {x: 683, y: 342}
+  m_MaxSize: {x: 12008, y: 8042}
   vertical: 0
-  controlID: 577
+  controlID: 110
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -151,12 +151,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 957
-    height: 611
-  m_MinSize: {x: 404, y: 321}
-  m_MaxSize: {x: 8004, y: 8021}
+    width: 1454
+    height: 947
+  m_MinSize: {x: 406, y: 342}
+  m_MaxSize: {x: 8006, y: 8042}
   vertical: 1
-  controlID: 490
+  controlID: 52
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -175,12 +175,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 957
-    height: 340
-  m_MinSize: {x: 404, y: 221}
-  m_MaxSize: {x: 8004, y: 4021}
+    width: 1454
+    height: 527
+  m_MinSize: {x: 406, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 491
+  controlID: 53
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -197,10 +197,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 222
-    height: 340
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+    width: 337
+    height: 527
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -220,10 +220,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 222
+    x: 337
     y: 0
-    width: 735
-    height: 340
+    width: 1117
+    height: 527
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
@@ -248,9 +248,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 340
-    width: 957
-    height: 271
+    y: 527
+    width: 1454
+    height: 420
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
@@ -273,10 +273,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 957
+    x: 1454
     y: 0
-    width: 307
-    height: 611
+    width: 466
+    height: 947
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
@@ -307,10 +307,10 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-    x: 232
-    y: 100
-    width: 731
-    height: 319
+    x: 339
+    y: 92
+    width: 1113
+    height: 506
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
   m_Stats: 0
@@ -319,10 +319,10 @@ MonoBehaviour:
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-    m_HBaseRangeMin: -268.44446
-    m_HBaseRangeMax: 268.44446
-    m_VBaseRangeMin: -151
-    m_VBaseRangeMax: 151
+    m_HBaseRangeMin: -434.66666
+    m_HBaseRangeMax: 434.66666
+    m_VBaseRangeMin: -244.5
+    m_VBaseRangeMax: 244.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -339,25 +339,25 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 731
-      height: 302
+      width: 1113
+      height: 489
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 365.5, y: 151}
+    m_Translation: {x: 556.5, y: 244.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -365.5
-      y: -151
-      width: 731
-      height: 302
+      x: -556.5
+      y: -244.5
+      width: 1113
+      height: 489
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 731, y: 319}
+  m_LastWindowPixelSize: {x: 1113, y: 506}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -383,15 +383,15 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 8
-    y: 100
-    width: 220
-    height: 319
+    x: 0
+    y: 92
+    width: 335
+    height: 506
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 4c20fbfffa65fbff2066fbffda7bfbff7285fbff9885fbffe699fbff7ca3fbffa2a3fbff3caafcff14b4fcff3ab4fcff4aebffff06faffff1afcffff00000000f8750000a4040100
+    m_ExpandedIDs: cc66ffff0000000098490000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -564,7 +564,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 43}
     m_SelectedIDs: d6280000
     m_LastClickedID: 10454
-    m_ExpandedIDs: 00000000582600000c270000ca280000d02800004e2b0000562b0000502c00009a2c0000382e00003a2e00003c2e00003e2e000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000a6440000e64400006e450000744500006a46000070460000d6460000ec46000026570000285700002a5700002c570000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -592,7 +592,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000582600000c270000ca280000d02800004e2b0000562b0000502c00009a2c0000382e00003a2e00003c2e00003e2e000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000a6440000e64400006e450000744500006a46000070460000d6460000ec46000026570000285700002a5700002c570000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -669,10 +669,10 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 8
-    y: 440
-    width: 955
-    height: 250
+    x: 0
+    y: 619
+    width: 1452
+    height: 399
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -695,10 +695,10 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 967
-    y: 100
-    width: 305
-    height: 590
+    x: 1456
+    y: 92
+    width: 464
+    height: 926
   m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
   m_PreviewResizer:
@@ -736,737 +736,717 @@ MonoBehaviour:
   m_PlayModeTestListGUI:
     m_Window: {fileID: 20}
     newResultList:
-    - id: '[University Domination]'
+    - id: '[University Domination][suite]'
       name: University Domination
       fullName: University Domination
-      resultStatus: 1
-      duration: 0.6746122
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll]'
+    - id: '[C:/Users/Gabriel/Documents/SEPR/ud-asm4/Library/ScriptAssemblies/Assembly-CSharp.dll][suite]'
       name: Assembly-CSharp.dll
-      fullName: C:/Users/Sam/Documents/Year 2/SEPR/Assessment 4/ud-asm4/Library/ScriptAssemblies/Assembly-CSharp.dll
-      resultStatus: 1
-      duration: 0.6105529
+      fullName: C:/Users/Gabriel/Documents/SEPR/ud-asm4/Library/ScriptAssemblies/Assembly-CSharp.dll
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest]'
+    - id: '[Assembly-CSharp.dll][GameTest][suite]'
       name: GameTest
       fullName: GameTest
-      resultStatus: 1
-      duration: 0.5930037
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][CreatePlayers_FourPlayersAreHuman]'
+    - id: '[Assembly-CSharp.dll][GameTest.CreatePlayers_FourPlayersAreHuman]'
       name: CreatePlayers_FourPlayersAreHuman
       fullName: GameTest.CreatePlayers_FourPlayersAreHuman
-      resultStatus: 1
-      duration: 0.5309429
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][CreatePlayers_ThreePlayersHumanAndOneNeutral]'
+    - id: '[Assembly-CSharp.dll][GameTest.CreatePlayers_ThreePlayersHumanAndOneNeutral]'
       name: CreatePlayers_ThreePlayersHumanAndOneNeutral
       fullName: GameTest.CreatePlayers_ThreePlayersHumanAndOneNeutral
-      resultStatus: 1
-      duration: 0.0487974
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][EndGame_GameEndsCorrectlyWithNoCurrentPlayerAndNoActivePlayersAndNoTurnState]'
+    - id: '[Assembly-CSharp.dll][GameTest.EndGame_GameEndsCorrectlyWithNoCurrentPlayerAndNoActivePlayersAndNoTurnState]'
       name: EndGame_GameEndsCorrectlyWithNoCurrentPlayerAndNoActivePlayersAndNoTurnState
       fullName: GameTest.EndGame_GameEndsCorrectlyWithNoCurrentPlayerAndNoActivePlayersAndNoTurnState
-      resultStatus: 1
-      duration: 0.1599082
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "There are no audio listeners in the scene. Please ensure there is always
-        one audio listener in the scene\r\nPVC is at sector_31\r\nGAME FINISHED\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][GetWinner_NoWinnerWhenAPlayerHasLandmarkAndAnotherHasUnits]'
+    - id: '[Assembly-CSharp.dll][GameTest.GetWinner_NoWinnerWhenAPlayerHasLandmarkAndAnotherHasUnits]'
       name: GetWinner_NoWinnerWhenAPlayerHasLandmarkAndAnotherHasUnits
       fullName: GameTest.GetWinner_NoWinnerWhenAPlayerHasLandmarkAndAnotherHasUnits
-      resultStatus: 1
-      duration: 0.0614366
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "There are no audio listeners in the scene. Please ensure there is always
-        one audio listener in the scene\r\nPVC is at sector_29\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][GetWinner_NoWinnerWhenMultiplePlayersOwningLandmarks]'
+    - id: '[Assembly-CSharp.dll][GameTest.GetWinner_NoWinnerWhenMultiplePlayersOwningLandmarks]'
       name: GetWinner_NoWinnerWhenMultiplePlayersOwningLandmarks
       fullName: GameTest.GetWinner_NoWinnerWhenMultiplePlayersOwningLandmarks
-      resultStatus: 1
-      duration: 0.0641766
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "There are no audio listeners in the scene. Please ensure there is always
-        one audio listener in the scene\r\nPVC is at sector_15\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][GetWinner_NoWinnerWhenMultiplePlayersWithUnits]'
+    - id: '[Assembly-CSharp.dll][GameTest.GetWinner_NoWinnerWhenMultiplePlayersWithUnits]'
       name: GetWinner_NoWinnerWhenMultiplePlayersWithUnits
       fullName: GameTest.GetWinner_NoWinnerWhenMultiplePlayersWithUnits
-      resultStatus: 1
-      duration: 0.0501516
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_05\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][GetWinner_OnePlayerWithLandmarksAndUnitsWins]'
+    - id: '[Assembly-CSharp.dll][GameTest.GetWinner_OnePlayerWithLandmarksAndUnitsWins]'
       name: GetWinner_OnePlayerWithLandmarksAndUnitsWins
       fullName: GameTest.GetWinner_OnePlayerWithLandmarksAndUnitsWins
-      resultStatus: 1
-      duration: 0.0683404
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "There are no audio listeners in the scene. Please ensure there is always
-        one audio listener in the scene\r\nPVC is at sector_23\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][InitializeMap_OneLandmarkAllocatedWithUnitPerPlayer]'
+    - id: '[Assembly-CSharp.dll][GameTest.InitializeMap_OneLandmarkAllocatedWithUnitPerPlayer]'
       name: InitializeMap_OneLandmarkAllocatedWithUnitPerPlayer
       fullName: GameTest.InitializeMap_OneLandmarkAllocatedWithUnitPerPlayer
-      resultStatus: 1
-      duration: 0.0487236
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_13\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][NeutralPlayerTurn_EnsureNeutralPlayerMovesCorrectly]'
+    - id: '[Assembly-CSharp.dll][GameTest.NeutralPlayerTurn_EnsureNeutralPlayerMovesCorrectly]'
       name: NeutralPlayerTurn_EnsureNeutralPlayerMovesCorrectly
       fullName: GameTest.NeutralPlayerTurn_EnsureNeutralPlayerMovesCorrectly
-      resultStatus: 1
-      duration: 0.0494895
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_19\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][NextPlayer_CurrentPlayerChangesToNextPlayerEachTime]'
+    - id: '[Assembly-CSharp.dll][GameTest.NextPlayer_CurrentPlayerChangesToNextPlayerEachTime]'
       name: NextPlayer_CurrentPlayerChangesToNextPlayerEachTime
       fullName: GameTest.NextPlayer_CurrentPlayerChangesToNextPlayerEachTime
-      resultStatus: 1
-      duration: 0.0644398
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "There are no audio listeners in the scene. Please ensure there is always
-        one audio listener in the scene\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][NextPlayer_EliminatedPlayersAreSkipped]'
+    - id: '[Assembly-CSharp.dll][GameTest.NextPlayer_EliminatedPlayersAreSkipped]'
       name: NextPlayer_EliminatedPlayersAreSkipped
       fullName: GameTest.NextPlayer_EliminatedPlayersAreSkipped
-      resultStatus: 1
-      duration: 0.0425907
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "EndOfTurn Initiated\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][NextPlayer_PlayerNullifyResourcesCountersAreDecremented]'
+    - id: '[Assembly-CSharp.dll][GameTest.NextPlayer_PlayerNullifyResourcesCountersAreDecremented]'
       name: NextPlayer_PlayerNullifyResourcesCountersAreDecremented
       fullName: GameTest.NextPlayer_PlayerNullifyResourcesCountersAreDecremented
-      resultStatus: 1
-      duration: 0.4641299
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "Unable to play sound: stamp\r\nUnable to play sound: stamp\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][NextPlayer_PlayersWithASkipFlagAreSkipped]'
+    - id: '[Assembly-CSharp.dll][GameTest.NextPlayer_PlayersWithASkipFlagAreSkipped]'
       name: NextPlayer_PlayersWithASkipFlagAreSkipped
       fullName: GameTest.NextPlayer_PlayersWithASkipFlagAreSkipped
-      resultStatus: 1
-      duration: 0.0515285
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "Skipturn: True for 1\r\nSkip Me! 1\r\nNew current player: 2\r\nThere
-        are no audio listeners in the scene. Please ensure there is always one audio
-        listener in the scene\r\nThere are no audio listeners in the scene. Please
-        ensure there is always one audio listener in the scene\r\nThere are no audio
-        listeners in the scene. Please ensure there is always one audio listener in
-        the scene\r\nThere are no audio listeners in the scene. Please ensure there
-        is always one audio listener in the scene\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][NextPlayer_UnitFrozenCountersAreDecremented]'
+    - id: '[Assembly-CSharp.dll][GameTest.NextPlayer_UnitFrozenCountersAreDecremented]'
       name: NextPlayer_UnitFrozenCountersAreDecremented
       fullName: GameTest.NextPlayer_UnitFrozenCountersAreDecremented
-      resultStatus: 1
-      duration: 0.0453555
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "There are no audio listeners in the scene. Please ensure there is always
-        one audio listener in the scene\r\nThere are no audio listeners in the scene.
-        Please ensure there is always one audio listener in the scene\r\nThere are
-        no audio listeners in the scene. Please ensure there is always one audio listener
-        in the scene\r\nThere are no audio listeners in the scene. Please ensure there
-        is always one audio listener in the scene\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][GameTest][NoUnitSelected_ReturnsFalseWhenUnitIsSelected]'
+    - id: '[Assembly-CSharp.dll][GameTest.NoUnitSelected_ReturnsFalseWhenUnitIsSelected]'
       name: NoUnitSelected_ReturnsFalseWhenUnitIsSelected
       fullName: GameTest.NoUnitSelected_ReturnsFalseWhenUnitIsSelected
-      resultStatus: 1
-      duration: 0.555216
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_28\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest]'
+    - id: '[Assembly-CSharp.dll][PlayerTest][suite]'
       name: PlayerTest
       fullName: PlayerTest
-      resultStatus: 1
-      duration: 1.2889262
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest][CaptureLandmark_BothPlayersBeerAmountCorrect]'
+    - id: '[Assembly-CSharp.dll][PlayerTest.CaptureLandmark_BothPlayersBeerAmountCorrect]'
       name: CaptureLandmark_BothPlayersBeerAmountCorrect
       fullName: PlayerTest.CaptureLandmark_BothPlayersBeerAmountCorrect
-      resultStatus: 1
-      duration: 0.5963927
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_23\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest][CaptureLandmark_BothPlayersKnowledgeAmountCorrect]'
+    - id: '[Assembly-CSharp.dll][PlayerTest.CaptureLandmark_BothPlayersKnowledgeAmountCorrect]'
       name: CaptureLandmark_BothPlayersKnowledgeAmountCorrect
       fullName: PlayerTest.CaptureLandmark_BothPlayersKnowledgeAmountCorrect
-      resultStatus: 1
-      duration: 0.0479935
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_26\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest][CaptureLandmark_NeutralLandmarkPlayerBeerAmountCorrect]'
+    - id: '[Assembly-CSharp.dll][PlayerTest.CaptureLandmark_NeutralLandmarkPlayerBeerAmountCorrect]'
       name: CaptureLandmark_NeutralLandmarkPlayerBeerAmountCorrect
       fullName: PlayerTest.CaptureLandmark_NeutralLandmarkPlayerBeerAmountCorrect
-      resultStatus: 1
-      duration: 0.0588335
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_24\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest][CaptureLandmark_NeutralLandmarkPlayerKnowledgeAmountCorrect]'
+    - id: '[Assembly-CSharp.dll][PlayerTest.CaptureLandmark_NeutralLandmarkPlayerKnowledgeAmountCorrect]'
       name: CaptureLandmark_NeutralLandmarkPlayerKnowledgeAmountCorrect
       fullName: PlayerTest.CaptureLandmark_NeutralLandmarkPlayerKnowledgeAmountCorrect
-      resultStatus: 1
-      duration: 0.047895
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_11\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest][CaptureSector_ChangesOwner]'
+    - id: '[Assembly-CSharp.dll][PlayerTest.CaptureSector_ChangesOwner]'
       name: CaptureSector_ChangesOwner
       fullName: PlayerTest.CaptureSector_ChangesOwner
-      resultStatus: 1
-      duration: 0.0495005
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_12\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest][IsEliminated_PlayerWithNoUnitsAndNoLandmarksEliminated]'
+    - id: '[Assembly-CSharp.dll][PlayerTest.IsEliminated_PlayerWithNoUnitsAndNoLandmarksEliminated]'
       name: IsEliminated_PlayerWithNoUnitsAndNoLandmarksEliminated
       fullName: PlayerTest.IsEliminated_PlayerWithNoUnitsAndNoLandmarksEliminated
-      resultStatus: 1
-      duration: 0.0498141
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_20\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest][SpawnUnits_NotSpawnedWhenLandmarkNotOwned]'
+    - id: '[Assembly-CSharp.dll][PlayerTest.SpawnUnits_NotSpawnedWhenLandmarkNotOwned]'
       name: SpawnUnits_NotSpawnedWhenLandmarkNotOwned
       fullName: PlayerTest.SpawnUnits_NotSpawnedWhenLandmarkNotOwned
-      resultStatus: 1
-      duration: 0.0464824
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_02\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest][SpawnUnits_NotSpawnedWhenLandmarkOwnedAndOccupied]'
+    - id: '[Assembly-CSharp.dll][PlayerTest.SpawnUnits_NotSpawnedWhenLandmarkOwnedAndOccupied]'
       name: SpawnUnits_NotSpawnedWhenLandmarkOwnedAndOccupied
       fullName: PlayerTest.SpawnUnits_NotSpawnedWhenLandmarkOwnedAndOccupied
-      resultStatus: 1
-      duration: 0.0460603
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_06\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][PlayerTest][SpawnUnits_SpawnedWhenLandmarkOwnedAndUnoccupied]'
+    - id: '[Assembly-CSharp.dll][PlayerTest.SpawnUnits_SpawnedWhenLandmarkOwnedAndUnoccupied]'
       name: SpawnUnits_SpawnedWhenLandmarkOwnedAndUnoccupied
       fullName: PlayerTest.SpawnUnits_SpawnedWhenLandmarkOwnedAndUnoccupied
-      resultStatus: 1
-      duration: 0.0451806
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_20\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SaveGameTest]'
+    - id: '[Assembly-CSharp.dll][SaveGameTest][suite]'
       name: SaveGameTest
       fullName: SaveGameTest
-      resultStatus: 1
-      duration: 1.4186708
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SaveGameTest][Load_NullFileName]'
+    - id: '[Assembly-CSharp.dll][SaveGameTest.Load_NullFileName]'
       name: Load_NullFileName
       fullName: SaveGameTest.Load_NullFileName
-      resultStatus: 1
-      duration: 0.0538811
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SaveGameTest][SaveLoad_Game_NeutralPlayer]'
+    - id: '[Assembly-CSharp.dll][SaveGameTest.SaveLoad_Game_NeutralPlayer]'
       name: SaveLoad_Game_NeutralPlayer
       fullName: SaveGameTest.SaveLoad_Game_NeutralPlayer
-      resultStatus: 1
-      duration: 0.0999522
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_21\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SaveGameTest][SaveLoad_Game_TurnState]'
+    - id: '[Assembly-CSharp.dll][SaveGameTest.SaveLoad_Game_TurnState]'
       name: SaveLoad_Game_TurnState
       fullName: SaveGameTest.SaveLoad_Game_TurnState
-      resultStatus: 1
-      duration: 0.0749708
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_19\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SaveGameTest][SaveLoad_Player_NullifiedResources]'
+    - id: '[Assembly-CSharp.dll][SaveGameTest.SaveLoad_Player_NullifiedResources]'
       name: SaveLoad_Player_NullifiedResources
       fullName: SaveGameTest.SaveLoad_Player_NullifiedResources
-      resultStatus: 1
-      duration: 0.0599782
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_24\r\nUnable to play sound: stamp\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SaveGameTest][SaveLoad_Player_PunismentCards]'
+    - id: '[Assembly-CSharp.dll][SaveGameTest.SaveLoad_Player_PunismentCards]'
       name: SaveLoad_Player_PunismentCards
       fullName: SaveGameTest.SaveLoad_Player_PunismentCards
-      resultStatus: 1
-      duration: 0.0611247
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_13\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SaveGameTest][SaveLoad_Player_ResourceBonus]'
+    - id: '[Assembly-CSharp.dll][SaveGameTest.SaveLoad_Player_ResourceBonus]'
       name: SaveLoad_Player_ResourceBonus
       fullName: SaveGameTest.SaveLoad_Player_ResourceBonus
-      resultStatus: 1
-      duration: 0.0860292
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_17\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SaveGameTest][SaveLoad_Player_Skip]'
+    - id: '[Assembly-CSharp.dll][SaveGameTest.SaveLoad_Player_Skip]'
       name: SaveLoad_Player_Skip
       fullName: SaveGameTest.SaveLoad_Player_Skip
-      resultStatus: 1
-      duration: 0.0700915
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_20\r\nSkipturn: True for 1\r\nUnable to play sound:
-        stamp\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SaveGameTest][SaveLoad_Sector_Owner]'
+    - id: '[Assembly-CSharp.dll][SaveGameTest.SaveLoad_Sector_Owner]'
       name: SaveLoad_Sector_Owner
       fullName: SaveGameTest.SaveLoad_Sector_Owner
-      resultStatus: 1
-      duration: 0.0607078
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_11\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SaveGameTest][SaveLoad_Sector_PunismentCard]'
+    - id: '[Assembly-CSharp.dll][SaveGameTest.SaveLoad_Sector_PunismentCard]'
       name: SaveLoad_Sector_PunismentCard
       fullName: SaveGameTest.SaveLoad_Sector_PunismentCard
-      resultStatus: 1
-      duration: 0.0720883
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_23\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SaveGameTest][SaveLoad_Sector_VC]'
+    - id: '[Assembly-CSharp.dll][SaveGameTest.SaveLoad_Sector_VC]'
       name: SaveLoad_Sector_VC
       fullName: SaveGameTest.SaveLoad_Sector_VC
-      resultStatus: 1
-      duration: 0.0577809
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_31\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SaveGameTest][SaveLoad_Unit_Frozen]'
+    - id: '[Assembly-CSharp.dll][SaveGameTest.SaveLoad_Unit_Frozen]'
       name: SaveLoad_Unit_Frozen
       fullName: SaveGameTest.SaveLoad_Unit_Frozen
-      resultStatus: 1
-      duration: 0.0599885
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_06\r\nUnable to play sound: goose\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SaveGameTest][SaveLoad_Unit_Level]'
+    - id: '[Assembly-CSharp.dll][SaveGameTest.SaveLoad_Unit_Level]'
       name: SaveLoad_Unit_Level
       fullName: SaveGameTest.SaveLoad_Unit_Level
-      resultStatus: 1
-      duration: 0.0599833
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_23\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SaveGameTest][SaveLoad_Unit_Name]'
+    - id: '[Assembly-CSharp.dll][SaveGameTest.SaveLoad_Unit_Name]'
       name: SaveLoad_Unit_Name
       fullName: SaveGameTest.SaveLoad_Unit_Name
-      resultStatus: 1
-      duration: 0.0727488
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_28\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SaveGameTest][SaveLoad_Unit_Sector]'
+    - id: '[Assembly-CSharp.dll][SaveGameTest.SaveLoad_Unit_Sector]'
       name: SaveLoad_Unit_Sector
       fullName: SaveGameTest.SaveLoad_Unit_Sector
-      resultStatus: 1
-      duration: 0.0639019
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_04\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SectorTest]'
+    - id: '[Assembly-CSharp.dll][SectorTest][suite]'
       name: SectorTest
       fullName: SectorTest
-      resultStatus: 1
-      duration: 2.8421526
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][SectorTest][AdjacentSelectedUnit_SectorsAreAdjacent]'
+    - id: '[Assembly-CSharp.dll][SectorTest.AdjacentSelectedUnit_SectorsAreAdjacent]'
       name: AdjacentSelectedUnit_SectorsAreAdjacent
       fullName: SectorTest.AdjacentSelectedUnit_SectorsAreAdjacent
-      resultStatus: 1
-      duration: 0.0451917
-      messages: 
-      output: "PVC is at sector_29\r\n"
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp.dll][SectorTest][ClearUnit_UnitRemovedFromSector]'
-      name: ClearUnit_UnitRemovedFromSector
-      fullName: SectorTest.ClearUnit_UnitRemovedFromSector
-      resultStatus: 1
-      duration: 0.0449656
-      messages: 
-      output: "PVC is at sector_23\r\n"
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp.dll][SectorTest][Initialize_OwnedAndNotOwnedSectorsOwnerAndColor]'
-      name: Initialize_OwnedAndNotOwnedSectorsOwnerAndColor
-      fullName: SectorTest.Initialize_OwnedAndNotOwnedSectorsOwnerAndColor
-      resultStatus: 1
-      duration: 0.0456806
-      messages: 
-      output: "PVC is at sector_11\r\n"
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp.dll][SectorTest][MoveIntoFriendlyUnit_UnitsSwapSectorsAndTurnStateProgressed]'
-      name: MoveIntoFriendlyUnit_UnitsSwapSectorsAndTurnStateProgressed
-      fullName: SectorTest.MoveIntoFriendlyUnit_UnitsSwapSectorsAndTurnStateProgressed
-      resultStatus: 1
-      duration: 0.066656
-      messages: 
-      output: "PVC is at sector_26\r\n"
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp.dll][SectorTest][MoveIntoHostileUnit_AttackingUnitTakesSectorAndLevelUpAndTurnEnd]'
-      name: MoveIntoHostileUnit_AttackingUnitTakesSectorAndLevelUpAndTurnEnd
-      fullName: SectorTest.MoveIntoHostileUnit_AttackingUnitTakesSectorAndLevelUpAndTurnEnd
-      resultStatus: 1
-      duration: 0.7839207
-      messages: 
-      output: "PVC is at sector_04\r\n1\r\n2\r\n"
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp.dll][SectorTest][MoveIntoHostileUnit_DefendingUnitDefendsSectorAndTurnEnd]'
-      name: MoveIntoHostileUnit_DefendingUnitDefendsSectorAndTurnEnd
-      fullName: SectorTest.MoveIntoHostileUnit_DefendingUnitDefendsSectorAndTurnEnd
-      resultStatus: 1
-      duration: 0.6711352
-      messages: 
-      output: "PVC is at sector_04\r\n"
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp.dll][SectorTest][MoveIntoHostileUnit_TieConflict_DefendingUnitDefendsSectorAndTurnEnd]'
-      name: MoveIntoHostileUnit_TieConflict_DefendingUnitDefendsSectorAndTurnEnd
-      fullName: SectorTest.MoveIntoHostileUnit_TieConflict_DefendingUnitDefendsSectorAndTurnEnd
-      resultStatus: 1
-      duration: 0.6727233
-      messages: 
-      output: "PVC is at sector_22\r\n"
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp.dll][SectorTest][MoveIntoUnoccupiedSector_NewSectorHasUnitAndOldDoesNotAndTurnStateProgressed]'
-      name: MoveIntoUnoccupiedSector_NewSectorHasUnitAndOldDoesNotAndTurnStateProgressed
-      fullName: SectorTest.MoveIntoUnoccupiedSector_NewSectorHasUnitAndOldDoesNotAndTurnStateProgressed
-      resultStatus: 1
-      duration: 0.0457907
-      messages: 
-      output: "PVC is at sector_15\r\n"
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp.dll][SectorTest][OnMouseAsButton_CorrectUnitIsSelected]'
-      name: OnMouseAsButton_CorrectUnitIsSelected
-      fullName: SectorTest.OnMouseAsButton_CorrectUnitIsSelected
-      resultStatus: 1
-      duration: 0.0507682
-      messages: 
-      output: "PVC is at sector_27\r\nSelectUnit Initiated\r\nPrevious State not updated
-        correctly: currentState: SelectUnit, prevState: SelectUnit.\r\n"
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp.dll][SectorTest][SetOwner_SectorOwnerAndColorCorrect]'
-      name: SetOwner_SectorOwnerAndColorCorrect
-      fullName: SectorTest.SetOwner_SectorOwnerAndColorCorrect
-      resultStatus: 1
-      duration: 0.0588775
-      messages: 
-      output: "PVC is at sector_07\r\n"
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-    - id: '[Assembly-CSharp.dll][UnitTest]'
-      name: UnitTest
-      fullName: UnitTest
-      resultStatus: 1
-      duration: 0.9339768
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][UnitTest][DestroySelf_UnitNotInSectorAndNotInPlayersUnitsList]'
+    - id: '[Assembly-CSharp.dll][SectorTest.ClearUnit_UnitRemovedFromSector]'
+      name: ClearUnit_UnitRemovedFromSector
+      fullName: SectorTest.ClearUnit_UnitRemovedFromSector
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp.dll][SectorTest.Initialize_OwnedAndNotOwnedSectorsOwnerAndColor]'
+      name: Initialize_OwnedAndNotOwnedSectorsOwnerAndColor
+      fullName: SectorTest.Initialize_OwnedAndNotOwnedSectorsOwnerAndColor
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp.dll][SectorTest.MoveIntoFriendlyUnit_UnitsSwapSectorsAndTurnStateProgressed]'
+      name: MoveIntoFriendlyUnit_UnitsSwapSectorsAndTurnStateProgressed
+      fullName: SectorTest.MoveIntoFriendlyUnit_UnitsSwapSectorsAndTurnStateProgressed
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp.dll][SectorTest.MoveIntoHostileUnit_AttackingUnitTakesSectorAndLevelUpAndTurnEnd]'
+      name: MoveIntoHostileUnit_AttackingUnitTakesSectorAndLevelUpAndTurnEnd
+      fullName: SectorTest.MoveIntoHostileUnit_AttackingUnitTakesSectorAndLevelUpAndTurnEnd
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp.dll][SectorTest.MoveIntoHostileUnit_DefendingUnitDefendsSectorAndTurnEnd]'
+      name: MoveIntoHostileUnit_DefendingUnitDefendsSectorAndTurnEnd
+      fullName: SectorTest.MoveIntoHostileUnit_DefendingUnitDefendsSectorAndTurnEnd
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp.dll][SectorTest.MoveIntoHostileUnit_TieConflict_DefendingUnitDefendsSectorAndTurnEnd]'
+      name: MoveIntoHostileUnit_TieConflict_DefendingUnitDefendsSectorAndTurnEnd
+      fullName: SectorTest.MoveIntoHostileUnit_TieConflict_DefendingUnitDefendsSectorAndTurnEnd
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp.dll][SectorTest.MoveIntoUnoccupiedSector_NewSectorHasUnitAndOldDoesNotAndTurnStateProgressed]'
+      name: MoveIntoUnoccupiedSector_NewSectorHasUnitAndOldDoesNotAndTurnStateProgressed
+      fullName: SectorTest.MoveIntoUnoccupiedSector_NewSectorHasUnitAndOldDoesNotAndTurnStateProgressed
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp.dll][SectorTest.OnMouseAsButton_CorrectUnitIsSelected]'
+      name: OnMouseAsButton_CorrectUnitIsSelected
+      fullName: SectorTest.OnMouseAsButton_CorrectUnitIsSelected
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp.dll][SectorTest.SetOwner_SectorOwnerAndColorCorrect]'
+      name: SetOwner_SectorOwnerAndColorCorrect
+      fullName: SectorTest.SetOwner_SectorOwnerAndColorCorrect
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp.dll][UnitTest][suite]'
+      name: UnitTest
+      fullName: UnitTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp.dll][UnitTest.DestroySelf_UnitNotInSectorAndNotInPlayersUnitsList]'
       name: DestroySelf_UnitNotInSectorAndNotInPlayersUnitsList
       fullName: UnitTest.DestroySelf_UnitNotInSectorAndNotInPlayersUnitsList
-      resultStatus: 1
-      duration: 0.048969
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_30\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][UnitTest][FreezeUnit_FrozenAndFrozenCounterSet]'
+    - id: '[Assembly-CSharp.dll][UnitTest.FreezeUnit_FrozenAndFrozenCounterSet]'
       name: FreezeUnit_FrozenAndFrozenCounterSet
       fullName: UnitTest.FreezeUnit_FrozenAndFrozenCounterSet
-      resultStatus: 1
-      duration: 0.0487305
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_14\r\nUnable to play sound: goose\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][UnitTest][LevelUp_UnitLevelDoesNotPastFive]'
+    - id: '[Assembly-CSharp.dll][UnitTest.LevelUp_UnitLevelDoesNotPastFive]'
       name: LevelUp_UnitLevelDoesNotPastFive
       fullName: UnitTest.LevelUp_UnitLevelDoesNotPastFive
-      resultStatus: 1
-      duration: 0.0474347
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_27\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][UnitTest][LevelUp_UnitLevelIncreasesByOne]'
+    - id: '[Assembly-CSharp.dll][UnitTest.LevelUp_UnitLevelIncreasesByOne]'
       name: LevelUp_UnitLevelIncreasesByOne
       fullName: UnitTest.LevelUp_UnitLevelIncreasesByOne
-      resultStatus: 1
-      duration: 0.0448618
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_25\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][UnitTest][MoveTo_UnitDoesNotMoveIfFrozen]'
+    - id: '[Assembly-CSharp.dll][UnitTest.MoveTo_UnitDoesNotMoveIfFrozen]'
       name: MoveTo_UnitDoesNotMoveIfFrozen
       fullName: UnitTest.MoveTo_UnitDoesNotMoveIfFrozen
-      resultStatus: 1
-      duration: 0.0603298
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_03\r\nUnable to play sound: goose\r\nThis unit is
-        frozen!\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][UnitTest][MoveToFriendly_UnitInCorrectSector]'
+    - id: '[Assembly-CSharp.dll][UnitTest.MoveToFriendly_UnitInCorrectSector]'
       name: MoveToFriendly_UnitInCorrectSector
       fullName: UnitTest.MoveToFriendly_UnitInCorrectSector
-      resultStatus: 1
-      duration: 0.0584828
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_23\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][UnitTest][MoveToFriendlyFromNull_UnitInCorrectSector]'
+    - id: '[Assembly-CSharp.dll][UnitTest.MoveToFriendlyFromNull_UnitInCorrectSector]'
       name: MoveToFriendlyFromNull_UnitInCorrectSector
       fullName: UnitTest.MoveToFriendlyFromNull_UnitInCorrectSector
-      resultStatus: 1
-      duration: 0.0447548
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_07\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][UnitTest][MoveToNeutral_UnitInCorrectSector]'
+    - id: '[Assembly-CSharp.dll][UnitTest.MoveToNeutral_UnitInCorrectSector]'
       name: MoveToNeutral_UnitInCorrectSector
       fullName: UnitTest.MoveToNeutral_UnitInCorrectSector
-      resultStatus: 1
-      duration: 0.0479087
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_29\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][UnitTest][SelectAndDeselect_SelectedTrueWhenSelectedFalseWhenDeselected]'
+    - id: '[Assembly-CSharp.dll][UnitTest.SelectAndDeselect_SelectedTrueWhenSelectedFalseWhenDeselected]'
       name: SelectAndDeselect_SelectedTrueWhenSelectedFalseWhenDeselected
       fullName: UnitTest.SelectAndDeselect_SelectedTrueWhenSelectedFalseWhenDeselected
-      resultStatus: 1
-      duration: 0.051255
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_22\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[Assembly-CSharp.dll][UnitTest][SwapPlaces_UnitsInCorrectNewSectors]'
+    - id: '[Assembly-CSharp.dll][UnitTest.SwapPlaces_UnitsInCorrectNewSectors]'
       name: SwapPlaces_UnitsInCorrectNewSectors
       fullName: UnitTest.SwapPlaces_UnitsInCorrectNewSectors
-      resultStatus: 1
-      duration: 0.1485644
+      resultStatus: 0
+      duration: 0
       messages: 
-      output: "PVC is at sector_09\r\nThere are no audio listeners in the scene. Please
-        ensure there is always one audio listener in the scene\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0

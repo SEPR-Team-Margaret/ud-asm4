@@ -1,0 +1,10 @@
+In order to minimise the messiness of the fight animation code, we used the IDs from the Units GetOwner().playerID method.
+
+Therefore at each call of the conflict method, these two values are returned and concatenated into a 3 integer string along with randomAnimation
+In addition as there are two animation variations, either 1 or 2 is randomly selected in the script and assigned to randomAnimation (the third integer)
+
+When the attacking unit wins, they are concatenated as attackingID + defendingID + randomAnimation
+
+When the defending unit wins, they are concatenated as defendingID + attackingID + randomAnimation
+
+Then the string is searched in the AnimationPlane game object and played
