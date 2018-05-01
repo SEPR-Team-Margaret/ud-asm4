@@ -71,11 +71,10 @@ public class Unit : MonoBehaviour {
         // place the unit in the sector
         MoveTo(sector);
 
-        Material backgroundMat = new Material(Shader.Find("Specular"));
+        // set the unit background to the player's color tinted slightly
         Color ownerColor = owner.GetColor();
         Color offset = new Color(0.4f, 0.4f, 0.4f);
-        backgroundMat.color = ownerColor - offset;
-        gameObject.transform.Find("Background").GetComponent<MeshRenderer>().material = backgroundMat;
+        gameObject.transform.Find("Background").GetComponent<MeshRenderer>().material.color = ownerColor - offset;
 
     }
 
